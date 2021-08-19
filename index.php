@@ -183,14 +183,14 @@ require("db/common.php");
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="about1.html">about us</a>
+                                            <a href="about.html">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper">
-                                            <a href="products1.html">products</a>
+                                            <a href="products.html">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
-                                                    <a class="active" href="products1.html">Products Landing 1</a>
+                                                    <a class="active" href="products.html">Products Landing 1</a>
                                                     <a href="products2.html">Products Landing 2</a>
                                                     <a href="products3.html">Products Landing 3</a>
                                                     <a href="product.html">Product Detail</a>
@@ -322,10 +322,10 @@ require("db/common.php");
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="services1.html">Services</a>
+                                            <a href="services.html">Services</a>
                                         </li>
                                         <li>
-                                            <a href="blog3.html">blog</a>
+                                            <a href="blog.html">blog</a>
                                             <div class="menu-toggle"></div>
                                             <ul>
                                                 <li>
@@ -345,7 +345,7 @@ require("db/common.php");
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="gallery1.html">gallery</a>
+                                            <a href="gallery.html">gallery</a>
                                             <div class="menu-toggle"></div>
                                             <ul>
                                                 <li><a href="gallery1.html">Gallery 1</a></li>
@@ -446,7 +446,7 @@ require("db/common.php");
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="contact1.html">contact</a></li>
+                                        <li><a href="contact.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
