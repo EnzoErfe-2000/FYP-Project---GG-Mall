@@ -163,7 +163,7 @@ require("db/common.php");
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" href="index1.html"><img src="img/logo-2.png" alt="" /></a>  
+                            <a id="logo" href="index.php"><img src="img/logo1.png" alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
@@ -171,16 +171,8 @@ require("db/common.php");
                                 <nav>
                                     <ul>
                                         <li class="active">
-                                            <a href="index1.html">Home</a>
+                                            <a href="index.php">Home</a>
                                             <div class="menu-toggle"></div>
-                                            <ul>
-                                                <li class="active"><a href="index1.html">Homepage 1</a></li>
-                                                <li><a href="index2.html">Homepage 2</a></li>
-                                                <li><a href="index3.html">Homepage 3</a></li>
-                                                <li><a href="index4.html">Homepage 4</a></li>
-                                                <li><a href="index5.html">Homepage 5</a></li>
-                                                <li><a href="index6.html">Homepage 6</a></li>
-                                            </ul>
                                         </li>
                                         <li>
                                             <a href="about.html">about us</a>
@@ -191,8 +183,6 @@ require("db/common.php");
                                             <div class="megamenu">
                                                 <div class="links">
                                                     <a class="active" href="products.html">Products Landing 1</a>
-                                                    <a href="products2.html">Products Landing 2</a>
-                                                    <a href="products3.html">Products Landing 3</a>
                                                     <a href="product.html">Product Detail</a>
                                                 </div>
                                                 <div class="content">
