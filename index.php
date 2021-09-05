@@ -36,8 +36,8 @@ require("db/common.php");
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-md-5 hidden-xs hidden-sm">
-                            <div class="entry"><b>contact us:</b> <a href="tel:+35235551238745">+3  (523) 555 123 8745</a></div>
-                            <div class="entry"><b>email:</b> <a href="mailto:office@exzo.com">office@exzo.com</a></div>
+                            <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
+                            <div class="entry"><b>email:</b> <a href="ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
                         </div>
                         <div class="col-md-7 col-md-text-right">
                             <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
@@ -163,7 +163,7 @@ require("db/common.php");
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" href="index.php"><img src="img/logo1.png" alt="" /></a>  
+                            <a id="logo" href="index.html"><img src="img/logo1.png" alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
@@ -171,18 +171,28 @@ require("db/common.php");
                                 <nav>
                                     <ul>
                                         <li class="active">
-                                            <a href="index.php">Home</a>
+                                            <a href="index1.html">Home</a>
                                             <div class="menu-toggle"></div>
+                                            <ul>
+                                                <li class="active"><a href="index1.html">Homepage 1</a></li>
+                                                <li><a href="index2.html">Homepage 2</a></li>
+                                                <li><a href="index3.html">Homepage 3</a></li>
+                                                <li><a href="index4.html">Homepage 4</a></li>
+                                                <li><a href="index5.html">Homepage 5</a></li>
+                                                <li><a href="index6.html">Homepage 6</a></li>
+                                            </ul>
                                         </li>
                                         <li>
-                                            <a href="about.html">about us</a>
+                                            <a href="about1.html">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper">
-                                            <a href="products.html">products</a>
+                                            <a href="products1.html">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
-                                                    <a class="active" href="products.html">Products Landing 1</a>
+                                                    <a class="active" href="products1.html">Products Landing 1</a>
+                                                    <a href="products2.html">Products Landing 2</a>
+                                                    <a href="products3.html">Products Landing 3</a>
                                                     <a href="product.html">Product Detail</a>
                                                 </div>
                                                 <div class="content">
@@ -312,10 +322,10 @@ require("db/common.php");
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="services.html">Services</a>
+                                            <a href="services1.html">Services</a>
                                         </li>
                                         <li>
-                                            <a href="blog.html">blog</a>
+                                            <a href="blog3.html">blog</a>
                                             <div class="menu-toggle"></div>
                                             <ul>
                                                 <li>
@@ -335,7 +345,7 @@ require("db/common.php");
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="gallery.html">gallery</a>
+                                            <a href="gallery1.html">gallery</a>
                                             <div class="menu-toggle"></div>
                                             <ul>
                                                 <li><a href="gallery1.html">Gallery 1</a></li>
@@ -436,7 +446,7 @@ require("db/common.php");
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="contact.html">contact</a></li>
+                                        <li><a href="contact1.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
@@ -2747,13 +2757,13 @@ require("db/common.php");
                 <div class="footer-top">
                     <div class="row">
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
-                            <img src="img/logo-1.png" alt="" />
+                            <img src="img/logo1.png" alt="" height="59"/>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="simple-article size-2 light fulltransparent">Integer posuere orci sit amet feugiat pellent que. Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</div>
                             <div class="empty-space col-xs-b20"></div>
-                            <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> contact us: <a href="tel:+35235551238745">+3  (523) 555 123 8745</a></div>
-                            <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:office@exzo.com">office@exzo.com</a></div>
-                            <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> address: <a href="#">1st, new york, usa</a></div>
+                            <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> contact us: <a href="tel:+0121314520">+0121314520</a></div>
+                            <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
+                            <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> address: <a href="https://goo.gl/maps/Xxv2Qu1mBzeaKiaM7">Jalan Ayer Keroh Lama, 75450 Bukit Beruang, Melaka</a></div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
                             <h6 class="h6 light">queck links</h6>
