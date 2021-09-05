@@ -1,6 +1,102 @@
 <?php
-require("db/common.php");
+    //include common file
+    require("db/common.php");
+/*
+    //define variables and empty value
+    $name= $email= $pswd= $repswd="";
+    $name_error= $email_error= $pswd_error= $repswd_error="";
 
+    function test_input($data) 
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    if($_SERVER["REQUEST_METHOD"]=="POST")
+    {
+        /*$data = $_POST;
+
+        if(empty($data['name']) ||
+            empty($data['email']) ||
+            empty($data['pswd']) ||
+            empty($data['repswd'])) 
+        {
+            die('Please fill all required fields!');
+        }
+
+        if($data['pswd'] !== $data['repswd']) 
+        {
+            die('Password and Confirm password should match!');   
+        }
+
+        if(empty($_POST["name"]))
+        {
+            $name_error="Name is required";
+        }
+        else
+        {
+            $name=ucwords(test_input($_POST["name"]));
+        }
+
+        if(empty($POST["email"]))
+        {
+            $email_error="Email is required";
+        }
+        else
+        {
+            $email=ucwords(test_input($_POST["email"]));
+        }
+
+        if(empty($POST["pswd"]))
+        {
+            $pswd_error="Password is required";
+        }
+        else
+        {
+            $pswd=$_POST["pswd"];
+        }
+
+        if(empty($POST["repswd"]))
+        {
+            $repswd_error="Please confirm password";
+        }
+        else
+        {
+            $repswd=$_POST["repswd"];
+            if(empty($pswd_error)&&($pswd!=$repswd))
+            {
+                $repswd_error="Password not match!";
+            }
+        }
+
+        if(empty($name_error) && empty($email_error) && empty($pswd_error) && empty($repswd_error))
+        {
+            $sql="INSERT INTO customer(customer_name, customer_email_address, customer_password) VALUES('$name','$email','$pswd')";
+
+            if (mysqli_query($con, $sql)) 
+            {
+                echo "
+                <script>
+                  alert('New account created');
+                  location.href = 'login.php';
+                </script>";
+      
+            } 
+            else 
+            {
+                echo "
+                <script>
+                  alert('Error: " . $sql . "\n" . mysqli_error($con) . "')
+                </script>";
+      
+            }
+        }
+    // Close connection
+    mysqli_close($con);
+
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +136,7 @@ require("db/common.php");
                             <div class="entry"><b>email:</b> <a href="mailto:office@exzo.com">office@exzo.com</a></div>
                         </div>
                         <div class="col-md-7 col-md-text-right">
-                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
+                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a href="register.php"><b>register</b></a></div>
                             <div class="entry language">
                                 <div class="title"><b>en</b></div>
                                 <div class="language-toggle header-toggle-animation">
@@ -2918,69 +3014,74 @@ require("db/common.php");
             </div>
         </div>
 
-        <div class="popup-content" data-rel="2">
+        <!--<div class="popup-content" data-rel="2">
             <div class="layer-close"></div>
             <div class="popup-container size-1">
                 <div class="popup-align">
-                    <h3 class="h3 text-center">register</h3>
-                    <div class="empty-space col-xs-b30"></div>
-                    <input class="simple-input" type="text" value="" placeholder="Your name" />
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="text" value="" placeholder="Your email" />
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="password" value="" placeholder="Enter password" />
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="password" value="" placeholder="Repeat password" />
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <div class="row">
-                        <div class="col-sm-7 col-xs-b10 col-sm-b0">
-                            <div class="empty-space col-sm-b15"></div>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /><span><a href="#">Privacy policy agreement</a></span>
-                            </label>
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <h3 class="h3 text-center">register</h3>
+                        <div class="empty-space col-xs-b30"></div>
+                        <input class="simple-input" type="text" value="" placeholder="Your name" name="name" <?php echo (!empty($name_error))?'IS-INVALID':'';?> value="<?php echo $name;?>">
+                        <span class="invalid"> <?php echo $name_error;?> </span>
+                        <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                        <input class="simple-input" type="text" value="" placeholder="Your email" name="email" <?php echo (!empty($email_error))?'IS-INVALID':'';?> value="<?php echo $email;?>">
+                        <span class="invalid"> <?php echo $email_error;?> </span>
+                        <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                        <input class="simple-input" type="password" value="" placeholder="Enter password" name="pswd" <?php echo (!empty($pswd_error))?'IS-INVALID':'';?> value="<?php echo $pswd;?>">
+                        <span class="invalid"> <?php echo $pswd_error;?> </span>
+                        <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                        <input class="simple-input" type="password" value="" placeholder="Repeat password" name="repswd" <?php echo (!empty($repswd_error))?'IS-INVALID':'';?> value="<?php echo $repswd;?>">
+                        <span class="invalid"> <?php echo $repswd_error;?> </span>
+                        <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-b10 col-sm-b0">
+                                <div class="empty-space col-sm-b15"></div>
+                                <label class="checkbox-entry">
+                                    <input type="checkbox" /><span><a href="#">Privacy policy agreement</a></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-5 text-right">
+                                <a class="button size-2 style-3" href="#">
+                                    <div class="form-group">
+                                        <input type="reset" class="btn btn-secondary" value="Reset">Reset
+                                    </div>
+                                </a>  
+                            </div>
                         </div>
-                        <div class="col-sm-5 text-right">
-                            <a class="button size-2 style-3" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
-                                    <span class="text">submit</span>
-                                </span>
-                            </a>  
+                        <div class="popup-or">
+                            <span>or</span>
                         </div>
-                    </div>
-                    <div class="popup-or">
-                        <span>or</span>
-                    </div>
-                    <div class="row m5">
-                        <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                            <a class="button facebook-button size-2 style-4 block" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
-                                    <span class="text">facebook</span>
-                                </span>
-                            </a>
+                        <div class="row m5">
+                            <div class="col-sm-4 col-xs-b10 col-sm-b0">
+                                <a class="button facebook-button size-2 style-4 block" href="#">
+                                    <span class="button-wrapper">
+                                        <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                        <span class="text">facebook</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-xs-b10 col-sm-b0">
+                                <a class="button twitter-button size-2 style-4 block" href="#">
+                                    <span class="button-wrapper">
+                                        <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                        <span class="text">twitter</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a class="button google-button size-2 style-4 block" href="#">
+                                    <span class="button-wrapper">
+                                        <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                        <span class="text">google+</span>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                            <a class="button twitter-button size-2 style-4 block" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
-                                    <span class="text">twitter</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a class="button google-button size-2 style-4 block" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
-                                    <span class="text">google+</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="button-close"></div>
             </div>
-        </div>
+        </div>-->
 
         <div class="popup-content" data-rel="3">
             <div class="layer-close"></div>
