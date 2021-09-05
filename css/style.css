@@ -53,7 +53,7 @@ textarea{display: block; resize: none; overflow: auto;}
 select::-ms-expand{display: none;}
 input[type="submit"], input[type="file"]
 {
-	position: absolute; 
+	position: static; 
 	left: 0; 
 	top: 0; 
 	width:100%; 

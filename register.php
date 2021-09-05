@@ -90,7 +90,7 @@
         {
             
             // Prepare an insert statement
-            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password, ) VALUES ('$email', '$username', '$password')";
+            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$password')";
             
             if (mysqli_query($con, $sql)) 
             {
@@ -132,7 +132,13 @@
     <link rel="shortcut icon" href="img/favicon.ico" />
   	<title>EX ZO</title>
     <style>
-        body{ font: 14px sans-serif; }
+        body
+        { 
+            font: 14px sans-serif; 
+            background-image: url("https://cdn.wallpaper.com/main/styles/responsive_1460w_scale/s3/wallpaperstore2.jpg?itok=ld54IJZc");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .wrapper{ width: 360px; padding: 20px; }
 
         .loginbox
@@ -177,7 +183,7 @@
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="submit" class="btn btn-success" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
