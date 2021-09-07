@@ -2848,11 +2848,11 @@ include_once 'include/header.php';
 						<div class="empty-space col-xs-b30"></div>
 						<input class="simple-input" type="text" value="" placeholder="Your email" name="email" id="email" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
-						<span class="simple-article size-2" id="errEmail" style="font-size:1; color:red; font-weight:bold; margin-left: 30px;">Bruh</span>
+						<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">Email Error Line</span>
 						</div>
 						<input class="simple-input" type="password" value="" placeholder="Enter password" name="password" id="password" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
-						<span class="simple-article size-2" id="errEmail" style="font-size:1; color:red; font-weight:bold; margin-left: 30px;">
+						<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">Password Error Line</span>
 						</span>
 						</div>
 						<div class="row">

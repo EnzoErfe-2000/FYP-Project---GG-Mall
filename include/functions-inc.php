@@ -48,7 +48,8 @@ function loginUser($conn, $email, $pwd){
 	$checkPwd = password_verify($pwd, $pwdHashed);
 	
 	if($checkPwd === false){
-		header("location: ../index.php?error=wrongpassword");
+		header("location: ../index.php?error=wrongpassword");		
+		print '<script type="text/javascript">alert("User not found!")</script>';
 		exit();
 	}
 	else if($checkPwd === true){
