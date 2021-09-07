@@ -12,15 +12,15 @@ function emptyInputLogin($email, $pwd){
 	return $result;
 }
 
-function uidExists($conn, $custname, $email){
-	$sql = "SELECT * FROM customer WHERE customer_name = ? OR customer_email_address = ?;";
+function uidExists($conn, $email, $password){
+	$sql = "SELECT * FROM customer WHERE customer_email_address = '$email';";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
 		header("location: ../index.php?error=stmtfailed");
 		exit();
 	}
 	
-	mysqli_stmt_bind_param($stmt, "ss", $custname ,$email);
+	mysqli_stmt_bind_param($stmt, "s", $email);
 	mysqli_stmt_execute($stmt);
 	
 	$resultData = mysqli_stmt_get_result($stmt);
@@ -33,6 +33,13 @@ function uidExists($conn, $custname, $email){
 		return $result;
 	}
 	mysqli_stmt_close($stmt);
+}
+
+function checkPassword($password, $row)
+{
+	$pwdHashed = $row["customer_password"];
+	$checkPwd = password_verify($password, $pwdHashed);
+	return $checkPwd;
 }
 
 function loginUser($conn, $email, $pwd){

@@ -5,7 +5,7 @@
             <div class="layer-close"></div>
             <div class="popup-container size-1">
                 <div class="popup-align">
-					<form action="include/login-inc.php" method="post">
+					<form method="post">
 						<h3 class="h3 text-center">Log in</h3>
 						<div class="empty-space col-xs-b30"></div>
 						<input class="simple-input" type="text" value="" placeholder="Your email" name="email" id="email" required />
@@ -25,7 +25,7 @@
 								<a class="simple-link">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
-								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" border="none" onclick="validate">
+								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" border="none" onclick="validate">
 									<span class="button-wrapper">
 										<span class="icon"><img src="img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
@@ -331,3 +331,46 @@
             </div>
         </div>
 	</div>
+	
+<?php 
+    require_once 'dbh-inc.php';
+	require_once 'functions-inc.php';
+	
+    if(isset($_POST['email']) ){
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		
+			session_start();    
+			$uidExists = uidExists($conn, $email, $password);
+			
+			//
+			if($uidExists === false)
+			{
+				echo "<script type='text/javascript'>alert('User not found.');</script>";
+				//echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
+			}
+			else
+			{
+				$correctPwd = checkPassword($password, $uidExists);
+				if($correctPwd === false)
+				{
+					echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
+				}
+				else if($correctPwd === true)
+				{
+					session_start();      
+					$_SESSION["customer_id"] = $uidExists["customer_id"];
+					$_SESSION["customer_name"] = $uidExists["customer_name"];
+					$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];
+					$custName = $uidExists["customer_name"];
+					//echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
+					echo "<script> location.assign('index.php');</script>";
+					//echo "<script> window.location.assign('welcome1.php'); window.history.forward();</script>";
+					//echo "<script> window.location.assign('welcome1.php'); </script>";
+					//header('Location: welcome.php');
+				}
+			}
+			mysqli_close($connect);
+		
+    } 
+?>

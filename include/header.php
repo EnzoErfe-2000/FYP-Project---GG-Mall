@@ -17,6 +17,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <link rel="shortcut icon" href="img/favicon.ico" />
+
   	<title>GG MALL</title>
 </head>
 <body>
