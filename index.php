@@ -1,7 +1,5 @@
 <?php
-    //include common file
-    require("db/common.php");
-
+include_once 'include/header.php';
 ?>
 
 

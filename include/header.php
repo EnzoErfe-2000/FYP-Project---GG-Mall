@@ -35,7 +35,7 @@
                             <div class="entry"><b>email:</b> <a href="ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
                         </div>
                         <div class="col-md-7 col-md-text-right">
-                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
+                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a href="register.php"><b>register</b></a></div>
                             <div class="entry language">
                                 <div class="title"><b>en</b></div>
                                 <div class="language-toggle header-toggle-animation">
