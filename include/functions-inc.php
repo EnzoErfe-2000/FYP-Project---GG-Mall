@@ -42,6 +42,12 @@ function checkPassword($password, $row)
 	return $checkPwd;
 }
 
+function resetHeadErrMsgs()
+{
+	echo "<script type='text/javascript'>document.getElementById('errEmail').innerHTML = '&nbsp;';</script>";
+	echo "<script type='text/javascript'>document.getElementById('errPwd').innerHTML = '&nbsp;';</script>";
+}
+/*
 function loginUser($conn, $email, $pwd){
 	$uidExists = uidExists($conn, $email, $email);
 	
@@ -68,4 +74,5 @@ function loginUser($conn, $email, $pwd){
 		exit();
 	}
 }
+*/
 ?>

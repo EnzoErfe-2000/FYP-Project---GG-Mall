@@ -9,11 +9,11 @@
 						<div class="empty-space col-xs-b30"></div>
 						<input class="simple-input" type="email" value="" placeholder="Your email" name="email" id="email" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
-							<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">Email Error Line</span>
+							<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">&nbsp;</span>
 						</div>
 						<input class="simple-input" type="password" value="" placeholder="Enter password" name="password" id="password" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
-							<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">Password Error Line</span>
+							<span class="simple-article size-2" id="errPwd" style="color:red; margin-left: 30px;">&nbsp;</span>
 						</div>
 						<div class="row">
 							<div class="col-sm-6 col-xs-b10 col-sm-b0">
@@ -334,6 +334,8 @@
     require_once 'dbh-inc.php';
 	require_once 'functions-inc.php';
 	
+	resetHeadErrMsgs();
+	
     if(isset($_POST['email']) ){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -344,7 +346,8 @@
 			//
 			if($uidExists === false)
 			{
-				echo "<script type='text/javascript'>alert('User not found.');</script>";
+				echo '<script type="text/javascript">alert("User not found!\nPlease try again.");</script>';
+				echo '<script type="text/javascript">document.getElementById("errEmail").innerHTML = "User not found!";</script>';
 				//echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
 			}
 			else
@@ -352,7 +355,8 @@
 				$correctPwd = checkPassword($password, $uidExists);
 				if($correctPwd === false)
 				{
-					echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
+					echo '<script type="text/javascript">alert("Invalid Email or Password!\nPlease try again.");</script>';
+					echo '<script type="text/javascript">document.getElementById("errPwd").innerHTML = "Invalid Email or Password;"</script>';
 				}
 				else if($correctPwd === true)
 				{

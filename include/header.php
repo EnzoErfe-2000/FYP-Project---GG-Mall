@@ -186,7 +186,7 @@ session_start();
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" href="index.html"><img src="img/logo1.png" alt="" /></a>  
+                            <a id="logo" <?php hrefIndex(); ?>><img src="img/logo1.png" alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
@@ -527,6 +527,12 @@ function active($currect_page){
   $uri = $_SERVER['REQUEST_URI'];
   if(strpos($uri, $currect_page)){
       echo 'active'; //class name in css 
+  } 
+}
+function hrefIndex(){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(!strpos($uri, "index.php")){
+      echo 'href = "index.php"'; //class name in css 
   } 
 }
 ?>
