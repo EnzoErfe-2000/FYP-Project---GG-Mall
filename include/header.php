@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +38,33 @@
                             <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
                             <div class="entry"><b>email:</b> <a href="ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
                         </div>
+						<?php
+						
+						?>
                         <div class="col-md-7 col-md-text-right">
-                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
-                            <div class="entry language">
+                            <?php
+								//class='open-popup' data-rel='1'
+								if(isset($_SESSION["customer_id"]))
+								{
+									echo "<div class='entry hidden-xs hidden-sm cart language'>
+<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
+<div class='language-toggle header-toggle-animation'>
+
+<a href='#.html'>Profile</a>
+<a href='#.html'>Orders</a>
+<a href='#.html'>Wishlist</a>
+</div>
+</div>";
+									
+									echo "<div class='entry'><a class='open-popup' data-rel='2'><b>Logout</b></a></div>";                            
+								}
+								else
+								{
+									echo "<div class='entry'><a class='open-popup' data-rel='1'><b>login</b></a>&nbsp; or &nbsp;<a class='open-popup' data-rel='2'><b>register</b></a></div>";                            
+								}
+							?>
+                            <!--
+							<div class="entry language">
                                 <div class="title"><b>en</b></div>
                                 <div class="language-toggle header-toggle-animation">
                                     <a href="index1.html">fr</a>
@@ -46,8 +73,9 @@
                                     <a href="index1.html">sp</a>
                                 </div>
                             </div>
-                            <div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
-                            <div class="entry hidden-xs hidden-sm cart">
+							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
+                            -->
+							<div class="entry hidden-xs hidden-sm cart">
                                 <a href="cart.html">
                                     <b class="hidden-xs">Your bag</b>
                                     <span class="cart-icon">
@@ -167,8 +195,8 @@
                                 <nav>
                                     <ul>
                                         <li class="active">
-                                            <a href="index1.html">Home</a>
-                                            <div class="menu-toggle"></div>
+                                            <a href="index.php">Home</a>
+                                            <!--<div class="menu-toggle"></div>
                                             <ul>
                                                 <li class="active"><a href="index1.html">Homepage 1</a></li>
                                                 <li><a href="index2.html">Homepage 2</a></li>
@@ -177,9 +205,10 @@
                                                 <li><a href="index5.html">Homepage 5</a></li>
                                                 <li><a href="index6.html">Homepage 6</a></li>
                                             </ul>
+											-->
                                         </li>
                                         <li>
-                                            <a href="about1.html">about us</a>
+                                            <a href="about.html">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper">
                                             <a href="products1.html">products</a>
@@ -320,6 +349,7 @@
                                         <li>
                                             <a href="services1.html">Services</a>
                                         </li>
+										<!--
                                         <li>
                                             <a href="blog3.html">blog</a>
                                             <div class="menu-toggle"></div>
@@ -442,7 +472,8 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="contact1.html">contact</a></li>
+                                        -->
+										<li><a href="contact1.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
