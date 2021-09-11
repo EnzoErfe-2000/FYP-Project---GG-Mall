@@ -36,7 +36,7 @@ session_start();
                     <div class="row">
                         <div class="col-md-5 hidden-xs hidden-sm">
                             <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
-                            <div class="entry"><b>email:</b> <a href="ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
+                            <div class="entry"><address><b>email:</b><a href="mailto:ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></address></div>
                         </div>
 						<?php
 						
@@ -47,16 +47,15 @@ session_start();
 								if(isset($_SESSION["customer_id"]))
 								{
 									echo "<div class='entry hidden-xs hidden-sm cart language'>
-<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
-<div class='language-toggle header-toggle-animation'>
-
-<a href='#.html'>Profile</a>
-<a href='#.html'>Orders</a>
-<a href='#.html'>Wishlist</a>
-</div>
-</div>";
+											<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
+											<div class='language-toggle header-toggle-animation'>
+												<a href='#.html'>Profile</a>
+												<a href='#.html'>Orders</a>
+												<a href='#.html'>Wishlist</a>
+											</div>
+										</div>";
 									
-									echo "<div class='entry'><a class='open-popup' data-rel='2'><b>Logout</b></a></div>";                            
+									echo "<div class='entry'><a href='include/logout-inc.php'><b>Logout</b></a></div>";                            
 								}
 								else
 								{

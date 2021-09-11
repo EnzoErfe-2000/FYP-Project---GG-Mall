@@ -7,7 +7,7 @@
 					<form method="post">
 						<h3 class="h3 text-center">Log in</h3>
 						<div class="empty-space col-xs-b30"></div>
-						<input class="simple-input" type="text" value="" placeholder="Your email" name="email" id="email" required />
+						<input class="simple-input" type="email" value="" placeholder="Your email" name="email" id="email" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
 							<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">Email Error Line</span>
 						</div>
@@ -361,11 +361,8 @@
 					$_SESSION["customer_name"] = $uidExists["customer_name"];
 					$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];
 					$custName = $uidExists["customer_name"];
-					//echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
+					echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
 					echo "<script> location.assign('index.php');</script>";
-					//echo "<script> window.location.assign('welcome1.php'); window.history.forward();</script>";
-					//echo "<script> window.location.assign('welcome1.php'); </script>";
-					//header('Location: welcome.php');
 				}
 			}
 			mysqli_close($connect);
