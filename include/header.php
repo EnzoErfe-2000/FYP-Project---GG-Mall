@@ -193,7 +193,7 @@ session_start();
                                 <div class="nav-close-layer"></div>
                                 <nav>
                                     <ul>
-                                        <li class="active">
+                                        <li <?php classActive("index.php"); ?>>
                                             <a href="index.php">Home</a>
                                             <!--<div class="menu-toggle"></div>
                                             <ul>
@@ -206,11 +206,11 @@ session_start();
                                             </ul>
 											-->
                                         </li>
-                                        <li>
+                                        <li <?php classActive("about.html"); ?>>
                                             <a href="about.html">about us</a>
                                         </li>
-                                        <li class="megamenu-wrapper">
-                                            <a href="products1.html">products</a>
+                                        <li class="megamenu-wrapper <?php active("products.html"); ?>">
+                                            <a href="products.html">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
@@ -345,8 +345,8 @@ session_start();
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <a href="services1.html">Services</a>
+                                        <li <?php classActive("services.html"); ?>>
+                                            <a href="services.html">Services</a>
                                         </li>
 										<!--
                                         <li>
@@ -472,7 +472,7 @@ session_start();
                                             </div>
                                         </li>
                                         -->
-										<li><a href="contact1.html">contact</a></li>
+										<li <?php classActive("contact.html"); ?>><a href="contact.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
@@ -514,3 +514,19 @@ session_start();
             </div>
 
         </header>
+		
+<?php
+function classActive($currect_page){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(strpos($uri, $currect_page)){
+      echo 'class = "active"'; //class name in css 
+  } 
+}
+
+function active($currect_page){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(strpos($uri, $currect_page)){
+      echo 'active'; //class name in css 
+  } 
+}
+?>
