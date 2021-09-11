@@ -1,10 +1,6 @@
 <?php
 include_once 'include/header.php';	
 ?>
-
-
-            
-
         <div class="header-empty-space"></div>
 
         <div class="slider-wrapper">
@@ -2266,8 +2262,7 @@ include_once 'include/header.php';
                 </div>
             </div>
         </div>
-
-        
+     
 <?php
 include_once 'include/footer.php';
 ?>
