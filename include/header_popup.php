@@ -82,7 +82,7 @@
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                    
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input class="simple-input" type="password" value="" placeholder="Repeat password" />
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
@@ -375,7 +375,7 @@
 					echo "<script> location.assign('index.php');</script>";
 				}
 			}
-			mysqli_close($connect);
+			mysqli_close($conn);
 		
     } 
 ?>
