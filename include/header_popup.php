@@ -72,11 +72,17 @@
                 <div class="popup-align">
                     <h3 class="h3 text-center">register</h3>
                     <div class="empty-space col-xs-b30"></div>
-                    <input class="simple-input" type="text" value="" placeholder="Your name" />
+                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>"/>
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="text" value="" placeholder="Your email" />
+                    <input type="text" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>"/>
+                    <span class="invalid-feedback"><?php echo $email_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="password" value="" placeholder="Enter password" />
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input class="simple-input" type="password" value="" placeholder="Repeat password" />
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
