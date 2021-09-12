@@ -129,3 +129,31 @@
 <script src="js/jquery.classycountdown.js"></script>
 <script src="js/jquery.knob.js"></script>
 <script src="js/jquery.throttle.js"></script>
+
+<!-- range slider -->
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var minVal = parseInt($('.min-price').text());
+            var maxVal = parseInt($('.max-price').text());
+            $( "#prices-range" ).slider({
+                range: true,
+                min: minVal,
+                max: maxVal,
+                step: 5,
+                values: [ minVal, maxVal ],
+                slide: function( event, ui ) {
+                    $('.min-price').text(ui.values[ 0 ]);
+                    $('.max-price').text(ui.values[ 1 ]);
+                }
+            });
+        });
+    </script>
+	
+<!-- MAP -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="js/map.js"></script>
+
+<!-- CONTACT -->
+<script src="js/contact.form.js"></script>

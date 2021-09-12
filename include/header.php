@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +20,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <link rel="shortcut icon" href="img/favicon.ico" />
+
   	<title>GG MALL</title>
 </head>
 <body>
@@ -32,11 +36,34 @@
                     <div class="row">
                         <div class="col-md-5 hidden-xs hidden-sm">
                             <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
-                            <div class="entry"><b>email:</b> <a href="ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
+                            <div class="entry"><address><b>email:</b><a href="mailto:ggmall_inc@gmail.com"> ggmall_inc@gmail.com</a></address></div>
                         </div>
+						<?php
+						
+						?>
                         <div class="col-md-7 col-md-text-right">
-                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a href="register.php"><b>register</b></a></div>
-                            <div class="entry language">
+                            <?php
+								//class='open-popup' data-rel='1'
+								if(isset($_SESSION["customer_id"]))
+								{
+									echo "<div class='entry hidden-xs hidden-sm cart language'>
+											<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
+											<div class='language-toggle header-toggle-animation'>
+												<a href='#.html'>Profile</a>
+												<a href='#.html'>Orders</a>
+												<a href='#.html'>Wishlist</a>
+											</div>
+										</div>";
+									
+									echo "<div class='entry'><a href='include/logout-inc.php'><b>Logout</b></a></div>";                            
+								}
+								else
+								{
+									echo "<div class='entry'><a class='open-popup' data-rel='1'><b>login</b></a>&nbsp; or &nbsp;<a class='open-popup' data-rel='2'><b>register</b></a></div>";                            
+								}
+							?>
+                            <!--
+							<div class="entry language">
                                 <div class="title"><b>en</b></div>
                                 <div class="language-toggle header-toggle-animation">
                                     <a href="index1.html">fr</a>
@@ -45,8 +72,9 @@
                                     <a href="index1.html">sp</a>
                                 </div>
                             </div>
-                            <div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
-                            <div class="entry hidden-xs hidden-sm cart">
+							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
+                            -->
+							<div class="entry hidden-xs hidden-sm cart">
                                 <a href="cart.html">
                                     <b class="hidden-xs">Your bag</b>
                                     <span class="cart-icon">
@@ -158,16 +186,16 @@
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" href="index.html"><img src="img/logo1.png" alt="" /></a>  
+                            <a id="logo" <?php hrefIndex(); ?>><img src="img/logo1.png" alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
                                 <div class="nav-close-layer"></div>
                                 <nav>
                                     <ul>
-                                        <li class="active">
-                                            <a href="index1.html">Home</a>
-                                            <div class="menu-toggle"></div>
+                                        <li <?php classActive("index.php"); ?>>
+                                            <a href="index.php">Home</a>
+                                            <!--<div class="menu-toggle"></div>
                                             <ul>
                                                 <li class="active"><a href="index1.html">Homepage 1</a></li>
                                                 <li><a href="index2.html">Homepage 2</a></li>
@@ -176,12 +204,13 @@
                                                 <li><a href="index5.html">Homepage 5</a></li>
                                                 <li><a href="index6.html">Homepage 6</a></li>
                                             </ul>
+											-->
                                         </li>
-                                        <li>
-                                            <a href="about1.html">about us</a>
+                                        <li <?php classActive("about.html"); ?>>
+                                            <a href="about.html">about us</a>
                                         </li>
-                                        <li class="megamenu-wrapper">
-                                            <a href="products1.html">products</a>
+                                        <li class="megamenu-wrapper <?php active("products.html"); ?>">
+                                            <a href="products.html">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
@@ -316,9 +345,10 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <a href="services1.html">Services</a>
+                                        <li <?php classActive("services.html"); ?>>
+                                            <a href="services.html">Services</a>
                                         </li>
+										<!--
                                         <li>
                                             <a href="blog3.html">blog</a>
                                             <div class="menu-toggle"></div>
@@ -441,7 +471,8 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="contact1.html">contact</a></li>
+                                        -->
+										<li <?php classActive("contact.html"); ?>><a href="contact.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
@@ -483,3 +514,25 @@
             </div>
 
         </header>
+		
+<?php
+function classActive($currect_page){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(strpos($uri, $currect_page)){
+      echo 'class = "active"'; //class name in css 
+  } 
+}
+
+function active($currect_page){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(strpos($uri, $currect_page)){
+      echo 'active'; //class name in css 
+  } 
+}
+function hrefIndex(){
+  $uri = $_SERVER['REQUEST_URI'];
+  if(!strpos($uri, "index.php")){
+      echo 'href = "index.php"'; //class name in css 
+  } 
+}
+?>

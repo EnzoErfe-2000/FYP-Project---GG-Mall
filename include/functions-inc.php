@@ -12,15 +12,15 @@ function emptyInputLogin($email, $pwd){
 	return $result;
 }
 
-function uidExists($conn, $custname, $email){
-	$sql = "SELECT * FROM customer WHERE customer_name = ? OR customer_email_address = ?;";
+function uidExists($conn, $email, $password){
+	$sql = "SELECT * FROM customer WHERE customer_email_address = '$email';";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
 		header("location: ../index.php?error=stmtfailed");
 		exit();
 	}
 	
-	mysqli_stmt_bind_param($stmt, "ss", $custname ,$email);
+	mysqli_stmt_bind_param($stmt, "s", $email);
 	mysqli_stmt_execute($stmt);
 	
 	$resultData = mysqli_stmt_get_result($stmt);
@@ -35,6 +35,19 @@ function uidExists($conn, $custname, $email){
 	mysqli_stmt_close($stmt);
 }
 
+function checkPassword($password, $row)
+{
+	$pwdHashed = $row["customer_password"];
+	$checkPwd = password_verify($password, $pwdHashed);
+	return $checkPwd;
+}
+
+function resetHeadErrMsgs()
+{
+	echo "<script type='text/javascript'>document.getElementById('errEmail').innerHTML = '&nbsp;';</script>";
+	echo "<script type='text/javascript'>document.getElementById('errPwd').innerHTML = '&nbsp;';</script>";
+}
+/*
 function loginUser($conn, $email, $pwd){
 	$uidExists = uidExists($conn, $email, $email);
 	
@@ -61,4 +74,5 @@ function loginUser($conn, $email, $pwd){
 		exit();
 	}
 }
+*/
 ?>
