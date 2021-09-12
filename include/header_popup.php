@@ -369,7 +369,7 @@
 					echo "<script> location.assign('index.php');</script>";
 				}
 			}
-			mysqli_close($connect);
+			mysqli_close($conn);
 		
     } 
 ?>
