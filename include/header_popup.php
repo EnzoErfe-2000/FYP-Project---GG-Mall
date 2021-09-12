@@ -84,7 +84,7 @@
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input class="simple-input" type="password" value="" placeholder="Repeat password" />
+                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <div class="row">
                         <div class="col-sm-7 col-xs-b10 col-sm-b0">
