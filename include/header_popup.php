@@ -23,7 +23,7 @@
 								<a class="simple-link">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
-								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" border="none" onclick="validate">
+								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
 									<span class="button-wrapper">
 										<span class="icon"><img src="img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
