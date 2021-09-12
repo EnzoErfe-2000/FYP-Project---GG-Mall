@@ -366,7 +366,9 @@
 					$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];
 					$custName = $uidExists["customer_name"];
 					echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
-					echo "<script> location.assign('index.php');</script>";
+					$uri=$_SERVER['REQUEST_URI'];
+					//echo "<script> location.assign('index.php');</script>";
+					echo "<script> location.assign('$uri');</script>";
 				}
 			}
 			mysqli_close($conn);
