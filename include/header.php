@@ -194,7 +194,7 @@ session_start();
                                 <nav>
                                     <ul>
                                         <li <?php classActive("index.php"); ?>>
-                                            <a href="index.php">Home</a>
+                                            <a href="/fyp-project/index.php">Home</a>
                                             <!--<div class="menu-toggle"></div>
                                             <ul>
                                                 <li class="active"><a href="index1.html">Homepage 1</a></li>
@@ -207,7 +207,7 @@ session_start();
 											-->
                                         </li>
                                         <li <?php classActive("about.html"); ?>>
-                                            <a href="about.html">about us</a>
+                                            <a href="/fyp-project/about.html">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper <?php active("products.html"); ?>">
                                             <a href="products.html">products</a>
@@ -346,7 +346,7 @@ session_start();
                                             </div>
                                         </li>
                                         <li <?php classActive("services.html"); ?>>
-                                            <a href="services.html">Services</a>
+                                            <a href="/fyp-project/services.html">Services</a>
                                         </li>
 										<!--
                                         <li>
@@ -472,7 +472,7 @@ session_start();
                                             </div>
                                         </li>
                                         -->
-										<li <?php classActive("contact.html"); ?>><a href="contact.html">contact</a></li>
+										<li <?php classActive("contact.html"); ?>><a href="/fyp-project/contact.html">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
