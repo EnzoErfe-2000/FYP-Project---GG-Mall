@@ -46,7 +46,7 @@ session_start();
 								//class='open-popup' data-rel='1'
 								if(isset($_SESSION["customer_id"]))
 								{
-									echo "<div class='entry hidden-xs hidden-sm cart language'>
+									echo "<div class='entry language'>
 											<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
 											<div class='language-toggle header-toggle-animation'>
 												<a href='#.html'>Profile</a>
