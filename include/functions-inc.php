@@ -12,8 +12,8 @@ function emptyInputLogin($email, $pwd){
 	return $result;
 }
 
-function uidExists($conn, $email, $password){
-	$sql = "SELECT * FROM customer WHERE customer_email_address = '$email';";
+function uidExists($conn= null, $email= null, $password = null){
+	$sql = "SELECT * FROM customer WHERE customer_email_address = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
 		header("location: ../index.php?error=stmtfailed");
