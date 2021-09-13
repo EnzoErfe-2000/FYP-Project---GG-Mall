@@ -29,12 +29,8 @@
             $email_err = "Invalid email format";
         } 
         else 
-<<<<<<< HEAD
         {
             // Prepare a select statement
-=======
-        {  // Prepare a select statement
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
 
             $sql = "SELECT customer_id FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
@@ -100,21 +96,13 @@
             // Prepare an insert statement
             $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
-<<<<<<< HEAD
-
-=======
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
             
             if (mysqli_query($conn, $sql)) 
             {
                 echo "
                 <script>
                   alert('New account created');
-<<<<<<< HEAD
 				  location.assign('index.php');
-=======
-                  location.assign('index.php');
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
                 </script>";
             }
             else 
@@ -128,13 +116,9 @@
         }
         // Close connection
         mysqli_close($conn);
-<<<<<<< HEAD
-=======
-
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
     }
 
-  ?>  
+?>  
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -208,20 +192,6 @@
             <div class="layer-close"></div>
             <div class="popup-container size-1">
                 <div class="popup-align">
-<<<<<<< HEAD
-					<form 
-                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); /* $_SERVER["PHP_SELF"] Returns the filename of the currently executing script */ ?>" 
-                    method="post"
-                    style="text-align: left">
-
-                    <h3 class="h3 text-center">register</h3>
-                    <div class="empty-space col-xs-b30"></div>
-                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>" required/>
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="text" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
-                    <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
-=======
                     <form 
                     action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); /* $_SERVER["PHP_SELF"] Returns the filename of the currently executing script */ ?>" 
                     method="post"
@@ -238,8 +208,7 @@
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
-
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
+					
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
                     <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
@@ -254,20 +223,12 @@
                         </div>
 
                         <div class="col-sm-5 text-right">
-<<<<<<< HEAD
-                             <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
-=======
                             <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">submit</span>
                                 </span>
-<<<<<<< HEAD
                             </button>
-=======
-                            </button>  
->>>>>>> 37e740a6ac56ae38b6528adb4faedc76a796fefe
                         </div>
                         
                     </div>
