@@ -38,9 +38,6 @@ session_start();
                             <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
                             <div class="entry"><address><b>email:</b><a href="mailto:ggmall_inc@gmail.com"> ggmall_inc@gmail.com</a></address></div>
                         </div>
-						<?php
-						
-						?>
                         <div class="col-md-7 col-md-text-right">
                             <?php
 								//class='open-popup' data-rel='1'
