@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2021 at 06:31 PM
+-- Generation Time: Sep 12, 2021 at 04:34 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -65,7 +65,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_email_address`, `customer_password`, `customer_dateOfBirth`, `customer_createdDate`, `customer_modifiedDate`) VALUES
-(0001, 'Enzo Joaquin Itona Erfe', 'enzonshadow@gmail.com', 'password', '2000-12-09', '2021-08-26 09:30:31', '2021-08-26 09:30:32');
+(0001, 'Enzo Joaquin Itona Erfe', 'enzonshadow@gmail.com', '$2y$10$IKL0ruJifFPHcnWH6Pa5R.kOVc.npFvUPBMY720j5CXoKxDISIVB.', '2000-12-09', '2021-08-26 09:30:31', '2021-08-26 09:30:32');
 
 -- --------------------------------------------------------
 
@@ -114,6 +114,21 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `product_name`, `product_brand`, `product_regularPrice`, `product_listedPrice`, `product_discountRate`, `product_saleStart`, `product_saleEnd`, `product_availability`, `product_stock`, `product_isUnlisted`) VALUES
 (00001, 'TEST_PRODUCT_01', 'TEST_BRAND_01', '100', '50', '0.500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 5, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopping_cart`
+--
+
+CREATE TABLE `shopping_cart` (
+  `cart_id` int(5) UNSIGNED ZEROFILL NOT NULL,
+  `product_id` int(5) UNSIGNED ZEROFILL NOT NULL,
+  `product_listedPrice` decimal(10,0) NOT NULL,
+  `cart_quantity` int(11) NOT NULL,
+  `cart_dateAdded` datetime NOT NULL,
+  `product_img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -144,6 +159,13 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `shopping_cart`
+--
+ALTER TABLE `shopping_cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD UNIQUE KEY `FOREIGN` (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -172,6 +194,12 @@ ALTER TABLE `product`
   MODIFY `product_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `shopping_cart`
+--
+ALTER TABLE `shopping_cart`
+  MODIFY `cart_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -179,7 +207,13 @@ ALTER TABLE `product`
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`);
+  ADD CONSTRAINT `order_idfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`);
+
+--
+-- Constraints for table `shopping_cart`
+--
+ALTER TABLE `shopping_cart`
+  ADD CONSTRAINT `shopping_cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
