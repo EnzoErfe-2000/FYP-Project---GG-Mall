@@ -1,3 +1,123 @@
+<?php
+    require_once 'dbh-inc.php';
+	require_once 'functions-inc.php';
+
+    // Define variables and initialize with empty values
+    $email = $username = $password = $confirm_password = "";
+    $email_err = $username_err = $password_err = $confirm_password_err = "";
+
+    function test_input($data) 
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    // Processing form data when form is submitted
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+ 
+        // Validate email
+        if (empty($_POST["email"])) 
+        {
+            $email_err = "Email is required";
+        } 
+        else if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) 
+        {
+            $email_err = "Invalid email format";
+        } 
+        else 
+        {
+            // Prepare a select statement
+
+            $sql = "SELECT customer_id FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) 
+            {
+                $email_err = "Email is taken";
+            } 
+            else 
+            {
+                $email = test_input($_POST["email"]);
+            }
+        }
+
+        // Validate username
+        if(empty($_POST["username"]))
+        {
+            $username_err = "Please enter a username.";
+        } 
+        elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
+        {
+            $username_err = "Username can only contain letters, numbers, and underscores.";
+        } 
+        else
+        {
+            $username = ucwords(test_input($_POST["username"]));
+        }
+        
+        
+        // Validate password
+        if(empty($_POST["password"]))
+        {
+            $password_err = "Please enter a password.";     
+        }
+        elseif(strlen(trim($_POST["password"])) < 6)
+        {
+            $password_err = "Password must have atleast 6 characters.";
+        } 
+        else
+        {
+            $password = ($_POST["password"]);
+        }
+        
+        // Validate confirm password
+        if(empty($_POST["confirm_password"]))
+        {
+            $confirm_password_err = "Please confirm password.";     
+        }
+        else
+        {
+            $confirm_password = $_POST["confirm_password"];
+
+            if(empty($password_err) && ($password != $confirm_password))
+            {
+                $confirm_password_err = "Password did not match.";
+            }
+        }
+        
+        // Check input errors before inserting in database
+        if(empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err))
+        {
+            
+            // Prepare an insert statement
+            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$password')";
+            
+            if (mysqli_query($conn, $sql)) 
+            {
+                echo "
+                <script>
+                  alert('New account created');
+                  location.href = 'index.php';
+                </script>";
+            }
+            else 
+            {
+            echo "
+            <script>
+                alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
+            </script>";
+    
+            }
+        }
+        // Close connection
+        mysqli_close($conn);
+    }
+
+  ?>  
+
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
         <div class="popup-content" data-rel="1">
@@ -70,37 +190,45 @@
             <div class="layer-close"></div>
             <div class="popup-container size-1">
                 <div class="popup-align">
+                    <form 
+                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); /* $_SERVER["PHP_SELF"] Returns the filename of the currently executing script */ ?>" 
+                    method="post"
+                    style="text-align: left">
                     <h3 class="h3 text-center">register</h3>
                     <div class="empty-space col-xs-b30"></div>
-                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>"/>
+                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>" required/>
                     <span class="invalid-feedback"><?php echo $username_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="text" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>"/>
+                    <input type="text" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
                     <span class="invalid-feedback"><?php echo $email_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
+                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
+                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <div class="row">
                         <div class="col-sm-7 col-xs-b10 col-sm-b0">
                             <div class="empty-space col-sm-b15"></div>
                             <label class="checkbox-entry">
-                                <input type="checkbox" /><span><a href="#">Privacy policy agreement</a></span>
+                                <input type="checkbox" required/><span><a href="#">Privacy policy agreement</a></span>
                             </label>
                         </div>
+
                         <div class="col-sm-5 text-right">
-                            <a class="button size-2 style-3" href="#">
+                            <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="img/icon-4.png" alt="" /></span>
                                     <span class="text">submit</span>
                                 </span>
-                            </a>  
+                            </button>  
                         </div>
+                        
                     </div>
                     <div class="popup-or">
                         <span>or</span>
@@ -378,4 +506,6 @@
 			mysqli_close($conn);
 		
     } 
+    
+    
 ?>
