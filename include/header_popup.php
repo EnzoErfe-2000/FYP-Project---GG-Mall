@@ -25,7 +25,7 @@
 							<div class="col-sm-6 text-right">
 								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" border="none" onclick="validate">
 									<span class="button-wrapper">
-										<span class="icon"><img src="img/icon-4.png" alt="" /></span>
+										<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
 									</span>
 								</button>  
@@ -39,7 +39,7 @@
 						<div class="col-sm-4 col-xs-b10 col-sm-b0">
 							<a class="button facebook-button size-2 style-4 block" href="#">
 								<span class="button-wrapper">
-									<span class="icon"><img src="img/icon-4.png" alt="" /></span>
+									<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 									<span class="text">facebook</span>
 								</span>
 							</a>
@@ -47,7 +47,7 @@
 					<div class="col-sm-4 col-xs-b10 col-sm-b0">
 						<a class="button twitter-button size-2 style-4 block" href="#">
 							<span class="button-wrapper">
-								<span class="icon"><img src="img/icon-4.png" alt="" /></span>
+								<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 								<span class="text">twitter</span>
 							</span>
 						</a>
@@ -55,7 +55,7 @@
 						<div class="col-sm-4">
 							<a class="button google-button size-2 style-4 block" href="#">
 								<span class="button-wrapper">
-									<span class="icon"><img src="img/icon-4.png" alt="" /></span>
+									<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 									<span class="text">google+</span>
 								</span>
 							</a>
@@ -90,7 +90,7 @@
                         <div class="col-sm-5 text-right">
                             <a class="button size-2 style-3" href="#">
                                 <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">submit</span>
                                 </span>
                             </a>  
@@ -103,7 +103,7 @@
                         <div class="col-sm-4 col-xs-b10 col-sm-b0">
                             <a class="button facebook-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">facebook</span>
                                 </span>
                             </a>
@@ -111,7 +111,7 @@
                         <div class="col-sm-4 col-xs-b10 col-sm-b0">
                             <a class="button twitter-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">twitter</span>
                                 </span>
                             </a>
@@ -119,7 +119,7 @@
                         <div class="col-sm-4">
                             <a class="button google-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
-                                    <span class="icon"><img src="img/icon-4.png" alt="" /></span>
+                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">google+</span>
                                 </span>
                             </a>
@@ -144,31 +144,31 @@
                                    <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-4.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-4.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-5.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-5.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-6.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-6.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-7.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-7.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-8.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-8.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-9.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-9.jpg"></div>
                                        </div>
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="img/product-preview-10.jpg"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="/fyp-project/img/product-preview-10.jpg"></div>
                                        </div>
                                    </div>
                                 </div>
@@ -181,37 +181,37 @@
                                    <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-4_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-4_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-5_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-5_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-6_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-6_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-7_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-7_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-8_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-8_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-9_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-9_.jpg" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="img/product-preview-10_.jpg" alt="" />
+                                                <img src="/fyp-project/img/product-preview-10_.jpg" alt="" />
                                             </div>
                                        </div>
 
@@ -294,7 +294,7 @@
                                 <div class="col-sm-6 col-xs-b10 col-sm-b0">
                                     <a class="button size-2 style-2 block" href="#">
                                         <span class="button-wrapper">
-                                            <span class="icon"><img src="img/icon-2.png" alt=""></span>
+                                            <span class="icon"><img src="/fyp-project/img/icon-2.png" alt=""></span>
                                             <span class="text">add to cart</span>
                                         </span>
                                     </a>
@@ -375,3 +375,46 @@
 		
     } 
 ?>
+
+</body>
+</html>
+
+<script src="/fyp-project/js/jquery-2.2.4.min.js"></script>
+<script src="/fyp-project/js/swiper.jquery.min.js"></script>
+<script src="/fyp-project/js/global.js"></script>
+
+<!-- styled select -->
+<script src="/fyp-project/js/jquery.sumoselect.min.js"></script>
+
+<!-- counter -->
+<script src="/fyp-project/js/jquery.classycountdown.js"></script>
+<script src="/fyp-project/js/jquery.knob.js"></script>
+<script src="/fyp-project/js/jquery.throttle.js"></script>
+
+<!-- range slider -->
+    <script src="/fyp-project/js/jquery-ui.min.js"></script>
+    <script src="/fyp-project/js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var minVal = parseInt($('.min-price').text());
+            var maxVal = parseInt($('.max-price').text());
+            $( "#prices-range" ).slider({
+                range: true,
+                min: minVal,
+                max: maxVal,
+                step: 5,
+                values: [ minVal, maxVal ],
+                slide: function( event, ui ) {
+                    $('.min-price').text(ui.values[ 0 ]);
+                    $('.max-price').text(ui.values[ 1 ]);
+                }
+            });
+        });
+    </script>
+	
+<!-- MAP -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/fyp-project/js/map.js"></script>
+
+<!-- CONTACT -->
+<script src="/fyp-project/js/contact.form.js"></script>

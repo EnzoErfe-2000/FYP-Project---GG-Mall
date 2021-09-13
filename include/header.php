@@ -12,14 +12,14 @@ session_start();
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Questrial|Raleway:700,900" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.extension.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
-    <link href="css/sumoselect.css" rel="stylesheet" type="text/css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/bootstrap.extension.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/swiper.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/sumoselect.css" rel="stylesheet" type="text/css" />
+    <link href="/fyp-project/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="/fyp-project/img/favicon.ico" />
 
   	<title>GG MALL</title>
 </head>
@@ -55,7 +55,7 @@ session_start();
 											</div>
 										</div>";
 									
-									echo "<div class='entry'><a href='include/logout-inc.php'><b>Logout</b></a></div>";                            
+									echo "<div class='entry'><a href='/fyp-project/include/logout-inc.php'><b>Logout</b></a></div>";                            
 								}
 								else
 								{
@@ -86,7 +86,7 @@ session_start();
                                 <div class="cart-toggle hidden-xs hidden-sm">
                                     <div class="cart-overflow">
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="img/product-1.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-1.png" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -109,7 +109,7 @@ session_start();
                                             </div>
                                         </div>
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="img/product-2.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-2.png" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -132,7 +132,7 @@ session_start();
                                             </div>
                                         </div>
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="img/product-3.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-3.png" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -165,7 +165,7 @@ session_start();
                                         <div class="col-xs-6 text-right">
                                             <a class="button size-2 style-3" href="checkout1.html">
                                                 <span class="button-wrapper">
-                                                    <span class="icon"><img src="img/icon-4.png" alt=""></span>
+                                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt=""></span>
                                                     <span class="text">proceed to checkout</span>
                                                 </span>
                                             </a>
@@ -186,7 +186,7 @@ session_start();
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" <?php hrefIndex(); ?>><img src="img/logo1.png" alt="" /></a>  
+                            <a id="logo" <?php hrefIndex(); ?>><img src="/fyp-project/img/logo1.png" alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
@@ -210,7 +210,7 @@ session_start();
                                             <a href="/fyp-project/about.html">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper <?php active("products.html"); ?>">
-                                            <a href="products.html">products</a>
+                                            <a href="/fyp-project/products.html">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
@@ -235,10 +235,10 @@ session_start();
                                                                         <div class="swiper-button-next style-1"></div>
                                                                         <div class="swiper-wrapper">
                                                                             <div class="swiper-slide">
-                                                                                <img src="img/product-59.jpg" alt="" />
+                                                                                <img src="/fyp-project/img/product-59.jpg" alt="" />
                                                                             </div>
                                                                             <div class="swiper-slide">
-                                                                                <img src="img/product-61.jpg" alt="" />
+                                                                                <img src="/fyp-project/img/product-61.jpg" alt="" />
                                                                             </div>
                                                                         </div>
                                                                     </div> 
@@ -267,13 +267,13 @@ session_start();
                                                                     <div class="buttons-wrapper">
                                                                         <a class="button size-2 style-2" href="product.html">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                                                <span class="icon"><img src="/fyp-project/img/icon-1.png" alt=""></span>
                                                                                 <span class="text">Learn More</span>
                                                                             </span>
                                                                         </a>
                                                                         <a class="button size-2 style-3" href="#">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                                                <span class="icon"><img src="/fyp-project/img/icon-3.png" alt=""></span>
                                                                                 <span class="text">Add To Cart</span>
                                                                             </span>
                                                                         </a>
@@ -295,10 +295,10 @@ session_start();
                                                                         <div class="swiper-button-next style-1"></div>
                                                                         <div class="swiper-wrapper">
                                                                             <div class="swiper-slide">
-                                                                                <img src="img/product-60.jpg" alt="" />
+                                                                                <img src="/fyp-project/img/product-60.jpg" alt="" />
                                                                             </div>
                                                                             <div class="swiper-slide">
-                                                                                <img src="img/product-61.jpg" alt="" />
+                                                                                <img src="/fyp-project/img/product-61.jpg" alt="" />
                                                                             </div>
                                                                         </div>
                                                                     </div> 
@@ -327,13 +327,13 @@ session_start();
                                                                     <div class="buttons-wrapper">
                                                                         <a class="button size-2 style-2" href="product.html">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                                                <span class="icon"><img src="/fyp-project/img/icon-1.png" alt=""></span>
                                                                                 <span class="text">Learn More</span>
                                                                             </span>
                                                                         </a>
                                                                         <a class="button size-2 style-3" href="#">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                                                <span class="icon"><img src="/fyp-project/img/icon-3.png" alt=""></span>
                                                                                 <span class="text">Add To Cart</span>
                                                                             </span>
                                                                         </a>
