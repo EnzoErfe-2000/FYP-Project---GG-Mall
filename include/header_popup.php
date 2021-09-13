@@ -28,8 +28,7 @@
             $email_err = "Invalid email format";
         } 
         else 
-        {
-            // Prepare a select statement
+        {  // Prepare a select statement
 
             $sql = "SELECT customer_id FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
@@ -93,14 +92,15 @@
         {
             
             // Prepare an insert statement
-            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$password')";
+            $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
             
             if (mysqli_query($conn, $sql)) 
             {
                 echo "
                 <script>
                   alert('New account created');
-                  location.href = 'index.php';
+                  location.assign('index.php');
                 </script>";
             }
             else 
@@ -114,6 +114,7 @@
         }
         // Close connection
         mysqli_close($conn);
+
     }
 
   ?>  
@@ -124,7 +125,7 @@
 			<div class="layer-close"></div>
 			<div class="popup-container size-1">
 				<div class="popup-align">
-					<form method="post">
+					<form action = "include/login-inc.php" method="post">
 						<h3 class="h3 text-center">Log in</h3>
 						<div class="empty-space col-xs-b30"></div>
 						<input class="simple-input" type="email" value="" placeholder="Your email" name="email" id="email" required />
@@ -464,7 +465,8 @@
         </div>	
 </div>
 	
-<?php 
+<!--?php 
+    $conn= new mysqli($serverName, $dBUserName, $dBPassword, $dBName);
     require_once 'dbh-inc.php';
 	require_once 'functions-inc.php';
 	
@@ -508,4 +510,4 @@
     } 
     
     
-?>
+? -->
