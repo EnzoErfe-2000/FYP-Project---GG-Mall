@@ -1,3 +1,4 @@
+<!--Registration Function-->
 <?php
     require_once 'dbh-inc.php';
 	require_once 'functions-inc.php';
@@ -15,83 +16,68 @@
     }
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST")
+    if(isset($_POST['submit']))
     {
  
         // Validate email
-        if (empty($_POST["email"])) 
-        {
-            $email_err = "Email is required";
-        } 
-        else if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) 
+        if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) 
         {
             $email_err = "Invalid email format";
+			echo '<script type="text/javascript">alert("wrong format.");</script>';
         } 
-        else 
-        {  // Prepare a select statement
+		else
+		{
+			// Prepare a select statement
 
-            $sql = "SELECT customer_id FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
+            $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) 
+			if (mysqli_num_rows($result) > 0) 
             {
-                $email_err = "Email is taken";
+                echo '<script type="text/javascript">alert("Email taken.");</script>';
             } 
             else 
             {
                 $email = test_input($_POST["email"]);
+				$email_chk = 1;
             }
-        }
-
-        // Validate username
-        if(empty($_POST["username"]))
+		}
+		
+		// Validate username
+        if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
         {
-            $username_err = "Please enter a username.";
-        } 
-        elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
-        {
-            $username_err = "Username can only contain letters, numbers, and underscores.";
+			echo '<script type="text/javascript">alert("Username can only contain letters, numbers, and underscores.");</script>';
         } 
         else
         {
             $username = ucwords(test_input($_POST["username"]));
+			$username_chk = 1;
         }
-        
-        
-        // Validate password
-        if(empty($_POST["password"]))
+		
+		// Validate password
+        if(strlen(trim($_POST["password"])) < 6)
         {
-            $password_err = "Please enter a password.";     
-        }
-        elseif(strlen(trim($_POST["password"])) < 6)
-        {
-            $password_err = "Password must have atleast 6 characters.";
+			echo '<script type="text/javascript">alert("Password must have atleast 6 characters.");</script>';
         } 
         else
         {
             $password = ($_POST["password"]);
+			$pwd_chk = 1;
         }
-        
-        // Validate confirm password
-        if(empty($_POST["confirm_password"]))
-        {
-            $confirm_password_err = "Please confirm password.";     
-        }
-        else
-        {
-            $confirm_password = $_POST["confirm_password"];
+		
+		// Validate confirm password
+        $confirm_password = $_POST["confirm_password"];
 
-            if(empty($password_err) && ($password != $confirm_password))
-            {
-                $confirm_password_err = "Password did not match.";
-            }
-        }
-        
-        // Check input errors before inserting in database
-        if(empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err))
+        if($password != $confirm_password)
         {
-            
-            // Prepare an insert statement
+			echo '<script type="text/javascript">alert("Password did not match.");</script>';
+        }
+		else
+			$cpwd_chk = 1;
+		
+		// Check input errors before inserting in database
+        if($email_chk == 1 && $username_chk == 1 && $pwd_chk == 1 && $cpwd_chk == 1)
+        {
+			// Prepare an insert statement
             $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
             
@@ -100,7 +86,7 @@
                 echo "
                 <script>
                   alert('New account created');
-                  location.assign('index.php');
+				  location.assign('/fyp-project/index.php');
                 </script>";
             }
             else 
@@ -114,10 +100,9 @@
         }
         // Close connection
         mysqli_close($conn);
-
     }
 
-  ?>  
+?>
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -128,11 +113,11 @@
 					<form action = "/fyp-project/include/login-inc.php" method="post">
 						<h3 class="h3 text-center">Log in</h3>
 						<div class="empty-space col-xs-b30"></div>
-						<input class="simple-input" type="email" value="" placeholder="Your email" name="email" id="email" required />
+						<input class="simple-input" type="email" value="" placeholder="Your email" name="login_email" id="login_email" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
 							<span class="simple-article size-2" id="errEmail" style="color:red; margin-left: 30px;">&nbsp;</span>
 						</div>
-						<input class="simple-input" type="password" value="" placeholder="Enter password" name="password" id="password" required />
+						<input class="simple-input" type="password" value="" placeholder="Enter password" name="login_password" id="login_password" required />
 						<div class="empty-space col-xs-b10 col-sm-b20">
 							<span class="simple-article size-2" id="errPwd" style="color:red; margin-left: 30px;">&nbsp;</span>
 						</div>
@@ -144,7 +129,7 @@
 								<a class="simple-link">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
-								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
+								<button class="button noshadow size-2 style-3" type="submit" name="login_submit" id="login_submit" class="submit" style="border:none" onclick="validate">
 									<span class="button-wrapper">
 										<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
@@ -201,7 +186,7 @@
                     <span class="invalid-feedback"><?php echo $username_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="text" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
+                    <input type="email" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
                     <span class="invalid-feedback"><?php echo $email_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
@@ -260,6 +245,7 @@
                             </a>
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div class="button-close"></div>
             </div>
@@ -465,53 +451,6 @@
         </div>	
 </div>
 	
-<!--?php 
-	$conn= new mysqli($serverName, $dBUserName, $dBPassword, $dBName);
-    require_once 'dbh-inc.php';
-	require_once 'functions-inc.php';
-	
-	resetHeadErrMsgs();
-	
-    if(isset($_POST['email']) ){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-		
-			session_start();    
-			$uidExists = uidExists($conn, $email, $password);
-			
-			//
-			if($uidExists === false)
-			{
-				echo '<script type="text/javascript">alert("User not found!\nPlease try again.");</script>';
-				echo '<script type="text/javascript">document.getElementById("errEmail").innerHTML = "User not found!";</script>';
-				//echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
-			}
-			else
-			{
-				$correctPwd = checkPassword($password, $uidExists);
-				if($correctPwd === false)
-				{
-					echo '<script type="text/javascript">alert("Invalid Email or Password!\nPlease try again.");</script>';
-					echo '<script type="text/javascript">document.getElementById("errPwd").innerHTML = "Invalid Email or Password;"</script>';
-				}
-				else if($correctPwd === true)
-				{
-					session_start();      
-					$_SESSION["customer_id"] = $uidExists["customer_id"];
-					$_SESSION["customer_name"] = $uidExists["customer_name"];
-					$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];
-					$custName = $uidExists["customer_name"];
-					echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
-					//echo "<script> location.assign('index.php');</script>";
-					$uri=$_SERVER['REQUEST_URI'];
-					echo "<script> location.assign('$uri');</script>";
-				}
-			}
-			mysqli_close($conn);
-		
-    } 
-?>-->
-
 </body>
 </html>
 

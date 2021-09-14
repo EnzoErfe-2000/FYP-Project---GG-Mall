@@ -4,9 +4,9 @@
 	$conn= new mysqli($serverName, $dBUserName, $dBPassword, $dBName);
 	resetHeadErrMsgs();
 	
-    if(isset($_POST['email']) ){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+    if(isset($_POST['login_email']) ){
+		$email = $_POST['login_email'];
+		$password = $_POST['login_password'];
 		
 			//session_start();    
 			$uidExists = uidExists($conn, $email, $password);
@@ -35,10 +35,10 @@
 					$custName = $uidExists["customer_name"];
 					echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
 					//echo "<script> location.assign('index.php');</script>";
-					$uri=$_SERVER['HTTP_REFERER'];
-					echo "<script> location.assign('$uri');</script>";
 				}
 			}
+			$uri=$_SERVER['HTTP_REFERER'];
+			echo "<script> location.assign('$uri');</script>";
 			mysqli_close($conn);
 		
     } 
