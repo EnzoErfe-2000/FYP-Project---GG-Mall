@@ -33,7 +33,6 @@
 					$custName = $uidExists["customer_name"];
 					echo "<script type='text/javascript'>alert('Welcome back, $custName');</script>";
 					//echo "<script> location.assign('index.php');</script>";
-					
 				}
 			}
 			$uri=$_SERVER['HTTP_REFERER'];

@@ -102,7 +102,7 @@
         mysqli_close($conn);
     }
 
-?>  
+?>
 
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
@@ -245,7 +245,7 @@
                             </a>
                         </div>
                     </div>
-					</form>
+                    </form>
                 </div>
                 <div class="button-close"></div>
             </div>
