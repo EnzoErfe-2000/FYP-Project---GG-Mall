@@ -15,7 +15,6 @@
 			if($uidExists === false)
 			{
 				echo '<script type="text/javascript">alert("User not found!\nPlease try again.");</script>';
-				echo '<script type="text/javascript">document.getElementById("errEmail").innerHTML = "User not found!";</script>';
 				//echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
 			}
 			else
@@ -24,8 +23,7 @@
 				if($correctPwd === false)
 				{
 					echo '<script type="text/javascript">alert("Invalid Email or Password!\nPlease try again.");</script>';
-					echo '<script type="text/javascript">document.getElementById("errPwd").innerHTML = "Invalid Email or Password;"</script>';
-				}
+					}
 				else if($correctPwd === true)
 				{
 					session_start();      

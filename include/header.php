@@ -529,7 +529,7 @@ function active($currect_page){
 function hrefIndex(){
   $uri = $_SERVER['REQUEST_URI'];
   if(!strpos($uri, "index.php")){
-      echo 'href = "index.php"'; //class name in css 
+      echo 'href = "/fyp-project/index.php"'; //class name in css 
   } 
 }
 ?>
