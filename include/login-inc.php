@@ -4,9 +4,9 @@
 	$conn= new mysqli($serverName, $dBUserName, $dBPassword, $dBName);
 	resetHeadErrMsgs();
 	
-    if(isset($_POST['email']) ){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+    if(isset($_POST['login_email']) ){
+		$email = $_POST['login_email'];
+		$password = $_POST['login_password'];
 		
 			//session_start();    
 			$uidExists = uidExists($conn, $email, $password);
@@ -15,7 +15,6 @@
 			if($uidExists === false)
 			{
 				echo '<script type="text/javascript">alert("User not found!\nPlease try again.");</script>';
-				echo '<script type="text/javascript">document.getElementById("errEmail").innerHTML = "User not found!";</script>';
 				//echo "<script type='text/javascript'>alert('Invalid Username or Password.');</script>";            
 			}
 			else
@@ -24,8 +23,7 @@
 				if($correctPwd === false)
 				{
 					echo '<script type="text/javascript">alert("Invalid Email or Password!\nPlease try again.");</script>';
-					echo '<script type="text/javascript">document.getElementById("errPwd").innerHTML = "Invalid Email or Password;"</script>';
-				}
+					}
 				else if($correctPwd === true)
 				{
 					session_start();      
