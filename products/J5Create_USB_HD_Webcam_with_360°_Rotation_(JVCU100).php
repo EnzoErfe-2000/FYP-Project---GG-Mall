@@ -18,18 +18,9 @@ include_once '../include/header.php';
                                    <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                             <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="../product_img/AcerNitro5_01.png"></div>
+                                            <div class="product-big-preview-entry swiper-lazy" data-background="../product_img/J5CreateUSB_webcam.png"></div>
                                        </div>
-									   <div class="swiper-slide">
-                                            <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="../product_img/AcerNitro5_02.png"></div>
-                                       </div>
-                                       <div class="swiper-slide">
-                                            <div class="swiper-lazy-preloader"></div>
-                                            <div class="product-big-preview-entry swiper-lazy" data-background="../product_img/AcerNitro5_03.png"></div>
-                                       </div>
-									   
-									  </div>
+									</div>
                                 </div>
 
                                 <div class="empty-space col-xs-b30 col-sm-b60"></div>
@@ -40,68 +31,55 @@ include_once '../include/header.php';
                                    <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="../product_img/AcerNitro5_01~1.png" alt="" />
+                                                <img src="../product_img/J5CreateUSB_webcam~1.png" alt="" />
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-small-preview-entry">
-                                                <img src="../product_img/AcerNitro5_02~1.png" alt="" />
-                                            </div>
-                                        </div>
-										<div class="swiper-slide">
-                                            <div class="product-small-preview-entry">
-                                                <img src="../product_img/AcerNitro5_03~1.png" alt="" />
-                                            </div>
-                                        </div>
-										
                                    </div>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-sm-6">
-                            <div class="simple-article size-3 grey col-xs-b5">Gaming Laptop</div>
-                            <div class="h3 col-xs-b25"><span id="prod_name">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</span><br>(RYZEN7-5800H, 8GB, 512GB, GTX1650, WIN10)</div>
+                            <div class="simple-article size-3 grey col-xs-b5">Webcam</div>
+                            <div class="h3 col-xs-b25"><span id="prod_name">J5Create USB HD Webcam with 360° Rotation (JVCU100)</div>
                             <?php echo '<script type="text/javascript">document.title = "GG Mall | " + document.getElementById("prod_name").innerText;</script>';?>
-							<div class="row col-xs-b25">
+                            <div class="row col-xs-b25">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-5 grey">PRICE: <span class="color">RM4,149.00</span></div>        
+                                    <div class="simple-article size-5 grey">PRICE: <span class="color">RM177.90</span></div>        
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
                                     <div class="rate-wrapper align-inline">
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
                                         <i class="fa fa-star-o" aria-hidden="true"></i>
                                     </div>
-                                    <div class="simple-article size-2 align-inline">0 Reviews</div>
-                                </div>
+                                    <div class="simple-article size-2 align-inline">0 Reviews</div>  
+                                </div> 
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">L06</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">17</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
                                     <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">YES</span></div>
                                 </div>
                             </div>
                             <div class="simple-article size-3 col-xs-b30">
-							• Processor	: AMD Ryzen 7 5800H Processor (3.2Ghz up to 4.4Ghz, 16MB cache 8 Cores)<br>
-							• RAM		:8GB DDR4 3200Mhz<br>
-							• Storage   :512B PCIE NVME M.2 SSD<br>
-							• Graphic Card   :NVIDIA GeForce GTX1650 4GB GDDR6<br>
-							• Display Screen / Design / Resolution :15.6″ FHD (1920×1080), 144Hz IPS technology Slim bezel Display<br>
-							• Operation System  :Windows 10 Home<br>
-							• Warranty   :2 Years Warranty<br>
+							• Display Fov 82°<br>
+							• Effective Pixels 1932(H) × 1088(V)<br>
+							• Frame Rate 1080P/ 720P/ 640P at 30FPS<br>
+							• Max Display Refresh Rate 30 Hz<br>
+							• Megapixels 2 million pixels (2MP)<br>
+							• Microphone Built-in high-fidelity microphone<br>
 							</div>
-                            
                             <div class="row col-xs-b40">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-1">quantity:</div>
                                 </div>
                                 <div class="col-sm-9">
-                                    <div class="quantity-select">
+                                    <div class="quantity-select"> 
                                         <span class="minus"></span>
                                         <span class="number">1</span>
                                         <span class="plus"></span>
@@ -112,7 +90,7 @@ include_once '../include/header.php';
                                 <div class="col-sm-6 col-xs-b10 col-sm-b0">
                                     <a class="button size-2 style-2 block" href="#">
                                         <span class="button-wrapper">
-                                            <span class="icon"><img src="../img/icon-2.png" alt=""></span>
+                                            <span class="icon"><img src="img/icon-2.png" alt=""></span>
                                             <span class="text">add to cart</span>
                                         </span>
                                     </a>
@@ -286,7 +264,7 @@ include_once '../include/header.php';
 
                     <div class="empty-space col-xs-b25 col-sm-b50"></div>
            
-                </div> 
+                </div>
             </div>
             </div>
         </div>
