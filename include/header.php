@@ -206,8 +206,8 @@ session_start();
                                         <li <?php classActive("about.html"); ?>>
                                             <a href="/fyp-project/about.html">about us</a>
                                         </li>
-                                        <li class="megamenu-wrapper <?php active("products.html"); ?>">
-                                            <a href="/fyp-project/products.html">products</a>
+                                        <li class="megamenu-wrapper <?php active("products.php"); ?>">
+                                            <a href="/fyp-project/products.php">products</a>
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
