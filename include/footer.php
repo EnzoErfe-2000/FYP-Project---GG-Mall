@@ -13,7 +13,7 @@
                             <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> address: <a href="https://goo.gl/maps/Xxv2Qu1mBzeaKiaM7">Jalan Ayer Keroh Lama, 75450 Bukit Beruang, Melaka</a></div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
-                            <h6 class="h6 light">queck links</h6>
+                            <h6 class="h6 light">quick links</h6>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="footer-column-links">
                                 <div class="row">
@@ -22,45 +22,45 @@
                                         <a href="#">about us</a>
                                         <a href="#">products</a>
                                         <a href="#">services</a>
-                                        <a href="#">blog</a>
-                                        <a href="#">gallery</a>
-                                        <a href="#">contact</a>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="#">privacy policy</a>
+                                        <a href="#">contact</a>
+										<a href="#">privacy policy</a>
+                                        <a href="#">warranty</a>
+                                        <!--<a href="#">privacy policy</a>
                                         <a href="#">warranty</a>
                                         <a href="#">login</a>
                                         <a href="#">registration</a>
                                         <a href="#">delivery</a>
                                         <a href="#">pages</a>
-                                        <a href="#">our stores</a>
+                                        <a href="#">our stores</a>-->
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="clear visible-sm"></div>
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-sm-b0">
-                            <h6 class="h6 light">some posts</h6>
+                            <h6 class="h6 light">top products</h6>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="#"><img src="/fyp-project/img/thumbnail-1.jpg" alt="" /></a>
+                                <a class="image" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php"><img src="/fyp-project/product_img/AcerNitro5_01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
+                                    <a class="title" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</a>
                                 </div>
                             </div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="#"><img src="/fyp-project/img/thumbnail-2.jpg" alt="" /></a>
+                                <a class="image" href="/fyp-project/products/Acer_Swift_3x_SF314-510G-761J.php"><img src="/fyp-project/product_img/AcerSwift3x_01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
+                                    <a class="title" href="/fyp-project/products/Acer_Swift_3x_SF314-510G-761J.php">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
                                 </div>
                             </div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="#"><img src="/fyp-project/img/thumbnail-3.jpg" alt="" /></a>
+                                <a class="image" href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php"><img src="/fyp-project/product_img/AsusTUFDash01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
+                                    <a class="title" href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
                                 </div>
                             </div>
                         </div>
