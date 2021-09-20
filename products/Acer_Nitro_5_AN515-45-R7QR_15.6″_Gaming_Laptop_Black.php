@@ -88,7 +88,7 @@ include_once '../include/header.php';
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey"id="product_id">00004</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID">00004</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
                                     <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey">YES</span></div>
@@ -105,7 +105,8 @@ include_once '../include/header.php';
 							• Warranty   :2 Years Warranty<br>
 							</div>
                             
-							<form>
+							<form action="/fyp-project/cart.php" onsubmit="addToCartFunction()" id="add-to-cart-form" method="post">
+							<input type="hidden" name="product_id" id="product_id" value="not yet defined">
                             <div class="row col-xs-b40">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-1">quantity:</div>
@@ -113,7 +114,8 @@ include_once '../include/header.php';
                                 <div class="col-sm-9">
                                     <div class="quantity-select">
                                         <span class="minus"></span>
-                                        <span class="number" id="product_quantity">1</span>
+                                        <span class="number" name="product_quantity">1</span>
+										<input type="hidden" name="product_quantity" id="product_quantity" value="not yet defined">
                                         <span class="plus"></span>
                                     </div>
                                 </div>
@@ -128,7 +130,7 @@ include_once '../include/header.php';
 									</button>
                                 </div>
 								<div class="col-sm-6 col-xs-b10 col-sm-b0">
-                                    <button class="button size-2 style-2 block noshadow">
+                                    <button class="button size-2 style-2 block noshadow" type="submit">
                                         <span class="button-wrapper">
                                             <span class="icon"><img src="../img/icon-2.png" alt=""></span>
                                             <span class="text">add to cart</span>
@@ -301,6 +303,24 @@ include_once '../include/header.php';
             </div>
             </div>
         </div>
+
+<script>
+// This function gets called once the user submits the form
+function addToCartFunction(){
+
+    // First get the value from the span
+    quantityValue = $('.number').html();
+	prodIdValue = $('.prodID').html();
+
+    // Then store the extracted timerValue in a hidden form field
+    $("#product_quantity").val(quantityValue);
+	$("#product_id").val(prodIdValue);
+
+    // submit the form using it's ID "my-form"
+	$("#add-to-cart-form").action = "/fyp-project/cart.php";
+	$("#add-to-cart-form").submit();
+}
+</script>
 
 <?php
 include_once '../include/footer.php';

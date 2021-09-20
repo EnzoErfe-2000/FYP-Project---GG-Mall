@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once 'dbh-inc.php';
+require_once 'functions-inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +74,7 @@ session_start();
 							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
                             -->
 							<div class="entry hidden-xs hidden-sm cart">
-                                <a href="cart.php">
+                                <a href="/fyp-project/cart.php">
                                     <b class="hidden-xs">Your cart</b>
                                     <span class="cart-icon">
                                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>

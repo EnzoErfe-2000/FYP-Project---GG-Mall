@@ -1,6 +1,71 @@
 <?php
 include_once 'include/header.php';	
 ?>
+<?php
+// If the user clicked the add to cart button on the product page we can check for the form data
+if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['product_quantity'])) {
+    echo '<script type="text/javascript">alert("Successfully posted!");</script>';
+	// Set the post variables so we easily identify them, also make sure they are integer
+    $product_id = (int)$_POST['product_id'];
+    $quantity = (int)$_POST['product_quantity'];
+    echo "<script type='text/javascript'>alert('ProductID = $product_id');</script>";
+	echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
+	
+	// Prepare the SQL statement, we basically are checking if the product exists in our databaser
+    //$stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
+    //$stmt->execute([$_POST['product_id']]);
+	
+	$sql = "SELECT * FROM product WHERE product_id = ?;";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $sql)){
+		//header("location: cart.php?error=stmtfailed");
+		echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		exit();
+	}
+	else
+	{
+		echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+	}
+	
+	mysqli_stmt_bind_param($stmt, "s", $product_id);
+	mysqli_stmt_execute($stmt);
+	
+    // Fetch the product from the database and return the result as an Array
+    //$product = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+	$productData = mysqli_stmt_get_result($stmt);
+	
+	$product = mysqli_fetch_assoc($productData);
+	
+	// Check if the product exists (array is not empty)
+    if ($product && $quantity > 0) {
+        // Product exists in database, now we can create/update the session variable for the cart
+        echo "<script type='text/javascript'>alert('product found');</script>";
+		if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+			echo "<script type='text/javascript'>alert('There are products in cart');</script>";
+            //if (array_key_exists($product_id, $_SESSION['cart'])) {
+                // Product exists in cart so just update the quanity
+                //$_SESSION['cart'][$product_id] += $quantity;
+            //} else {
+                // Product is not in cart so add it
+                //$_SESSION['cart'][$product_id] = $quantity;
+            //}
+        } else {
+            // There are no products in cart, this will add the first product to cart
+            echo "<script type='text/javascript'>alert('There are NO products in cart');</script>";
+			//$_SESSION['cart'] = array($product_id => $quantity);
+        }
+    }
+	else
+		echo "<script type='text/javascript'>alert('product NOT found');</script>";
+    // Prevent form resubmission...
+	
+	//mysqli_stmt_close($stmt);
+    //header('location: cart.php');
+    //exit;
+}
+?>        
+
         <div class="header-empty-space"></div>
 
         <div class="container">
@@ -203,7 +268,6 @@ include_once 'include/header.php';
             <div class="empty-space col-xs-b35 col-md-b70"></div>
         </div>
 
-        
 <?php
 include_once 'include/footer.php';
 ?>
