@@ -72,8 +72,8 @@ session_start();
 							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
                             -->
 							<div class="entry hidden-xs hidden-sm cart">
-                                <a href="cart.html">
-                                    <b class="hidden-xs">Your bag</b>
+                                <a href="cart.php">
+                                    <b class="hidden-xs">Your cart</b>
                                     <span class="cart-icon">
                                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                         <span class="cart-label">5</span>
@@ -209,6 +209,7 @@ session_start();
                                         <li class="megamenu-wrapper <?php active("products.php"); ?>">
                                             <a href="/fyp-project/products.php">products</a>
                                             <div class="menu-toggle"></div>
+											<!--
                                             <div class="megamenu">
                                                 <div class="links">
                                                     <a class="active" href="products1.html">Products Landing 1</a>
@@ -341,7 +342,8 @@ session_start();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+											-->
+										</li>
                                         <li <?php classActive("services.html"); ?>>
                                             <a href="/fyp-project/services.html">Services</a>
                                         </li>

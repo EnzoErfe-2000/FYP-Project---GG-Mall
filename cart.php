@@ -33,6 +33,11 @@ include_once 'include/header.php';
                     </tr>
                 </thead>
                 <tbody>
+					<?php if (empty($products)): ?>
+					<tr>
+						<td colspan="7" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>You have no products added in your Shopping Cart<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
+					</tr>
+				    <?php else: ?>
                     <tr>
                         <td data-title=" ">
                             <a class="cart-entry-thumbnail" href="#"><img src="img/product-1.png" alt=""></a>
@@ -90,7 +95,8 @@ include_once 'include/header.php';
                             <div class="button-close"></div>
                         </td>
                     </tr>
-                </tbody>
+					<?php endif; ?>
+				</tbody>
             </table>
             <div class="empty-space col-xs-b35"></div>
             <div class="row">
@@ -136,6 +142,7 @@ include_once 'include/header.php';
                             </div>
                         </div>
                     </div>
+					<!--
                     <div class="order-details-entry simple-article size-3 grey uppercase">
                         <div class="row">
                             <div class="col-xs-6">
@@ -156,6 +163,7 @@ include_once 'include/header.php';
                             </div>
                         </div>
                     </div>
+					-->
                 </div>
             </div>
             <div class="empty-space col-xs-b35 col-md-b70"></div>
