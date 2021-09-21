@@ -20,7 +20,8 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
 	if(!mysqli_stmt_prepare($stmt, $sql)){
 		//header("location: cart.php?error=stmtfailed");
 		echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-		exit();
+		//exit();
+		mysqli_close($conn);
 	}
 	else
 	{
@@ -50,19 +51,70 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
                 // Product is not in cart so add it
                 //$_SESSION['cart'][$product_id] = $quantity;
             //}
+			$item = array_keys($_SESSION['cart']);
+			echo "<script type='text/javascript'>alert('Array keys: $item');</script>";
+
         } else {
             // There are no products in cart, this will add the first product to cart
             echo "<script type='text/javascript'>alert('There are NO products in cart');</script>";
-			//$_SESSION['cart'] = array($product_id => $quantity);
+			$_SESSION['cart'] = array($product_id => $quantity);
         }
     }
 	else
 		echo "<script type='text/javascript'>alert('product NOT found');</script>";
     // Prevent form resubmission...
 	
-	//mysqli_stmt_close($stmt);
+	mysqli_stmt_close($stmt);
     //header('location: cart.php');
     //exit;
+	//mysqli_close($conn);
+}
+
+// Check the session variable for products in cart
+$products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+$products = array();
+$subtotal = 0.00;
+// If there are products in cart
+if ($products_in_cart) {
+	echo "<script type='text/javascript'>alert('Proceeding to fill up cart...');</script>";
+    // There are products in the cart so we need to select those products from the database
+    // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
+    $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+    
+	//$stmt = $pdo->prepare('SELECT * FROM products WHERE id IN (' . $array_to_question_marks . ')');
+    
+	//$sql = "SELECT * FROM product WHERE product_id IN (10004);";
+	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
+	echo "<script type='text/javascript'>alert('$sql');</script>";
+	
+	$stmt = mysqli_stmt_init($conn);
+	
+	if(!mysqli_stmt_prepare($stmt, $sql)){
+		echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		mysqli_close($conn);
+	}
+	else
+	{
+		echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+	}
+	
+	// We only need the array keys, not the values, the keys are the id's of the products
+    //$stmt->execute(array_keys($products_in_cart));
+    
+	//mysqli_stmt_bind_param($stmt, "s", $array_to_question_marks);
+	mysqli_stmt_execute($stmt);
+	// Fetch the products from the database and return the result as an Array
+    //$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+	$productData = mysqli_stmt_get_result($stmt);
+	
+	$products = mysqli_fetch_assoc($productData);
+	// Calculate the subtotal
+    //foreach ($products as $product) {
+        //$subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
+    //}
+	
+	mysqli_close($conn);
 }
 ?>        
 
@@ -103,6 +155,10 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
 						<td colspan="7" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>You have no products added in your Shopping Cart<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
 					</tr>
 				    <?php else: ?>
+					<tr>
+						<td colspan="7" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>You have some products added in your Shopping Cart<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
+					</tr>
+					<!--
                     <tr>
                         <td data-title=" ">
                             <a class="cart-entry-thumbnail" href="#"><img src="img/product-1.png" alt=""></a>
@@ -160,6 +216,7 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
                             <div class="button-close"></div>
                         </td>
                     </tr>
+					-->
 					<?php endif; ?>
 				</tbody>
             </table>

@@ -88,7 +88,7 @@ include_once '../include/header.php';
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID">00004</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID">10004</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
                                     <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey">YES</span></div>
