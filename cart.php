@@ -4,12 +4,12 @@ include_once 'include/header.php';
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
 if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['product_quantity'])) {
-    echo '<script type="text/javascript">alert("Successfully posted!");</script>';
+    //echo '<script type="text/javascript">alert("Successfully posted!");</script>';
 	// Set the post variables so we easily identify them, also make sure they are integer
     $product_id = (int)$_POST['product_id'];
     $quantity = (int)$_POST['product_quantity'];
-    echo "<script type='text/javascript'>alert('ProductID = $product_id');</script>";
-	echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
+    //echo "<script type='text/javascript'>alert('ProductID = $product_id');</script>";
+	//echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
 	
 	// Prepare the SQL statement, we basically are checking if the product exists in our databaser
     //$stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
@@ -19,13 +19,13 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
 		//header("location: cart.php?error=stmtfailed");
-		echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
 		//exit();
 		mysqli_close($conn);
 	}
 	else
 	{
-		echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
 	}
 	
 	mysqli_stmt_bind_param($stmt, "s", $product_id);
@@ -41,9 +41,9 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
 	// Check if the product exists (array is not empty)
     if ($product && $quantity > 0) {
         // Product exists in database, now we can create/update the session variable for the cart
-        echo "<script type='text/javascript'>alert('product found');</script>";
+        //echo "<script type='text/javascript'>alert('product found');</script>";
 		if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-			echo "<script type='text/javascript'>alert('There are products in cart');</script>";
+			//echo "<script type='text/javascript'>alert('There are products in cart');</script>";
             //if (array_key_exists($product_id, $_SESSION['cart'])) {
                 // Product exists in cart so just update the quanity
                 //$_SESSION['cart'][$product_id] += $quantity;
@@ -52,7 +52,7 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
                 //$_SESSION['cart'][$product_id] = $quantity;
             //}
 			$item = array_keys($_SESSION['cart']);
-			echo "<script type='text/javascript'>alert('Array keys: $item');</script>";
+			//echo "<script type='text/javascript'>alert('Array keys: $item');</script>";
 
         } else {
             // There are no products in cart, this will add the first product to cart
@@ -90,12 +90,12 @@ if ($products_in_cart) {
 	$stmt = mysqli_stmt_init($conn);
 	
 	if(!mysqli_stmt_prepare($stmt, $sql)){
-		echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
 		mysqli_close($conn);
 	}
 	else
 	{
-		echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
 	}
 	
 	// We only need the array keys, not the values, the keys are the id's of the products
@@ -106,9 +106,13 @@ if ($products_in_cart) {
 	// Fetch the products from the database and return the result as an Array
     //$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-	$productData = mysqli_stmt_get_result($stmt);
+	$products = mysqli_stmt_get_result($stmt);
+	$count = count($products);
+	echo "<script type='text/javascript'>alert('count = $count');</script>";
 	
-	$products = mysqli_fetch_assoc($productData);
+	$productData = mysqli_fetch_assoc($products);
+	$count = count($productData);
+	echo "<script type='text/javascript'>alert('count = $count');</script>";
 	// Calculate the subtotal
     //foreach ($products as $product) {
         //$subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
@@ -155,13 +159,37 @@ if ($products_in_cart) {
 						<td colspan="7" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>You have no products added in your Shopping Cart<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
 					</tr>
 				    <?php else: ?>
+					<?php foreach ($products as $product): ?>
+					
+					<tr>
+                        <td data-title=" ">
+                            <a class="cart-entry-thumbnail" href="#"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
+                        </td>
+                        <td data-title=" "><h6 class="h6"><a href="#"><?=$product['product_name']?></a></h6></td>
+                        <td data-title="Price: ">$ <?=number_format($product['product_listedPrice'],2,".",",")?></td>
+                        <td data-title="Quantity: ">
+                            <div class="quantity-select">
+                                <span class="minus"></span>
+                                <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
+                                <span class="plus"></span>
+                            </div>
+                        </td>
+                        <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
+                        <td data-title="Total:">$ <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
+                        <td data-title="">
+                            <div class="button-close"></div>
+                        </td>
+                    </tr>
+					
+					<?php endforeach; ?>
+					<!--
 					<tr>
 						<td colspan="7" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>You have some products added in your Shopping Cart<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
 					</tr>
-					<!--
+					
                     <tr>
                         <td data-title=" ">
-                            <a class="cart-entry-thumbnail" href="#"><img src="img/product-1.png" alt=""></a>
+                            <a class="cart-entry-thumbnail" href="#"><img src="product_img/AcerNitro5_01~1.png" alt=""></a>
                         </td>
                         <td data-title=" "><h6 class="h6"><a href="#">modern beat ht</a></h6></td>
                         <td data-title="Price: ">$155.00</td>
@@ -215,7 +243,7 @@ if ($products_in_cart) {
                         <td data-title=" ">
                             <div class="button-close"></div>
                         </td>
-                    </tr>
+                    </tr>					
 					-->
 					<?php endif; ?>
 				</tbody>
