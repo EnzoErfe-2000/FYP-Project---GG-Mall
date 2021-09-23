@@ -6,19 +6,12 @@ include_once 'include/header.php';
 
         <div class="container">
             <div class="empty-space col-xs-b15 col-sm-b30"></div>
-            <div class="breadcrumbs">
-                <a href="#">home</a>
-                <a href="#">accessories</a>
-                <a href="#">gadgets</a>
-                <a href="#">sport gadgets</a>
-            </div>
-            <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
+            
             <div class="row">
                 <div class="col-md-9 col-md-push-3">
                     <div class="slider-wrapper">
                         <div class="swiper-container arrows-align-top" data-breakpoints="1" data-xs-slides="1" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="4">
                             <div class="h4 swiper-title">popular products</div>
-                            <div class="empty-space col-xs-b20"></div>
                             <div class="swiper-button-prev style-1"></div>
                             <div class="swiper-button-next style-1"></div>
                             <div class="swiper-wrapper">
@@ -180,51 +173,24 @@ include_once 'include/header.php';
                     <div class="empty-space col-xs-b20 col-sm-b35 col-md-b70"></div>
 
                     <div class="align-inline spacing-1">
-                        <div class="h4">Sport gadgets</div>
+                        <div class="h4">BEST RECOMMENDED</div>
                     </div>
-                    <div class="align-inline spacing-1">
-                        <div class="simple-article size-1">SHOWING <b class="grey">15</b> OF <b class="grey">2 358</b> RESULTS</div>
-                    </div>
-                    <div class="align-inline spacing-1 hidden-xs">
-                        <a class="pagination toggle-products-view active"><img src="img/icon-14.png" alt="" /><img src="img/icon-15.png" alt="" /></a>
-                        <a class="pagination toggle-products-view"><img src="img/icon-16.png" alt="" /><img src="img/icon-17.png" alt="" /></a>
-                    </div>
-                    <div class="align-inline spacing-1 filtration-cell-width-1">
-                        <select class="SlectBox small">
-                            <option disabled="disabled" selected="selected">Most popular products</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                    </div>
-                    <div class="align-inline spacing-1 filtration-cell-width-2">
-                        <select class="SlectBox small">
-                            <option disabled="disabled" selected="selected">Show 30</option>
-                            <option value="volvo">30</option>
-                            <option value="saab">50</option>
-                            <option value="mercedes">100</option>
-                            <option value="audi">200</option>
-                        </select>
-                    </div>
-
-
-                    <div class="empty-space col-xs-b25 col-sm-b60"></div>
-
+                    
                     <div class="products-content">
                         <div class="products-wrapper">
                             <div class="row nopadding">
-                                <div class="col-sm-4">
+                                
+                               <div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-40.jpg" alt="">
+                                            <img src="product_img/SteelSeriesArctis571_RGB_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -240,15 +206,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="color-selection">
-                                                <div class="entry active" style="color: #a7f050;"></div>
-                                                <div class="entry" style="color: #50e3f0;"></div>
-                                                <div class="entry" style="color: #eee;"></div>
-                                            </div>
-                                            <div class="simple-article size-4"><span class="color">$630.00</span>&nbsp;&nbsp;&nbsp;<span class="line-through">$350.00</span></div>
+                                            <div class="simple-article size-4 dark">RM398.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Best mic in gaming: the Discord-certified Clearcast bidirectional microphone</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -256,18 +217,18 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
+                               </div>
                                 <div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">Razer Blackshark V2 X Esports Gaming Headset</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-41.jpg" alt="">
+                                            <img src="product_img/RazerBlacksharkV2X_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -283,10 +244,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM218.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Advanced Passive Noise Cancellation</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -294,18 +255,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-42.jpg" alt="">
+                                            <img src="product_img/RazerKrakenBluetoothKitty_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -321,10 +281,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM410.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Kitty ears and earcups powered by Razer Chroma RGB</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -332,18 +292,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-43.jpg" alt="">
+                                            <img src="product_img/Apex3_kb.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -359,10 +318,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM249.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Customizable 10-zone RGB illumination reacts to games and Discord</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -370,18 +329,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Mice</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-44.jpg" alt="">
+                                            <img src="product_img/SteelseriesAerox3_gm.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -397,10 +355,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM359.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">PTFE glide skates for silky smooth mouse movements</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -408,18 +366,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">MSI GF63 Thin 15.6″ FHD Gaming Laptop</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-45.jpg" alt="">
+                                            <img src="product_img/MSIGF63_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/MSI_GF63_Thin_15.6″_FHD_Gaming_Laptop.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -435,10 +392,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM3,499.00</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">i5-10500H Processor with Graphic card of GTX 1650</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -446,18 +403,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 Gaming Laptop</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-46.jpg" alt="">
+                                            <img src="product_img/AcerNitro5_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -473,10 +429,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM4,149.00</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">15.6" 144Hz Slim Bezel FHD IPS Display with Ryzen7-5800H processor</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -484,18 +440,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Mice</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Logitech_MX_Master_3_Wireless_Mouse.php">Logitech MX Master 3 Wireless Mouse</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-47.jpg" alt="">
+                                            <img src="product_img/LogitechtMXMaster_om.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Logitech_MX_Master_3_Wireless_Mouse.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -511,10 +466,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM398.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Top mouse for productivity and creative tasks</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -522,18 +477,17 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
-                                <div class="col-sm-4">
+                               </div><div class="col-sm-4">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">Microsoft Bluetooth Desktop Combo Keyboard</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/product-48.jpg" alt="">
+                                            <img src="product_img/MicrosoftBluetoothDesktopCombo_ok.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="#">
+                                                    <a class="button size-2 style-2" href="/fyp-project/products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -549,10 +503,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$630.00</div>
+                                            <div class="simple-article size-4 dark">RM257.90</div>
                                         </div>
                                         <div class="description">
-                                            <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                            <div class="simple-article text size-2">Slim, modern design at an exceptional value</div>
                                             <div class="icons">
                                                 <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                 <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -560,42 +514,10 @@ include_once 'include/header.php';
                                             </div>
                                         </div>
                                     </div>  
-                                </div>
+                               </div>
                             </div>
                         </div>
                     </div>
-                    <div class="empty-space col-xs-b35 col-sm-b0"></div>
-                    <div class="row">
-                        <div class="col-sm-3 hidden-xs">
-                            <a class="button size-1 style-5" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-                                    <span class="text">prev page</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 text-center">
-                            <div class="pagination-wrapper">
-                                <a class="pagination active">1</a>
-                                <a class="pagination">2</a>
-                                <a class="pagination">3</a>
-                                <a class="pagination">4</a>
-                                <span class="pagination">...</span>
-                                <a class="pagination">23</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 hidden-xs text-right">
-                            <a class="button size-1 style-5" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-                                    <span class="text">prev page</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="empty-space col-xs-b35 col-md-b70"></div>
-                    <div class="empty-space col-md-b70"></div>
                 </div>
                 <div class="col-md-3 col-md-pull-9">
                     <div class="h4 col-xs-b10">popular categories</div>
@@ -742,127 +664,6 @@ include_once 'include/header.php';
             </div>
             </div>
         </div>
-            
-                <div class="col-sm-6 col-md-3 col-xs-b25">
-                    <div class="h4 col-xs-b25">Hot Sale</div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-28.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                            <div class="simple-article dark">$98.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-29.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                            <div class="simple-article dark">$12.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-30.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                            <div class="simple-article"><span class="color">$24.00</span>&nbsp;&nbsp;&nbsp;<span class="line-through">$32.00</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-b25">
-                    <div class="h4 col-xs-b25">Top Rated</div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-31.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                            <div class="simple-article dark">$98.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-32.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                            <div class="simple-article dark">$12.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-33.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                            <div class="simple-article dark">$4.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-b25">
-                    <div class="h4 col-xs-b25">Popular</div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-34.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                            <div class="simple-article dark">$98.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-35.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                            <div class="simple-article dark">$12.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-36.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                            <div class="simple-article dark">$4.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-b25">
-                    <div class="h4 col-xs-b25">Best Choice</div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-37.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                            <div class="simple-article dark">$98.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-38.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                            <div class="simple-article dark">$12.00</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-b10"></div>
-                    <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="img/product-39.jpg" alt="" /></a>
-                        <div class="description">
-                            <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                            <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                            <div class="simple-article dark">$4.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 <?php
 include_once 'include/footer.php';
 ?>
