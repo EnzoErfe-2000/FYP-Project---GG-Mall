@@ -97,8 +97,8 @@ CREATE TABLE `product` (
   `product_id` int(5) UNSIGNED ZEROFILL NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `product_brand` varchar(255) NOT NULL,
-  `product_regularPrice` decimal(10,0) NOT NULL,
-  `product_listedPrice` decimal(10,0) NOT NULL,
+  `product_regularPrice` decimal(10,2) NOT NULL,
+  `product_listedPrice` decimal(10,2) NOT NULL,
   `product_discountRate` decimal(10,3) NOT NULL,
   `product_saleStart` datetime NOT NULL,
   `product_saleEnd` datetime NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_brand`, `product_regularPrice`, `product_listedPrice`, `product_discountRate`, `product_saleStart`, `product_saleEnd`, `product_availability`, `product_stock`, `product_isUnlisted`) VALUES
-(00001, 'TEST_PRODUCT_01', 'TEST_BRAND_01', '100', '50', '0.500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 5, 1);
+(00001, 'TEST_PRODUCT_01', 'TEST_BRAND_01', '100.00', '50.00', '0.500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 5, 1);
 
 --
 -- Indexes for dumped tables
