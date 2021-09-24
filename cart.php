@@ -109,7 +109,7 @@ if ($products_in_cart) {
     
 	//$sql = "SELECT * FROM product WHERE product_id IN (10004);";
 	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
-	echo "<script type='text/javascript'>alert('$sql');</script>";
+	//echo "<script type='text/javascript'>alert('$sql');</script>";
 	
 	$stmt = mysqli_stmt_init($conn);
 	
@@ -165,7 +165,7 @@ if ($products_in_cart) {
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
-			<form action="cart.php" method="post">
+			<form action="cart.php" onsubmit="updateQuantityFunction()" id="cart-form" method="post">
             <table class="cart-table">
                 <thead>
                     <tr>
@@ -193,13 +193,14 @@ if ($products_in_cart) {
                         <td data-title=" "><h6 class="h6"><a href="#"><?=$product['product_name']?></a></h6></td>
                         <td data-title="Price: ">$ <?=number_format($product['product_listedPrice'],2,".",",")?></td>
                         <td data-title="Quantity: " class="quantity">
-                            <div class="quantity-select">
+                            <div class="quantity-select" style="height:auto;padding:10px 15px">
                                 <!--
 								<span class="minus"></span>
-                                <span class="number" name="quantity-"><?=$products_in_cart[$product['product_id']]?></span>
+                                <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
                                 <span class="plus"></span>
 								-->
-								<input type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+								<input style="text-align:center;font-weight:bold" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+								
 							</div>
                         </td>
                         <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
