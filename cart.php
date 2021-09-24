@@ -78,6 +78,22 @@ if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['ca
 	unset($_SESSION['cart'][$_GET['remove']]);
 }
 
+// Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
+if (isset($_POST['update']) && isset($_SESSION['cart'])) {
+	echo "<script type='text/javascript'>alert('Updating...');</script>";
+	foreach ($_POST as $k => $v) {
+        if (strpos($k, 'quantity') !== false && is_numeric($v)) {
+            $id = str_replace('quantity-', '', $k);
+            $quantity = (int)$v;
+            // Always do checks and validation
+            if (is_numeric($id) && isset($_SESSION['cart'][$id]) && $quantity > 0) {
+                // Update new quantity
+                $_SESSION['cart'][$id] = $quantity;
+            }
+        }
+    }	
+}
+
 // Check the session variable for products in cart
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
@@ -87,13 +103,13 @@ if ($products_in_cart) {
 	//echo "<script type='text/javascript'>alert('Proceeding to fill up cart...');</script>";
     // There are products in the cart so we need to select those products from the database
     // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
-    $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+    //$array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
     
 	//$stmt = $pdo->prepare('SELECT * FROM products WHERE id IN (' . $array_to_question_marks . ')');
     
 	//$sql = "SELECT * FROM product WHERE product_id IN (10004);";
 	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
-	//echo "<script type='text/javascript'>alert('$sql');</script>";
+	echo "<script type='text/javascript'>alert('$sql');</script>";
 	
 	$stmt = mysqli_stmt_init($conn);
 	
@@ -149,6 +165,7 @@ if ($products_in_cart) {
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
+			<form action="cart.php" method="post">
             <table class="cart-table">
                 <thead>
                     <tr>
@@ -175,12 +192,15 @@ if ($products_in_cart) {
                         </td>
                         <td data-title=" "><h6 class="h6"><a href="#"><?=$product['product_name']?></a></h6></td>
                         <td data-title="Price: ">$ <?=number_format($product['product_listedPrice'],2,".",",")?></td>
-                        <td data-title="Quantity: ">
+                        <td data-title="Quantity: " class="quantity">
                             <div class="quantity-select">
-                                <span class="minus"></span>
-                                <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
+                                <!--
+								<span class="minus"></span>
+                                <span class="number" name="quantity-"><?=$products_in_cart[$product['product_id']]?></span>
                                 <span class="plus"></span>
-                            </div>
+								-->
+								<input type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+							</div>
                         </td>
                         <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
                         <td data-title="Total:">$ <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
@@ -342,12 +362,12 @@ if ($products_in_cart) {
                 </div>
                 <div class="col-sm-6 col-md-7 col-sm-text-right">
                     <div class="buttons-wrapper">
-                        <a class="button size-2 style-2" href="#">
+                        <button class="button size-2 style-2 noshadow" type="submit" name="update" value="update">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="img/icon-2.png" alt=""></span>
                                 <span class="text">update cart</span>
                             </span>
-                        </a>
+                        </button>
                         <a class="button size-2 style-3" href="#">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="img/icon-4.png" alt=""></span>
@@ -356,6 +376,7 @@ if ($products_in_cart) {
                         </a>
                     </div>
                 </div>
+				</form>
             </div>
 			<div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="empty-space col-xs-b35 col-md-b70"></div>
