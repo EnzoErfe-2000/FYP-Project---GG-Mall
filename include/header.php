@@ -73,11 +73,11 @@ require_once 'functions-inc.php';
                             </div>
 							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
                             -->
-							<div class="entry hidden-xs hidden-sm cart">
+							<div class="entry hidden-xs hidden-sm">
                                 <a href="/fyp-project/cart.php">
                                     <b class="hidden-xs">Your cart</b>
                                     <span class="cart-icon">
-                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        <i class="fa fa-shopping-bag" href="/fyp-project/cart.php" aria-hidden="true"></i>
                                         <span class="cart-label">5</span>
                                     </span>
                                     <span class="cart-title hidden-xs">$1195.00</span>

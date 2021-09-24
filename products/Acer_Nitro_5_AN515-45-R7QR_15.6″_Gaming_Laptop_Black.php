@@ -8,9 +8,9 @@ include_once '../include/header.php';
             <div class="empty-space col-xs-b15 col-sm-b30"></div>
             <div class="breadcrumbs">
                 <a href="/fyp-project/index.php">home</a>
+                <a href="#">products</a>
                 <a href="#">laptops</a>
-                <a href="#">gaming</a>
-                <a href="#">acer</a>
+                <a href="#">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</a>
             </div>
             <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
                

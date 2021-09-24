@@ -44,19 +44,19 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
         //echo "<script type='text/javascript'>alert('product found');</script>";
 		if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 			//echo "<script type='text/javascript'>alert('There are products in cart');</script>";
-            //if (array_key_exists($product_id, $_SESSION['cart'])) {
+            if (array_key_exists($product_id, $_SESSION['cart'])) {
                 // Product exists in cart so just update the quanity
-                //$_SESSION['cart'][$product_id] += $quantity;
-            //} else {
+                $_SESSION['cart'][$product_id] += $quantity;
+            } else {
                 // Product is not in cart so add it
-                //$_SESSION['cart'][$product_id] = $quantity;
-            //}
+                $_SESSION['cart'][$product_id] = $quantity;
+            }
 			$item = array_keys($_SESSION['cart']);
 			//echo "<script type='text/javascript'>alert('Array keys: $item');</script>";
 
         } else {
             // There are no products in cart, this will add the first product to cart
-            echo "<script type='text/javascript'>alert('There are NO products in cart');</script>";
+            //echo "<script type='text/javascript'>alert('There are NO products in cart');</script>";
 			$_SESSION['cart'] = array($product_id => $quantity);
         }
     }
@@ -70,13 +70,21 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
 	//mysqli_close($conn);
 }
 
+// Remove product from cart, check for the URL param "remove", this is the product id, make sure it's a number and check if it's in the cart
+if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['remove']])) {
+    // Remove the product from the shopping cart
+    echo "<script type='text/javascript'>alert('Successfully removed item $_GET[remove]!');</script>";
+	//echo "<script type='text/javascript'>alert('Successfully removed item!');</script>";
+	unset($_SESSION['cart'][$_GET['remove']]);
+}
+
 // Check the session variable for products in cart
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
 $subtotal = 0.00;
 // If there are products in cart
 if ($products_in_cart) {
-	echo "<script type='text/javascript'>alert('Proceeding to fill up cart...');</script>";
+	//echo "<script type='text/javascript'>alert('Proceeding to fill up cart...');</script>";
     // There are products in the cart so we need to select those products from the database
     // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
     $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
@@ -85,7 +93,7 @@ if ($products_in_cart) {
     
 	//$sql = "SELECT * FROM product WHERE product_id IN (10004);";
 	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
-	echo "<script type='text/javascript'>alert('$sql');</script>";
+	//echo "<script type='text/javascript'>alert('$sql');</script>";
 	
 	$stmt = mysqli_stmt_init($conn);
 	
@@ -107,12 +115,12 @@ if ($products_in_cart) {
     //$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
 	$products = mysqli_stmt_get_result($stmt);
-	$count = count($products);
-	echo "<script type='text/javascript'>alert('count = $count');</script>";
+	//$count = count($products);
+	//echo "<script type='text/javascript'>alert('count = $count');</script>";
 	
-	$productData = mysqli_fetch_assoc($products);
-	$count = count($productData);
-	echo "<script type='text/javascript'>alert('count = $count');</script>";
+	//$productData = mysqli_fetch_assoc($products);
+	//$count = count($productData);
+	//echo "<script type='text/javascript'>alert('count = $count');</script>";
 	// Calculate the subtotal
     //foreach ($products as $product) {
         //$subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
@@ -120,7 +128,7 @@ if ($products_in_cart) {
 	
 	mysqli_close($conn);
 }
-?>        
+?>      
 
         <div class="header-empty-space"></div>
 
@@ -160,7 +168,7 @@ if ($products_in_cart) {
 					</tr>
 				    <?php else: ?>
 					<?php foreach ($products as $product): ?>
-					
+					<?php //echo "<script type='text/javascript'>alert('Adding cart item $product[product_id]');</script>";?>
 					<tr>
                         <td data-title=" ">
                             <a class="cart-entry-thumbnail" href="#"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
@@ -177,7 +185,7 @@ if ($products_in_cart) {
                         <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
                         <td data-title="Total:">$ <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
                         <td data-title="">
-                            <div class="button-close"></div>
+                            <a href="cart.php?remove=<?=$product['product_id']?>" name="remove"><div class="button-close"></div></a>
                         </td>
                     </tr>
 					
