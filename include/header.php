@@ -46,7 +46,7 @@ session_start();
 									echo "<div class='entry language'>
 											<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
 											<div class='language-toggle header-toggle-animation'>
-												<a href='#.html'>Profile</a>
+												<a href='profile.php'>Profile</a>
 												<a href='#.html'>Orders</a>
 												<a href='#.html'>Wishlist</a>
 											</div>
