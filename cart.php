@@ -138,9 +138,9 @@ if ($products_in_cart) {
 	//$count = count($productData);
 	//echo "<script type='text/javascript'>alert('count = $count');</script>";
 	// Calculate the subtotal
-    //foreach ($products as $product) {
-        //$subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
-    //}
+    foreach ($products as $product) {
+        $subtotal += (float)$product['product_listedPrice'] * (int)$products_in_cart[$product['product_id']];
+    }
 	
 	mysqli_close($conn);
 }
@@ -191,7 +191,7 @@ if ($products_in_cart) {
                             <a class="cart-entry-thumbnail" href="#"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
                         </td>
                         <td data-title=" "><h6 class="h6"><a href="#"><?=$product['product_name']?></a></h6></td>
-                        <td data-title="Price: ">$ <?=number_format($product['product_listedPrice'],2,".",",")?></td>
+                        <td data-title="Price: ">RM <?=number_format($product['product_listedPrice'],2,".",",")?></td>
                         <td data-title="Quantity: " class="quantity">
                             <div class="quantity-select" style="height:auto;padding:10px 15px">
                                 <!--
@@ -204,7 +204,7 @@ if ($products_in_cart) {
 							</div>
                         </td>
                         <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
-                        <td data-title="Total:">$ <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
+                        <td data-title="Total:">RM <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
                         <td data-title="">
                             <a href="cart.php?remove=<?=$product['product_id']?>" name="remove"><div class="button-close"></div></a>
                         </td>
@@ -317,7 +317,7 @@ if ($products_in_cart) {
                                 cart subtotal
                             </div>
                             <div class="col-xs-6 col-xs-text-right">
-                                <div class="color">$1195.00</div>
+                                <div class="color" style="font-weight:bold;font-size:18px">RM <?=number_format($subtotal,2,".",",")?></div>
                             </div>
                         </div>
                     </div>
