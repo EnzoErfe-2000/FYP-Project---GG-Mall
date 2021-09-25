@@ -18,13 +18,13 @@
                             <div class="footer-column-links">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <a href="#">home</a>
-                                        <a href="#">about us</a>
-                                        <a href="#">products</a>
-                                        <a href="#">services</a>
+                                        <a href="index.php">home</a>
+                                        <a href="about.html">about us</a>
+                                        <a href="products.php">products</a>
+                                        <a href="services.html">services</a>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="#">contact</a>
+                                        <a href="contact.html">contact</a>
 										<a href="#">privacy policy</a>
                                         <a href="#">warranty</a>
                                         <!--<a href="#">privacy policy</a>
@@ -88,14 +88,17 @@
                     <div class="row">
                         <div class="col-lg-8 col-xs-text-center col-lg-text-left col-xs-b20 col-lg-b0">
                             <div class="copyright">&copy; 2015 All rights reserved. Development by <a href="http://themeforest.net/user/unionagency" target="_blank">UnionAgency</a></div>
-                            <div class="follow">
+                            <!--
+							<div class="follow">
                                 <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
                                 <a class="entry" href="#"><i class="fa fa-twitter"></i></a>
                                 <a class="entry" href="#"><i class="fa fa-linkedin"></i></a>
                                 <a class="entry" href="#"><i class="fa fa-google-plus"></i></a>
                                 <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
+							-->
                         </div>
+						<!--
                         <div class="col-lg-4 col-xs-text-center col-lg-text-right">
                             <div class="footer-payment-icons">
                                 <a class="entry"><img src="/fyp-project/img/thumbnail-4.jpg" alt="" /></a>
@@ -106,6 +109,7 @@
                                 <a class="entry"><img src="/fyp-project/img/thumbnail-9.jpg" alt="" /></a>
                             </div>
                         </div>
+						-->
                     </div>
                 </div>
             </div>

@@ -348,9 +348,10 @@ if ($products_in_cart) {
             <div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="row">
                 <div class="col-sm-6 col-md-5 col-xs-b10 col-sm-b0">
-					<!--
+					
                     <div class="single-line-form">
-                        <input class="simple-input" type="text" value="" placeholder="Enter your coupon code" />
+						<!--
+						<input class="simple-input" type="text" value="" placeholder="Enter your coupon code" />
                         <div class="button size-2 style-3">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="img/icon-4.png" alt=""></span>
@@ -358,10 +359,14 @@ if ($products_in_cart) {
                             </span>
                             <input type="submit" value="">
                         </div>
-                    </div>
-					-->
+						-->
+						</div>
+					
                 </div>
                 <div class="col-sm-6 col-md-7 col-sm-text-right">
+					<div class="col-md-b15">
+						<span class="uppercase color" style="font-weight:bold;font-size:12px">Make sure your cart is updated!</span>
+					</div>
                     <div class="buttons-wrapper">
                         <button class="button size-2 style-2 noshadow" type="submit" name="update" value="update">
                             <span class="button-wrapper">

@@ -78,7 +78,7 @@ require_once 'functions-inc.php';
                                     <b class="hidden-xs">Your cart</b>
                                     <span class="cart-icon">
                                         <i class="fa fa-shopping-bag" href="/fyp-project/cart.php" aria-hidden="true"></i>
-                                        <span class="cart-label">5</span>
+                                        <span class="cart-label"><?=isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;?></span>
                                     </span>
                                     <span class="cart-title hidden-xs">$1195.00</span>
                                 </a>

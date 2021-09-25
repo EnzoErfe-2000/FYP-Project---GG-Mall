@@ -26,13 +26,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOP</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10004">Acer Nitro 5</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="img/AN5.png" alt="">
+                                            <img src="product_img/AcerNitro5_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10004">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
