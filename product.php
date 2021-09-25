@@ -46,12 +46,7 @@ include_once 'include/header.php';
 				<a href="#">laptops</a>
                 -->
 				<a href="#">
-					<?php 
-						if(isset($_GET['product']) && is_numeric($_GET['product']))
-						{
-							echo "$_GET[product]";
-						}
-					?>
+					<?=$product['product_name']?>
 				</a>
             </div>
 		
