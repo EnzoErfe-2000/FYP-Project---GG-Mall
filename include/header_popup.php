@@ -486,6 +486,23 @@
             });
         });
     </script>
+	<script>
+	// This function gets called once the user submits the form
+	function addToCartFunction(){
+
+		// Get the value from the span
+		quantityValue = $('.number').html();
+		prodIdValue = $('.prodID').html();
+
+		// Store the values in hidden entry elements
+		$("#product_quantity").val(quantityValue);
+		$("#product_id").val(prodIdValue);
+
+		// Submit form using ID "add-to-cart-form"
+		$("#add-to-cart-form").action = "/fyp-project/cart.php";
+		$("#add-to-cart-form").submit();
+	}
+	</script>
 	
 <!-- MAP -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>

@@ -43,24 +43,24 @@
                             <h6 class="h6 light">top products</h6>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php"><img src="/fyp-project/product_img/AcerNitro5_01~1.png" alt="" /></a>
+                                <a class="image" href="/fyp-project/product.php?product=10023"><img src="/fyp-project/product_img/AcerNitro5_01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</a>
+                                    <a class="title" href="/fyp-project/product.php?product=10023">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</a>
                                 </div>
                             </div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="/fyp-project/products/Acer_Swift_3x_SF314-510G-761J.php"><img src="/fyp-project/product_img/AcerSwift3x_01~1.png" alt="" /></a>
+                                <a class="image" href="/fyp-project/product.php?product=10019"><img src="/fyp-project/product_img/AcerSwift3x_01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title" href="/fyp-project/products/Acer_Swift_3x_SF314-510G-761J.php">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
+                                    <a class="title" href="/fyp-project/product.php?product=10019">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
                                 </div>
                             </div>
                             <div class="footer-post-preview clearfix">
-                                <a class="image" href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php"><img src="/fyp-project/product_img/AsusTUFDash01~1.png" alt="" /></a>
+                                <a class="image" href="/fyp-project/product.php?product=10022"><img src="/fyp-project/product_img/AsusTUFDash01~1.png" alt="" /></a>
                                 <div class="description">
                                     <div class="date">apr 07 / 15</div>
-                                    <a class="title" href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
+                                    <a class="title" href="/fyp-project/product.php?product=10022">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
                                 </div>
                             </div>
                         </div>

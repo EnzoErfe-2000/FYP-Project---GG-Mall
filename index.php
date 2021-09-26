@@ -86,7 +86,7 @@ include_once 'include/header.php';
                                         </div>
                                         <div data-swiper-parallax-x="-300">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="product.php?product=10004">
+                                                <a class="button size-2 style-2" href="product.php?product=10011">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
@@ -144,7 +144,7 @@ include_once 'include/header.php';
                                         </div>
                                         <div data-swiper-parallax-x="-300">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="product.php?product=10002">
+                                                <a class="button size-2 style-2" href="product.php?product=10019">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
