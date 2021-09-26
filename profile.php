@@ -30,6 +30,15 @@ include_once 'include/header.php';
         {
             margin-bottom:10px;
         }
+
+        ul.a 
+        {
+            list-style-type: square;
+            margin-left:11px;
+            padding:1%;
+            margin-bottom:5%;
+        }
+
     </style>
 </head>
 <body>
@@ -54,24 +63,27 @@ include_once 'include/header.php';
                             </div>
                             <div class="col-xl-3 col-md-4">
                                 <div class="dashboardmenu"><span style="font-size:18px; text-decoration:underline; font-weight:bold;" >Account Selection</span>
-                                    <ul>
-                                        <li>
-                                            <a href="profile.php">
-                                            > Dashboard</a>
-                                        </li>
-                                        <li>
-                                            > Personal Details
-                                        </li>
-                                        <li>
-                                            > Address
-                                        </li>
-                                        <li>
-                                            > Password Changes
-                                        </li>
-                                        <li>
-                                            > Logout
-                                        </li>
-                                    </ul>
+                                    <div class="menus">
+                                        <ul class="a">
+                                            <li>
+                                                <a href="profile.php">
+                                                Dashboard</a>
+                                            </li>
+                                            <li>
+                                                <a href="personal.php">
+                                                Personal Details</a>
+                                            </li>
+                                            <li>
+                                                Orders
+                                            </li>
+                                            <li>
+                                                Password Changes
+                                            </li>
+                                            <li>
+                                                Logout
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
