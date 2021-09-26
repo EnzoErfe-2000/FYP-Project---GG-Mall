@@ -1,8 +1,3 @@
-<?php
-session_start();
-require_once 'dbh-inc.php';
-require_once 'functions-inc.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +75,7 @@ require_once 'functions-inc.php';
                                         <i class="fa fa-shopping-bag" href="/fyp-project/cart.php" aria-hidden="true"></i>
                                         <span class="cart-label"><?=isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;?></span>
                                     </span>
-                                    <span class="cart-title hidden-xs">$1195.00</span>
+                                    <span class="cart-title hidden-xs">RM <?=isset($_SESSION['cartTotal']) ? number_format($_SESSION['cartTotal'],2,".",",") : 0;?></span>
                                 </a>
                                 <div class="cart-toggle hidden-xs hidden-sm">
                                     <div class="cart-overflow">
@@ -491,7 +486,7 @@ require_once 'functions-inc.php';
                                 <a href="/fyp-project/cart.php">
 									<i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                 </a>
-								<span class="cart-label">5</span>
+								<span class="cart-label"><?=isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;?></span>
                             </div>
                         </div>
                     </div>

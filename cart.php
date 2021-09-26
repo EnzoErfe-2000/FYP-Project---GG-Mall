@@ -1,5 +1,5 @@
 <?php
-include_once 'include/header.php';	
+include_once 'include/session-db-func.php';	
 ?>
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
@@ -65,9 +65,6 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
     // Prevent form resubmission...
 	
 	mysqli_stmt_close($stmt);
-    //header('location: cart.php');
-    //exit;
-	//mysqli_close($conn);
 }
 
 // Remove product from cart, check for the URL param "remove", this is the product id, make sure it's a number and check if it's in the cart
@@ -141,11 +138,14 @@ if ($products_in_cart) {
     foreach ($products as $product) {
         $subtotal += (float)$product['product_listedPrice'] * (int)$products_in_cart[$product['product_id']];
     }
+	$_SESSION['cartTotal'] =$subtotal;
 	
 	mysqli_close($conn);
 }
 ?>      
-
+<?php
+include_once 'include/header.php';	
+?>
         <div class="header-empty-space"></div>
 
         <div class="container">
