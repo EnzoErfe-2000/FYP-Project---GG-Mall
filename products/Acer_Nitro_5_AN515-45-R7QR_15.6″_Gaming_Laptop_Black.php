@@ -5,6 +5,14 @@ include_once '../include/header.php';
         <div class="header-empty-space"></div>
 
         <div class="container">
+            <div class="empty-space col-xs-b15 col-sm-b30"></div>
+            <div class="breadcrumbs">
+                <a href="/fyp-project/index.php">home</a>
+                <a href="#">products</a>
+                <a href="#">laptops</a>
+                <a href="#">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</a>
+            </div>
+            <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
                
             <div class="row">
                 <div class="col-md-9 col-md-push-3">
@@ -60,7 +68,7 @@ include_once '../include/header.php';
 
                         </div>
                         <div class="col-sm-6">
-                            <div class="simple-article size-3 grey col-xs-b5">	Gaming Laptop</div>
+                            <div class="simple-article size-3 grey col-xs-b5">Gaming Laptop</div>
                             <div class="h3 col-xs-b25"><span id="prod_name">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop BLACK</span><br>(RYZEN7-5800H, 8GB, 512GB, GTX1650, WIN10)</div>
                             <?php echo '<script type="text/javascript">document.title = "GG Mall | " + document.getElementById("prod_name").innerText;</script>';?>
 							<div class="row col-xs-b25">
@@ -80,10 +88,11 @@ include_once '../include/header.php';
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">L06</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID">10004</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
-                                    <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">YES</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey">YES</span></div>
+									<div class="simple-article size-3 col-xs-b20">STOCK : <span class="color">10</span></div>
                                 </div>
                             </div>
                             <div class="simple-article size-3 col-xs-b30">
@@ -96,6 +105,8 @@ include_once '../include/header.php';
 							• Warranty   :2 Years Warranty<br>
 							</div>
                             
+							<form action="/fyp-project/cart.php" onsubmit="addToCartFunction()" id="add-to-cart-form" method="post">
+							<input type="hidden" name="product_id" id="product_id" value="not yet defined">
                             <div class="row col-xs-b40">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-1">quantity:</div>
@@ -103,30 +114,32 @@ include_once '../include/header.php';
                                 <div class="col-sm-9">
                                     <div class="quantity-select">
                                         <span class="minus"></span>
-                                        <span class="number">1</span>
+                                        <span class="number" name="product_quantity">1</span>
+										<input type="hidden" name="product_quantity" id="product_quantity" value="not yet defined">
                                         <span class="plus"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="row m5 col-xs-b40">
-                                <div class="col-sm-6 col-xs-b10 col-sm-b0">
-                                    <a class="button size-2 style-2 block" href="#">
-                                        <span class="button-wrapper">
-                                            <span class="icon"><img src="../img/icon-2.png" alt=""></span>
-                                            <span class="text">add to cart</span>
-                                        </span>
-                                    </a>
-                                </div>
                                 <div class="col-sm-6">
-                                    <a class="button size-2 style-1 block noshadow" href="#">
+                                    <button class="button size-2 style-1 block noshadow" href="#">
                                     <span class="button-wrapper">
                                         <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
                                         <span class="text">add to favourites</span>
                                     </span>
-                                </a>
+									</button>
+                                </div>
+								<div class="col-sm-6 col-xs-b10 col-sm-b0">
+                                    <button class="button size-2 style-2 block noshadow" type="submit">
+                                        <span class="button-wrapper">
+                                            <span class="icon"><img src="../img/icon-2.png" alt=""></span>
+                                            <span class="text">add to cart</span>
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="row">
+                            </form>
+							<div class="row">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-2">share:</div>
                                 </div>
@@ -290,6 +303,24 @@ include_once '../include/header.php';
             </div>
             </div>
         </div>
+
+<script>
+// This function gets called once the user submits the form
+function addToCartFunction(){
+
+    // First get the value from the span
+    quantityValue = $('.number').html();
+	prodIdValue = $('.prodID').html();
+
+    // Then store the extracted timerValue in a hidden form field
+    $("#product_quantity").val(quantityValue);
+	$("#product_id").val(prodIdValue);
+
+    // submit the form using it's ID "my-form"
+	$("#add-to-cart-form").action = "/fyp-project/cart.php";
+	$("#add-to-cart-form").submit();
+}
+</script>
 
 <?php
 include_once '../include/footer.php';
