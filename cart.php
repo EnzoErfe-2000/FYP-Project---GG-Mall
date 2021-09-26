@@ -173,7 +173,7 @@ include_once 'include/header.php';
                         <th>product name</th>
                         <th style="width: 150px;">price</th>
                         <th style="width: 260px;">quantity</th>
-                        <th style="width: 70px;">color</th>
+                        <th style="width: 70px;">stock</th>
                         <th style="width: 150px;">total</th>
                         <th style="width: 70px;"></th>
                     </tr>
@@ -199,12 +199,13 @@ include_once 'include/header.php';
                                 <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
                                 <span class="plus"></span>
 								-->
-								<input style="text-align:center;font-weight:bold" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+								<input style="text-align:center;font-weight:bold;" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
 								
 							</div>
+							</td>
+						<td data-title="Color: "><span style="font-weight:bold"><?=$product['product_stock']?></span>
                         </td>
-                        <td data-title="Color: "><div class="cart-color" style="background: #eee;"></div></td>
-                        <td data-title="Total:">RM <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
+						<td data-title="Total:">RM <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
                         <td data-title="">
                             <a href="cart.php?remove=<?=$product['product_id']?>" name="remove"><div class="button-close"></div></a>
                         </td>
