@@ -12,7 +12,7 @@ include_once 'include/header.php';
             margin-bottom: 80px;
             width: 1500px;
         }
-
+        
         .accounttitle
         {
             margin-left:30px;
@@ -36,7 +36,6 @@ include_once 'include/header.php';
             padding:1%;
             margin-bottom:5%;
         }
-
     </style>
 </head>
 <body>
@@ -46,18 +45,44 @@ include_once 'include/header.php';
                 <div class="col-12">
                     <div class="dashboard">
                         <div class="row">
-                            <div class="col-xl-8 col-md-8" style="font-size:16px;">
-                                <h4 class="accounttitle">Dashboard</h4>
-                                    <div class="welcome">
-                                    <p>Hello,  
-                                        <?php
-                                            echo "(If not ". $_SESSION["customer_name"] . " please <a href='/fyp-project/include/logout-inc.php'><b>Logout</b></a> )";
-                                        ?>
-                                    </p>
-                                        <p class="m-t-25"><br>From your account dashboard. you can easily check &amp; view your
-                                            recent orders, manage your shipping and billing <br>addresses and edit your password and
-                                            account details.</p>
-                                    </div>
+                            <div class="col-xl-8 col-md-8">
+                                <h4 class="accounttitle">Check Orders</h4>
+                                <div class="container">
+                                    <table class="cart-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 150px;">orders</th>
+                                                <th style="width: 150px; text-align:center;">date</th>
+                                                <th style="width: 150px;">status</th>
+                                                <th style="width: 150px;">total</th>
+                                                <th style="width: 150px;">action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td style="text-align:center;">Aug 22, 2018</td>
+                                                <td>Pending</td>
+                                                <td>$3000</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td style="text-align:center;">July 22, 2018</td>
+                                                <td>Approved</td>
+                                                <td>$200</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td style="text-align:center;">June 12, 2017</td>
+                                                <td>On Hold</td>
+                                                <td>$990</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>    
                             </div>
                             <div class="col-xl-3 col-md-4">
                                 <div class="dashboardmenu"><span style="font-size:18px; text-decoration:underline; font-weight:bold;" >Account Selection</span>

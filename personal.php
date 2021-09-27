@@ -10,9 +10,7 @@ include_once 'include/header.php';
             margin-top: 70px;
             margin-left: 50px;
             margin-bottom: 80px;
-            border-radius: 0px;
-            border-style: double;
-            width: 1430px;
+            width: 1500px;
         }
 
         .accounttitle
@@ -62,27 +60,27 @@ include_once 'include/header.php';
                                                     <div id="personal-details">
                                                         <div class="form-group required">
                                                             <label for="input-firstname" class="control-label">First Name</label>
-                                                            <input type="text" class="form-control" id="input-firstname" placeholder="First Name" value="" name="firstname">
+                                                            <input type="text" class="simple-input" id="input-firstname" placeholder="First Name" value="" name="firstname">
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-lastname" class="control-label">Last Name</label>
-                                                            <input type="text" class="form-control" id="input-lastname" placeholder="Last Name" value="" name="lastname">
+                                                            <input type="text" class="simple-input" id="input-lastname" placeholder="Last Name" value="" name="lastname">
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-email" class="control-label">E-Mail</label>
-                                                            <input type="email" class="form-control" id="input-email" placeholder="name@email.com" value="" name="email">
+                                                            <input type="email" class="simple-input" id="input-email" placeholder="name@email.com" value="" name="email">
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-telephone" class="control-label">Telephone</label>
-                                                            <input type="tel" class="form-control" id="input-telephone" placeholder="012-3456789" value="" name="telephone">
+                                                            <input type="tel" class="simple-input" id="input-telephone" placeholder="012-3456789" value="" name="telephone">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Date of Birth</label>
-                                                            <input type="text" class="form-control" id="input-dob" placeholder="YYYY-MM-DD" value="" name="dob">
+                                                            <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" value="" name="dob">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Address</label>
-                                                            <input type="text" class="form-control" id="input-address" placeholder="123, Taman 1, 75350 Melaka" value="" name="address">
+                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" value="" name="address">
                                                         </div>
                                                     </div>
                                                     <br>
@@ -114,13 +112,16 @@ include_once 'include/header.php';
                                                 Personal Details</a>
                                             </li>
                                             <li>
-                                                Orders
+                                                <a href="pw_change.php">
+                                                Password Changes</a>
                                             </li>
                                             <li>
-                                                Password Changes
+                                                <a href="user_order.php">
+                                                Orders</a>
                                             </li>
                                             <li>
-                                                Logout
+                                                <a href='/fyp-project/include/logout-inc.php'>
+                                                Logout</a>
                                             </li>
                                         </ul>
                                     </div>
