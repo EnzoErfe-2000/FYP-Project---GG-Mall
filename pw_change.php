@@ -1,5 +1,35 @@
 <?php
-include_once 'include/header.php';
+    include_once 'include/header.php';
+    include_once 'include/dbh-inc.php';
+
+    $newpassword = $oldpassword = $cfmpassword = "";
+
+    if(isset($_POST['save']))
+    {
+        $oldpassword = $_POST['old-password'];
+        $newpassword = $_POST['new-password'];
+        $cfmpassword = $_POST['new-confirm'];
+
+        $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
+
+        $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
+
+        if(mysqli_query($conn, $sql))
+        {
+            echo "
+            <script> 
+                alert('Password Updated Successfully');
+                location.assign('/fyp-project/pw_change.php');
+            </script>";
+        }
+        else
+        {
+            echo"
+            <script> 
+                alert('Something went wrong');
+            </script>";
+        }
+    }
 ?>
 <head>
     <style>
@@ -47,26 +77,26 @@ include_once 'include/header.php';
                         <div class="row">
                             <div class="col-xl-8 col-md-8">
                                 <h4 class="accounttitle">Change Password</h4>
-                                    <form>
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" >
                                         <div class="row">
                                             <div class="col-sm-6" style="margin-left:30px;">
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">Old Password</label>
-                                                    <input type="password" class="simple-input" id="input-password" placeholder="" value="" name="old-password">
+                                                    <input type="password" class="simple-input" id="input-password" name="old-password" required>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">New Password</label>
-                                                    <input type="password" class="simple-input" id="input-password" placeholder="" value="" name="new-password">
+                                                    <input type="password" class="simple-input" id="input-password" name="new-password" required>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-confirm" class="control-label">New Password Confirm</label>
-                                                    <input type="password" class="simple-input" id="input-confirm" placeholder="" value="" name="new-confirm">
+                                                    <input type="password" class="simple-input" id="input-confirm" name="new-confirm" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm=6" style="margin-left:40px;">
-                                                <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
+                                                <button class="button noshadow size-2 style-3" type="submit" name="save" id="submit" class="submit" style="border:none" onclick="validate">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                                         <span class="text">save</span>

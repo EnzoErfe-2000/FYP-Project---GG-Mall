@@ -1,6 +1,43 @@
 <?php
 include_once 'include/header.php';
+require_once 'include/dbh-inc.php';
+
+$name = $email = $phone = $dob = $address = "";
+
+if(isset($_POST['submitt']))
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $dob = $_POST['dob'];
+    $address = $_POST['address'];
+    $sql = "
+        UPDATE customer SET 
+        customer_name = '".$_POST["name"]."', 
+        customer_email_address = '". $_POST["email"]."', 
+        customer_phone = '".$_POST["phone"]."', 
+        customer_dateOfBirth = '".$_POST["dob"]."',
+        customer_address = '".$_POST["address"]."'
+        WHERE customer_id = ". $_SESSION['customer_id'];
+
+    if(mysqli_query($conn, $sql))
+    {
+        echo "
+        <script> 
+            alert('Updated Successfully');
+            location.assign('/fyp-project/personal.php');
+        </script>";
+    }
+    else
+    {
+        echo"
+        <script> 
+            alert('Something went wrong');
+        </script>";
+    }
+}
 ?>
+
 <head>
     <style>
         .containerr
@@ -54,33 +91,42 @@ include_once 'include/header.php';
                                             ?>
                                         - To update your account information.
                                         </p>
-                                        <form>
+                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" >
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div id="personal-details">
                                                         <div class="form-group required">
-                                                            <label for="input-firstname" class="control-label">First Name</label>
-                                                            <input type="text" class="simple-input" id="input-firstname" placeholder="First Name" value="" name="firstname">
-                                                        </div>
-                                                        <div class="form-group required">
-                                                            <label for="input-lastname" class="control-label">Last Name</label>
-                                                            <input type="text" class="simple-input" id="input-lastname" placeholder="Last Name" value="" name="lastname">
+                                                        <?php 
+                                                            $sql = "SELECT * FROM customer WHERE customer_id = ".$_SESSION['customer_id'];
+                                                            $result = mysqli_query($conn, $sql);
+                                                    
+                                                            while($row=mysqli_fetch_assoc($result)) 
+                                                            {
+                                                                $name = $row['customer_name'];
+                                                                $email = $row['customer_email_address'];
+                                                                $phone = $row['customer_phone'];
+                                                                $dob = $row['customer_dateOfBirth'];
+                                                                $address = $row['customer_address'];
+                                                            }
+                                                        ?>
+                                                            <label for="input-name" class="control-label">Name</label>
+                                                            <input type="text" class="simple-input" id="input-name" placeholder="Name" name="name" value="<?php echo $name?>" required>
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-email" class="control-label">E-Mail</label>
-                                                            <input type="email" class="simple-input" id="input-email" placeholder="name@email.com" value="" name="email">
+                                                            <input type="email" class="simple-input" id="input-email" placeholder="name@email.com" name="email" value="<?php echo $email?>" required>
                                                         </div>
                                                         <div class="form-group required">
-                                                            <label for="input-telephone" class="control-label">Telephone</label>
-                                                            <input type="tel" class="simple-input" id="input-telephone" placeholder="012-3456789" value="" name="telephone">
+                                                            <label for="input-phone" class="control-label">Phone Number</label>
+                                                            <input type="tel" class="simple-input" id="input-phone" placeholder="012-3456789" name="phone" value="<?php echo $phone?>" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Date of Birth</label>
-                                                            <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" value="" name="dob">
+                                                            <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Address</label>
-                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" value="" name="address">
+                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $address?>" required>
                                                         </div>
                                                     </div>
                                                     <br>
@@ -88,7 +134,7 @@ include_once 'include/header.php';
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm=6">
-                                                    <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
+                                                    <button class="button noshadow size-2 style-3" type="submit" name="submitt" id="submit" class="submit" style="border:none" >
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                                             <span class="text">save</span>

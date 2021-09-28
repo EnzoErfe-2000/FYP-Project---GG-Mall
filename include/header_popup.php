@@ -129,7 +129,7 @@
 								<a class="simple-link">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
-								<button class="button noshadow size-2 style-3" type="submit" name="login_submit" id="login_submit" class="submit" style="border:none" onclick="validate">
+								<button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none">
 									<span class="button-wrapper">
 										<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
