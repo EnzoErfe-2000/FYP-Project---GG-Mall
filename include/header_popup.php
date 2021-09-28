@@ -126,7 +126,7 @@
 								<div class="empty-space col-sm-b5"></div>
 								<a class="simple-link">Forgot password?</a>
 								<div class="empty-space col-xs-b5"></div>
-								<a class="simple-link">register now</a>
+								<a class="simple-link switchModal">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
 								<button class="button noshadow size-2 style-3" type="submit" name="login_submit" id="login_submit" class="login_submit" style="border:none" onclick="validate">
@@ -502,6 +502,14 @@
 		$("#add-to-cart-form").action = "/fyp-project/cart.php";
 		$("#add-to-cart-form").submit();
 	}
+	
+	$(document).on('click', '.switchModal', function(e){
+		e.preventDefault();
+		$('.popup-content').removeClass('active');
+		$('.popup-wrapper, .popup-content[data-rel="2"]').addClass('active');
+		$('html').addClass('overflow-hidden');
+		return false;
+	});
 	</script>
 	
 <!-- MAP -->
