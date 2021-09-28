@@ -129,7 +129,7 @@
 								<a class="simple-link">register now</a>
 							</div>
 							<div class="col-sm-6 text-right">
-								<button class="button noshadow size-2 style-3" type="submit" name="login_submit" id="login_submit" class="submit" style="border:none" onclick="validate">
+								<button class="button noshadow size-2 style-3" type="submit" name="login_submit" id="login_submit" class="login_submit" style="border:none" onclick="validate">
 									<span class="button-wrapper">
 										<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
 										<span class="text">submit</span>
@@ -192,7 +192,7 @@
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
-
+					
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
                     <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
@@ -212,7 +212,7 @@
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">submit</span>
                                 </span>
-                            </button>  
+                            </button>
                         </div>
                         
                     </div>
@@ -450,7 +450,7 @@
             </div>
         </div>	
 </div>
-	
+
 </body>
 </html>
 
