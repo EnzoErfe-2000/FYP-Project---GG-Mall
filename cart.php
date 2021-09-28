@@ -91,6 +91,12 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
     }	
 }
 
+// Send the user to the place order page if they click the Place Order button, also the cart should not be empty
+if (isset($_POST['checkout']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    header('Location: checkout.php');
+    exit;
+}
+
 // Check the session variable for products in cart
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
@@ -152,7 +158,7 @@ include_once 'include/header.php';
             <div class="empty-space col-xs-b15 col-sm-b30"></div>
             <div class="breadcrumbs">
                 <a href="/fyp-project/index.php">home</a>
-                <a href="/fyp-project/cart.php">shopping cart</a>
+                <a href="#">shopping cart</a>
             </div>
             <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
             <div class="text-center">
@@ -365,9 +371,6 @@ include_once 'include/header.php';
 					
                 </div>
                 <div class="col-sm-6 col-md-7 col-sm-text-right">
-					<div class="col-md-b15">
-						<span class="uppercase color" style="font-weight:bold;font-size:12px">Make sure your cart is updated!</span>
-					</div>
                     <div class="buttons-wrapper">
                         <button class="button size-2 style-2 noshadow" type="submit" name="update" value="update">
                             <span class="button-wrapper">
@@ -375,13 +378,17 @@ include_once 'include/header.php';
                                 <span class="text">update cart</span>
                             </span>
                         </button>
-                        <a class="button size-2 style-3" href="#">
+                        <button class="button size-2 style-3 noshadow" type="submit" value="checkout" name="checkout">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="img/icon-4.png" alt=""></span>
                                 <span class="text">proceed to checkout</span>
                             </span>
-                        </a>
+                        </button>
                     </div>
+					<div class="empty-space col-xs-b35 col-md-b20"></div>
+					<div class="col-md-b15">
+						<span class="uppercase color" style="font-weight:bold;font-size:12px">Make sure your cart is updated!</span>
+					</div>
                 </div>
 				</form>
             </div>
@@ -395,3 +402,10 @@ include_once 'include/footer.php';
 <?php
 include_once 'include/header_popup.php';
 ?>
+
+<script>
+function noCart()
+{
+	alert("There are no items in your cart!");
+}
+</script>
