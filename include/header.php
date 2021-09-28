@@ -44,7 +44,7 @@
 											<div class='title'><b>" . $_SESSION["customer_name"] ."</b></div>
 											<div class='language-toggle header-toggle-animation'>
 												<a href='profile.php'>Profile</a>
-												<a href='#.html'>Orders</a>
+												<a href='user_order.php'>Orders</a>
 												<a href='#.html'>Wishlist</a>
 											</div>
 										</div>";

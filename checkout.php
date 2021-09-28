@@ -168,14 +168,14 @@ if(isset($_SESSION['cart']))
                     <div style="max-height:440px; overflow-y:auto">
 					<?php foreach ($orderList as $order): ?>
 					<div class="cart-entry clearfix">
-                        <a class="cart-entry-thumbnail" href="#"><img src="product_img/<?=$order['product_img']?>" alt=""></a>
+                        <a class="cart-entry-thumbnail" href="product.php?product=<?=$order['product_id']?>""><img src="product_img/<?=$order['product_img']?>" alt=""></a>
                         <div class="cart-entry-description">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <div class="h6"><a href="#"><?=$order['product_name']?></a></div>
-                                            <div class="simple-article size-1">QUANTITY: <?=$products_in_cart[$order['product_id']]?></div>
+                                            <div class="h6"><a href="product.php?product=<?=$order['product_id']?>"><?=$order['product_name']?></a></div>
+                                            <div class="simple-article size-1">QUANTITY:&emsp;<span class="h4" style="font-weight:bold;"><?=$products_in_cart[$order['product_id']]?></span></div>
                                         </td>
                                         <td>
                                             <div class="simple-article size-3 grey">RM <?=number_format($order['product_listedPrice'],2,".",",")?></div>
