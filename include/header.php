@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,14 +68,14 @@ session_start();
                             </div>
 							<div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
                             -->
-							<div class="entry hidden-xs hidden-sm cart">
-                                <a href="cart.html">
-                                    <b class="hidden-xs">Your bag</b>
+							<div class="entry hidden-xs hidden-sm">
+                                <a href="/fyp-project/cart.php">
+                                    <b class="hidden-xs">Your cart</b>
                                     <span class="cart-icon">
-                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                        <span class="cart-label">5</span>
+                                        <i class="fa fa-shopping-bag" href="/fyp-project/cart.php" aria-hidden="true"></i>
+                                        <span class="cart-label"><?=isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;?></span>
                                     </span>
-                                    <span class="cart-title hidden-xs">$1195.00</span>
+                                    <span class="cart-title hidden-xs">RM <?=isset($_SESSION['cartTotal']) ? number_format($_SESSION['cartTotal'],2,".",",") : 0;?></span>
                                 </a>
                                 <div class="cart-toggle hidden-xs hidden-sm">
                                     <div class="cart-overflow">
@@ -209,6 +206,7 @@ session_start();
                                         <li class="megamenu-wrapper <?php active("products.php"); ?>">
                                             <a href="/fyp-project/products.php">products</a>
                                             <div class="menu-toggle"></div>
+											<!--
                                             <div class="megamenu">
                                                 <div class="links">
                                                     <a class="active" href="products1.html">Products Landing 1</a>
@@ -341,7 +339,8 @@ session_start();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+											-->
+										</li>
                                         <li <?php classActive("services.html"); ?>>
                                             <a href="/fyp-project/services.html">Services</a>
                                         </li>
@@ -484,8 +483,10 @@ session_start();
                             <div class="header-bottom-icon toggle-search"><i class="fa fa-search" aria-hidden="true"></i></div>
                             <div class="header-bottom-icon visible-rd"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
                             <div class="header-bottom-icon visible-rd">
-                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                <span class="cart-label">5</span>
+                                <a href="/fyp-project/cart.php">
+									<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                </a>
+								<span class="cart-label"><?=isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;?></span>
                             </div>
                         </div>
                     </div>
@@ -529,7 +530,7 @@ function active($currect_page){
 function hrefIndex(){
   $uri = $_SERVER['REQUEST_URI'];
   if(!strpos($uri, "index.php")){
-      echo 'href = "index.php"'; //class name in css 
+      echo 'href = "/fyp-project/index.php"'; //class name in css 
   } 
 }
 ?>

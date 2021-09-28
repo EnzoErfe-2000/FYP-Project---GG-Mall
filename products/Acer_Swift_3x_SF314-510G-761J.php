@@ -5,6 +5,14 @@ include_once '../include/header.php';
         <div class="header-empty-space"></div>
 
         <div class="container">
+            <div class="empty-space col-xs-b15 col-sm-b30"></div>
+            <div class="breadcrumbs">
+                <a href="/fyp-project/index.php">home</a>
+                <a href="#">products</a>
+                <a href="#">laptops</a>
+                <a href="#">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
+            </div>
+            <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
                
             <div class="row">
                 <div class="col-md-9 col-md-push-3">
@@ -71,10 +79,11 @@ include_once '../include/header.php';
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">L02</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID">10002</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
-                                    <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">YES</span></div>
+                                    <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey">YES</span></div>
+									<div class="simple-article size-3 col-xs-b20">STOCK : <span class="color">5</span></div>
                                 </div>
                             </div>
                             <div class="simple-article size-3 col-xs-b30">
@@ -87,36 +96,40 @@ include_once '../include/header.php';
 							• Warranty   :2 years Warranty with 1st Year International Travelers Warranty (ITW)<br>
 							</div>
                             
-                            <div class="row col-xs-b40">
+                            <form action="/fyp-project/cart.php" onsubmit="addToCartFunction()" id="add-to-cart-form" method="post">
+							<input type="hidden" name="product_id" id="product_id" value="not yet defined">
+							<div class="row col-xs-b40">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-1">quantity:</div>
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="quantity-select">
                                         <span class="minus"></span>
-                                        <span class="number">1</span>
+                                        <span class="number" name="product_quantity">1</span>
+										<input type="hidden" name="product_quantity" id="product_quantity" value="not yet defined">
                                         <span class="plus"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="row m5 col-xs-b40">
-                                <div class="col-sm-6 col-xs-b10 col-sm-b0">
-                                    <a class="button size-2 style-2 block" href="#">
-                                        <span class="button-wrapper">
-                                            <span class="icon"><img src="../img/icon-2.png" alt=""></span>
-                                            <span class="text">add to cart</span>
-                                        </span>
-                                    </a>
-                                </div>
                                 <div class="col-sm-6">
-                                    <a class="button size-2 style-1 block noshadow" href="#">
+                                    <button class="button size-2 style-1 block noshadow" href="#">
                                     <span class="button-wrapper">
                                         <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
                                         <span class="text">add to favourites</span>
                                     </span>
-                                </a>
+									</button>
+                                </div>
+								<div class="col-sm-6 col-xs-b10 col-sm-b0">
+                                    <button class="button size-2 style-2 block noshadow" type="submit">
+                                        <span class="button-wrapper">
+                                            <span class="icon"><img src="../img/icon-2.png" alt=""></span>
+                                            <span class="text">add to cart</span>
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
+							</form>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-2">share:</div>
@@ -281,6 +294,24 @@ include_once '../include/header.php';
             </div>
             </div>
         </div>
+
+<script>
+// This function gets called once the user submits the form
+function addToCartFunction(){
+
+    // First get the value from the span
+    quantityValue = $('.number').html();
+	prodIdValue = $('.prodID').html();
+
+    // Then store the extracted timerValue in a hidden form field
+    $("#product_quantity").val(quantityValue);
+	$("#product_id").val(prodIdValue);
+
+    // submit the form using it's ID "my-form"
+	$("#add-to-cart-form").action = "/fyp-project/cart.php";
+	$("#add-to-cart-form").submit();
+}
+</script>
 
 <?php
 include_once '../include/footer.php';
