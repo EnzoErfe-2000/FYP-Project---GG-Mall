@@ -205,11 +205,12 @@ include_once 'include/header.php';
                                 <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
                                 <span class="plus"></span>
 								-->
-								<input style="text-align:center;font-weight:bold;" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
-								
+								<button type="button" class="minus" style="border:none;"></button>
+								<input class="numInput" style="text-align:center;font-weight:bold;margin:0;" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+								<button type="button" class="plus" style="border:none;"></button>
 							</div>
-							</td>
-						<td data-title="Color: "><span style="font-weight:bold"><?=$product['product_stock']?></span>
+						</td>
+						<td data-title="Color: "><span class="productStock" style="font-weight:bold"><?=$product['product_stock']?></span>
                         </td>
 						<td data-title="Total:">RM <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
                         <td data-title="">
