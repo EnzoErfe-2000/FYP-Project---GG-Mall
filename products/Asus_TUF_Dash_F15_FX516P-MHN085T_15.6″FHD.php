@@ -157,7 +157,7 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="STEELSERIES ARCTIS 5 7.1 SURROUND RGB GAMING HEADSET.html">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
+                                            <a href="STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
                                         </li>
                                         <li>
                                             <a href="Razer Blackshark V2 X Esports Gaming Headset.html">Razer Blackshark V2 X Esports Gaming Headset</a>

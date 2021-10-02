@@ -132,13 +132,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
+                                            <a href="STEELSERIES ARCTIS 5 7.1 SURROUND RGB GAMING HEADSET.html">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">Razer Blackshark V2 X Esports Gaming Headset</a>
+                                            <a href="Razer Blackshark V2 X Esports Gaming Headset.html">Razer Blackshark V2 X Esports Gaming Headset</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
+                                            <a href="Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset.html">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -147,13 +147,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
+                                            <a href="SteelSeries Apex 3 Water Resistant Gaming Keyboard.html">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Cooler_Master _CK530_V2_TKL_RGB_Gaming_Keyboard.php">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
+                                            <a href="Cooler Master CK530 V2 TKL RGB Gaming Keyboard.html">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
                                         </li>
 										<li>
-                                            <a href="../products/Razer_BlackWidow_Green_Mechanical_Gaming_Keyboard.php">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
+                                            <a href="Razer BlackWidow Green Mechanical Gaming Keyboard.html">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -162,13 +162,13 @@ include_once '../include/header.php';
 									<div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/Logitech_G502_Hero_High_Performance_Gaming_Mouse.php">Logitech G502 Hero High Performance Gaming Mouse</a>
+                                            <a href="Logitech G502 Hero High Performance Gaming Mouse.html">Logitech G502 Hero High Performance Gaming Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Razer_DeathAdder_Essential_Gaming_Mouse.php">Razer DeathAdder Essential Gaming Mouse</a>
+                                            <a href="Razer DeathAdder Essential Gaming Mouse.html">Razer DeathAdder Essential Gaming Mouse</a>
                                         </li>
 										<li>
-                                            <a href="../products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
+                                            <a href="Steelseries Aerox 3 Wireless Lightweight Gaming Mouse.html">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -183,13 +183,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/Logitech_M170_Wireless_Mouse.php">Logitech M170 Wireless Mouse</a>
+                                            <a href="Logitech M170 Wireless Mouse.html">Logitech M170 Wireless Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Logitech_MX_Master_3_Wireless_Mouse.php">Logitech MX Master 3 Wireless Mouse</a>
+                                            <a href="Logitech MX Master 3 Wireless Mouse.html">Logitech MX Master 3 Wireless Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Logitech_M325_Wireless_Mouse.php">Logitech M325 Wireless Mouse</a>
+                                            <a href="Logitech M325 Wireless Mouse.html">Logitech M325 Wireless Mouse</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -198,13 +198,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/Logitech_K380_Slim_Multi-Device_Keyboard.php">Logitech K380 Slim Multi-Device Keyboard</a>
+                                            <a href="Logitech K380 Slim Multi-Device Keyboard.html">Logitech K380 Slim Multi-Device Keyboard</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">Microsoft Bluetooth Desktop Combo Keyboard</a>
+                                            <a href="Microsoft Bluetooth Desktop Combo Keyboard.html">Microsoft Bluetooth Desktop Combo Keyboard</a>
                                         </li>
 										<li>
-                                            <a href="../products/Targus_KB55_Multi-Platform_Bluetooth.php">Targus KB55 Multi-Platform Bluetooth</a>
+                                            <a href="Targus KB55 Multi-Platform Bluetooth.html">Targus KB55 Multi-Platform Bluetooth</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -213,10 +213,10 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/Logitech_C922_Pro_HD_Stream_Webcam.php">Logitech C922 Pro HD Stream Webcam</a>
+                                            <a href="Logitech C922 Pro HD Stream Webcam.html">Logitech C922 Pro HD Stream Webcam</a>
                                         </li>
                                         <li>
-                                            <a href="../products/J5Create_USB_HD_Webcam_with_360°_Rotation_(JVCU100).php">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
+                                            <a href="J5Create USB HD Webcam with 360° Rotation (JVCU100).html">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -231,13 +231,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/MSI_Modern_15_15.6″_FHD_Laptop.php">MSI Modern 15 15.6″ FHD Laptop</a>
+                                            <a href="MSI Modern 15 15.6″ FHD Laptop.html">MSI Modern 15 15.6″ FHD Laptop</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Acer_Swift_3x_SF314-510G-761J.php">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
+                                            <a href="Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue.html">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Asus_ZenBook_13 UX325E-AKG349TS 13.3”_OLED_FHD_Laptop_Pine_Grey.php">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
+                                            <a href="Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey.html">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -246,13 +246,13 @@ include_once '../include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="../products/MSI_GF63_Thin_15.6″_FHD_Gaming_Laptop.php">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
+                                            <a href="MSI GF63 Thin 15.6″ FHD Gaming Laptop.html">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
                                         </li>
                                         <li>
-                                            <a href="../products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
+                                            <a href="Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD.html">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
                                         </li>
                                         <li>
-                                            <a href="../products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
+                                            <a href="Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black.html">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -261,7 +261,7 @@ include_once '../include/header.php';
 
                     <div class="empty-space col-xs-b25 col-sm-b50"></div>
            
-                </div> 
+                </div>
             </div>
             </div>
         </div>

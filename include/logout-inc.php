@@ -4,5 +4,6 @@ session_unset();
 session_destroy();
 //header("location: ../index.php");
 $uri = $_SERVER['HTTP_REFERER'];
-header("location: ".$uri);
+//header("location: ".$uri);
+header("location: /fyp-project/index.php");
 ?>
