@@ -4,32 +4,50 @@
     include_once 'include/dbh-inc.php';
 
     $newpassword = $oldpassword = $cfmpassword = "";
+    $oldpassword_error = $newpassword_error = $cfmpassword_error = "";
 
     if(isset($_POST['save']))
     {
-        $oldpassword = $_POST['old-password'];
-        $newpassword = $_POST['new-password'];
-        $cfmpassword = $_POST['new-confirm'];
+        $oldpassword_error = $newpassword_error = $cfmpassword_error = "";
+        $result = mysqli_query($conn,"SELECT * from customer where customer_id = ". $_SESSION['customer_id']);
+        $row = mysqli_fetch_array($result);
 
-        $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
-
-        $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
-
-        if(mysqli_query($conn, $sql))
+        if($_POST["old-password"] != $row["customer_password"])
         {
-            echo "
-            <script> 
-                alert('Password Updated Successfully');
-                location.assign('/fyp-project/pw_change.php');
-            </script>";
+            $oldpassword_error = "Old password not the same";
         }
-        else
+        else if(strlen(trim($_POST["new-password"])) <6)
         {
-            echo"
-            <script> 
-                alert('Something went wrong');
-            </script>";
+            $newpassword_error = "New password must be more than 6";
         }
+        else if($_POST["new-password"] != $_POST["new-confirm"])
+        {
+            $cfmpassword_error = "Password not match";
+        }
+
+        if(empty($oldpassword_error) && empty($newpassword_error) && empty($cfmpassword_error))
+        {
+            $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
+
+            $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
+    
+            if(mysqli_query($conn, $sql))
+            {
+                echo "
+                <script> 
+                    alert('Password Updated Successfully');
+                    location.assign('/fyp-project/pw_change.php');
+                </script>";
+            }
+            else
+            {
+                echo"
+                <script> 
+                    alert('Something went wrong');
+                </script>";
+            }
+        }
+       
     }
 ?>
 <head>
@@ -84,14 +102,23 @@
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">Old Password</label>
                                                     <input type="password" class="simple-input" id="input-password" name="old-password" required>
+                                                    <span class="invalid-feedback" style="color:red;">
+                                                        <?php echo $oldpassword_error; ?>
+                                                    </span>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">New Password</label>
                                                     <input type="password" class="simple-input" id="input-password" name="new-password" required>
+                                                    <span class="invalid-feedback" style="color:red;">
+                                                        <?php echo $newpassword_error; ?>
+                                                    </span>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-confirm" class="control-label">New Password Confirm</label>
                                                     <input type="password" class="simple-input" id="input-confirm" name="new-confirm" required>
+                                                    <span class="invalid-feedback" style = "color:red;">
+                                                        <?php echo $cfmpassword_error; ?>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

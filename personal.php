@@ -123,7 +123,7 @@ if(isset($_POST['submitt']))
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Date of Birth</label>
-                                                            <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
+                                                            <input type="date" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Address</label>
