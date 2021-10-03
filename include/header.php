@@ -157,7 +157,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a class="button size-2 style-3" href="checkout1.html">
+                                            <a class="button size-2 style-3" href="checkout1.php">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt=""></span>
                                                     <span class="text">proceed to checkout</span>
@@ -200,8 +200,8 @@
                                             </ul>
 											-->
                                         </li>
-                                        <li <?php classActive("about.html"); ?>>
-                                            <a href="/fyp-project/about.html">about us</a>
+                                        <li <?php classActive("about.php"); ?>>
+                                            <a href="/fyp-project/about.php">about us</a>
                                         </li>
                                         <li class="megamenu-wrapper <?php active("products.php"); ?>">
                                             <a href="/fyp-project/products.php">products</a>
@@ -341,8 +341,8 @@
                                             </div>
 											-->
 										</li>
-                                        <li <?php classActive("services.html"); ?>>
-                                            <a href="/fyp-project/services.html">Services</a>
+                                        <li <?php classActive("services.php"); ?>>
+                                            <a href="/fyp-project/services.php">Services</a>
                                         </li>
 										<!--
                                         <li>
@@ -468,7 +468,7 @@
                                             </div>
                                         </li>
                                         -->
-										<li <?php classActive("contact.html"); ?>><a href="/fyp-project/contact.html">contact</a></li>
+										<li <?php classActive("contact.php"); ?>><a href="/fyp-project/contact.php">contact</a></li>
                                     </ul>
                                     <div class="navigation-title">
                                         Navigation
