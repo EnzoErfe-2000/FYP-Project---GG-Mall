@@ -10,26 +10,52 @@
         $oldpassword = $_POST['old-password'];
         $newpassword = $_POST['new-password'];
         $cfmpassword = $_POST['new-confirm'];
+		$sql = "SELECT customer_password FROM customer WHERE customer_id = ?;";
+		
+		$stmt = mysqli_stmt_init($conn);
+		if(!mysqli_stmt_prepare($stmt, $sql)){
+			//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		}
+		else
+		{
+			//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		}
+		
+		mysqli_stmt_bind_param($stmt, "s", $_SESSION['customer_id']);
+		mysqli_stmt_execute($stmt);
+		
+		$result = mysqli_stmt_get_result($stmt);
+		$row = mysqli_fetch_assoc($result);
+		
+		if(password_verify($oldpassword, $row['customer_password']))
+		{
+			echo "<script type='text/javascript'>alert('found old password');</script>";
+			$hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
 
-        $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
+			$sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
 
-        $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
-
-        if(mysqli_query($conn, $sql))
-        {
-            echo "
-            <script> 
-                alert('Password Updated Successfully');
-                location.assign('/fyp-project/pw_change.php');
-            </script>";
-        }
-        else
-        {
-            echo"
-            <script> 
-                alert('Something went wrong');
-            </script>";
-        }
+			if(mysqli_query($conn, $sql))
+			{
+				echo "
+				<script> 
+					alert('Password Updated Successfully');
+					location.assign('/fyp-project/pw_change.php');
+				</script>";
+			}
+			else
+			{
+				echo"
+				<script> 
+					alert('Something went wrong');
+				</script>";
+			}
+		}
+		else
+		{
+			echo "<script type='text/javascript'>alert('Old password does not match');</script>";
+			
+		}
+        
     }
 ?>
 <head>
