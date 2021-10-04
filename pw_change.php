@@ -1,52 +1,98 @@
 <?php
-	include_once 'include/session-db-func.php';
+    include_once 'include/session-db-func.php';
     include_once 'include/header.php';
     include_once 'include/dbh-inc.php';
 
     $newpassword = $oldpassword = $cfmpassword = "";
-    $oldpassword_error = $newpassword_error = $cfmpassword_error = "";
 
     if(isset($_POST['save']))
     {
-        $oldpassword_error = $newpassword_error = $cfmpassword_error = "";
-        $result = mysqli_query($conn,"SELECT * from customer where customer_id = ". $_SESSION['customer_id']);
-        $row = mysqli_fetch_array($result);
+        $oldpassword = $_POST['old-password'];
+        $newpassword = $_POST['new-password'];
+        $cfmpassword = $_POST['new-confirm'];
+        $sql = "SELECT customer_password FROM customer WHERE customer_id = ?;";
+
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt, $sql))
+        {
+            //echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+        }
+        else
+        {
+            //echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $_SESSION['customer_id']);
+        mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
 
         if(password_verify($oldpassword, $row['customer_password']))
         {
+            $uppercase = preg_match('@[A-Z]@', $newpassword);
+            $lowercase = preg_match('@[a-z]@', $newpassword);
+            $number = preg_match('@[0-9]@', $newpassword);
+            $specialChars = preg_match('@[^\w]@', $newpassword);
+
+            if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($newpassword) < 8) 
+            {
+                echo"
+                    <script> 
+                        alert('Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.');
+                    </script>";
+            }
+            else if($newpassword != $cfmpassword)
+            {
+                echo"
+                    <script> 
+                        alert('New password does not match');
+                    </script>";
+            }
+
             echo"
                 <script> 
-                    alert('Old password found');
+                    alert('Old password match');
                 </script>";
-            
-            $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
 
-            $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
-
-            if(mysqli_query($conn, $sql))
+            if(($oldpassword != $newpassword) && ($newpassword == $cfmpassword))
             {
-                echo "
-                <script> 
-                    alert('Password Updated Successfully');
-                    location.assign('/fyp-project/pw_change.php');
-                </script>";
+                $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
+
+                $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
+    
+                if(mysqli_query($conn, $sql))
+                {
+                    echo "
+                    <script> 
+                        alert('Password Updated Successfully');
+                        location.assign('/fyp-project/pw_change.php');
+                    </script>";
+                }
+                else
+                {
+                    echo"
+                    <script> 
+                        alert('Something went wrong');
+                    </script>";
+                }
             }
             else
             {
                 echo"
-                <script> 
-                    alert('Something went wrong');
-                </script>";
+                    <script> 
+                        alert('Please insert different password');
+                    </script>";
             }
         }
         else
         {
             echo"
                 <script> 
-                    alert('Old password does not match');
+                    alert('Password does not match');
                 </script>";
         }
-       
+
     }
 ?>
 <head>
@@ -101,23 +147,14 @@
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">Old Password</label>
                                                     <input type="password" class="simple-input" id="input-password" name="old-password" required>
-                                                    <span class="invalid-feedback" style="color:red;">
-                                                        <?php echo $oldpassword_error; ?>
-                                                    </span>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-password" class="control-label">New Password</label>
                                                     <input type="password" class="simple-input" id="input-password" name="new-password" required>
-                                                    <span class="invalid-feedback" style="color:red;">
-                                                        <?php echo $newpassword_error; ?>
-                                                    </span>
                                                 </div>
                                                 <div class="form-group required">
                                                     <label for="input-confirm" class="control-label">New Password Confirm</label>
                                                     <input type="password" class="simple-input" id="input-confirm" name="new-confirm" required>
-                                                    <span class="invalid-feedback" style = "color:red;">
-                                                        <?php echo $cfmpassword_error; ?>
-                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,6 +185,10 @@
                                             <li>
                                                 <a href="pw_change.php">
                                                 Password Changes</a>
+                                            </li>
+                                            <li>
+                                                <a href="address.php">
+                                                Address Details</a>
                                             </li>
                                             <li>
                                                 <a href="user_order.php">

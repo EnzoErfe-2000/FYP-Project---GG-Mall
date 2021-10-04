@@ -80,22 +80,41 @@
 			// Prepare an insert statement
             $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
-            
-            if (mysqli_query($conn, $sql)) 
+            $sqll= "SELECT customer_id from customer where customer_email_address = '$email' and customer_password = '$hashed_pass'";
+
+            if(mysqli_query($conn, $sql))
             {
-                echo "
-                <script>
-                  alert('New account created');
-				  location.assign('/fyp-project/index.php');
-                </script>";
+                if($id=mysqli_query($conn, $sqll))
+                {
+                    while($row=mysqli_fetch_assoc($id))
+                    {
+                        $sql_insert_address = "INSERT INTO address (customer_id) VALUES (" . $row['customer_id'] . ")";
+
+                        if(mysqli_query($conn, $sql_insert_address))
+                        {
+                            echo "
+                                <script>
+                                alert('New account created');
+                                location.assign('/fyp-project/index.php');
+                                </script>";
+                        }
+                        else
+                        {
+                            echo "
+                                <script>
+                                    alert('Error: " . $sql_insert_address . "\n" . mysqli_error($conn) . "')
+                                </script>";
+                        }
+                    }
+                }
             }
             else 
             {
-            echo "
-            <script>
-                alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
-            </script>";
-    
+                echo "
+                <script>
+                    alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
+                </script>";
+        
             }
         }
         // Close connection
