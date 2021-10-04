@@ -12,25 +12,17 @@
         $result = mysqli_query($conn,"SELECT * from customer where customer_id = ". $_SESSION['customer_id']);
         $row = mysqli_fetch_array($result);
 
-        if($_POST["old-password"] != $row["customer_password"])
+        if(password_verify($oldpassword, $row['customer_password']))
         {
-            $oldpassword_error = "Old password not the same";
-        }
-        else if(strlen(trim($_POST["new-password"])) <6)
-        {
-            $newpassword_error = "New password must be more than 6";
-        }
-        else if($_POST["new-password"] != $_POST["new-confirm"])
-        {
-            $cfmpassword_error = "Password not match";
-        }
-
-        if(empty($oldpassword_error) && empty($newpassword_error) && empty($cfmpassword_error))
-        {
+            echo"
+                <script> 
+                    alert('Old password found');
+                </script>";
+            
             $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
 
             $sql = "UPDATE customer SET customer_password = '$hashed_password' WHERE customer_id = ". $_SESSION['customer_id'];
-    
+
             if(mysqli_query($conn, $sql))
             {
                 echo "
@@ -46,6 +38,13 @@
                     alert('Something went wrong');
                 </script>";
             }
+        }
+        else
+        {
+            echo"
+                <script> 
+                    alert('Old password does not match');
+                </script>";
         }
        
     }
