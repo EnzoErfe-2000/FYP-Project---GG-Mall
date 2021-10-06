@@ -146,7 +146,7 @@ if ($products_in_cart) {
     }
 	$_SESSION['cartTotal'] =$subtotal;
 	
-	mysqli_close($conn);
+	//mysqli_close($conn); <<if remove then can run register at checkout
 }
 ?>      
 <?php

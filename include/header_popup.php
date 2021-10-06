@@ -31,6 +31,7 @@
 
             $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
+            
 			if (mysqli_num_rows($result) > 0) 
             {
                 echo '<script type="text/javascript">alert("Email taken.");</script>';
