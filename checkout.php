@@ -79,120 +79,74 @@ else
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
+		<form action="checkout.php" method="post" onsubmit="return validateForm();" name="orderForm">
             <div class="row">
-                <div class="col-md-6 col-xs-b50 col-md-b0">
-                    <h4 class="h4 col-xs-b25">billing details</h4>
-                    <select class="SlectBox">
-                        <option disabled="disabled" selected="selected">Choose country</option>
-                        <option value="malaysia">Malaysia</option>
+				<div class="col-md-6 col-xs-b50 col-md-b0">
+					<h4 class="h4 col-xs-b25">billing details</h4>
+					<select class="SlectBox" required>
+                        <option value="" disabled="disabled">Choose country</option>
+                        <option value="malaysia" selected="selected">Malaysia</option>
                     </select>
-                    <div class="empty-space col-xs-b20"></div>
+					<div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_first]";}else{echo "";}?>" placeholder="First name" />
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_first]";}else{echo "";}?>" placeholder="First name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_last]";}else{echo "";}?>" placeholder="Last name" />
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_last]";}else{echo "";}?>" placeholder="Last name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<!--
-                    <input class="simple-input" type="text" value="" placeholder="Company name" />
-                    <div class="empty-space col-xs-b20"></div>
-					-->
-                    <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
+					<input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_unit]";}else{echo "";}?>" placeholder="Unit No." />
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_unit]";}else{echo "";}?>" placeholder="Unit No." />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_city]";}else{echo "";}?>" placeholder="Town/City" />
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_city]";}else{echo "";}?>" placeholder="Town/City" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-                    <div class="row m10">
+					<div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_state]";}else{echo "";}?>" placeholder="State" />
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_state]";}else{echo "";}?>" placeholder="State" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-						    <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_country]";}else{echo "";}?>" placeholder="Country" />
-                            <div class="empty-space col-xs-b20"></div>
-                        </div>
-                    </div>
-                    <div class="row m10">
-                        <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_postcodeZIP]";}else{echo "";}?>" placeholder="Postcode/ZIP" />
-                            <div class="empty-space col-xs-b20"></div>
-                        </div>
-                        <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_phone]";}else{echo "";}?>" placeholder="Phone" />
+						    <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_country]";}else{echo "";}?>" placeholder="Country" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
+					<div class="row m10">
+                        <div class="col-sm-6">
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_postcodeZIP]";}else{echo "";}?>" placeholder="Postcode/ZIP" />
+                            <div class="empty-space col-xs-b20"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_phone]";}else{echo "";}?>" placeholder="Phone" />
+                            <div class="empty-space col-xs-b20"></div>
+                        </div>
+                    </div>
+					<input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
                     <div class="empty-space col-xs-b20"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox" required><span>Privacy policy agreement</span>
-                    </label>
+                    <div class="row m10">
+					<div class="col-sm-6">
+					<label class="checkbox-entry">
+                        <input type="checkbox" name="privacyCheck" id="privacyCheck"><span>Privacy policy agreement
+					</label>
+					</div>
+					<div class="col-sm-6">
+						<div id="error" class="simple-article size-3 color" style="font-family:'Raleway', sans-serif;"></div></span>
+                    </div>
+					</div>
                     <div class="empty-space col-xs-b50"></div>
-					<!--
-                    <label class="checkbox-entry checkbox-toggle-title">
-                        <input type="checkbox"><span>ship to different address?</span>
-                    </label>
-                    <div class="checkbox-toggle-wrapper">
-                        <div class="empty-space col-xs-b25"></div>
-                        <select class="SlectBox">
-                            <option disabled="disabled" selected="selected">Choose country</option>
-                            <option value="malaysia">Malaysia</option>
-                        </select>
-                        <div class="empty-space col-xs-b20"></div>
-                        <div class="row m10">
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="First name" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Last name" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                        </div>
-						<!--
-                        <input class="simple-input" type="text" value="" placeholder="Company name" />
-                        <div class="empty-space col-xs-b20"></div>
-						
-                        <input class="simple-input" type="text" value="" placeholder="Street address" />
-                        <div class="empty-space col-xs-b20"></div>
-                        <div class="row m10">
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Unit No." />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Town/City" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                        </div>
-                        <div class="row m10">
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="State/Country" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Postcode/ZIP" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="empty-space col-xs-b30 col-sm-b60"></div>
-                    -->
 					<textarea class="simple-input" placeholder="Note about your order"></textarea>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="h4 col-xs-b25">your order</h4>
+				</div>
+				<div class="col-md-6">
+					<h4 class="h4 col-xs-b25">your order</h4>
                     <div style="max-height:440px; overflow-y:auto">
 					<?php foreach ($orderList as $order): ?>
 					<div class="cart-entry clearfix">
@@ -265,16 +219,16 @@ else
                     <div class="empty-space col-xs-b10"></div>
                     <div class="simple-article size-2">* The following page may redirect you to another page based on your selected payment method</div>
                     <div class="empty-space col-xs-b30"></div>
-                    <div class="button block size-2 style-3">
+                    <button class="button block size-2 style-3 noshadow" type="submit" onclick="validate()">
                         <span class="button-wrapper">
                             <span class="icon"><img src="img/icon-4.png" alt=""></span>
                             <span class="text">place order</span>
                         </span>
-                        <input type="submit"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </button>
+				</div>
+			</div>
+		</form>
+		</div>
 
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
@@ -285,3 +239,30 @@ include_once 'include/footer.php';
 <?php
 include_once 'include/header_popup.php';
 ?>
+<script>
+function validate() {
+	var val = document.getElementById("privacyCheck").checked;
+	if(val != true)
+	{
+		//event.preventDefault();
+		document.getElementById("error").innerHTML = "Please read & agree before proceeding";
+		
+	}
+	else
+	{
+		//document.getElementById("orderForm").unbind('submit').submit();
+		document.getElementById("error").innerHTML = "&nbsp;";
+	}
+}
+
+function validateForm() {
+  let x = document.forms["orderForm"]["privacyCheck"].checked;
+  if (x == false) {
+    //alert("Name must be filled out");
+    $('html, body').animate({
+        scrollTop: $(".checkbox-entry").offset().top - 300
+    }, 500);
+	return false;
+  }
+}
+</script>
