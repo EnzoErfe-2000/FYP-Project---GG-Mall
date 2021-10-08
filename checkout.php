@@ -3,6 +3,10 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
 ?>
 <?php
+if (isset($_POST['placeOrder'])) {
+	echo "<script> location.assign('successful_checkout.html');</script>";
+}
+
 if(isset($_SESSION['cart']))
 {
 	$products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
@@ -219,7 +223,7 @@ else
                     <div class="empty-space col-xs-b10"></div>
                     <div class="simple-article size-2">* The following page may redirect you to another page based on your selected payment method</div>
                     <div class="empty-space col-xs-b30"></div>
-                    <button class="button block size-2 style-3 noshadow" type="submit" onclick="validate()">
+                    <button class="button block size-2 style-3 noshadow" type="submit" onclick="validate()" value="placeOrder" name="placeOrder">
                         <span class="button-wrapper">
                             <span class="icon"><img src="img/icon-4.png" alt=""></span>
                             <span class="text">place order</span>
