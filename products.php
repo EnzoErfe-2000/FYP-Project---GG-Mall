@@ -20,13 +20,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">GAMING LAPTOP</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10023">Acer Nitro 5</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="/fyp-project/product_img/AcerNitro5_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10023">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -50,13 +50,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">GAMING LAPTOP</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Asus TUF Dash F15</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10022">Asus TUF Dash F15</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="/fyp-project/product_img/AsusTUFDash01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10022">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -80,13 +80,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">GAMING HEADSET</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="/fyp-project/product_img/RazerKrakenBluetoothKitty_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10003">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -110,13 +110,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">GAMING KEYBOARD</a></div>
-                                            <div class="h6 animate-to-green"><a href="#">Razer BlackWidow Green</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10006">Razer BlackWidow Green</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="/fyp-project/product_img/RazerBlackWidow_kb.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_BlackWidow_Green_Mechanical_Gaming_Keyboard.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10006">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -140,13 +140,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1 small">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">GAMING MICE</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Razer_DeathAdder_Essential_Gaming_Mouse.php">Razer DeathAdder</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10008">Razer DeathAdder</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="/fyp-project/product_img/RazerDeathAdderWired_gm.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_DeathAdder_Essential_Gaming_Mouse.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10008">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -185,13 +185,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/SteelSeriesArctis571_RGB_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10001">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -223,13 +223,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">Razer Blackshark V2 X Esports Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/RazerBlacksharkV2X_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10002">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -260,13 +260,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/RazerKrakenBluetoothKitty_GH.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10003">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -297,13 +297,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Keyboard</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/Apex3_kb.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10004">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -334,13 +334,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Mice</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/SteelseriesAerox3_gm.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10009">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -371,13 +371,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">MSI GF63 Thin 15.6″ FHD Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10021">MSI GF63 Thin 15.6″ FHD Gaming Laptop</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/MSIGF63_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/MSI_GF63_Thin_15.6″_FHD_Gaming_Laptop.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10021">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -408,13 +408,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10023">Acer Nitro 5 Gaming Laptop</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/AcerNitro5_01.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10023">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -445,13 +445,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Mice</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Logitech_MX_Master_3_Wireless_Mouse.php">Logitech MX Master 3 Wireless Mouse</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/LogitechtMXMaster_om.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Logitech_MX_Master_3_Wireless_Mouse.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10011">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -482,13 +482,13 @@ include_once 'include/header.php';
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Keyboard</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">Microsoft Bluetooth Desktop Combo Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a></div>
                                         </div>
                                         <div class="preview">
                                             <img src="product_img/MicrosoftBluetoothDesktopCombo_ok.png" alt="">
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10014">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
@@ -532,13 +532,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/STEELSERIES_ARCTIS_5_7.1_SURROUND_RGB_GAMING_HEADSET.php">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
+                                            <a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Razer_Blackshark_V2_X_Esports_Gaming_Headset.php">Razer Blackshark V2 X Esports Gaming Headset</a>
+                                            <a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Razer_Kraken_Bluetooth_Kitty_Edition_Wireless_Gaming_RGB_Headset.php">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
+                                            <a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -547,13 +547,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/SteelSeries_Apex_3_Water_Resistant_Gaming_Keyboard.php">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
+                                            <a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Cooler_Master _CK530_V2_TKL_RGB_Gaming_Keyboard.php">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
+                                            <a href="/fyp-project/product.php?product=10005">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
                                         </li>
 										<li>
-                                            <a href="/fyp-project/products/Razer_BlackWidow_Green_Mechanical_Gaming_Keyboard.php">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
+                                            <a href="/fyp-project/product.php?product=10006">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -562,13 +562,13 @@ include_once 'include/header.php';
 									<div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_G502_Hero_High_Performance_Gaming_Mouse.php">Logitech G502 Hero High Performance Gaming Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10007">Logitech G502 Hero High Performance Gaming Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Razer_DeathAdder_Essential_Gaming_Mouse.php">Razer DeathAdder Essential Gaming Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10008">Razer DeathAdder Essential Gaming Mouse</a>
                                         </li>
 										<li>
-                                            <a href="/fyp-project/products/Steelseries_Aerox_3_Wireless_Lightweight_Gaming_Mouse.php">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -583,13 +583,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_M170_Wireless_Mouse.php">Logitech M170 Wireless Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10010">Logitech M170 Wireless Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_MX_Master_3_Wireless_Mouse.php">Logitech MX Master 3 Wireless Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_M325_Wireless_Mouse.php">Logitech M325 Wireless Mouse</a>
+                                            <a href="/fyp-project/product.php?product=10012">Logitech M325 Wireless Mouse</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -598,13 +598,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_K380_Slim_Multi-Device_Keyboard.php">Logitech K380 Slim Multi-Device Keyboard</a>
+                                            <a href="/fyp-project/product.php?product=10013">Logitech K380 Slim Multi-Device Keyboard</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Microsoft_Bluetooth_Desktop_Combo_Keyboard.php">Microsoft Bluetooth Desktop Combo Keyboard</a>
+                                            <a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a>
                                         </li>
 										<li>
-                                            <a href="/fyp-project/products/Targus_KB55_Multi-Platform_Bluetooth.php">Targus KB55 Multi-Platform Bluetooth</a>
+                                            <a href="/fyp-project/product.php?product=10015">Targus KB55 Multi-Platform Bluetooth</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -613,10 +613,10 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/Logitech_C922_Pro_HD_Stream_Webcam.php">Logitech C922 Pro HD Stream Webcam</a>
+                                            <a href="/fyp-project/product.php?product=10016">Logitech C922 Pro HD Stream Webcam</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/J5Create_USB_HD_Webcam_with_360°_Rotation_(JVCU100).php">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
+                                            <a href="/fyp-project/product.php?product=10017">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -631,13 +631,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/MSI_Modern_15_15.6″_FHD_Laptop.php">MSI Modern 15 15.6″ FHD Laptop</a>
+                                            <a href="/fyp-project/product.php?product=10018">MSI Modern 15 15.6″ FHD Laptop</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Acer_Swift_3x_SF314-510G-761J.php">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
+                                            <a href="/fyp-project/product.php?product=10019">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Asus_ZenBook_13 UX325E-AKG349TS 13.3”_OLED_FHD_Laptop_Pine_Grey.php">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
+                                            <a href="/fyp-project/product.php?product=10020">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -646,13 +646,13 @@ include_once 'include/header.php';
                                     <div class="toggle"></div>
                                     <ul>
                                         <li>
-                                            <a href="/fyp-project/products/MSI_GF63_Thin_15.6″_FHD_Gaming_Laptop.php">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
+                                            <a href="/fyp-project/product.php?product=10021">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Asus_TUF_Dash_F15_FX516P-MHN085T_15.6″FHD.php">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
+                                            <a href="/fyp-project/product.php?product=10022">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
                                         </li>
                                         <li>
-                                            <a href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
+                                            <a href="/fyp-project/product.php?product=10023">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
                                         </li>
                                     </ul>
                                 </li>

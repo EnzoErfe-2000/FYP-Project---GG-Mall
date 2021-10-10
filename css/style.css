@@ -1010,8 +1010,8 @@ span.pagination{border: none;}
 /*shortcode 9*/
 .product-shortcode.style-9{text-align: center; border: 1px #eee solid;}
 .product-shortcode.style-9 .preview{border-bottom: 1px #eee solid;}
-.product-shortcode.style-9 .preview img{display: block; max-width: 100%; margin: 0 auto; height: auto; -webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .3s; -webkit-transition: all .3s;}
-.product-shortcode.style-9:hover .preview img{-webkit-filter: grayscale(0%); filter: grayscale(0%);}
+.product-shortcode.style-9 .preview img{display: block; max-width: 100%; margin: 0 auto; height: auto; -webkit-filter: none !important; filter: none !important; transition: all .3s; -webkit-transition: all .3s;}
+.product-shortcode.style-9:hover .preview img{-webkit-filter: none !important; filter: none !important;}
 .product-shortcode.style-9 .title{margin-bottom: 10px; max-width: 250px; margin-left: auto; margin-right: auto; padding: 0 15px; transition: all .3s; -webkit-transition: all .3s;}
 .product-shortcode.style-9 .description{max-width: 250px; margin-left: auto; margin-right: auto; padding: 0 15px; transition: all .3s; -webkit-transition: all .3s;}
 .product-shortcode.style-9 .content{position: relative; margin: 0 -1px -1px -1px; background: #fff; padding-top: 25px; min-height: 116px;}
