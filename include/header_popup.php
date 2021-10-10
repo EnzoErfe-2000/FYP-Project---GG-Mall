@@ -1,3 +1,109 @@
+<!--Registration Function-->
+<?php
+    require_once 'dbh-inc.php';
+	require_once 'functions-inc.php';
+
+    // Define variables and initialize with empty values
+    $email = $username = $password = $confirm_password = "";
+    $email_err = $username_err = $password_err = $confirm_password_err = "";
+
+    function test_input($data) 
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    // Processing form data when form is submitted
+    if(isset($_POST['submit']))
+    {
+ 
+        // Validate email
+        if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) 
+        {
+            $email_err = "Invalid email format";
+			echo '<script type="text/javascript">alert("wrong format.");</script>';
+        } 
+		else
+		{
+			// Prepare a select statement
+
+            $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
+            $result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) > 0) 
+            {
+                echo '<script type="text/javascript">alert("Email taken.");</script>';
+            } 
+            else 
+            {
+                $email = test_input($_POST["email"]);
+				$email_chk = 1;
+            }
+		}
+		
+		// Validate username
+        if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
+        {
+			echo '<script type="text/javascript">alert("Username can only contain letters, numbers, and underscores.");</script>';
+        } 
+        else
+        {
+            $username = ucwords(test_input($_POST["username"]));
+			$username_chk = 1;
+        }
+		
+		// Validate password
+        if(strlen(trim($_POST["password"])) < 6)
+        {
+			echo '<script type="text/javascript">alert("Password must have atleast 6 characters.");</script>';
+        } 
+        else
+        {
+            $password = ($_POST["password"]);
+			$pwd_chk = 1;
+        }
+		
+		// Validate confirm password
+        $confirm_password = $_POST["confirm_password"];
+
+        if($password != $confirm_password)
+        {
+			echo '<script type="text/javascript">alert("Password did not match.");</script>';
+        }
+		else
+			$cpwd_chk = 1;
+		
+		// Check input errors before inserting in database
+        if($email_chk == 1 && $username_chk == 1 && $pwd_chk == 1 && $cpwd_chk == 1)
+        {
+			// Prepare an insert statement
+            $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
+            
+            if (mysqli_query($conn, $sql)) 
+            {
+                echo "
+                <script>
+                  alert('New account created');
+				  location.assign('/fyp-project/index.php');
+                </script>";
+            }
+            else 
+            {
+            echo "
+            <script>
+                alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
+            </script>";
+    
+            }
+        }
+        // Close connection
+        mysqli_close($conn);
+    }
+
+?>
+
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
         <div class="popup-content" data-rel="1">
@@ -71,24 +177,26 @@
             <div class="popup-container size-1">
                 <div class="popup-align">
                     <form 
-                    action="/fyp-project/include/register-inc.php" 
+                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); /* $_SERVER["PHP_SELF"] Returns the filename of the currently executing script */ ?>" 
                     method="post"
                     style="text-align: left">
-					
-					<?php $email = $username = $password = $confirm_password = "";?>
                     <h3 class="h3 text-center">register</h3>
                     <div class="empty-space col-xs-b30"></div>
-                    <input type="text" placeholder="Your name" name="username" class="simple-input" value="<?php echo $username; ?>" required />
-                    
+                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>" required/>
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="email" placeholder="Your email" name="email" class="simple-input" value="<?php echo $email; ?>" required />
-                    
+                    <input type="email" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
+                    <span class="invalid-feedback"><?php echo $email_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input" value="<?php echo $password; ?>" required />
-                   
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+					
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input" value="<?php echo $confirm_password; ?>" required />
-                    
+                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
+                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <div class="row">
                         <div class="col-sm-7 col-xs-b10 col-sm-b0">

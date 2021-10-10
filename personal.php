@@ -108,12 +108,6 @@ if(isset($_POST['submitt']))
                                                                 $phone = $row['customer_phone'];
                                                                 $dob = $row['customer_dateOfBirth'];
                                                                 $address = $row['customer_address'];
-																$street = $row['customer_address_street'];
-																$unit = $row['customer_address_unit'];
-																$city = $row['customer_address_city'];
-																$state = $row['customer_address_state'];
-																$country = $row['customer_address_country'];
-																$zip = $row['customer_address_postcodeZIP'];
                                                             }
                                                         ?>
                                                             <label for="input-name" class="control-label">Name</label>
@@ -132,45 +126,8 @@ if(isset($_POST['submitt']))
                                                             <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="input-dob" class="control-label">Street Address</label>
-                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $street?>" required>
-															<div class="empty-space col-xs-b10"></div>
-															<div class="row m10">
-																<div class="col-sm-6">
-																	<label for="input-dob" class="control-label">Unit No.</label>
-																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$unit?>" placeholder="Unit No." />
-																	<div class="empty-space col-xs-b10"></div>
-																</div>
-																<div class="col-sm-6">
-																	<label for="input-dob" class="control-label">Town/City</label>
-																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$city?>" placeholder="Town/City" />
-																	<div class="empty-space col-xs-b10"></div>
-																</div>
-															</div>
-															<div class="row m10">
-																<div class="col-sm-6">
-																	<label for="input-dob" class="control-label">State</label>
-																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$state?>" placeholder="State" />
-																	<div class="empty-space col-xs-b10"></div>
-																</div>
-																<div class="col-sm-6">
-																	<label for="input-dob" class="control-label">Country</label>
-																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$country?>" placeholder="Country" />
-																	<div class="empty-space col-xs-b5"></div>
-																</div>
-															</div>
-															<div class="row m10">
-																<div class="col-sm-6">
-																	<label for="input-dob" class="control-label">Postcode/ZIP</label>
-																	<div class="empty-space col-xs-b10"></div>
-																	<input class="simple-input" type="text" value="<?=$zip?>" placeholder="Postcode/ZIP" />
-																	<div class="empty-space col-xs-b5"></div>
-																</div>
-															</div>
+                                                            <label for="input-dob" class="control-label">Address</label>
+                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $address?>" required>
                                                         </div>
                                                     </div>
                                                     <br>

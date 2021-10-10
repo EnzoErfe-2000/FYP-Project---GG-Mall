@@ -92,16 +92,9 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
 }
 
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
-if (isset($_POST['checkout'])) {
-    if(isset($_SESSION['cart']) && !empty($_SESSION['cart']))
-	{
-		header('Location: checkout.php');
-		exit;
-	}
-	
-	else {
-		echo "<script type='text/javascript'>alert('There are no items in your cart!');</script>";
-	}
+if (isset($_POST['checkout']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    header('Location: checkout.php');
+    exit;
 }
 
 // Check the session variable for products in cart
@@ -201,9 +194,9 @@ include_once 'include/header.php';
 					<?php //echo "<script type='text/javascript'>alert('Adding cart item $product[product_id]');</script>";?>
 					<tr>
                         <td data-title=" ">
-                            <a class="cart-entry-thumbnail" href="product.php?product=<?=$product['product_id']?>"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
+                            <a class="cart-entry-thumbnail" href="#"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
                         </td>
-                        <td data-title=" "><h6 class="h6"><a href="product.php?product=<?=$product['product_id']?>"><?=$product['product_name']?></a></h6></td>
+                        <td data-title=" "><h6 class="h6"><a href="#"><?=$product['product_name']?></a></h6></td>
                         <td data-title="Price: ">RM <?=number_format($product['product_listedPrice'],2,".",",")?></td>
                         <td data-title="Quantity: " class="quantity">
                             <div class="quantity-select" style="height:auto;padding:10px 15px">
@@ -212,12 +205,11 @@ include_once 'include/header.php';
                                 <span class="number"><?=$products_in_cart[$product['product_id']]?></span>
                                 <span class="plus"></span>
 								-->
-								<button type="button" class="minus" style="border:none;"></button>
-								<input class="numInput" style="text-align:center;font-weight:bold;margin:0;" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
-								<button type="button" class="plus" style="border:none;"></button>
+								<input style="text-align:center;font-weight:bold;" class="color" type="number" name="quantity-<?=$product['product_id']?>" value="<?=$products_in_cart[$product['product_id']]?>" min="1" max="<?=$product['product_stock']?>" placeholder="Quantity" required>
+								
 							</div>
-						</td>
-						<td data-title="Color: "><span class="productStock" style="font-weight:bold"><?=$product['product_stock']?></span>
+							</td>
+						<td data-title="Color: "><span style="font-weight:bold"><?=$product['product_stock']?></span>
                         </td>
 						<td data-title="Total:">RM <?= number_format(($product['product_listedPrice']*$products_in_cart[$product['product_id']]),2,'.',',')?></td>
                         <td data-title="">
@@ -410,3 +402,10 @@ include_once 'include/footer.php';
 <?php
 include_once 'include/header_popup.php';
 ?>
+
+<script>
+function noCart()
+{
+	alert("There are no items in your cart!");
+}
+</script>

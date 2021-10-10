@@ -16,20 +16,20 @@ include_once 'include/header.php';
                                     <div class="cell-view page-height">
                                         <div class="col-xs-b40 col-sm-b80"></div>
                                         <div data-swiper-parallax-x="-600">
-                                            <div class="simple-article grey size-5">BEST PRICE <span class="color">$199.00</span></div>
+                                            <div class="simple-article grey size-5">BEST PRICE <span class="color">RM4,149.00</span></div>
                                             <div class="col-xs-b5"></div>
                                         </div>
                                         <div data-swiper-parallax-x="-500">
-                                            <h1 class="h1">smartphone x transform</h1>
+                                            <h1 class="h1">Acer Nitro 5</h1>
                                             <div class="title-underline left"><span></span></div>
                                         </div>
                                         <div data-swiper-parallax-x="-400">
-                                            <div class="simple-article size-4 grey">In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</div>
+                                            <div class="simple-article size-4 grey">Explore and enjoy a new level of gaming with the powerful Nitro 5. The solid, understated design houses a lightning-quick 144Hz FHD IPS display and a lineup of impressive tech to enhance every aspect of gameplay.</div>
                                             <div class="col-xs-b30"></div>
                                         </div>
                                         <div data-swiper-parallax-x="-300">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="product.php?product=10000">
+                                                <a class="button size-2 style-2" href="/fyp-project/product.php?product=10023">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
@@ -51,15 +51,15 @@ include_once 'include/header.php';
                                 <div class="product-preview-shortcode">
                                     <div class="preview">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="entry full-size swiper-lazy active" data-background="img/product-preview-1.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-2.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-3.jpg"></div>
+                                        <div class="entry full-size swiper-lazy active" data-background="/fyp-project/product_img/AcerNitro5_01.png"></div>
+                                        <div class="entry full-size swiper-lazy" data-background="/fyp-project/product_img/AcerNitro5_02.png"></div>
+                                        <div class="entry full-size swiper-lazy" data-background="/fyp-project/product_img/AcerNitro5_03.png"></div>
                                     </div>
                                     <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
                                         <div class="valign-middle-content">
-                                            <div class="entry active"><img src="img/product-4.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-5.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-6.png" alt="" /></div>
+                                            <div class="entry active"><img src="/fyp-project/product_img/AcerNitro5_01~1.png" alt="" /></div>
+                                            <div class="entry"><img src="/fyp-project/product_img/AcerNitro5_02~1.png" alt="" /></div>
+                                            <div class="entry"><img src="/fyp-project/product_img/AcerNitro5_03~1.png" alt="" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -70,82 +70,24 @@ include_once 'include/header.php';
                    <div class="swiper-slide">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-6 col-sm-offset-6">
-                                    <div class="cell-view page-height">
-                                        <div class="col-xs-b40 col-sm-b80"></div>
-                                        <div data-swiper-parallax-x="-600">
-                                            <div class="simple-article grey size-5">BEST PRICE <span class="color">$199.00</span></div>
-                                            <div class="col-xs-b5"></div>
-                                        </div>
-                                        <div data-swiper-parallax-x="-500">
-                                            <h1 class="h1">smartphone x transform</h1>
-                                            <div class="title-underline left"><span></span></div>
-                                        </div>
-                                        <div data-swiper-parallax-x="-400">
-                                            <div class="simple-article size-4 grey">In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</div>
-                                            <div class="col-xs-b30"></div>
-                                        </div>
-                                        <div data-swiper-parallax-x="-300">
-                                            <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="product.php?product=10011">
-                                                    <span class="button-wrapper">
-                                                        <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                        <span class="text">Learn More</span>
-                                                    </span>
-                                                </a>
-                                                <a class="button size-2 style-3" href="#">
-                                                    <span class="button-wrapper">
-                                                        <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                        <span class="text">Add To Cart</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-b40 col-sm-b80"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-product-preview align-left">
-                                <div class="product-preview-shortcode">
-                                    <div class="preview">
-                                        <div class="swiper-lazy-preloader"></div>
-                                        <div class="entry full-size swiper-lazy active" data-background="img/product-preview-1.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-2.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-3.jpg"></div>
-                                    </div>
-                                    <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
-                                        <div class="valign-middle-content">
-                                            <div class="entry active"><img src="img/product-4.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-5.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-6.png" alt="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="empty-space col-xs-b80 col-sm-b0"></div>
-                        </div>
-                   </div>
-				   <div class="swiper-slide">
-                        <div class="container">
-                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="cell-view page-height">
                                         <div class="col-xs-b40 col-sm-b80"></div>
                                         <div data-swiper-parallax-x="-600">
-                                            <div class="simple-article grey size-5">BEST PRICE <span class="color">$199.00</span></div>
+                                            <div class="simple-article grey size-5">BEST PRICE <span class="color">RM2,799.00</span></div>
                                             <div class="col-xs-b5"></div>
                                         </div>
                                         <div data-swiper-parallax-x="-500">
-                                            <h1 class="h1">smartphone x transform</h1>
+                                            <h1 class="h1">MSI Modern 15</h1>
                                             <div class="title-underline left"><span></span></div>
                                         </div>
                                         <div data-swiper-parallax-x="-400">
-                                            <div class="simple-article size-4 grey">In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</div>
+                                            <div class="simple-article size-4 grey">Bring your vivid imagination to life with this 15.6-inch MSI Modern laptop. The 512GB SSD provides high-performance storage, while the Intel Core i7 processor and 16GB of RAM support advanced content creation.</div>
                                             <div class="col-xs-b30"></div>
                                         </div>
                                         <div data-swiper-parallax-x="-300">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="product.php?product=10019">
+                                                <a class="button size-2 style-2" href="/fyp-project/product.php?product=10018">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
@@ -167,15 +109,15 @@ include_once 'include/header.php';
                                 <div class="product-preview-shortcode">
                                     <div class="preview">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="entry full-size swiper-lazy active" data-background="img/product-preview-1.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-2.jpg"></div>
-                                        <div class="entry full-size swiper-lazy" data-background="img/product-preview-3.jpg"></div>
+                                        <div class="entry full-size swiper-lazy active" data-background="/fyp-project/product_img/MSIModern15_01.png"></div>
+                                        <div class="entry full-size swiper-lazy" data-background="/fyp-project/product_img/MSIModern15_02.png"></div>
+                                        <div class="entry full-size swiper-lazy" data-background="/fyp-project/product_img/MSIModern15_03.png"></div>
                                     </div>
                                     <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
                                         <div class="valign-middle-content">
-                                            <div class="entry active"><img src="img/product-4.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-5.png" alt="" /></div>
-                                            <div class="entry"><img src="img/product-6.png" alt="" /></div>
+                                            <div class="entry active"><img src="/fyp-project/product_img/MSIModern15_01~1.png" alt="" /></div>
+                                            <div class="entry"><img src="/fyp-project/product_img/MSIModern15_02~1.png" alt="" /></div>
+                                            <div class="entry"><img src="/fyp-project/product_img/MSIModern15_03~1.png" alt="" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -192,20 +134,360 @@ include_once 'include/header.php';
             <div class="empty-space col-xs-b40 col-sm-b80"></div>
             <div class="container">
                 <div class="row">
+				
                     <div class="col-md-9 col-md-push-3">
                         <div class="tabs-block">
                             <div class="tabulation-menu-wrapper text-center">
                                 <div class="tabulation-title simple-input">all</div>
-                                <ul class="tabulation-toggle">
-                                    <li><a class="tab-menu active">all</a></li>
-                                    <li><a class="tab-menu">top 10</a></li>
-                                    <li><a class="tab-menu">gadgets</a></li>
-                                    <li><a class="tab-menu">laptops</a></li>
-                                    <li><a class="tab-menu">accessories</a></li>
-                                </ul>
                             </div>
-                            <div class="empty-space col-xs-b30"></div>
+							<div class="align-inline spacing-1">
+                        <div class="h4">BEST RECOMMENDED</div>
+                    </div>
                             <div class="tab-entry visible">
+                                <div class="products-content">
+                        <div class="products-wrapper">
+                            <div class="row nopadding">
+                                
+                               <div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/SteelSeriesArctis571_RGB_GH.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10001">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM398.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Best mic in gaming: the Discord-certified Clearcast bidirectional microphone</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div>
+                                <div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/RazerBlacksharkV2X_GH.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10002">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM218.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Advanced Passive Noise Cancellation</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/RazerKrakenBluetoothKitty_GH.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10003">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM410.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Kitty ears and earcups powered by Razer Chroma RGB</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/Apex3_kb.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10004">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM249.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Customizable 10-zone RGB illumination reacts to games and Discord</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Mice</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/SteelseriesAerox3_gm.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10009">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM359.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">PTFE glide skates for silky smooth mouse movements</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">MSI GF63 Thin 15.6″ FHD Gaming Laptop</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/MSIGF63_01.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10021">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM3,499.00</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">i5-10500H Processor with Graphic card of GTX 1650</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10023">Acer Nitro 5 Gaming Laptop</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/AcerNitro5_01.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10021">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM4,149.00</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">15.6" 144Hz Slim Bezel FHD IPS Display with Ryzen7-5800H processor</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Mice</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/LogitechtMXMaster_om.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10011">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM398.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Top mouse for productivity and creative tasks</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div><div class="col-sm-4">
+                                    <div class="product-shortcode style-1">
+                                        <div class="title">
+                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Keyboard</a></div>
+                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a></div>
+                                        </div>
+                                        <div class="preview">
+                                            <img src="product_img/MicrosoftBluetoothDesktopCombo_ok.png" alt="">
+                                            <div class="preview-buttons valign-middle">
+                                                <div class="valign-middle-content">
+                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10014">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                                                            <span class="text">Learn More</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="button size-2 style-3" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="simple-article size-4 dark">RM257.90</div>
+                                        </div>
+                                        <div class="description">
+                                            <div class="simple-article text size-2">Slim, modern design at an exceptional value</div>
+                                            <div class="icons">
+                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="tab-entry">
                                 <div class="row nopadding">
                                     <div class="col-sm-4">
                                         <div class="product-shortcode style-1">
@@ -244,44 +526,6 @@ include_once 'include/header.php';
                                                 </div>
                                             </div>
                                         </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-8.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="product-shortcode style-1">
@@ -309,200 +553,6 @@ include_once 'include/header.php';
                                                 </div>
                                             </div>
                                             <div class="price">
-                                                <div class="simple-article size-4"><span class="color">$630.00</span>&nbsp;&nbsp;&nbsp;<span class="line-through">$350.00</span></div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-10.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-11.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-12.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-entry">
-                                <div class="row nopadding">
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-7.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-9.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
                                                 <div class="simple-article size-4 dark">$630.00</div>
                                             </div>
                                             <div class="description">
@@ -910,169 +960,6 @@ include_once 'include/header.php';
                                 </div>
                             </div>
                         </div>
-
-                        <div class="empty-space col-xs-b35 col-md-b70"></div>
-
-                        <div class="swiper-container arrows-align-top" data-breakpoints="1" data-xs-slides="1" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="4">
-                            <div class="h4 swiper-title">our best categories</div>
-                            <div class="empty-space col-xs-b20"></div>
-                            <div class="swiper-button-prev style-1"></div>
-                            <div class="swiper-button-next style-1"></div>
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-13.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-17.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-14.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-18.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-15.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-19.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-16.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-20.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-15.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-16.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-13.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                    <a class="product-shortcode style-2" href="#">
-                                        <span class="preview"><img src="img/product-14.png" alt="" /></span>
-                                        <span class="description">
-                                            <span class="h6 animate-to-green">smart watches</span>
-                                            <span class="simple-article size-1 animate-to-fulltransparent">137 PRODUCTS</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination relative-pagination visible-xs"></div>
-                        </div>
-
-                        <div class="empty-space col-xs-b35 col-md-b70"></div>
-
-                        <div class="swiper-container arrows-align-top">
-                            <div class="h4 swiper-title">people choice</div>
-                            <div class="empty-space col-xs-b20"></div>
-                            <div class="swiper-button-prev style-1"></div>
-                            <div class="swiper-button-next style-1"></div>
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="banner-shortcode style-1">
-                                        <div class="background" style="background-image: url(img/thumbnail-10.jpg);"></div>
-                                        <div class="description valign-middle">
-                                            <div class="valign-middle-content">
-                                                <div class="simple-article size-3 light fulltransparent">DON'T MISS!</div>
-                                                <div class="banner-title color">UP TO 70%</div>
-                                                <div class="h4 light">best android tv box</div>
-                                                <div class="empty-space col-xs-b25"></div>
-                                                <a class="button size-1 style-3" href="#">
-                                                    <span class="button-wrapper">
-                                                        <span class="icon"><img src="img/icon-4.png" alt=""></span>
-                                                        <span class="text">learn more</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <div class="empty-space col-xs-b60 col-sm-b0"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="banner-shortcode style-1">
-                                        <div class="background" style="background-image: url(img/thumbnail-14.jpg);"></div>
-                                        <div class="description valign-middle">
-                                            <div class="valign-middle-content">
-                                                <div class="simple-article size-3 light fulltransparent">DON'T MISS!</div>
-                                                <div class="banner-title color">UP TO 70%</div>
-                                                <div class="h4 light">best android tv box</div>
-                                                <div class="empty-space col-xs-b25"></div>
-                                                <a class="button size-1 style-3" href="#">
-                                                    <span class="button-wrapper">
-                                                        <span class="icon"><img src="img/icon-4.png" alt=""></span>
-                                                        <span class="text">learn more</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <div class="empty-space col-xs-b60 col-sm-b0"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination visible-xs"></div>
-                        </div>
-
-                        <div class="empty-space col-xs-b35 col-md-b70"></div>
-
                         <div class="swiper-container arrows-align-top" data-breakpoints="1" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lt-slides="2" data-slides-per-view="2">
                             <div class="h4 swiper-title">hot proposes</div>
                             <div class="empty-space col-xs-b20"></div>
@@ -1081,15 +968,15 @@ include_once 'include/header.php';
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="product-shortcode style-3">
-                                        <div class="simple-article size-5 grey col-xs-b20">BEST PRICE: <span class="color">$299.00</span></div>
+                                        <div class="simple-article size-5 grey col-xs-b20">BEST PRICE: <span class="color">RM424.90</span></div>
                                         <div class="products-line col-xs-b25">
                                             <div class="line col-xs-b10"><div class="fill" style="width: 55%;"></div></div>
                                             <div class="row">
                                                 <div class="col-xs-6 text-left">
-                                                    <div class="simple-article size-1">AVAILABLE: <span class="grey">21</span></div>
+                                                    <div class="simple-article size-1">AVAILABLE: <span class="grey">100</span></div>
                                                 </div>
                                                 <div class="col-xs-6 text-right">
-                                                    <div class="simple-article size-1">SOLD: <span class="grey">14</span></div>
+                                                    <div class="simple-article size-1">SOLD: <span class="grey">50</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1098,26 +985,26 @@ include_once 'include/header.php';
                                             <div class="swiper-button-next style-1"></div>
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <img src="img/product-21.jpg" alt="" />
+                                                    <img src="/fyp-project/product_img/LogitechtMXMaster_om.png" alt="" />
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <img src="img/product-23.jpg" alt="" />
+                                                    <img src="/fyp-project/product_img/LogitechtMXMaster_om02.png" alt="" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="empty-space col-xs-b20"></div>
-                                        <div class="h6 animate-to-green"><a href="#">smartphone VIBE S1</a></div>
+                                        <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a></div>
                                         <div class="empty-space col-xs-b10"></div>
                                         <div class="description">
-                                            <div class="simple-article size-2">Penatibus nec consequat at In feugiat mole stie tortor a malesuada natoque penatibus</div>
+                                            <div class="simple-article size-2">Get work done anywhere with this small portable mouse. </div>
                                         </div>
                                         <div class="empty-space col-xs-b20"></div>
                                         <div class="countdown-wrapper">
-                                            <div class="countdown" data-end="Sep,1,2017"></div>
+                                            <div class="countdown" data-end="Dec,31,2021"></div>
                                         </div>
                                         <div class="preview-buttons">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="#">
+                                                <a class="button size-2 style-2" href="/fyp-project/product.php?product=10011">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
@@ -1135,12 +1022,12 @@ include_once 'include/header.php';
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="product-shortcode style-3">
-                                        <div class="simple-article size-5 grey col-xs-b20">BEST PRICE: <span class="color">$299.00</span></div>
+                                        <div class="simple-article size-5 grey col-xs-b20">BEST PRICE: <span class="color">RM398.90</span></div>
                                         <div class="products-line col-xs-b25">
                                             <div class="line col-xs-b10"><div class="fill" style="width: 55%;"></div></div>
                                             <div class="row">
                                                 <div class="col-xs-6 text-left">
-                                                    <div class="simple-article size-1">AVAILABLE: <span class="grey">21</span></div>
+                                                    <div class="simple-article size-1">AVAILABLE: <span class="grey">100</span></div>
                                                 </div>
                                                 <div class="col-xs-6 text-right">
                                                     <div class="simple-article size-1">SOLD: <span class="grey">14</span></div>
@@ -1152,26 +1039,26 @@ include_once 'include/header.php';
                                             <div class="swiper-button-next style-1"></div>
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <img src="img/product-22.jpg" alt="" />
+                                                    <img src="/fyp-project/product_img/SteelSeriesArctis571_RGB_GH.png" alt="" />
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <img src="img/product-24.jpg" alt="" />
+                                                    <img src="/fyp-project/product_img/SteelSeriesArctis571_RGB_GH_02.png" alt="" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="empty-space col-xs-b20"></div>
-                                        <div class="h6 animate-to-green"><a href="#">smartphone VIBE S1</a></div>
+                                        <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
                                         <div class="empty-space col-xs-b10"></div>
                                         <div class="description">
-                                            <div class="simple-article size-2">Penatibus nec consequat at In feugiat mole stie tortor a malesuada natoque penatibus</div>
+                                            <div class="simple-article size-2">Best mic in gaming: the Discord-certified Clearcast bidirectional microphone</div>
                                         </div>
                                         <div class="empty-space col-xs-b20"></div>
                                         <div class="countdown-wrapper">
-                                            <div class="countdown" data-end="Sep,1,2017"></div>
+                                            <div class="countdown" data-end="Nov,20,2021"></div>
                                         </div>
                                         <div class="preview-buttons">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="#">
+                                                <a class="button size-2 style-2" href="/fyp-project/product.php?product=10001">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
@@ -1301,1024 +1188,154 @@ include_once 'include/header.php';
 
                         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
-                        <div class="tabs-block">
-                            <div class="row">
-                                <div class="col-lg-4 col-xs-b15 col-lg-b0">
-                                    <div class="h4">best proposes</div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="tabulation-menu-wrapper col-lg-text-right">
-                                        <div class="tabulation-title simple-input">all</div>
-                                        <ul class="tabulation-toggle">
-                                            <li><a class="tab-menu active">all</a></li>
-                                            <li><a class="tab-menu">featured</a></li>
-                                            <li><a class="tab-menu">on sale</a></li>
-                                            <li><a class="tab-menu">top rated</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="empty-space col-xs-b15 col-sm-b30"></div>
-                            <div class="tab-entry visible">
-                                <div class="row nopadding">
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-25.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #a7f050;"></div>
-                                                    <div class="entry" style="color: #50e3f0;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-26.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-27.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #d0c45c;"></div>
-                                                    <div class="entry" style="color: #000;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-entry">
-                                <div class="row nopadding">
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-26.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-27.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #d0c45c;"></div>
-                                                    <div class="entry" style="color: #000;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-entry">
-                                <div class="row nopadding">
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-25.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #a7f050;"></div>
-                                                    <div class="entry" style="color: #50e3f0;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-26.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-entry">
-                                <div class="row nopadding">
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-25.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #a7f050;"></div>
-                                                    <div class="entry" style="color: #50e3f0;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-27.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #d0c45c;"></div>
-                                                    <div class="entry" style="color: #000;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-shortcode style-1">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">SMART PHONES</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="img/product-26.jpg" alt="" />
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                <span class="text">Learn More</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$630.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="empty-space col-xs-b35 col-md-b70"></div>
                     </div>
+
                     <div class="col-md-3 col-md-pull-9">
+					<div class="row">
+                    <div class="h4 col-xs-b10">popular categories</div>
+                    <ul class="categories-menu transparent">
+                        <li>
+                            <a href="#">PC Gaming Peripheral</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">Gaming Headset</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Gaming Keyboard</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10005">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
+                                        </li>
+										<li>
+                                            <a href="/fyp-project/product.php?product=10006">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Gaming Mice</a>
+									<div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10007">Logitech G502 Hero High Performance Gaming Mouse</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10008">Razer DeathAdder Essential Gaming Mouse</a>
+                                        </li>
+										<li>
+                                            <a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">PC Office</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">Office Mice</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10010">Logitech M170 Wireless Mouse</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10012">Logitech M325 Wireless Mouse</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Office Keyboard</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10013">Logitech K380 Slim Multi-Device Keyboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a>
+                                        </li>
+										<li>
+                                            <a href="/fyp-project/product.php?product=10015">Targus KB55 Multi-Platform Bluetooth</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Webcam</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10016">Logitech C922 Pro HD Stream Webcam</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10017">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Laptop</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">Consumer Laptop</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10018">MSI Modern 15 15.6″ FHD Laptop</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10019">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10020">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
+                                        </li>
+                                    </ul>
+                                </li>
+								<li>
+                                    <a href="#">Gaming Laptop</a>
+                                    <div class="toggle"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10021">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10022">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fyp-project/product.php?product=10023">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                             
+                    </ul>
 
-                        <div class="h4 col-xs-b25">popular categories</div>
-                        <ul class="categories-menu">
-                            <li>
-                                <a href="#">laptops &amp; computers</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">video &amp; photo cameras</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">smartphones</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">tv &amp; audio</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">gadgets</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">car electronics</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    <li>
-                                        <a href="#">laptops &amp; computers</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">laptops &amp; computers</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">video &amp; photo cameras</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">smartphones</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">tv &amp; audio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">gadgets</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">video games &amp; consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">software</a>
-                            </li>
-                            <li>
-                                <a href="#">offeci accessories</a>
-                            </li>
-                            <li>
-                                <a href="#">accessories</a>
-                            </li>
-                        </ul>
-
-                        <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-12">
-                                <div class="swiper-container banner-shortcode style-2">
-                                    <div class="swiper-button-prev hidden"></div>
-                                    <div class="swiper-button-next hidden"></div>
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="banner-shortcode style-2">
-                                                <div class="content">
-                                                    <div class="background" style="background-image: url(img/thumbnail-11.jpg);"></div>
-                                                    <div class="description valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                            <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                            <div class="banner-title color">- 35% OFF</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="banner-shortcode style-2">
-                                                <div class="content">
-                                                    <div class="background" style="background-image: url(img/thumbnail-11.jpg);"></div>
-                                                    <div class="description valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                            <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                            <div class="banner-title color">- 35% OFF</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="banner-shortcode style-2">
-                                                <div class="content">
-                                                    <div class="background" style="background-image: url(img/thumbnail-11.jpg);"></div>
-                                                    <div class="description valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                            <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                            <div class="banner-title color">- 35% OFF</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="banner-shortcode style-2">
-                                                <div class="content">
-                                                    <div class="background" style="background-image: url(img/thumbnail-11.jpg);"></div>
-                                                    <div class="description valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                            <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                            <div class="banner-title color">- 35% OFF</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-
-                                <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                            </div>
-                            <div class="col-sm-6 col-md-12">
-                                <div class="h4 col-xs-b25">most viewed</div>
-                                <div class="product-shortcode style-4 clearfix">
-                                    <a class="preview" href="#"><img src="img/product-28.jpg" alt="" /></a>
-                                    <div class="description">
-                                        <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                                        <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                                        <div class="simple-article dark">$98.00</div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-b10"></div>
-                                <div class="product-shortcode style-4 clearfix">
-                                    <a class="preview" href="#"><img src="img/product-29.jpg" alt="" /></a>
-                                    <div class="description">
-                                        <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                                        <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                                        <div class="simple-article dark">$12.00</div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-b10"></div>
-                                <div class="product-shortcode style-4 clearfix">
-                                    <a class="preview" href="#"><img src="img/product-30.jpg" alt="" /></a>
-                                    <div class="description">
-                                        <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                                        <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                                        <div class="simple-article dark">$4.00</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-12">
-                                <div class="h4 col-xs-b25">feature products</div>
-                                <div class="swiper-container">
-                                    <div class="swiper-button-prev hidden"></div>
-                                    <div class="swiper-button-next hidden"></div>
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="product-shortcode style-1 text-center">
-                                                <div class="title">
-                                                    <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                    <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                                </div>
-                                                <div class="preview">
-                                                    <img src="img/product-26.jpg" alt="">
-                                                    <div class="preview-buttons valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <a class="button size-2 style-2" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                    <span class="text">Learn More</span>
-                                                                </span>
-                                                            </a>
-                                                            <a class="button size-2 style-3" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                    <span class="text">Add To Cart</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="simple-article size-4 dark">$950.00</div>
-                                                </div>
-                                                <div class="description">
-                                                    <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                    <div class="icons">
-                                                        <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                        <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="empty-space col-xs-b60"></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-shortcode style-1 text-center">
-                                                <div class="title">
-                                                    <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                    <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                                </div>
-                                                <div class="preview">
-                                                    <img src="img/product-27.jpg" alt="">
-                                                    <div class="preview-buttons valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <a class="button size-2 style-2" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                    <span class="text">Learn More</span>
-                                                                </span>
-                                                            </a>
-                                                            <a class="button size-2 style-3" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                    <span class="text">Add To Cart</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="simple-article size-4 dark">$950.00</div>
-                                                </div>
-                                                <div class="description">
-                                                    <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                    <div class="icons">
-                                                        <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                        <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="empty-space col-xs-b60"></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-shortcode style-1 text-center">
-                                                <div class="title">
-                                                    <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                    <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                                </div>
-                                                <div class="preview">
-                                                    <img src="img/product-26.jpg" alt="">
-                                                    <div class="preview-buttons valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <a class="button size-2 style-2" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                    <span class="text">Learn More</span>
-                                                                </span>
-                                                            </a>
-                                                            <a class="button size-2 style-3" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                    <span class="text">Add To Cart</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="simple-article size-4 dark">$950.00</div>
-                                                </div>
-                                                <div class="description">
-                                                    <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                    <div class="icons">
-                                                        <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                        <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="empty-space col-xs-b60"></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-shortcode style-1 text-center">
-                                                <div class="title">
-                                                    <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                    <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                                </div>
-                                                <div class="preview">
-                                                    <img src="img/product-25.jpg" alt="">
-                                                    <div class="preview-buttons valign-middle">
-                                                        <div class="valign-middle-content">
-                                                            <a class="button size-2 style-2" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                                    <span class="text">Learn More</span>
-                                                                </span>
-                                                            </a>
-                                                            <a class="button size-2 style-3" href="#">
-                                                                <span class="button-wrapper">
-                                                                    <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                                    <span class="text">Add To Cart</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="simple-article size-4 dark">$950.00</div>
-                                                </div>
-                                                <div class="description">
-                                                    <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                    <div class="icons">
-                                                        <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                        <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="empty-space col-xs-b60"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-
-                                <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                            </div>
-                            <div class="col-sm-6 col-md-12">
-                                <div class="h4 col-xs-b25">latest post</div>
-                                <div class="row m5 text-center">
-                                    <div class="blog-shortcode style-1">
-                                        <a href="#" class="preview simple-mouseover"><img src="img/thumbnail-12.jpg" alt="" /></a>
-                                        <div class="description">
-                                            <div class="simple-article size-1 grey col-xs-b5">APR 07 / 15 &nbsp;&nbsp;&nbsp;<a href="#" class="color">GADGETS</a></div>
-                                            <h6 class="h6 col-xs-b10"><a href="#">Phasellus rhoncus in</a></h6>
-                                            <div class="simple-article size-2">Etiam mollis tristique mi ac ultrices. Morbi vel neque eget lacus</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="blog-shortcode style-1">
-                                        <a href="#" class="preview simple-mouseover"><img src="img/thumbnail-13.jpg" alt="" /></a>
-                                        <div class="description">
-                                            <div class="simple-article size-1 grey col-xs-b5">APR 07 / 15 &nbsp;&nbsp;&nbsp;<a href="#" class="color">GADGETS</a></div>
-                                            <h6 class="h6 col-xs-b10"><a href="#">Phasellus rhoncus in</a></h6>
-                                            <div class="simple-article size-2">Etiam mollis tristique mi ac ultrices. Morbi vel neque eget lacus</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
+           
+                </div> 
+            </div>
+            </div>
+        </div>
             </div>
         </div>
      

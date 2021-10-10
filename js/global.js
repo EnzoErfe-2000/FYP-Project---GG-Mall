@@ -320,20 +320,11 @@ $(function() {
     $(document).on('click', '.quantity-select .minus', function(){
     	var newValue = parseInt($(this).parent().find('.number').text(), 10);
     	$(this).parent().find('.number').text(newValue>1?(newValue-1):newValue);
-		
-		//Decrement inputs
-    	var newValue = parseInt($(this).parent().find('.numInput').val());
-    	$(this).parent().find('.numInput').val(newValue>1?(newValue-1):newValue);
     });
 
     $(document).on('click', '.quantity-select .plus', function(){
     	var newValue = parseInt($(this).parent().find('.number').text(), 10);
     	$(this).parent().find('.number').text(newValue+1);
-		
-		//Increment inputs
-    	var newValue = parseInt($(this).parent().find('.numInput').val());
-		var stockLimit = $('.productStock');
-    	$(this).parent().find('.numInput').val(newValue<(parseInt(stockLimit.text(),10))?(newValue+1):newValue);
     });
 
     //rating

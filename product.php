@@ -125,7 +125,7 @@ include_once 'include/header.php';
                             </div>
                             <div class="col-sm-6 col-sm-text-right">
                                 <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey"><?php if($product['product_availability'] == 0){ echo 'YES';}else{echo 'NO';}?></span></div>
-								<div class="simple-article size-3 col-xs-b20">STOCK : <span class="productStock color"><?=$product['product_stock']?></span></div>
+								<div class="simple-article size-3 col-xs-b20">STOCK : <span class="color"><?=$product['product_stock']?></span></div>
                             </div>
                         </div>
                         <div class="simple-article size-3 col-xs-b30">
@@ -140,15 +140,16 @@ include_once 'include/header.php';
                                 </div>
 								<div class="col-sm-9">
 									<div class="quantity-select">
-										<button type="button" class="minus" style="border:none;"></button>
-										<input class="numInput" style="font-weight:bold;margin:0;" type="number" name="product_quantity" id="product_quantity" value="1" min=1 max=<?=$product['product_stock']?>>
-										<button type="button" class="plus" style="border:none;"></button>
+										<span class="minus"></span>
+										<span class="number" name="product_quantity">1</span>
+										<input type="hidden" name="product_quantity" id="product_quantity" value="not yet defined">
+										<span class="plus"></span>
 									</div>
 								</div>
 							</div>
 							<div class="row m5 col-xs-b40">
 								<div class="col-sm-6">
-									<button type="button" class="button size-2 style-1 block noshadow" href="#">
+									<button class="button size-2 style-1 block noshadow" href="#">
 										<span class="button-wrapper">
 											<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
 											<span class="text">add to favourites</span>
