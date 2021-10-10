@@ -31,6 +31,32 @@ if(isset($_SESSION['cart']))
         $subtotal += (float)$order['product_listedPrice'] * (int)$products_in_cart[$order['product_id']];
 		}
 	}
+	
+	$sql = "SELECT * FROM customer WHERE customer_id = ?;";
+		
+		$stmt = mysqli_stmt_init($conn);
+	
+		if(!mysqli_stmt_prepare($stmt, $sql)){
+			//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+			mysqli_close($conn);
+		}
+		else
+		{
+			//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		}
+		
+		mysqli_stmt_bind_param($stmt, "s", $_SESSION["customer_id"]);
+		mysqli_stmt_execute($stmt);
+		
+		$resultData = mysqli_stmt_get_result($stmt);
+		$row = mysqli_fetch_assoc($resultData);
+		$num = count($row);
+		//echo "<script type='text/javascript'>alert('$num');</script>";
+		/*<?=$row['customer_name_first']?>*/
+}
+else
+{
+	echo "<script> location.assign('index.php');</script>";
 }
 ?>
 <div class="header-empty-space"></div>
@@ -63,11 +89,11 @@ if(isset($_SESSION['cart']))
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="First name" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_first]";}else{echo "";}?>" placeholder="First name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Last name" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_last]";}else{echo "";}?>" placeholder="Last name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
@@ -75,40 +101,42 @@ if(isset($_SESSION['cart']))
                     <input class="simple-input" type="text" value="" placeholder="Company name" />
                     <div class="empty-space col-xs-b20"></div>
 					-->
-                    <input class="simple-input" type="text" value="" placeholder="Street address" />
+                    <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Unit No." />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_unit]";}else{echo "";}?>" placeholder="Unit No." />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Town/City" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_city]";}else{echo "";}?>" placeholder="Town/City" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="State/Country" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_state]";}else{echo "";}?>" placeholder="State" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Postcode/ZIP" />
+						    <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_country]";}else{echo "";}?>" placeholder="Country" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Email" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_postcodeZIP]";}else{echo "";}?>" placeholder="Postcode/ZIP" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input class="simple-input" type="text" value="" placeholder="Phone" />
+                            <input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_phone]";}else{echo "";}?>" placeholder="Phone" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
+					<input class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
+                    <div class="empty-space col-xs-b20"></div>
                     <label class="checkbox-entry">
-                        <input type="checkbox" checked><span>Privacy policy agreement</span>
+                        <input type="checkbox" required><span>Privacy policy agreement</span>
                     </label>
                     <div class="empty-space col-xs-b50"></div>
 					<!--
@@ -168,7 +196,7 @@ if(isset($_SESSION['cart']))
                     <div style="max-height:440px; overflow-y:auto">
 					<?php foreach ($orderList as $order): ?>
 					<div class="cart-entry clearfix">
-                        <a class="cart-entry-thumbnail" href="product.php?product=<?=$order['product_id']?>""><img src="product_img/<?=$order['product_img']?>" alt=""></a>
+                        <a class="cart-entry-thumbnail" href="product.php?product=<?=$order['product_id']?>"><img src="product_img/<?=$order['product_img']?>" alt=""></a>
                         <div class="cart-entry-description">
                             <table>
                                 <tbody>

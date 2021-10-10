@@ -6,14 +6,6 @@ This is our group's FYP Project
 
 REMEMBER: Clone this repository into you xampp/htdocs folder. 
 
-## Website Template Link
-Documentation - https://elements.envato.com/exzo-electronics-ecommerce-html-template-NTRWY8 <br />
-Live Demo     - http://unionagency.one/exzo/index1.html
-
-## GG Mall Documents
-GG Mall - https://docs.google.com/spreadsheets/d/1g7GdN9HwAZXWJOoJl7aYtedNskDNoelIYgnlokG5pzk/edit#gid=1032506543 <br />
-Admin Dashboard     - https://docs.google.com/document/d/13XjAF3ktEJtleU9n1eWBpzZFIlzbmhS3n9pKggAll_E/edit
-
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
@@ -96,3 +88,8 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+## Website Template Link
+Documentation - https://elements.envato.com/exzo-electronics-ecommerce-html-template-NTRWY8 <br />
+Live Demo     - http://unionagency.one/exzo/index1.html
+
