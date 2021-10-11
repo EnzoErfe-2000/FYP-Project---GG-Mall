@@ -3,9 +3,9 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
 ?>
 <?php
-if (isset($_POST['placeOrder'])) {
-	echo "<script> location.assign('successful_checkout.html');</script>";
-}
+//if (isset($_POST['placeOrder'])) {
+	//echo "<script> location.assign('successful_checkout.php');</script>";
+//}
 
 if(isset($_SESSION['cart']))
 {
@@ -83,58 +83,60 @@ else
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
-		<form action="checkout.php" method="post" onsubmit="return validateForm();" name="orderForm">
+		<form action="successful_checkout.php" method="post" onsubmit="return validateForm();" name="orderForm">
             <div class="row">
 				<div class="col-md-6 col-xs-b50 col-md-b0">
 					<h4 class="h4 col-xs-b25">billing details</h4>
+					<!--
 					<select class="SlectBox" required>
                         <option value="" disabled="disabled">Choose country</option>
                         <option value="malaysia" selected="selected">Malaysia</option>
                     </select>
+					-->
 					<div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_first]";}else{echo "";}?>" placeholder="First name" />
+                            <input required name="firstName" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_first]";}else{echo "";}?>" placeholder="First name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_last]";}else{echo "";}?>" placeholder="Last name" />
+                            <input required name="lastName" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_name_last]";}else{echo "";}?>" placeholder="Last name" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
+					<input required name="streetAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_unit]";}else{echo "";}?>" placeholder="Unit No." />
+                            <input required name="unitAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_unit]";}else{echo "";}?>" placeholder="Unit No." />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_city]";}else{echo "";}?>" placeholder="Town/City" />
+                            <input required name="towncityAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_city]";}else{echo "";}?>" placeholder="Town/City" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
 					<div class="row m10">
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_state]";}else{echo "";}?>" placeholder="State" />
+                            <input required name="stateAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_state]";}else{echo "";}?>" placeholder="State" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-						    <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_country]";}else{echo "";}?>" placeholder="Country" />
+						    <input required name="countryAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_country]";}else{echo "";}?>" placeholder="Country" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
 					<div class="row m10">
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_postcodeZIP]";}else{echo "";}?>" placeholder="Postcode/ZIP" />
+                            <input required name="postzipAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_postcodeZIP]";}else{echo "";}?>" placeholder="Postcode/ZIP" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                         <div class="col-sm-6">
-                            <input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_phone]";}else{echo "";}?>" placeholder="Phone" />
+                            <input required name="phone" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_phone]";}else{echo "";}?>" placeholder="Phone" />
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<input required class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
+					<input required name="email" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
 					<div class="col-sm-6">
@@ -147,7 +149,7 @@ else
                     </div>
 					</div>
                     <div class="empty-space col-xs-b50"></div>
-					<textarea class="simple-input" placeholder="Note about your order"></textarea>
+					<textarea name="note" class="simple-input" placeholder="Note about your order"></textarea>
 				</div>
 				<div class="col-md-6">
 					<h4 class="h4 col-xs-b25">your order</h4>

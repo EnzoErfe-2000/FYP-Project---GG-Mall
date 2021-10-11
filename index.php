@@ -29,7 +29,7 @@ include_once 'include/header.php';
                                         </div>
                                         <div data-swiper-parallax-x="-300">
                                             <div class="buttons-wrapper">
-                                                <a class="button size-2 style-2" href="/fyp-project/products/Acer_Nitro_5_AN515-45-R7QR_15.6″_Gaming_Laptop_Black.php">
+                                                <a class="button size-2 style-2" href="/fyp-project/product.php?product=10023">
                                                     <span class="button-wrapper">
                                                         <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                         <span class="text">Learn More</span>
