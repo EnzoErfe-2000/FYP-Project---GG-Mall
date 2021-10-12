@@ -4,22 +4,10 @@ include_once 'include/header.php';
 ?>
 <?php
 if (isset($_POST['firstName'])) {
-	$name = $_POST['firstName'];
-	echo "<script type='text/javascript'>alert('$name');</script>";
+	//$name = $_POST['firstName'];
+	//echo "<script type='text/javascript'>alert('$name');</script>";
 	
-	//CREATE ORDER
-	
-	//CREATE ORDER DETAILS
-}
-if (isset($_POST['note'])) {
-	$note = $_POST['note'];
-	echo "<script type='text/javascript'>alert('$note');</script>";
-}
-if (isset($_SESSION['cart'])) {
-	$num = count($_SESSION['cart']);
-	echo "<script type='text/javascript'>alert($num);</script>";
-}
-// GET LASTEST ID FROM A TABLE
+	// GET LASTEST ID FROM A TABLE
 	$sql = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -34,9 +22,47 @@ if (isset($_SESSION['cart'])) {
 	mysqli_stmt_bind_param($stmt, "ss", $dBName, $tableName);	
 	mysqli_stmt_execute($stmt);
 	$resultlastId = mysqli_stmt_get_result($stmt);
-	$lastId = mysqli_fetch_assoc($resultlastId);
-	echo "<script type='text/javascript'>alert('$lastId[AUTO_INCREMENT]');</script>";
+	$lastId = mysqli_fetch_assoc($resultlastId)['AUTO_INCREMENT'];
+	echo "<script type='text/javascript'>alert('$lastId');</script>";
 	//
+	
+	$custID = $_SESSION['customer_id'];
+	echo "<script type='text/javascript'>alert('$custID');</script>";
+	
+	$note = $_POST['note'];
+	echo "<script type='text/javascript'>alert('$note');</script>";
+
+	$status = "Ongoing";
+	echo "<script type='text/javascript'>alert('$status');</script>";
+
+	$total = number_format($_SESSION['cartTotal'],2,'.','');
+	echo "<script type='text/javascript'>alert('$total');</script>";
+	
+	
+	
+	//CREATE ORDER
+	$sql = "INSERT INTO orders (orders_id, orders_customerId, orders_comment, orders_status, orders_total) VALUES ('$lastId', '$custID', '$note', '$status', '$total')";
+	$stmt = mysqli_stmt_init($conn);
+	if (mysqli_query($conn, $sql)) 
+    {
+		echo "<script type='text/javascript'>alert('Order successfully created!');</script>";
+	}
+	else 
+	{
+		echo "
+			<script>
+				alert('Error: " . $sql . "\n" . mysqli_error($conn) . "');
+			</script>";
+    }
+	//
+	
+	//CREATE ORDER DETAILS
+}
+if (isset($_SESSION['cart'])) {
+	$num = count($_SESSION['cart']);
+	echo "<script type='text/javascript'>alert($num);</script>";
+}
+
 ?>
         <div class="header-empty-space"></div>
 

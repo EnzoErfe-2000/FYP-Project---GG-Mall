@@ -34,6 +34,7 @@ if(isset($_SESSION['cart']))
 		foreach ($orderList as $order) {
         $subtotal += (float)$order['product_listedPrice'] * (int)$products_in_cart[$order['product_id']];
 		}
+		$_SESSION['cartTotal'] =$subtotal;
 	}
 	
 	$sql = "SELECT * FROM customer WHERE customer_id = ?;";
@@ -187,7 +188,7 @@ else
                                 cart subtotal
                             </div>
                             <div class="col-xs-6 col-xs-text-right">
-                                <div class="color">RM <?=number_format($subtotal,2,".",",")?></div>
+                                <div class="color" style="font-weight:bold;">RM <?=number_format($subtotal,2,".",",")?></div>
                             </div>
                         </div>
                     </div>
@@ -207,7 +208,7 @@ else
                                 order total
                             </div>
                             <div class="col-xs-6 col-xs-text-right">
-                                <div class="color"> RM <?=number_format($subtotal,2,".",",")?></div>
+                                <div class="color" style="font-weight:bold;"> RM <?=number_format($subtotal,2,".",",")?></div>
                             </div>
                         </div>
                     </div>
