@@ -57,11 +57,58 @@ if (isset($_POST['firstName'])) {
 	//
 	
 	//CREATE ORDER DETAILS
+	if (isset($_SESSION['cart'])) {
+		$num = count($_SESSION['cart']);
+		echo "<script type='text/javascript'>alert($num);</script>";
+		
+		$products_in_cart = array_keys($_SESSION['cart']);
+		
+		//echo "<script type='text/javascript'>alert('".implode(',', array_keys($products_in_cart))."');</script>";
+		for($i =0; $i < $num; $i++)
+		{
+			$currentProdId = $products_in_cart[$i];
+			$currentProdQuantity = $_SESSION['cart'][$currentProdId];
+			echo "Current prod id : $currentProdId <br>";
+			echo "Current prod quantity : $currentProdQuantity <br>";
+			
+			$sql = "SELECT product_listedPrice FROM product WHERE product_id = $currentProdId";
+			$stmt = mysqli_stmt_init($conn);
+			if(!mysqli_stmt_prepare($stmt, $sql)){
+				//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+				mysqli_close($conn);
+			}
+			else
+			{
+				//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+			}
+			
+			mysqli_stmt_execute($stmt);
+			$result = mysqli_stmt_get_result($stmt);
+			$resultArray = mysqli_fetch_assoc($result);
+			$resultListedPrice = $resultArray['product_listedPrice'];
+			echo "Current prod subtotal : $resultListedPrice <br>";
+			
+			$currentProdSubTotal = $currentProdQuantity * $resultListedPrice;
+			
+			$sql = "INSERT INTO orderDetail (ordersDetail_ordersId, ordersDetail_productId, ordersDetail_quantity, ordersDetail_subtotal) VALUES ('$lastId', '$currentProdId', '$currentProdQuantity', '$currentProdSubTotal')";
+			$stmt = mysqli_stmt_init($conn);
+			if (mysqli_query($conn, $sql)) 
+			{
+				echo "<script type='text/javascript'>alert('Order successfully created!');</script>";
+			}
+			else 
+			{
+				echo "
+					<script>
+						alert('Error: " . $sql . "\n" . mysqli_error($conn) . "');
+					</script>";
+			}
+			
+		}
+	}
+	
 }
-if (isset($_SESSION['cart'])) {
-	$num = count($_SESSION['cart']);
-	echo "<script type='text/javascript'>alert($num);</script>";
-}
+
 
 ?>
         <div class="header-empty-space"></div>

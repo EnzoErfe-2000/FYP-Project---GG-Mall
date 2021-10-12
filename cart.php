@@ -118,6 +118,7 @@ if ($products_in_cart) {
 	//$stmt = $pdo->prepare('SELECT * FROM products WHERE id IN (' . $array_to_question_marks . ')');
     
 	//$sql = "SELECT * FROM product WHERE product_id IN (10004);";
+	//echo "<script type='text/javascript'>alert('".implode(',', array_keys($products_in_cart))."');</script>";
 	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
 	//echo "<script type='text/javascript'>alert('$sql');</script>";
 	
