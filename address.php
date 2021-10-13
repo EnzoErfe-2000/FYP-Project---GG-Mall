@@ -4,6 +4,7 @@ include_once 'include/header.php';
 require_once 'include/dbh-inc.php';
 
 $unit = $street = $country = $state = $postcode = "";
+$postcodeerr = "";
 
 if(isset($_POST['submittt']))
 {
@@ -12,7 +13,16 @@ if(isset($_POST['submittt']))
     $country = $_POST['country'];
     $state = $_POST['state'];
     $postcode = $_POST['postcode'];
-    $sql = "
+    $number = preg_match('@[0-9]@', $postcode);
+
+    if(!$number)
+    {
+        $postcodeerr = "Please enter a valid postcode.";
+    }
+
+    if(empty($postcodeerr))
+    {
+        $sql = "
         UPDATE address SET 
         unit_no = '".$_POST["unit"]."', 
         street_address = '". $_POST["street"]."', 
@@ -21,21 +31,23 @@ if(isset($_POST['submittt']))
         postcode = '".$_POST["postcode"]."'
         WHERE customer_id = ". $_SESSION['customer_id'];
 
-    if(mysqli_query($conn, $sql))
-    {
-        echo "
-        <script> 
-            alert('Updated Successfully');
-            location.assign('/fyp-project/address.php');
-        </script>";
+        if(mysqli_query($conn, $sql))
+        {
+            echo "
+            <script> 
+                alert('Updated Successfully');
+                location.assign('/fyp-project/address.php');
+            </script>";
+        }
+        else
+        {
+            echo"
+            <script> 
+                alert('Something went wrong');
+            </script>";
+        }
     }
-    else
-    {
-        echo"
-        <script> 
-            alert('Something went wrong');
-        </script>";
-    }
+   
 }
 ?>
 
@@ -124,7 +136,8 @@ if(isset($_POST['submittt']))
                                                 </div>
                                                 <div class="form-group" style="margin-left:15px;">
                                                     <label for="input-postcode" class="control-label">Postcode</label>
-                                                    <input class="simple-input" name="postcode" type="text" placeholder="Postcode" value="<?php echo $postcode?>" />
+                                                    <input class="simple-input" name="postcode" type="text" maxlength="5" placeholder="Postcode" value="<?php echo $postcode?>" />
+                                                    <span class="invalid-feedback" style="color: red;"><?php echo $postcodeerr; ?></span>
                                                     <div class="empty-space col-xs-b20"></div>
                                                 </div>
                                                 <div class="row" style="margin-left:10px;">
