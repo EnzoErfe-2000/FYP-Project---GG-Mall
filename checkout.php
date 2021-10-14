@@ -7,8 +7,13 @@ include_once 'include/header.php';
 	//echo "<script> location.assign('successful_checkout.php');</script>";
 //}
 
-if(isset($_SESSION['cart']))
+//PREVENT RANDOM ACCESS BY GUEST
+$uri=$_SERVER['HTTP_REFERER'];
+if($uri == "http://localhost/fyp-project/cart.php" || $_SESSION['checkout'] == 1)
 {
+	$_SESSION['checkout'] = 1;
+	if(isset($_SESSION['cart']))
+	{
 	$products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 	$products = array();
 	$subtotal = 0.00;
@@ -55,13 +60,14 @@ if(isset($_SESSION['cart']))
 		
 		$resultData = mysqli_stmt_get_result($stmt);
 		$row = mysqli_fetch_assoc($resultData);
-		$num = count($row);
+		//$num = count($row);
 		//echo "<script type='text/javascript'>alert('$num');</script>";
 		/*<?=$row['customer_name_first']?>*/
+	}
 }
 else
 {
-	echo "<script> location.assign('index.php');</script>";
+	echo "<script> location.assign('cart.php');</script>";
 }
 ?>
 <div class="header-empty-space"></div>
@@ -84,7 +90,7 @@ else
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
-		<form action="successful_checkout.php" method="post" onsubmit="return validateForm();" name="orderForm">
+		<form action="<?php if(isset($_SESSION['customer_name'])){echo "successful_checkout.php";}?>" method="post" onsubmit="return validateForm();" name="orderForm" id="orderForm">
             <div class="row">
 				<div class="col-md-6 col-xs-b50 col-md-b0">
 					<h4 class="h4 col-xs-b25">billing details</h4>
@@ -138,8 +144,9 @@ else
                         </div>
                     </div>
 					<input required name="email" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
-                    <div class="empty-space col-xs-b20"></div>
-                    <div class="row m10">
+                    <!--
+					<div class="empty-space col-xs-b20"></div>
+					<div class="row m10">
 					<div class="col-sm-6">
 					<label class="checkbox-entry">
                         <input type="checkbox" name="privacyCheck" id="privacyCheck"><span>Privacy policy agreement
@@ -149,7 +156,8 @@ else
 						<div id="error" class="simple-article size-3 color" style="font-family:'Raleway', sans-serif;"></div></span>
                     </div>
 					</div>
-                    <div class="empty-space col-xs-b50"></div>
+					-->
+                    <div class="empty-space col-xs-b30"></div>
 					<textarea name="note" class="simple-input" placeholder="Note about your order"></textarea>
 				</div>
 				<div class="col-md-6">
@@ -182,6 +190,7 @@ else
                     </div>
 					<?php endforeach; ?>
 					</div>
+					<!--
 					<div class="order-details-entry simple-article size-3 grey uppercase">
                         <div class="row">
                             <div class="col-xs-6">
@@ -202,6 +211,7 @@ else
                             </div>
                         </div>
                     </div>
+					-->
                     <div class="order-details-entry simple-article size-3 grey uppercase">
                         <div class="row">
                             <div class="col-xs-6">
@@ -212,26 +222,66 @@ else
                             </div>
                         </div>
                     </div>
+					<div class="empty-space col-xs-b50"></div>
+                    <h4 class="h4 col-xs-b25">delivery options</h4>
+					<select class="SlectBox" name='delivery' required>
+						<option selected="selected" value="">Select courier service</option>
+						<option value="POSLaju">POS Laju</option>
+						<option value="FedEx">FedEx</option>
+						<option value="DHL">DHL</option>
+								
+					</select>
                     <div class="empty-space col-xs-b50"></div>
                     <h4 class="h4 col-xs-b25">payment method</h4>
-                    <select class="SlectBox">
-                        <option selected="selected">PayPal</option>
-                        <!--
-						<option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-						-->
-                    </select>
+					<div class="selectWrapper">
+						<div class="payMethod_menu">
+						<select class="SlectBox payMethodSlct" name="payMethod" required>
+							<option selected="selected" value="">Select payment method</option>
+							<option value="Card">Card (Credit/Debit)</option>
+							<!--
+							<option value="saab">Saab</option>
+							<option value="mercedes">Mercedes</option>
+							<option value="audi">Audi</option>
+							-->
+						</select>
+						</div>
+						<div class="payMethod_content">
+							<div id="Card" class="payMethod_content_data" style="display:none">
+								<div class="empty-space col-xs-b50"></div>
+								<h4 class="h4 col-xs-b25">Credit</h4>
+								<div class="row">
+								<div class="col-xs-6">
+								<label class="checkbox-entry radio">
+									<input class="cardRadio" type="radio" name="cardChoice" value="Credit_Visa"><span>VISA</span></input>
+								</label>
+								</div>
+								<div class="col-xs-6">
+								<label class="checkbox-entry radio">
+									<input class="cardRadio" type="radio" name="cardChoice" value="Credit_MasterCard"><span>Master Card</span></input>
+								</label>
+								</div>
+								</div>
+								<div class="empty-space col-xs-b25"></div>
+								<h4 class="h4 col-xs-b25">Debit</h4>
+								<label class="checkbox-entry radio">
+									<input class="cardRadio" type="radio" name="cardChoice" value="Debit_Visa"><span>VISA</span></input>
+								</label>
+								<div class="empty-space col-xs-b25"></div>
+							</div>
+							
+						</div>
+					</div>
+					<div style="">
                     <div class="empty-space col-xs-b10"></div>
                     <div class="simple-article size-2">* The following page may redirect you to another page based on your selected payment method</div>
                     <div class="empty-space col-xs-b30"></div>
-                    <button class="button block size-2 style-3 noshadow" type="submit" onclick="validate()" value="placeOrder" name="placeOrder">
+                    <button class="button block size-2 style-3 noshadow placeOrderBtn" style="width:100%" type="submit" onclick="<?php if(isset($_SESSION['customer_name'])){echo "validate();";}else{echo "validateRegister();";}?>" value="placeOrder" name="placeOrder">
                         <span class="button-wrapper">
                             <span class="icon"><img src="img/icon-4.png" alt=""></span>
                             <span class="text">place order</span>
                         </span>
                     </button>
+					</div>
 				</div>
 			</div>
 		</form>
@@ -272,4 +322,52 @@ function validateForm() {
 	return false;
   }
 }
+
+function validateRegister()
+{
+	var infoCheck = 0, privacyCheck = 0;
+	var val = document.getElementById("privacyCheck").checked;
+	if(val != true)
+	{
+		//event.preventDefault();
+		document.getElementById("error").innerHTML = "Please read & agree before proceeding";
+	}
+	else
+	{
+		//document.getElementById("orderForm").unbind('submit').submit();
+		document.getElementById("error").innerHTML = "&nbsp;";
+		privacyCheck = 1;
+	}
+	
+	if(infoCheck == 1 && privacyCheck == 1)
+	{
+		$(document).on('click', '.placeOrderBtn', function(e){
+			e.preventDefault();
+			$('.popup-content').removeClass('active');
+			$('.popup-wrapper, .popup-content[data-rel="2"]').addClass('active');
+			$('html').addClass('overflow-hidden');
+			return false;
+		});
+	}
+}
+
+
+$(document).ready(function(){
+	$(".payMethodSlct").on('change', function(){
+		$(".payMethod_content_data").hide();
+		$("#" + $(this).val()).fadeIn(700);
+	}).change();
+});
+
+$(document).on('click', '.cardRadio', function(){
+	if($(this).val()=="credit_visa")
+		$location = "creditCardDetails.php?card=visa";
+	else if($(this).val()=="credit_mastercard")
+		$location = "creditCardDetails.php?card=master";
+	else
+		$location = "successful_checkout.php";
+	//alert("will redirect to" + $location);	
+	$("#orderForm").attr("action", $location);
+});
+
 </script>

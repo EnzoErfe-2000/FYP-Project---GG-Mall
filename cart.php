@@ -100,6 +100,7 @@ if (isset($_POST['checkout'])) {
 	}
 	
 	else {
+		unset($_SESSION['checkout']);
 		echo "<script type='text/javascript'>alert('There are no items in your cart!');</script>";
 	}
 }
@@ -121,7 +122,6 @@ if ($products_in_cart) {
 	//echo "<script type='text/javascript'>alert('".implode(',', array_keys($products_in_cart))."');</script>";
 	$sql = "SELECT * FROM product WHERE product_id IN (".implode(',', array_keys($products_in_cart)).");";
 	//echo "<script type='text/javascript'>alert('$sql');</script>";
-	
 	$stmt = mysqli_stmt_init($conn);
 	
 	if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -154,7 +154,7 @@ if ($products_in_cart) {
     }
 	$_SESSION['cartTotal'] =$subtotal;
 	
-	mysqli_close($conn);
+	//mysqli_close($conn);
 }
 ?>      
 <?php

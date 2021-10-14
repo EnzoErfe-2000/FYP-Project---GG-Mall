@@ -3,6 +3,8 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
 ?>
 <?php
+//PREVENT RANDOM ACCESS BY GUEST
+
 if (isset($_POST['firstName'])) {
 	//$name = $_POST['firstName'];
 	//echo "<script type='text/javascript'>alert('$name');</script>";
@@ -29,6 +31,14 @@ if (isset($_POST['firstName'])) {
 	$custID = $_SESSION['customer_id'];
 	echo "<script type='text/javascript'>alert('$custID');</script>";
 	
+	$custEmail = $_POST['email'];
+	echo "<script type='text/javascript'>alert('$custEmail');</script>";
+	
+	$addressArr = array($_POST['unitAdr'], $_POST['streetAdr'],$_POST['towncityAdr'],$_POST['stateAdr'],$_POST['postzipAdr'],$_POST['countryAdr']);
+	$streetAddress = implode(", ", $addressArr);
+	//$streetAddress = $_POST['streetAdr'];
+	echo "<script type='text/javascript'>alert('Address : $streetAddress');</script>";
+
 	$note = $_POST['note'];
 	echo "<script type='text/javascript'>alert('$note');</script>";
 
@@ -38,10 +48,17 @@ if (isset($_POST['firstName'])) {
 	$total = number_format($_SESSION['cartTotal'],2,'.','');
 	echo "<script type='text/javascript'>alert('$total');</script>";
 	
+	$delivery = $_POST['delivery'];
+	echo "<script type='text/javascript'>alert('Delivery : $delivery');</script>";
 	
+	$test = $_POST['cardChoice'];
+	echo "<script type='text/javascript'>alert('Delivery : $test');</script>";
+	
+	$payMethod = implode("_", array($_POST['payMethod'], $_POST['cardChoice']));
+	echo "<script type='text/javascript'>alert('Pay method : $payMethod');</script>";
 	
 	//CREATE ORDER
-	$sql = "INSERT INTO orders (orders_id, orders_customerId, orders_comment, orders_status, orders_total) VALUES ('$lastId', '$custID', '$note', '$status', '$total')";
+	$sql = "INSERT INTO orders (orders_id, orders_customerId, orders_email, orders_shippingAddress, orders_comment, orders_status, orders_total, orders_deliveryMethod, orders_payMethod) VALUES ('$lastId', '$custID', '$custEmail', '$streetAddress', '$note', '$status', '$total', '$delivery', '$payMethod')";
 	$stmt = mysqli_stmt_init($conn);
 	if (mysqli_query($conn, $sql)) 
     {
@@ -90,7 +107,7 @@ if (isset($_POST['firstName'])) {
 			
 			$currentProdSubTotal = $currentProdQuantity * $resultListedPrice;
 			
-			$sql = "INSERT INTO orderDetail (ordersDetail_ordersId, ordersDetail_productId, ordersDetail_quantity, ordersDetail_subtotal) VALUES ('$lastId', '$currentProdId', '$currentProdQuantity', '$currentProdSubTotal')";
+			$sql = "INSERT INTO ordersDetail (ordersDetail_ordersId, ordersDetail_productId, ordersDetail_quantity, ordersDetail_subtotal) VALUES ('$lastId', '$currentProdId', '$currentProdQuantity', '$currentProdSubTotal')";
 			$stmt = mysqli_stmt_init($conn);
 			if (mysqli_query($conn, $sql)) 
 			{
