@@ -24,6 +24,7 @@ body{
     background: #f5f6fa;
 }
 
+
 .wrapper .sidebar{
     background: rgb(184,205,7);
     position: fixed;
@@ -31,8 +32,8 @@ body{
     left: 0;
     width: 225px;
     height: 100%;
-    padding: 20px 0;
-    transition: all 0.5s ease;
+    padding-left: 0px;
+    
 }
 .wrapper .sidebar .profile{
     margin-bottom: 30px;
@@ -80,6 +81,10 @@ body{
 .wrapper .sidebar ul li a:hover:before,
 .wrapper .sidebar ul li a.active:before{
     display: block;
+}
+.content {
+  margin-top: 20px;
+  margin-left: 25%;
 }
 </style>
 </head>
