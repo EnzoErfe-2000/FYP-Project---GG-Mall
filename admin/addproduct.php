@@ -1,14 +1,7 @@
 <?php
-include_once '../include/adminsidebar.php';
-include_once '../include/session-db-func.php';
-include_once '../include/dbh-inc.php';
+include_once '../admin/include/adminheader.php';	
 ?>
-<?php
-$link=mysqli_connect("localhost","root","");
-mysqli_select_db($link,"gg_mall");
-?>
-
-	<div class="content">
+<div class="content">
 		<div class="box round first">
 			<h2>Add Product</h2>
 			<div class="block">
@@ -56,6 +49,15 @@ mysqli_select_db($link,"gg_mall");
 				</tr>
 				</table>
 				</form>
+<?php
+include_once 'include/adminfooter.php';	
+?>
+<?php
+$link=mysqli_connect("localhost","root","");
+mysqli_select_db($link,"gg_mall");
+?>
+
+	
 <?php
 if(isset($_POST["submit1"]))
 {
