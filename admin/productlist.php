@@ -1,67 +1,69 @@
 <?php
-include_once '../admin/include/adminheader.php';	
+include_once '../admin/include/adminheader.php';
 ?>
-<div class="container-fluid" id="container-wrapper">
-			  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-					<h1 class="h3 mb-0 text-gray-800">Product List</h1>
-					<ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="./">Home</a></li>
-					  <li class="breadcrumb-item">Product</li>
-					  <li class="breadcrumb-item active" aria-current="page">Product List</li>
-					</ol>
-			  </div>
-		
-		 <!-- Row -->
-          <div class="row">
-            <!-- Datatables -->
-            <div class="col-lg-12">
+<style>
+thead th {
+    font-size: 12px;
+}
+tbody td {
+    font-size: 11px;
+}
+tfoot {
+    font-size: 11px;
+}
+</style>
+		<div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Product List</h6>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Stock [Availability]</th>
+                        <th>Product Description</th>
+                        <th>Price [RM] </th>
                       </tr>
-                    </thead>
-                    <tfoot>
+                    </thead >
+                    <tfoot class="thead-light">
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Stock [Availability]</th>
+                        <th>Product Description</th>
+                        <th>Price [RM]</th>
                       </tr>
                     </tfoot>
                     <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                      </tr>
-                  
                       
+						<?php
+						include_once '../include/dbh-inc.php';
+						$sql = "SELECT * FROM product";
+						$result = $conn->query($sql);
+							while($data = mysqli_fetch_array($result))
+							{
+								echo "<tr>";
+								echo "<td>" . $data['product_id'] . "</td>";
+								echo "<td>" . $data['product_name'] . "</td>";
+								echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
+								echo "<td>" . $data['product_stock'] ."[".$data['product_availability'] ."]". "</td>";
+								echo "<td>" . $data['product_description'] . "</td>";
+								echo "<td>" . $data['product_listedPrice'] . "</td>";
+								echo "</tr>";
+							}
+						?>
+					  
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
-          </div>
-          <!--Row-->
-
-</div>
-
+            
 <?php
 include_once 'include/adminfooter.php';	
 ?>
