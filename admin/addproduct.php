@@ -1,9 +1,17 @@
 <?php
 include_once '../admin/include/adminheader.php';	
 ?>
-<div class="content">
+<div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Add Product</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item">Product</li>
+              <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+            </ol>
+          </div>
+		  <div class="content">
 		<div class="box round first">
-			<h2>Add Product</h2>
 			<div class="block">
 				<form name="form1" action="" method="post" enctype="multipart/form-data">
 				<table border=1>
@@ -49,6 +57,11 @@ include_once '../admin/include/adminheader.php';
 				</tr>
 				</table>
 				</form>
+		  
+		  
+		  
+</div>
+
 <?php
 include_once 'include/adminfooter.php';	
 ?>

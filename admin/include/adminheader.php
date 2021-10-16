@@ -57,8 +57,9 @@
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="productlist.php">Form Basics</a>
-            <a class="collapse-item" href="form_advanceds.php">Form Advanceds</a>
+            <a class="collapse-item" href="productlist.php">Product List</a>
+            <a class="collapse-item" href="addproduct.php">Add Product</a>
+			<a class="collapse-item" href="addcategory.php">Add Category</a>
           </div>
         </div>
       </li>
@@ -66,48 +67,47 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
+          <span>Customer</span>
         </a>
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="simple-tables.php">Simple Tables</a>
-            <a class="collapse-item" href="datatables.php">DataTables</a>
+            <a class="collapse-item" href="customer list.php">Customer List</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ui-colors.php">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>UI Colors</span>
+	  <li class="nav-item">
+        <a class="nav-link" href="salesreport.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Sales Report</span>
         </a>
       </li>
+ 
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        GG Mall
       </div>
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">
           <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
+          <span>User site</span>
         </a>
         <div id="collapsePage" class="collapse show" aria-labelledby="headingPage" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="login.php">Login</a>
-            <a class="collapse-item" href="register.php">Register</a>
-            <a class="collapse-item active" href="404.php">404 Page</a>
-            <a class="collapse-item" href="blank.php">Blank Page</a>
+            <h6 class="collapse-header">Pages</h6>
+            <a class="collapse-item" href="../index.php">Home</a>
+            <a class="collapse-item" href="../register.php">Register</a>
+			<a class="collapse-item" href="../about.php">About us</a>
+			<a class="collapse-item " href="../products.php">Products</a>
+            <a class="collapse-item " href="../services.php">Services</a>
+			<a class="collapse-item " href="../contact.php">Contact</a>
+            <a class="collapse-item" href="../cart.php">Cart</a>
+			<a class="collapse-item" href="../checkout.php">Checkout</a>
+			<a class="collapse-item" href="../error_404.php">404 error</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
+      
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
     </ul>
@@ -224,53 +224,6 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-tasks fa-fw"></i>
-                <span class="badge badge-success badge-counter">3</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Task
-                </h6>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Design Button
-                      <div class="small float-right"><b>50%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Make Beautiful Transitions
-                      <div class="small float-right"><b>30%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Create Pie Chart
-                      <div class="small float-right"><b>75%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
-              </div>
-            </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -279,19 +232,6 @@
                 <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
