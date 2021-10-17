@@ -146,7 +146,7 @@ if ($products_in_cart) {
     }
 	$_SESSION['cartTotal'] =$subtotal;
 	
-	mysqli_close($conn);
+	//mysqli_close($conn);
 }
 ?>      
 <?php
@@ -390,7 +390,7 @@ include_once 'include/header.php';
 						<span class="uppercase color" style="font-weight:bold;font-size:12px">Make sure your cart is updated!</span>
 					</div>
                 </div>
-				</form>
+			</form>
             </div>
 			<div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="empty-space col-xs-b35 col-md-b70"></div>

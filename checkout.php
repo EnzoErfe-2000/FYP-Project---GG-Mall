@@ -132,7 +132,6 @@ if(isset($_SESSION['cart']))
                                 <div class="empty-space col-xs-b20"></div>
                             </div>
                         </div>
-						<!--
                         <input class="simple-input" type="text" value="" placeholder="Company name" />
                         <div class="empty-space col-xs-b20"></div>
 						

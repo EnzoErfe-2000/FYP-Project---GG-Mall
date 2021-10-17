@@ -20,10 +20,10 @@
     {
  
         // Validate email
-        if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) 
+        if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", test_input($_POST["email"])))
         {
             $email_err = "Invalid email format";
-			echo '<script type="text/javascript">alert("wrong format.");</script>';
+			echo '<script type="text/javascript">alert("Invalid email format.");</script>';
         } 
 		else
 		{
@@ -31,6 +31,7 @@
 
             $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
+            
 			if (mysqli_num_rows($result) > 0) 
             {
                 echo '<script type="text/javascript">alert("Email taken.");</script>';
@@ -54,15 +55,28 @@
         }
 		
 		// Validate password
-        if(strlen(trim($_POST["password"])) < 6)
+        $password = $_POST['password'];
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
+
+        if(empty($_POST['password']))
         {
-			echo '<script type="text/javascript">alert("Password must have atleast 6 characters.");</script>';
-        } 
+            $password_err = "Please enter a password";
+            echo '<script type="text/javascript">alert("Please enter a password.");</script>';
+        }
+        else if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8)
+        {
+            $password_err = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
+            echo '<script type="text/javascript">alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");</script>';
+        }
         else
         {
-            $password = ($_POST["password"]);
-			$pwd_chk = 1;
+            $password = $_POST["password"];
+            $pwd_chk = 1;
         }
+        
 		
 		// Validate confirm password
         $confirm_password = $_POST["confirm_password"];
@@ -72,7 +86,12 @@
 			echo '<script type="text/javascript">alert("Password did not match.");</script>';
         }
 		else
-			$cpwd_chk = 1;
+        {
+            $confirm_password = $_POST["confirm_password"];
+            $cpwd_chk = 1;
+        }
+        
+			
 		
 		// Check input errors before inserting in database
         if($email_chk == 1 && $username_chk == 1 && $pwd_chk == 1 && $cpwd_chk == 1)
@@ -80,22 +99,41 @@
 			// Prepare an insert statement
             $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
-            
-            if (mysqli_query($conn, $sql)) 
+            $sqll= "SELECT customer_id from customer where customer_email_address = '$email' and customer_password = '$hashed_pass'";
+
+            if(mysqli_query($conn, $sql))
             {
-                echo "
-                <script>
-                  alert('New account created');
-				  location.assign('/fyp-project/index.php');
-                </script>";
+                if($id=mysqli_query($conn, $sqll))
+                {
+                    while($row=mysqli_fetch_assoc($id))
+                    {
+                        $sql_insert_address = "INSERT INTO address (customer_id) VALUES (" . $row['customer_id'] . ")";
+
+                        if(mysqli_query($conn, $sql_insert_address))
+                        {
+                            echo "
+                                <script>
+                                alert('New account created');
+                                location.assign('/fyp-project/index.php');
+                                </script>";
+                        }
+                        else
+                        {
+                            echo "
+                                <script>
+                                    alert('Error: " . $sql_insert_address . "\n" . mysqli_error($conn) . "')
+                                </script>";
+                        }
+                    }
+                }
             }
             else 
             {
-            echo "
-            <script>
-                alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
-            </script>";
-    
+                echo "
+                <script>
+                    alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
+                </script>";
+        
             }
         }
         // Close connection
@@ -190,8 +228,8 @@
                     <span class="invalid-feedback"><?php echo $email_err; ?></span>
 
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required/>
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" onkeyup="validatepassword(this.value);" value="<?php echo $password; ?>" required/>
+                    <span class="invalid-feedback d-block" id="msg"><?php echo $password_err; ?></span>
 					
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
@@ -511,6 +549,50 @@
 		return false;
 	});
 	</script>
+    <script>
+        function validatepassword(password) {
+        // Do not show anything when the length of password is zero.
+        if (password.length === 0) {
+            document.getElementById("msg").innerHTML = "";
+            return;
+        }
+        // Create an array and push all possible values that you want in password
+        var matchedCase = new Array();
+        matchedCase.push("[$@$!%*#?&]"); // Special Charector
+        matchedCase.push("[A-Z]"); // Uppercase Alpabates
+        matchedCase.push("[0-9]"); // Numbers
+        matchedCase.push("[a-z]"); // Lowercase Alphabates
+
+        // Check the conditions
+        var ctr = 0;
+        for (var i = 0; i < matchedCase.length; i++) {
+            if (new RegExp(matchedCase[i]).test(password)) {
+                ctr++;
+            }
+        }
+        // Display it
+        var color = "";
+        var strength = "";
+        switch (ctr) {
+            case 0:
+            case 1:
+            case 2:
+                strength = "Very Weak";
+                color = "red";
+                break;
+            case 3:
+                strength = "Medium";
+                color = "orange";
+                break;
+            case 4:
+                strength = "Strong";
+                color = "green";
+                break;
+        }
+        document.getElementById("msg").innerHTML = strength;
+        document.getElementById("msg").style.color = color;
+    }
+    </script>
 	
 <!-- MAP -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
