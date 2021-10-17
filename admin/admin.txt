@@ -1,9 +1,0 @@
-admin 
-
-adminhome.php
-orderlist.php
-productlist.php
-addproduct.php
-customerlist.php
-salesreport.php
-adminlist.php
