@@ -90,7 +90,7 @@ else
         <div class="empty-space col-xs-b35 col-md-b70"></div>
 
         <div class="container">
-		<form action="<?php if(isset($_SESSION['customer_name'])){echo "successful_checkout.php";}?>" method="post" onsubmit="return validateForm();" name="orderForm" id="orderForm">
+		<form action="<?php if(isset($_SESSION['customer_name'])){echo "include/createOrder-inc.php";}?>" method="post" onsubmit="return validateForm();" name="orderForm" id="orderForm">
             <div class="row">
 				<div class="col-md-6 col-xs-b50 col-md-b0">
 					<h4 class="h4 col-xs-b25">billing details</h4>
@@ -252,7 +252,7 @@ else
 								<div class="row">
 								<div class="col-xs-6">
 								<label class="checkbox-entry radio">
-									<input class="cardRadio" type="radio" name="cardChoice" value="Credit_Visa"><span>VISA</span></input>
+									<input required class="cardRadio" type="radio" name="cardChoice" value="Credit_Visa"><span>VISA</span></input>
 								</label>
 								</div>
 								<div class="col-xs-6">
@@ -268,7 +268,7 @@ else
 								</label>
 								<div class="empty-space col-xs-b25"></div>
 							</div>
-							
+							<input hidden type="text" class="paymethod" name="paymethod" id="paymethod"value="">
 						</div>
 					</div>
 					<div style="">
@@ -325,21 +325,9 @@ function validateForm() {
 
 function validateRegister()
 {
-	var infoCheck = 0, privacyCheck = 0;
-	var val = document.getElementById("privacyCheck").checked;
-	if(val != true)
-	{
-		//event.preventDefault();
-		document.getElementById("error").innerHTML = "Please read & agree before proceeding";
-	}
-	else
-	{
-		//document.getElementById("orderForm").unbind('submit').submit();
-		document.getElementById("error").innerHTML = "&nbsp;";
-		privacyCheck = 1;
-	}
+	var infoCheck = 1;
 	
-	if(infoCheck == 1 && privacyCheck == 1)
+	if(infoCheck == 1)
 	{
 		$(document).on('click', '.placeOrderBtn', function(e){
 			e.preventDefault();
@@ -360,14 +348,26 @@ $(document).ready(function(){
 });
 
 $(document).on('click', '.cardRadio', function(){
-	if($(this).val()=="credit_visa")
+	if($(this).val()=="Credit_Visa")
+	{
 		$location = "creditCardDetails.php?card=visa";
-	else if($(this).val()=="credit_mastercard")
+	}else if($(this).val()=="Credit_MasterCard")
+	{
 		$location = "creditCardDetails.php?card=master";
-	else
-		$location = "successful_checkout.php";
+	}else
+	{	
+		$location = "include/createOrder-inc.php";
+	}
 	//alert("will redirect to" + $location);	
 	$("#orderForm").attr("action", $location);
 });
 
+$(document).ready(function(){
+	$('.cardRadio').click(function(){
+		//alert($(this).val());
+		//$('.paymethod').val("Card_"+$(this).val());
+		document.getElementById('paymethod').value = "Card_" + $(this).val();
+		//alert($('.paymethod').val());
+	})
+});
 </script>
