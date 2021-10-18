@@ -1,147 +1,3 @@
-<!--Registration Function-->
-<?php
-    require_once 'dbh-inc.php';
-	require_once 'functions-inc.php';
-
-    // Define variables and initialize with empty values
-    $email = $username = $password = $confirm_password = "";
-    $email_err = $username_err = $password_err = $confirm_password_err = "";
-
-    function test_input($data) 
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    // Processing form data when form is submitted
-    if(isset($_POST['submit']))
-    {
- 
-        // Validate email
-        if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", test_input($_POST["email"])))
-        {
-            $email_err = "Invalid email format";
-			echo '<script type="text/javascript">alert("Invalid email format.");</script>';
-        } 
-		else
-		{
-			// Prepare a select statement
-
-            $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
-            $result = mysqli_query($conn, $sql);
-            
-			if (mysqli_num_rows($result) > 0) 
-            {
-                echo '<script type="text/javascript">alert("Email taken.");</script>';
-            } 
-            else 
-            {
-                $email = test_input($_POST["email"]);
-				$email_chk = 1;
-            }
-		}
-		
-		// Validate username
-        if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
-        {
-			echo '<script type="text/javascript">alert("Username can only contain letters, numbers, and underscores.");</script>';
-        } 
-        else
-        {
-            $username = ucwords(test_input($_POST["username"]));
-			$username_chk = 1;
-        }
-		
-		// Validate password
-        $password = $_POST['password'];
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-        $specialChars = preg_match('@[^\w]@', $password);
-
-        if(empty($_POST['password']))
-        {
-            $password_err = "Please enter a password";
-            echo '<script type="text/javascript">alert("Please enter a password.");</script>';
-        }
-        else if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8)
-        {
-            $password_err = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-            echo '<script type="text/javascript">alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");</script>';
-        }
-        else
-        {
-            $password = $_POST["password"];
-            $pwd_chk = 1;
-        }
-        
-		
-		// Validate confirm password
-        $confirm_password = $_POST["confirm_password"];
-
-        if($password != $confirm_password)
-        {
-			echo '<script type="text/javascript">alert("Password did not match.");</script>';
-        }
-		else
-        {
-            $confirm_password = $_POST["confirm_password"];
-            $cpwd_chk = 1;
-        }
-        
-			
-		
-		// Check input errors before inserting in database
-        if($email_chk == 1 && $username_chk == 1 && $pwd_chk == 1 && $cpwd_chk == 1)
-        {
-			// Prepare an insert statement
-            $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO customer (customer_email_address, customer_name, customer_password ) VALUES ('$email', '$username', '$hashed_pass')";
-            $sqll= "SELECT customer_id from customer where customer_email_address = '$email' and customer_password = '$hashed_pass'";
-
-            if(mysqli_query($conn, $sql))
-            {
-                if($id=mysqli_query($conn, $sqll))
-                {
-                    while($row=mysqli_fetch_assoc($id))
-                    {
-                        $sql_insert_address = "INSERT INTO address (customer_id) VALUES (" . $row['customer_id'] . ")";
-
-                        if(mysqli_query($conn, $sql_insert_address))
-                        {
-                            echo "
-                                <script>
-                                alert('New account created');
-                                location.assign('/fyp-project/index.php');
-                                </script>";
-                        }
-                        else
-                        {
-                            echo "
-                                <script>
-                                    alert('Error: " . $sql_insert_address . "\n" . mysqli_error($conn) . "')
-                                </script>";
-                        }
-                    }
-                }
-            }
-            else 
-            {
-                echo "
-                <script>
-                    alert('Error: " . $sql . "\n" . mysqli_error($conn) . "')
-                </script>";
-        
-            }
-        }
-        // Close connection
-        mysqli_close($conn);
-    }
-
-?>
-
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
         <div class="popup-content" data-rel="1">
@@ -215,26 +71,24 @@
             <div class="popup-container size-1">
                 <div class="popup-align">
                     <form 
-                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); /* $_SERVER["PHP_SELF"] Returns the filename of the currently executing script */ ?>" 
+                    action="/fyp-project/include/register-inc.php" 
                     method="post"
                     style="text-align: left">
+					
+					<?php $email = $username = $password = $confirm_password = "";?>
                     <h3 class="h3 text-center">register</h3>
                     <div class="empty-space col-xs-b30"></div>
-                    <input type="text" placeholder="Your name" name="username" class="simple-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> "value="<?php echo $username; ?>" required/>
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
-
+                    <input type="text" placeholder="Your name" name="username" class="simple-input" value="<?php echo $username; ?>" required />
+                    
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="email" placeholder="Your email" name="email" class="simple-input <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" required/>
-                    <span class="invalid-feedback"><?php echo $email_err; ?></span>
-
+                    <input type="email" placeholder="Your email" name="email" class="simple-input" value="<?php echo $email; ?>" required />
+                    
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" onkeyup="validatepassword(this.value);" value="<?php echo $password; ?>" required/>
-                    <span class="invalid-feedback d-block" id="msg"><?php echo $password_err; ?></span>
-					
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input" value="<?php echo $password; ?>" required />
+                   
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required/>
-                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-
+                    <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input" value="<?php echo $confirm_password; ?>" required />
+                    
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <div class="row">
                         <div class="col-sm-7 col-xs-b10 col-sm-b0">
