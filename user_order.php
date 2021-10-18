@@ -47,16 +47,16 @@ include_once 'include/header.php';
                     <div class="dashboard">
                         <div class="row">
                             <div class="col-xl-8 col-md-8">
-                                <h4 class="accounttitle">Check Orders</h4>
+                                <h4 class="accounttitle h4 col-xs-b25">Check Orders</h4>
                                 <div class="container">
                                     <table class="cart-table">
                                         <thead>
                                             <tr>
-                                                <th style="width: 150px;">orders</th>
-                                                <th style="width: 150px; text-align:center;">date</th>
+                                                <th style="width: 150px;">order id</th>
+                                                <th style="width: 150px; text-align:center;">date created</th>
                                                 <th style="width: 150px;">status</th>
                                                 <th style="width: 150px;">total</th>
-                                                <th style="width: 150px;">action</th>
+                                                <th style="width: 150px;"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
