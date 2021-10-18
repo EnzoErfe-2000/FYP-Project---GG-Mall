@@ -27,6 +27,7 @@ if(isset($_POST['submittt']))
         unit_no = '".$_POST["unit"]."', 
         street_address = '". $_POST["street"]."', 
         country = '".$_POST["country"]."', 
+        city = '".$_POST["city"]."',
         state = '".$_POST["state"]."',
         postcode = '".$_POST["postcode"]."'
         WHERE customer_id = ". $_SESSION['customer_id'];
@@ -110,6 +111,7 @@ if(isset($_POST['submittt']))
                                                     $unit = $row['unit_no'];
                                                     $street = $row['street_address'];
                                                     $country = $row['country'];
+                                                    $city = $row['city'];
                                                     $state = $row['state'];
                                                     $postcode = $row['postcode'];
                                                 }
@@ -130,6 +132,11 @@ if(isset($_POST['submittt']))
                                                     <div class="empty-space col-xs-b20"></div>
                                                 </div>
                                                 <div class="form-group" style="margin-left:15px;">
+                                                    <label for="input-city" class="control-label">City</label>
+                                                    <input class="simple-input" name="city" type="text" placeholder="City" value="<?php echo $city?>" />
+                                                    <div class="empty-space col-xs-b20"></div>
+                                                </div>
+												<div class="form-group" style="margin-left:15px;">
                                                     <label for="input-state" class="control-label">State</label>
                                                     <input class="simple-input" name="state" type="text" placeholder="State" value="<?php echo $state?>" />
                                                     <div class="empty-space col-xs-b20"></div>
