@@ -113,8 +113,7 @@
                         {
                             echo "
                                 <script>
-                                alert('New account created');
-                                location.assign('/fyp-project/index.php');
+                                    alert('New account created');
                                 </script>";
                         }
                         else
