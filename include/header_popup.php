@@ -84,8 +84,9 @@
                     <input type="email" placeholder="Your email" name="email" class="simple-input" value="<?php echo $email; ?>" required />
                     
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
-                    <input type="password" placeholder="Enter password" name="password" class="simple-input" value="<?php echo $password; ?>" required />
-                   
+                    <input type="password" placeholder="Enter password" name="password" class="simple-input <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" onkeyup="validatepassword(this.value);" value="<?php echo $password; ?>" required/>
+                    <span class="invalid-feedback d-block" id="msg"><?php echo $password_err; ?></span>
+
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <input type="password" placeholder="Repeat password" name="confirm_password" class="simple-input" value="<?php echo $confirm_password; ?>" required />
                     
