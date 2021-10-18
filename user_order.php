@@ -1,6 +1,34 @@
 <?php
 include_once 'include/session-db-func.php';
 include_once 'include/header.php';
+
+if(isset($_SESSION['customer_id']))
+{
+	$sql = "SELECT * FROM orders WHERE orders_customerId = ?";
+		
+		$stmt = mysqli_stmt_init($conn);
+	
+		if(!mysqli_stmt_prepare($stmt, $sql)){
+			//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+			mysqli_close($conn);
+		}
+		else
+		{
+			//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		}
+		mysqli_stmt_bind_param($stmt, "s", $_SESSION["customer_id"]);
+		mysqli_stmt_execute($stmt);
+		
+		$orders = mysqli_stmt_get_result($stmt);
+		//$num = count($orders);
+		$row = mysqli_fetch_assoc($orders);
+		//$num1 = count($row);
+		//echo "<script>alert($num1)</script>";
+}
+else
+{
+	echo "<script> location.assign('error_404.php');</script>";
+}
 ?>
 <head>
     <style>
@@ -60,27 +88,26 @@ include_once 'include/header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+										<form action="user_orderDetails.php" method="get">
+										<?php foreach($orders as $order):?>
                                             <tr>
-                                                <td>1</td>
-                                                <td style="text-align:center;">Aug 22, 2018</td>
-                                                <td>Pending</td>
-                                                <td>$3000</td>
-                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                                <td><input readonly name="orderID" value="<?=$order['orders_id']?>" style="text-align:center;"></td>
+                                                <td style="text-align:center;"><?php echo date_format(date_create($order['orders_creationDate']), 'd-M-Y');?></td>
+                                                <td><?=$order['orders_status']?></td>
+                                                <td>RM <?=number_format($order['orders_total'],2,'.',',')?></td>
+                                                <td>
+													<button type="submit" class=" button size-1 style-2 noshadow">
+														<span class="button-wrapper">
+															<span class="icon">
+																<img src="img/icon-4.png" alt="">
+															</span>
+															<span class="text">View</span>
+														</span>
+													</button>
+												</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td style="text-align:center;">July 22, 2018</td>
-                                                <td>Approved</td>
-                                                <td>$200</td>
-                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td style="text-align:center;">June 12, 2017</td>
-                                                <td>On Hold</td>
-                                                <td>$990</td>
-                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
-                                            </tr>
+										<?php endforeach;?>
+										</form>
                                         </tbody>
                                     </table>
                                 </div>    
