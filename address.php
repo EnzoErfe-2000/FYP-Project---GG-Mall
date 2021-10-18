@@ -11,7 +11,8 @@ if(isset($_POST['submittt']))
     $unit = $_POST['unit'];
     $street = $_POST['street'];
     $country = $_POST['country'];
-    $state = $_POST['state'];
+    $city = $_POST['cit'];
+	$state = $_POST['state'];
     $postcode = $_POST['postcode'];
     $number = preg_match('@[0-9]@', $postcode);
 
