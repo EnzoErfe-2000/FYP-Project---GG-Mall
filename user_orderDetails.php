@@ -72,6 +72,16 @@ else
 		</div>
 		<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
 		<div class="row">
+			<div class="col-sm-3">
+			<div class="h4">Customer ID..</div>
+			<div class="h4">Customer Email..</div>
+			<div class="h4">Shipping Address..</div>
+			<div class="h4">Status..</div>
+			<div class="h4">Delivery..</div>
+			<div class="h4">PayMethod..</div>
+			<div class="h4">Comment..</div>
+			</div>
+			<div class="col-sm-9">
 			<div class="container">
                 <table class="cart-table">
                     <thead>
@@ -123,6 +133,7 @@ else
 					</div>
 				</div>
             </div>    
+			</div>
 		</div>
 	</div>
 	<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>

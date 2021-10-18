@@ -111,6 +111,9 @@ if (isset($_POST['firstName'])) {
 			$stmt = mysqli_stmt_init($conn);
 			if (mysqli_query($conn, $sql)) 
 			{
+				unset($_SESSION['cart']);
+				unset($_SESSION['cartTotal']);
+				unset($_SESSION['checkout']);
 				echo "<script type='text/javascript'>alert('Order successfully created!');</script>";
 			}
 			else 

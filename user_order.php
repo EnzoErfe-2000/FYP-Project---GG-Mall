@@ -6,24 +6,24 @@ if(isset($_SESSION['customer_id']))
 {
 	$sql = "SELECT * FROM orders WHERE orders_customerId = ?";
 		
-		$stmt = mysqli_stmt_init($conn);
+	$stmt = mysqli_stmt_init($conn);
 	
-		if(!mysqli_stmt_prepare($stmt, $sql)){
-			//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-			mysqli_close($conn);
-		}
-		else
-		{
-			//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
-		}
-		mysqli_stmt_bind_param($stmt, "s", $_SESSION["customer_id"]);
-		mysqli_stmt_execute($stmt);
-		
-		$orders = mysqli_stmt_get_result($stmt);
-		//$num = count($orders);
-		$row = mysqli_fetch_assoc($orders);
-		//$num1 = count($row);
-		//echo "<script>alert($num1)</script>";
+	if(!mysqli_stmt_prepare($stmt, $sql)){
+		//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		mysqli_close($conn);
+	}
+	else
+	{
+		//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+	}
+	mysqli_stmt_bind_param($stmt, "s", $_SESSION["customer_id"]);
+	mysqli_stmt_execute($stmt);
+	
+	$orders = mysqli_stmt_get_result($stmt);
+	//$num = count($orders);
+	$row = mysqli_fetch_assoc($orders);
+	//$num1 = count($row);
+	//echo "<script>alert($num)</script>";
 }
 else
 {
@@ -88,15 +88,19 @@ else
                                             </tr>
                                         </thead>
                                         <tbody>
-										<form action="user_orderDetails.php" method="get">
+										<?php if(empty($row)): ?>
+										<tr>
+											<td colspan="5" class="simple-article size-5 grey uppercase col-xs-b5"><div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>order list is empty!<br/>you have not created any orders yet<div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div></td>
+										</tr>
+										<?php else: ?>
 										<?php foreach($orders as $order):?>
                                             <tr>
-                                                <td><input readonly name="orderID" value="<?=$order['orders_id']?>" style="text-align:center;"></td>
+                                                <td><form id="order_<?=$order['orders_id']?>" action="user_orderDetails.php" method="get"><input readonly name="orderID" value="<?=$order['orders_id']?>" style="text-align:center;"></form></td>
                                                 <td style="text-align:center;"><?php echo date_format(date_create($order['orders_creationDate']), 'd-M-Y');?></td>
                                                 <td><?=$order['orders_status']?></td>
                                                 <td>RM <?=number_format($order['orders_total'],2,'.',',')?></td>
                                                 <td>
-													<button type="submit" class=" button size-1 style-2 noshadow">
+													<button form="order_<?=$order['orders_id']?>" type="submit" class=" button size-1 style-2 noshadow">
 														<span class="button-wrapper">
 															<span class="icon">
 																<img src="img/icon-4.png" alt="">
@@ -107,7 +111,7 @@ else
 												</td>
                                             </tr>
 										<?php endforeach;?>
-										</form>
+										<?php endif; ?>
                                         </tbody>
                                     </table>
                                 </div>    
@@ -148,6 +152,7 @@ else
                     </div>
                 </div>
             </div>
+			<div class="empty-space col-xs-b50"></div>
         </div>
     
 </body>

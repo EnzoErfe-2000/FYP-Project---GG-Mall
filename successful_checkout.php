@@ -1,13 +1,20 @@
 <?php
 include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
-?>       <div class="header-empty-space"></div>
+?>       
+<?php
+$uri=$_SERVER['HTTP_REFERER'];
+if($uri == "http://localhost/fyp-project/include/createOrder-inc.php")
+{
+	
+?>
+<div class="header-empty-space"></div>
 
         <div class="container">
             <div class="empty-space col-xs-b15 col-sm-b30"></div>
             <div class="breadcrumbs">
                 <a href="#">home</a>
-                <a href="#">checkout</a>
+                <a href="cart.php">checkout</a>
 				<a href="#">successful checkout</a>
             </div>
             <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
@@ -43,7 +50,14 @@ include_once 'include/header.php';
 
         <div class="empty-space col-xs-b35 col-md-b70"></div>
         <div class="empty-space col-xs-b35 col-md-b70"></div>
+<?php
+}
+else
+{
+	echo "<script> location.assign('error_404.php');</script>";
+}
 
+?>
 <?php
 include_once 'include/footer.php';
 ?>
