@@ -64,30 +64,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h6 class="h6 light">popular tags</h6>
-                            <div class="empty-space col-xs-b20"></div>
-                            <div class="tags clearfix">
-                                <a class="tag">headphoness</a>
-                                <a class="tag">accessories</a>
-                                <a class="tag">new</a>
-                                <a class="tag">wireless</a>
-                                <a class="tag">cables</a>
-                                <a class="tag">devices</a>
-                                <a class="tag">gadgets</a>
-                                <a class="tag">brands</a>
-                                <a class="tag">replacements</a>
-                                <a class="tag">cases</a>
-                                <a class="tag">cables</a>
-                                <a class="tag">professional</a>
-                            </div>
                         </div>
-                    </div>
                 </div>
                 <div class="footer-bottom">
                     <div class="row">
                         <div class="col-lg-8 col-xs-text-center col-lg-text-left col-xs-b20 col-lg-b0">
-                            <div class="copyright">&copy; 2015 All rights reserved. Development by <a href="http://themeforest.net/user/unionagency" target="_blank">UnionAgency</a></div>
+                            <div class="copyright">&copy; 2021 All rights reserved. Development by <a href="#" target="_blank">GG Mall</a></div>
                             <!--
 							<div class="follow">
                                 <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
