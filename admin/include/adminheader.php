@@ -66,7 +66,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="productlist.php">Product List</a>
             <a class="collapse-item" href="addproduct.php">Add Product</a>
-			<a class="collapse-item" href="addcategory.php">Add Category</a>
+			      <a class="collapse-item" href="addcategory.php">Add Category</a>
           </div>
         </div>
       </li>
@@ -79,6 +79,25 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="customerlist.php">Customer List</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true"
+          aria-controls="collapseList">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Admin</span>
+        </a>
+        <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <ul>
+              <li>
+                <a class="collapse-item" href="adminlist.php">Admin List</a>
+              </li>
+              <li>
+                <a class="collapse-item" href="adminchange.php">Change Password</a>
+              </li>
+            </ul>
           </div>
         </div>
       </li>
@@ -236,7 +255,17 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $_SESSION['name'];?></span>
+                <span class="ml-2 d-none d-lg-inline text-white small">
+                <?php if (isset($_SESSION["name"])) 
+                        {
+                          echo $_SESSION['name'];
+                        } 
+                        else 
+                        {
+                            echo "<a href='login.php'>Login</a>";
+                        }
+                  ?>
+                </span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">

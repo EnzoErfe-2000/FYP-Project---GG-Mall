@@ -53,10 +53,10 @@
 						</a>
 					</div>
 						<div class="col-sm-4">
-							<a class="button google-button size-2 style-4 block" href="#">
+							<a class="button google-button size-2 style-4 block" href="admin/login.php">
 								<span class="button-wrapper">
 									<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
-									<span class="text">google+</span>
+									<span class="text">Admin</span>
 								</span>
 							</a>
 						</div>
