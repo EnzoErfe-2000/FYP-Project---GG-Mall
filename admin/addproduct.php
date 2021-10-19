@@ -10,55 +10,58 @@ include_once '../admin/include/adminheader.php';
               <li class="breadcrumb-item active" aria-current="page">Add Product</li>
             </ol>
           </div>
+		  
+		  
 		  <div class="content">
-		<div class="box round first">
-			<div class="block">
-				<form name="form1" action="" method="post" enctype="multipart/form-data">
-				<table border=1>
-				<tr>
-					<td>Product ID</td>
-					<td><input type="text" name="product_id"></td>
-				</tr>
-				<tr>
-					<td>Product Name</td>
-					<td><input type="text" name="product_name"></td>
-				</tr>
-				<tr>
-					<td>Product Category</td>
-					<td><input type="text" name="product_category0"></td>
-					<select name=
-				</tr>
-				<tr>
-					<td>Product Brand</td>
-					<td><input type="text" name="product_brand"></td>
-				</tr>
-				<tr>
-					<td>Product Description</td>
-					<td><input type="text" name="product_description"></td>
-				</tr>
-				<tr>
-					<td>Product Price</td>
-					<td><input type="text" name="product_listedPrice"></td>
-				</tr>
-				<tr>
-					<td>Product Stock</td>
-					<td><input type="text" name="product_stock"></td>
-				</tr>
-				<tr>
-					<td>Product Availability</td>
-					<td><input type="text" name="product_availability"></td>
-				</tr>
-				<tr>
-					<td>Product Image</td>
-					<td><input type="file" name="product_img"></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" name="submit1" value="upload"></td>
-				</tr>
-				</table>
-				</form>
-		  
-		  
+				<div class="box round first">
+					<div class="block">
+						<form name="form1" action="" method="post" enctype="multipart/form-data">
+							<table border=1>
+								<tr>
+									<td>Product ID</td>
+									<td><input type="text" name="product_id"></td>
+								</tr>
+								<tr>
+									<td>Product Name</td>
+									<td><input type="text" name="product_name"></td>
+								</tr>
+								<tr>
+									<td>Product Category</td>
+									<td><input type="text" name="product_category0"></td>
+									
+								</tr>
+								<tr>
+									<td>Product Brand</td>
+									<td><input type="text" name="product_brand"></td>
+								</tr>
+								<tr>
+									<td>Product Description</td>
+									<td><input type="text" name="product_description"></td>
+								</tr>
+								<tr>
+									<td>Product Price</td>
+									<td><input type="text" name="product_listedPrice"></td>
+								</tr>
+								<tr>
+									<td>Product Stock</td>
+									<td><input type="text" name="product_stock"></td>
+								</tr>
+								<tr>
+									<td>Product Availability</td>
+									<td><input type="text" name="product_availability"></td>
+								</tr>
+								<tr>
+									<td>Product Image</td>
+									<td><input type="file" name="product_img"></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><input type="submit" name="submit1" value="upload"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+		  </div>
 		  
 </div>
 
