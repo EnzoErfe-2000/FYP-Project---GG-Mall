@@ -23,12 +23,12 @@ include_once '../admin/include/adminheader.php';
                   <h6 class="m-0 font-weight-bold text-primary">New Product</h6>
                 </div>
                 <div class="card-body">
-                  <form method="post" action="insertproduct.php" enctype="multipart/form-data">
+      <form method="post" action="insertproduct.php" enctype="multipart/form-data">
                     <div class="form-group row">
-                      <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
-                      <div class="col-sm-9">
-					   <input class="form-control " type="text"name="product_id" placeholder="00000">
-                      </div>
+                        <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
+                        <div class="col-sm-9">
+                            <input class="form-control " type="text"name="product_id" placeholder="00000">
+                        </div>
                     </div>
 					
 					<div class="form-group row">
@@ -118,19 +118,19 @@ include_once '../admin/include/adminheader.php';
 					
 
 					<div class="form-group row">
-                      <label for="	product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
+                      <label for="product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
                       <div class="col-sm-9">
-					   <input class="form-control" type="file" name="product_bigSwiperImg" id="product_bigSwiperImg" multiple accept=".jpg, .png, .gif" />
+					   <input class="form-control" type="file" name="product_bigSwiperImg"  multiple accept=".jpg, .png, .gif" />
                 		<br />
                       </div>
                     </div>
 
                      <div class="form-group row">
                       <div class="col-sm-10">
-                        <button type="submit" name="submit1" class="btn btn-primary">Upload</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                       </div>
                     </div>
-                  </form>
+    </form>
 				  
                 </div>
               </div>
