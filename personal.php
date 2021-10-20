@@ -4,15 +4,53 @@ include_once 'include/header.php';
 require_once 'include/dbh-inc.php';
 
 $name = $email = $phone = $dob = $address = "";
+$email_err = $phone_err = "";
 
 if(isset($_POST['submitt']))
 {
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $newemail = $_POST['email'];
     $phone = $_POST['phone'];
     $dob = $_POST['dob'];
     $address = $_POST['address'];
-    $sql = "
+
+    if (empty($_POST["phone"])) 
+    {
+        $phone_err = "Phone number is required";
+    } 
+    else if (!preg_match('/^[0-9]{10}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{11}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{12}+$/', $_POST["phone"])) 
+    {
+        $phone_err ="Invalid phone number format";
+    }
+    else 
+    {
+        $phone = $_POST["phone"];
+    }
+
+    if(empty($_POST['email']))
+    {
+        $email_err = "Please enter your email";
+    }
+    else if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", ($_POST["email"])))
+    {
+        $email_err = "Invalid email format";
+    } 
+    else
+    {
+        // Prepare a select statement
+
+        $sql = "SELECT * FROM customer WHERE customer_email_address = '" . ($_POST["email"]) . "'";
+        $result = mysqli_query($conn, $sql);
+        
+        if (mysqli_num_rows($result) > 0) 
+        {
+            $email_err = "Email is taken";
+        } 
+    }
+
+    if(empty($email_err) && empty($phone_err))
+    {
+        $sql = "
         UPDATE customer SET 
         customer_name = '".$_POST["name"]."', 
         customer_email_address = '". $_POST["email"]."', 
@@ -21,21 +59,23 @@ if(isset($_POST['submitt']))
         customer_address = '".$_POST["address"]."'
         WHERE customer_id = ". $_SESSION['customer_id'];
 
-    if(mysqli_query($conn, $sql))
-    {
-        echo "
-        <script> 
-            alert('Updated Successfully');
-            location.assign('/fyp-project/personal.php');
-        </script>";
+        if(mysqli_query($conn, $sql))
+        {
+            echo "
+            <script> 
+                alert('Updated Successfully');
+                location.assign('/fyp-project/personal.php');
+            </script>";
+        }
+        else
+        {
+            echo"
+            <script> 
+                alert('Something went wrong');
+            </script>";
+        }
     }
-    else
-    {
-        echo"
-        <script> 
-            alert('Something went wrong');
-        </script>";
-    }
+    
 }
 ?>
 
@@ -108,6 +148,12 @@ if(isset($_POST['submitt']))
                                                                 $phone = $row['customer_phone'];
                                                                 $dob = $row['customer_dateOfBirth'];
                                                                 $address = $row['customer_address'];
+																$street = $row['customer_address_street'];
+																$unit = $row['customer_address_unit'];
+																$city = $row['customer_address_city'];
+																$state = $row['customer_address_state'];
+																$country = $row['customer_address_country'];
+																$zip = $row['customer_address_postcodeZIP'];
                                                             }
                                                         ?>
                                                             <label for="input-name" class="control-label">Name</label>
@@ -116,18 +162,57 @@ if(isset($_POST['submitt']))
                                                         <div class="form-group required">
                                                             <label for="input-email" class="control-label">E-Mail</label>
                                                             <input type="email" class="simple-input" id="input-email" placeholder="name@email.com" name="email" value="<?php echo $email?>" required>
+                                                            <span class="invalid-feedback" style="color: red;"><?php echo $email_err; ?></span>
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-phone" class="control-label">Phone Number</label>
-                                                            <input type="tel" class="simple-input" id="input-phone" placeholder="012-3456789" name="phone" value="<?php echo $phone?>" required>
+                                                            <input type="tel" class="simple-input" id="input-phone" placeholder="0123456789" name="phone" value="<?php echo $phone?>" required>
+                                                            <span class="invalid-feedback" style="color: red;"><?php echo $phone_err; ?></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Date of Birth</label>
-                                                            <input type="text" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
+                                                            <input type="date" class="simple-input" id="input-dob" placeholder="YYYY-MM-DD" name="dob" value="<?php echo $dob?>" required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="input-dob" class="control-label">Address</label>
-                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $address?>" required>
+                                                            <label for="input-dob" class="control-label">Street Address</label>
+                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $street?>" required>
+															<div class="empty-space col-xs-b10"></div>
+															<div class="row m10">
+																<div class="col-sm-6">
+																	<label for="input-dob" class="control-label">Unit No.</label>
+																	<div class="empty-space col-xs-b5"></div>
+																	<input class="simple-input" type="text" value="<?=$unit?>" placeholder="Unit No." />
+																	<div class="empty-space col-xs-b10"></div>
+																</div>
+																<div class="col-sm-6">
+																	<label for="input-dob" class="control-label">Town/City</label>
+																	<div class="empty-space col-xs-b5"></div>
+																	<input class="simple-input" type="text" value="<?=$city?>" placeholder="Town/City" />
+																	<div class="empty-space col-xs-b10"></div>
+																</div>
+															</div>
+															<div class="row m10">
+																<div class="col-sm-6">
+																	<label for="input-dob" class="control-label">State</label>
+																	<div class="empty-space col-xs-b5"></div>
+																	<input class="simple-input" type="text" value="<?=$state?>" placeholder="State" />
+																	<div class="empty-space col-xs-b10"></div>
+																</div>
+																<div class="col-sm-6">
+																	<label for="input-dob" class="control-label">Country</label>
+																	<div class="empty-space col-xs-b5"></div>
+																	<input class="simple-input" type="text" value="<?=$country?>" placeholder="Country" />
+																	<div class="empty-space col-xs-b5"></div>
+																</div>
+															</div>
+															<div class="row m10">
+																<div class="col-sm-6">
+																	<label for="input-dob" class="control-label">Postcode/ZIP</label>
+																	<div class="empty-space col-xs-b10"></div>
+																	<input class="simple-input" type="text" value="<?=$zip?>" placeholder="Postcode/ZIP" />
+																	<div class="empty-space col-xs-b5"></div>
+																</div>
+															</div>
                                                         </div>
                                                     </div>
                                                     <br>
@@ -161,6 +246,10 @@ if(isset($_POST['submitt']))
                                             <li>
                                                 <a href="pw_change.php">
                                                 Password Changes</a>
+                                            </li>
+                                            <li>
+                                                <a href="address.php">
+                                                Address Details</a>
                                             </li>
                                             <li>
                                                 <a href="user_order.php">

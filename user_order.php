@@ -102,6 +102,10 @@ include_once 'include/header.php';
                                                 Password Changes</a>
                                             </li>
                                             <li>
+                                                <a href="address.php">
+                                                Address Details</a>
+                                            </li>
+                                            <li>
                                                 <a href="user_order.php">
                                                 Orders</a>
                                             </li>

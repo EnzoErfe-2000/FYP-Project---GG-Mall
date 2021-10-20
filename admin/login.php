@@ -1,3 +1,70 @@
+<?php
+  require "../include/dbh-inc.php";
+
+  $email = $password = "";
+  $email_err = $password_err = $login_err = "";
+
+  if (isset($_POST['login']))
+  {
+    if(empty($_POST['email']))
+    {
+      echo'
+          <script>
+            alert("Please enter email.");
+          </script>
+        ';
+    }
+    else
+    {
+      $email = trim($_POST["email"]);
+    }
+
+    if(empty($_POST['password']))
+    {
+      echo'
+          <script>
+            alert("Please enter password.");
+          </script>
+        ';
+    }
+    else
+    {
+      $password = $_POST["password"];
+    }
+
+    if(empty($email_err) && empty($password_err))
+    { 
+      $sql = "SELECT * FROM admin WHERE admin_emailAddress = '$email' AND admin_password = '$password' ";
+      $result = mysqli_query($conn, $sql);
+
+      if(mysqli_num_rows($result) == 1)
+      {
+        while($row=mysqli_fetch_assoc($result))
+        {
+          session_start();
+          $_SESSION["loggedin"] = true;
+          $_SESSION["name"] = $row['admin_name'];
+        }
+        echo'
+          <script>
+            alert("Welcome back admin");
+            location.href="index.php"
+          </script>
+        ';
+      }
+      else
+      {
+        echo'
+          <script>
+            alert("Admin not found.");
+          </script>
+        ';
+      }
+    }
+  }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,13 +96,14 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+                  <form action="#" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                        placeholder="Enter Email Address">
+                      <input type="email" class="form-control" id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address" required>
+                      <span class="invalid-feedback"><?php echo $email_err; ?></span>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password" required>
+                      <span class="invalid-feedback"><?php echo $password_err; ?></span>
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
@@ -45,7 +113,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <a href="index.html" class="btn btn-primary btn-block">Login</a>
+                      <input type="submit" class="btn btn-primary btn-block" name="login" value="Login">
                     </div>
                     <hr>
                     <a href="index.html" class="btn btn-google btn-block">
