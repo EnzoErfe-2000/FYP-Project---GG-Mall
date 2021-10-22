@@ -3,13 +3,13 @@ include_once '../admin/include/adminheader.php';
 ?>
 <style>
 thead th {
-    font-size: 12px;
+    font-size: 15px;
 }
 tbody td {
-    font-size: 11px;
+    font-size: 15px;
 }
 tfoot {
-    font-size: 11px;
+    font-size: 15px;
 }
 </style>
 <div class="container-fluid" id="container-wrapper">
@@ -60,16 +60,19 @@ tfoot {
 								{
 									$d=$data['product_id'];
 									echo "<tr>";
-									echo "<td>" ."<a href = '/fyp-project/product.php?product=$d'>". $data['product_id'] . "</td>";
+									echo "<td>" ."
+													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] . "</td>";
 									echo "<td>" . $data['product_name'] . "</td>";
 									echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
 									echo "<td>" . $data['product_listedPrice'] . "</td>";
 									echo "<td>".
-									   "	<form action='deleteproduct.php' method='POST'>
+									   "	
 											<input type ='hidden' name='deleteproduct' value=product_id>
-											<button type='submit' name='submit2' class= 'btn btn-danger btn-sm'>DELETE</button>
-										</form>"			
+											<button type='button' class='btn btn-outline-danger mb-1'>
+											<font size='2px'><a href = '/fyp-project/admin/deleteproduct.php?product=$d'>DELETE</a></button>
+											
+										"			
 									."</td>";
 									echo "</tr>";
 								}

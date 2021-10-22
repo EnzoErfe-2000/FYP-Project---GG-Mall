@@ -3,13 +3,13 @@ include_once '../admin/include/adminheader.php';
 ?>
 <style>
 thead th {
-    font-size: 12px;
+    font-size: 15px;
 }
 tbody td {
-    font-size: 11px;
+    font-size: 15px;
 }
 tfoot {
-    font-size: 11px;
+    font-size: 15px;
 }
 
 </style>
@@ -61,7 +61,8 @@ tfoot {
 								{
 									$d=$data['product_id'];
 									echo "<tr>";
-									echo "<td>" ."<a href = '/fyp-project/product.php?product=$d'>". $data['product_id'] . "</td>";
+									echo "<td>" ."<button type='button'style='height:29px;' class='btn btn-outline-primary mb-1'>
+													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
 									echo "<td>" . $data['product_name'] . "</td>";
 									echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
@@ -70,7 +71,7 @@ tfoot {
 									   "<form action='editproduct.php' method='POST'>
 											<input type ='hidden' name='edit_id' value=product_id>
 											<button type='submit' name='submit1' style='height:24px;' class= 'btn btn-light btn-sm'>
-											<a href = '/fyp-project/editproduct.php?product=$d'>EDIT</p></button>
+											<a href = '/fyp-project/admin/editproduct.php?product=$d'>EDIT</p></button>
 										</form>"		
 									."</td>";
 									echo "</tr>";
