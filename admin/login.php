@@ -45,6 +45,7 @@
           $_SESSION["loggedin"] = true;
           $_SESSION["name"] = $row["admin_name"];
           $_SESSION["id"] = $row["admin_id"];
+          $_SESSION["status"] = $row["admin_status"];
         }
         echo'
           <script>

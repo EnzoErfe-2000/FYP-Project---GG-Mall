@@ -36,30 +36,14 @@
 						<span>or</span>
 					</div>
 					<div class="row m5">
-						<div class="col-sm-4 col-xs-b10 col-sm-b0">
-							<a class="button facebook-button size-2 style-4 block" href="#">
-								<span class="button-wrapper">
-									<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
-									<span class="text">facebook</span>
-								</span>
-							</a>
-						</div>
-					<div class="col-sm-4 col-xs-b10 col-sm-b0">
-						<a class="button twitter-button size-2 style-4 block" href="#">
+					<div class="col-sm-12 col-xs-b10 col-sm-b0">
+						<a class="button twitter-button size-2 style-4 block" href="admin/login.php">
 							<span class="button-wrapper">
 								<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
-								<span class="text">twitter</span>
+								<span class="text">Admin</span>
 							</span>
 						</a>
 					</div>
-						<div class="col-sm-4">
-							<a class="button google-button size-2 style-4 block" href="admin/login.php">
-								<span class="button-wrapper">
-									<span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
-									<span class="text">Admin</span>
-								</span>
-							</a>
-						</div>
 					</div>
 				</div>
             <div class="button-close"></div>
