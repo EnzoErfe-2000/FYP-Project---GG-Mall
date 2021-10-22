@@ -1,8 +1,3 @@
-<?php
-  session_start();
-
-  require "../include/dbh-inc.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="../img/logo1~1.png" rel="icon">
   <title>GG Mall Admin</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -66,7 +61,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="productlist.php">Product List</a>
             <a class="collapse-item" href="addproduct.php">Add Product</a>
-			<a class="collapse-item" href="addcategory.php">Add Category</a>
+            <a class="collapse-item" href="deleteproductlist.php">Delete Product</a>
+	
           </div>
         </div>
       </li>
@@ -236,11 +232,12 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $_SESSION['name'];?></span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <a href="adminlogout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a> 
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
                 </a>
               </div>
             </li>

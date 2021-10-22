@@ -11,7 +11,6 @@ tbody td {
 tfoot {
     font-size: 11px;
 }
-
 </style>
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -36,7 +35,7 @@ tfoot {
 							<th>Category</th>
 							<th>Stock [Availability]</th>
 							<th>Price [RM] </th>
-							<th>Action</th>
+							<th>ACTION</th>
 						  </tr>
 						</thead >
 						<tfoot class="thead-light">
@@ -67,11 +66,10 @@ tfoot {
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
 									echo "<td>" . $data['product_listedPrice'] . "</td>";
 									echo "<td>".
-									   "<form action='editproduct.php' method='POST'>
-											<input type ='hidden' name='edit_id' value=product_id>
-											<button type='submit' name='submit1' style='height:24px;' class= 'btn btn-light btn-sm'>
-											<a href = '/fyp-project/editproduct.php?product=$d'>EDIT</p></button>
-										</form>"		
+									   "	<form action='deleteproduct.php' method='POST'>
+											<input type ='hidden' name='deleteproduct' value=product_id>
+											<button type='submit' name='submit2' class= 'btn btn-danger btn-sm'>DELETE</button>
+										</form>"			
 									."</td>";
 									echo "</tr>";
 								}

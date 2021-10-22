@@ -103,9 +103,9 @@ include_once '../admin/include/adminheader.php';
                     </div>
 
 					<div class="form-group row">
-                      <label for="product_availability" class="col-sm-3 col-form-label">Product Availability</label>
+                      <label for="product_availability" class="col-sm-3 col-form-label">Product Availability<br> [Key in Yes if available]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_availability" placeholder="0">
+					   <input class="form-control " type="text" name="product_availability" placeholder="Yes/No">
                       </div>
                     </div>
 
