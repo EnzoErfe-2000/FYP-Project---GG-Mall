@@ -9,7 +9,7 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
     $product_id = (int)$_POST['product_id'];
     $quantity = (int)$_POST['product_quantity'];
     //echo "<script type='text/javascript'>alert('ProductID = $product_id');</script>";
-	//echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
+	echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
 	
 	// Prepare the SQL statement, we basically are checking if the product exists in our databaser
     //$stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');

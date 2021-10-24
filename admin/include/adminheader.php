@@ -83,10 +83,18 @@
         </div>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="salesreport.php">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGraph" aria-expanded="true"
+          aria-controls="collapseGraph">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Sales Report</span>
+          <span>Statistics</span>
         </a>
+        <div id="collapseGraph" class="collapse" aria-labelledby="headingGraph" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="salesreport.php">Sales Report</a>
+			<a class="collapse-item" href="inventoryreport.php">Inventory Report</a>
+			
+          </div>
+        </div>
       </li>
  
       <hr class="sidebar-divider">

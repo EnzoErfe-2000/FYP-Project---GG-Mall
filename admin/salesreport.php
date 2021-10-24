@@ -122,8 +122,6 @@ foreach($result as $rowDeets)
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonYear">
                       <a class="dropdown-item" onclick="">2021</a>
-                      <a class="dropdown-item" onclick="">2020</a>
-                      <a class="dropdown-item" onclick="">2019</a>
                     </div>
 				  </h6>
 				</div>
