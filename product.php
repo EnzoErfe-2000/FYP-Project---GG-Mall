@@ -124,7 +124,7 @@ include_once 'include/header.php';
 								<div class="simple-article size-3 col-xs-b5">PRODUCT ID : <span class="grey prodID"><?=$product['product_id']?></span></div>
                             </div>
                             <div class="col-sm-6 col-sm-text-right">
-                                <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey"><?php if($product['product_availability'] == 0){ echo 'YES';}else{echo 'NO';}?></span></div>
+                                <div class="simple-article size-3 col-xs-b5">AVAILABLE : <span class="grey"><?php =$product['product_availability']?></span></div>
 								<div class="simple-article size-3 col-xs-b20">STOCK : <span class="productStock color"><?=$product['product_stock']?></span></div>
                             </div>
                         </div>
