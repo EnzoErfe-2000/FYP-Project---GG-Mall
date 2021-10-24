@@ -70,7 +70,7 @@ tfoot {
 									echo "<td>".
 									   "<form action='editproduct.php' method='POST'>
 											<input type ='hidden' name='edit_id' value=product_id>
-											<button type='submit' name='submit1' style='height:24px;' class= 'btn btn-light btn-sm'>
+											<button type='submit' name='update1' style='height:24px;' class= 'btn btn-light btn-sm'>
 											<a href = '/fyp-project/admin/editproduct.php?product=$d'>EDIT</p></button>
 										</form>"		
 									."</td>";
