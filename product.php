@@ -141,7 +141,7 @@ include_once 'include/header.php';
 								<div class="col-sm-9">
 									<div class="quantity-select">
 										<button type="button" class="minus" style="border:none;"></button>
-										<input class="numInput" style="font-weight:bold;margin:0;" type="number" name="product_quantity" value="1" min=1 max=<?=$product['product_stock']?>>
+										<input class="numInput" style="font-weight:bold;margin:0;" type="number" name="product_quantity" value="1" min=1 max=<?=$product['product_stock']?> required>
 										<button type="button" class="plus" style="border:none;"></button>
 									</div>
 								</div>

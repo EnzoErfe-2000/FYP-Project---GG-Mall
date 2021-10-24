@@ -9,7 +9,7 @@ if (isset($_POST['product_id'], $_POST['product_quantity']) && is_numeric($_POST
     $product_id = (int)$_POST['product_id'];
     $quantity = (int)$_POST['product_quantity'];
     //echo "<script type='text/javascript'>alert('ProductID = $product_id');</script>";
-	echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
+	//echo "<script type='text/javascript'>alert('ProductQuantity = $quantity');</script>";
 	
 	// Prepare the SQL statement, we basically are checking if the product exists in our databaser
     //$stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
@@ -151,7 +151,11 @@ if ($products_in_cart) {
 	// Calculate the subtotal
     foreach ($products as $product) {
         $subtotal += (float)$product['product_listedPrice'] * (int)$products_in_cart[$product['product_id']];
-    }
+		if($products_in_cart[$product['product_id']] > $product['product_stock'])
+		{
+			$products_in_cart[$product['product_id']] = $product['product_stock'];
+		}
+	}
 	$_SESSION['cartTotal'] =$subtotal;
 	
 	//mysqli_close($conn);
