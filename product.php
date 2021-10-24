@@ -91,7 +91,7 @@ include_once 'include/header.php';
 														<div class='product-small-preview-entry'>
 															<img src='./admin/product_img/" . $swiperImgs[$i] . "' alt='' />
 														</div>
-													</div>";
+													</div>";   
 											}
 										?>
 									</div>
