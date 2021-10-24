@@ -1,6 +1,24 @@
 <?php
 include_once '../admin/include/adminheader.php';	
 ?>
+<?php
+$sql = "SELECT * FROM orders;";
+$stmt = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($stmt, $sql)){
+	//header("location: cart.php?error=stmtfailed");
+	//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+	//exit();
+	mysqli_close($conn);
+}
+else
+{
+	//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+}
+	
+mysqli_stmt_execute($stmt);
+$orders = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($orders);
+?>
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Order List</h1>
@@ -25,13 +43,25 @@ include_once '../admin/include/adminheader.php';
                     <thead class="thead-light">
                       <tr>
                         <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Item</th>
+                        <th>Customer ID</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+					<?php if(empty($row)): ?>
+					<tr>
+						<td colspan="4"><div style="text-align:center;">Order list is empty!<br/>No orders have been created yet.</div></td>
+					</tr>
+					<?php else: ?>
+					<?php foreach($orders as $order):?>
+					<tr>
+                        <td><a href="#"><?=$order['orders_id']?></a></td>
+                        <td><?=$order['orders_customerId']?></td>
+                        <td><span class="badge <?php if($order['orders_status'] == "Pending"){echo"badge-danger";}else{echo"badge-success";}?>"><?=$order['orders_status']?></span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                    </tr>
+					<!--
                       <tr>
                         <td><a href="#">RA0449</a></td>
                         <td>Udin Wayang</td>
@@ -67,6 +97,9 @@ include_once '../admin/include/adminheader.php';
                         <td><span class="badge badge-success">Delivered</span></td>
                         <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                       </tr>
+					  -->
+					<?php endforeach;?>
+					<?php endif; ?>
                     </tbody>
                   </table>
                 </div>

@@ -41,7 +41,7 @@ if (isset($_POST['firstName'])) {
 	$note = $_POST['note'];
 	echo "<script type='text/javascript'>alert('$note');</script>";
 
-	$status = "Ongoing";
+	$status = "Pending";
 	echo "<script type='text/javascript'>alert('$status');</script>";
 
 	$total = number_format($_SESSION['cartTotal'],2,'.','');

@@ -45,7 +45,7 @@ DAY(CAST(orders_creationDate AS DATE)) AS 'DAY',
 SUM(orders_total) AS 'SALES' 
 FROM orders WHERE 
 MONTH(orders_creationDate) = 10 AND
-orders_status = 'Ongoing'
+orders_status = 'Pending'
 GROUP BY CAST(orders_creationDate AS DATE)
 ORDER BY CAST(orders_creationDate AS DATE)
 ";
