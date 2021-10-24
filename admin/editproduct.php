@@ -28,8 +28,7 @@ $sql = "SELECT * FROM product where product_id = $id";
 $result = $conn->query($sql);
 
 $data = mysqli_fetch_array($result); // fetch data
-?> 
-<?php 
+
 if(isset($_POST['update_product'])) // when click on Update button
 {
     
@@ -53,6 +52,7 @@ if(isset($_POST['update_product'])) // when click on Update button
     
 
     $edit = mysqli_query($conn,"UPDATE product
+
     set product_id='$product_id',
         product_name='$product_name',
         product_nameExtra='$product_product_nameExtra',
@@ -65,20 +65,12 @@ if(isset($_POST['update_product'])) // when click on Update button
         product_listedPrice='$product_listedPrice',
         product_discountRate='$product_discountRate',
         product_stock='$product_stock',
-        product_availability='$product_availability',
-         where id='$id'");
+        product_availability='$product_availability'
+         where product_id='$id'");
+
+        
 }
-        if($edit)
-        {
-            mysqli_close($db); // Close connection
-            header("location:productlist.php"); // redirects to all records page
-            exit;
-        }
-        else
-        {
-            echo "Error to update product details..";
-        }    	
-?> 
+?>  
 <form method="POST" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
@@ -178,8 +170,18 @@ if(isset($_POST['update_product'])) // when click on Update button
                       </div>
                     </div>
     </form>
-
+<?php 
+if($edit)
+        {
+            echo "Product Updated successfully.";
+            exit;
+        }
+        else
+        {
+            echo "Error to update product details..";
+        }    	
+?>
 <?php
-include_once 'include/adminfooter.php';	
+include_once '../admin/include/adminfooter.php';	
 ?>
   

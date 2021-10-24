@@ -85,6 +85,6 @@ tfoot {
         </div>
 </div>
 <?php
-include_once 'include/adminfooter.php';	
+include_once '../admin/include/adminfooter.php';	
 ?>
   
