@@ -89,7 +89,7 @@ include_once 'include/header.php';
 											{
 												echo "<div class='swiper-slide'>
 														<div class='product-small-preview-entry'>
-															<img src='/admin/product_img/" . $swiperImgs[$i] . "' alt='' />
+															<img src='./admin/product_img/" . $swiperImgs[$i] . "' alt='' />
 														</div>
 													</div>";
 											}
