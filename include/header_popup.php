@@ -76,22 +76,14 @@
                     
                     <div class="empty-space col-xs-b10 col-sm-b20"></div>
                     <div class="row">
-                        <div class="col-sm-7 col-xs-b10 col-sm-b0">
-                            <div class="empty-space col-sm-b15"></div>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" required/><span><a href="#">Privacy policy agreement</a></span>
-                            </label>
-                        </div>
-
                         <div class="col-sm-5 text-right">
-                            <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none" onclick="validate">
+                            <button class="button noshadow size-2 style-3" type="submit" name="submit" id="submit" class="submit" style="border:none; margin-right:30px;" onclick="validate">
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">submit</span>
                                 </span>
                             </button>
                         </div>
-                        
                     </div>
                     <div class="popup-or">
                         <span>or</span>
