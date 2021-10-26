@@ -18,7 +18,7 @@
 						<div class="row">
 							<div class="col-sm-6 col-xs-b10 col-sm-b0">
 								<div class="empty-space col-sm-b5"></div>
-								<a class="simple-link">Forgot password?</a>
+								<a href="pw_reset.php" class="simple-link">Forgot password?</a>
 								<div class="empty-space col-xs-b5"></div>
 								<a class="simple-link switchModal">register now</a>
 							</div>
