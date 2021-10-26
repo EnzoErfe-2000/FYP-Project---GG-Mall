@@ -22,6 +22,79 @@ $row = mysqli_fetch_assoc($orders);
 <?php
 if(isset($_GET['order']))
 {
+	if(isset($_POST['updateSubmit']))
+	{
+		$orderID = $_GET['order'];
+		$updatedAddress = $_POST['customer_address'];
+		$updatedComment = $_POST['orders_comment'];
+		$updatedStatus = $_POST['orders_status'];
+		$updatedDelivery = $_POST['orders_delivery'];
+		$updatedProducts = $_POST['orders_product'];
+		$updatedQuantities = $_POST['product_quantity'];
+		$updatedSubtotals = $_POST['product_subtotal'];
+		$updatedTotal = $_POST['orders_total'];
+	
+		//echo "<script type='text/javascript'>alert($updatedTotal);</script>";
+		
+		$sql = "
+		UPDATE orders
+		SET orders_shippingAddress = '$updatedAddress' , 
+		orders_comment = '$updatedComment' ,
+		orders_status = '$updatedStatus' ,
+		orders_total = $updatedTotal ,
+		orders_deliveryMethod= '$updatedDelivery'
+		WHERE orders_id = $orderID
+		";
+		
+		$stmt = mysqli_stmt_init($conn);
+		if(!mysqli_stmt_prepare($stmt, $sql)){
+		//header("location: cart.php?error=stmtfailed");
+		//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		//exit();
+		mysqli_close($conn);
+		}
+		else
+		{
+			//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+		}
+		//mysqli_stmt_bind_param($stmt, "ssssss", $updatedAddress, $updatedComment, $updatedStatus, $updatedTotal, $updatedDelivery ,$orderID);
+		if(mysqli_stmt_execute($stmt)){
+			echo "<script type='text/javascript'>alert('Order was updated successfully!');</script>";
+		}
+
+		for($i =0; $i < count($updatedProducts); $i++)
+		{
+			$currentQuantity = $updatedQuantities[$i];
+			$currentSubtotal = $updatedSubtotals[$i];
+			$currentProduct = $updatedProducts[$i];
+			
+			//echo "Current prod id : $updatedProducts[$i] <br>";
+			$sql = "
+			UPDATE ordersdetail
+			SET ordersDetail_quantity = $currentQuantity,
+			ordersDetail_subtotal = $currentSubtotal
+			WHERE ordersDetail_ordersId = $orderID
+			AND ordersDetail_productId = $currentProduct
+			";
+			
+			$stmt = mysqli_stmt_init($conn);
+			if(!mysqli_stmt_prepare($stmt, $sql)){
+			//header("location: cart.php?error=stmtfailed");
+			//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+			//exit();
+			mysqli_close($conn);
+			}
+			else
+			{
+				//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+			}
+			//mysqli_stmt_bind_param($stmt, "ssssss", $updatedAddress, $updatedComment, $updatedStatus, $updatedTotal, $updatedDelivery ,$orderID);
+			if(mysqli_stmt_execute($stmt)){
+				//echo "<script type='text/javascript'>alert('Product $updatedProducts[$i] was updated successfully!');</script>";
+			}
+		}
+	}
+	
 	$sql = "SELECT * FROM orders, ordersdetail where orders_id = ? AND ordersdetail_ordersId = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -85,13 +158,6 @@ if(isset($_GET['order']))
 	
 	$orderProducts = mysqli_stmt_get_result($stmt);
 ?>
-<?php
-if(isset($_POST['updateSubmit']))
-{
-	echo "<script type='text/javascript'>alert('huhuhu');</script>";
-	
-}
-?>
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Order No. <span class="h4 font-weight-bold text-primary"><?=$_GET['order']?></span></h1>
@@ -138,13 +204,13 @@ if(isset($_POST['updateSubmit']))
 						<p></p>
 						<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<div>
-						<button type="button" class="btn btn-secondary mb-1" onclick="updateStatus('Pending')">Pending</button>
+						<button type="button" class="btn btn-danger mb-1" onclick="updateStatus('Pending')">Pending</button>
 						<button type="button" class="btn btn-primary mb-1" onclick="updateStatus('Processing')">Processing</button>
 						<button type="button" class="btn btn-warning mb-1" onclick="updateStatus('Shipping')">Shipping</button>
 						<button type="button" class="btn btn-success mb-1" onclick="updateStatus('Delivered')">Delivered</button>
 						</div>
 						<div>
-						<button type="button" class="btn btn-danger mb-1" onclick="updateStatus('Cancelled')">Cancelled</button>
+						<button type="button" class="btn btn-secondary mb-1" onclick="updateStatus('Cancelled')">Cancelled</button>
 						</div>
 						</div>
 					</div>
@@ -178,24 +244,34 @@ if(isset($_POST['updateSubmit']))
 						<tbody>
 							<?php foreach($orderProducts as $orderProduct):?>
 							<tr>
-								<td><?=$orderProduct['ordersDetail_productId']?></td>
+								<td><?=$orderProduct['ordersDetail_productId']?>
+								<input name="orders_product[]" hidden type="text" readonly value="<?=$orderProduct['ordersDetail_productId']?>">
+								</td>
 								<td><?=$orderProduct['product_name']?></td>
 								<td>RM<span id="prodPrice"><?=$orderProduct['product_listedPrice']?></span></td>
 								<td>
 								<div class="input-group  bootstrap-touchspin bootstrap-touchspin-injected">
-								<input onkeyup="updateSubtotal(<?=$orderProduct['ordersDetail_productId']?>)" style="font-weight:bold;margin:0;" class="form-control quantityBox" type="number" id="quantityInput[<?=$orderProduct['ordersDetail_productId']?>]" min=1 value=<?=$orderProduct['ordersDetail_quantity']?>>
+								<input onkeyup="updateSubtotal(<?=$orderProduct['ordersDetail_productId']?>)" style="font-weight:bold;margin:0;" class="form-control quantityBox" type="number" name="product_quantity[]" id="quantityInput[<?=$orderProduct['ordersDetail_productId']?>]" min=1 value=<?=$orderProduct['ordersDetail_quantity']?>>
 								<input hidden readonly class="thisProdID" value="<?=$orderProduct['ordersDetail_productId']?>">
 								<button class="btn btn-primary bootstrap-touchspin-up sub" type="button">-</button>
 								<button class="btn btn-primary bootstrap-touchspin-down add" type="button">+</button>
 								</div>
 								</td>
-								<td>RM <span class="subTotal" name="prodSubtotal" id="subTotal[<?=$orderProduct['ordersDetail_productId']?>]"><?=$orderProduct['ordersDetail_subtotal']?></span></td>
+								<td>
+									RM <span class="subTotal" name="prodSubtotal[]" id="subTotal[<?=$orderProduct['ordersDetail_productId']?>]">
+										<?=$orderProduct['ordersDetail_subtotal']?>
+									</span>
+									<input type="text" name="product_subtotal[]" id="hiddenSubTotal[<?=$orderProduct['ordersDetail_productId']?>]" hidden readonly value="<?=$orderProduct['ordersDetail_subtotal']?>">
+								</td>
 							</tr>
 							<?php endforeach;?>
 							<tr>
 								<td colspan="3"></td>
 								<td>Total</td>
-								<td id="orders_total">RM <?=$orderDetails['orders_total']?></td>
+								<td>RM <span id="orders_total"><?=$orderDetails['orders_total']?></span>
+								
+								<input hidden readonly type="text" name="orders_total" id="hidden_orders_total" value="<?=$orderDetails['orders_total']?>">
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -257,46 +333,9 @@ else
 					<tr>
                         <td><a href="#"><?=$order['orders_id']?></a></td>
                         <td><?=$order['orders_customerId']?></td>
-                        <td><span class="badge <?php if($order['orders_status'] == "Pending"){echo"badge-secondary";}else{echo"badge-success";}?>"><?=$order['orders_status']?></span></td>
+                        <td><span class="badge <?php if($order['orders_status'] == "Pending"){echo"badge-danger";}else if($order['orders_status'] == "Processing"){echo"badge-primary";}else if($order['orders_status'] == "Shipping"){echo"badge-warning";}else if($order['orders_status'] == "Delivered"){echo"badge-success";}else if($order['orders_status'] == "Cancelled"){echo"badge-secondary";}?>"><?=$order['orders_status']?></span></td>
                         <td><a href="orderlist.php?order=<?=$order['orders_id']?>" class="btn btn-sm btn-primary">Detail</a></td>
                     </tr>
-					<!--
-                      <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90' Edition</td>
-                        <td><span class="badge badge-warning">Shipping</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>
-                        <td>Oblong T-Shirt</td>
-                        <td><span class="badge badge-danger">Pending</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>
-                        <td>Hat Rounded</td>
-                        <td><span class="badge badge-info">Processing</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td>Baby Powder</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-					  -->
 					<?php endforeach;?>
 					<?php endif; ?>
                     </tbody>
@@ -351,6 +390,8 @@ function updateSubtotal(n){
 	{	Quantity = 1;
 	}const newSubTotal = (Price*Quantity).toFixed(2);
 	document.getElementById("subTotal["+n+"]").innerHTML = newSubTotal;
+	document.getElementById("hiddenSubTotal["+n+"]").value = newSubTotal;
+	//alert(document.getElementById("hiddenSubTotal["+n+"]").value);
 	updateTotal();
 }
 function updateStatus(n){
@@ -360,12 +401,15 @@ function updateDelivery(n){
 	document.getElementById("orders_delivery").value = n;
 }
 function updateTotal(){
-	const all = document.getElementsByName('prodSubtotal');
+	const all = document.getElementsByName('prodSubtotal[]');
 	var total = parseFloat(0);
 	for (var i = 0; i < all.length; i++) {
 		total += parseFloat(all[i].innerHTML);
 	}
 	document.getElementById("orders_total").innerHTML = (total).toFixed(2);
+	document.getElementById("hidden_orders_total").value = (total).toFixed(2);
+	alert(document.getElementById("hidden_orders_total").value);
+	
 }
 /*
 $(document).on('keyup', '.quantityBox', function() {
@@ -375,7 +419,7 @@ $(document).on('keyup', '.quantityBox', function() {
 		Quantity = 1;
 	alert(Price*Quantity);
 	
-	//this.parentNode.parentNode.find('.subTotal').val(Quantity * Price);
+	this.parentNode.parentNode.find('.subTotal').val(Quantity * Price);
 });
 */
 </script>
