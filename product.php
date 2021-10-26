@@ -363,11 +363,11 @@ include_once 'include/footer.php';
 include_once 'include/header_popup.php';
 ?>
 
-<script>
+<!--<script>
 document.querySelector(".favbtn").addEventListener("click", addTodo);
 
   function addTodo() {
 	  alert(parseInt($("#product_quantity").val()));
 	  $("#product_quantity").val(5);
   }
-</script>
+</script>-->
