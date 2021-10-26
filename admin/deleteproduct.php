@@ -11,9 +11,11 @@ $del = mysqli_query($conn,"DELETE FROM product where product_id = '$id'"); // de
 
 if($del)
 {
-    mysqli_close($conn); // Close connection
-   
-    exit;	
+    echo "
+    <script>
+      alert('Product Deleted.');
+      location.href = 'deleteproductlist.php';
+    </script>";
 }
 else
 {

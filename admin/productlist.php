@@ -61,8 +61,7 @@ tfoot {
 								{
 									$d=$data['product_id'];
 									echo "<tr>";
-									echo "<td>" ."<button type='button'style='height:29px;' class='btn btn-outline-primary mb-1'>
-													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
+									echo "<td>" ."<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
 									echo "<td>" . $data['product_name'] . "</td>";
 									echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";

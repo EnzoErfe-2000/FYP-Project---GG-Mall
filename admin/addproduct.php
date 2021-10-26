@@ -23,7 +23,7 @@ include_once '../admin/include/adminheader.php';
                   <h6 class="m-0 font-weight-bold text-primary">New Product</h6>
                 </div>
                 <div class="card-body">
-      <form method="post" action="insertproduct.php" enctype="multipart/form-data">
+      <form method="post" action="insertproduct.php" enctype="multipart/form-data" >
                     <div class="form-group row">
                         <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
                         <div class="col-sm-9">
@@ -84,21 +84,21 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_regularPrice" class="col-sm-3 col-form-label">Product Regular Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_regularPrice"placeholder="0.00">
+					   <input class="form-control " type="number"min=0  step="0.01" name="product_regularPrice"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_listedPrice" class="col-sm-3 col-form-label">Product Listed Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_listedPrice"placeholder="0.00">
+					   <input class="form-control " type="number" min=0 step="0.01" name="product_listedPrice"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_discountRate" class="col-sm-3 col-form-label">ProductDiscount Rate</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_discountRate"placeholder="0.00">
+					   <input class="form-control " min=0 type="number" step="0.01" name="product_discountRate"placeholder="0.00">
                       </div>
                     </div>
 
@@ -112,7 +112,7 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_stock" class="col-sm-3 col-form-label">Product Stock</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_stock" placeholder="0">
+					   <input class="form-control " min=0 type="text" name="product_stock" placeholder="0">
                       </div>
                     </div>
 					

@@ -35,7 +35,7 @@ tfoot {
 							<th>Category</th>
 							<th>Stock [Availability]</th>
 							<th>Price [RM] </th>
-							<th>ACTION</th>
+							<th>Delete</th>
 						  </tr>
 						</thead >
 						<tfoot class="thead-light">
@@ -45,7 +45,7 @@ tfoot {
 							<th>Category</th>
 							<th>Stock [Availability]</th>
 							<th>Price [RM]</th>
-							<th>Action</th>
+							<th>Delete</th>
 							
 						  </tr>
 						</tfoot>
@@ -61,7 +61,7 @@ tfoot {
 									$d=$data['product_id'];
 									echo "<tr>";
 									echo "<td>" ."
-													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] . "</td>";
+													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
 									echo "<td>" . $data['product_name'] . "</td>";
 									echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
@@ -69,7 +69,7 @@ tfoot {
 									echo "<td>".
 									   "	
 											<input type ='hidden' name='deleteproduct' value=product_id>
-											<button type='button' class='btn btn-outline-danger mb-1'>
+											<button type='button'  style='height:25px;' class= 'btn btn-warning btn-sm'>
 											<font size='2px'><a href = '/fyp-project/admin/deleteproduct.php?product=$d'>DELETE</a></button>
 											
 										"			

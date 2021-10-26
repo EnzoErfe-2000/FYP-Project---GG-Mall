@@ -36,7 +36,9 @@
                             VALUES ('$filename') ";
 
                         if (mysqli_query($conn, $sql)) {
-                            echo "File uploaded successfully"."<br>";
+                            echo "<script>
+                            location.href = 'productlist.php';
+                          </script>";
                         }
                     } else {
                         echo "Failed to upload file.";
@@ -79,14 +81,16 @@
 			
             if($conn->query($sql) === TRUE)
             {
-                echo "Record added sucessfully";
+                echo "
+                <script>
+                  alert('Record added sucessfully.');
+                  location.href = 'productlist.php';
+                </script>";
             }
             else
             {
-                echo "Error" . $sql . "<br/>" . $conn->error;
+                echo "Error" ;
             }
-               
-                
 
         
 ?>

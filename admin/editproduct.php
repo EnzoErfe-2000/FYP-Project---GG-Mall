@@ -67,8 +67,16 @@ if(isset($_POST['update_product'])) // when click on Update button
         product_stock='$product_stock',
         product_availability='$product_availability'
          where product_id='$id'");
+    if($edit)
+    {
+        echo "
+        <script>
+          alert('Product Updated.');
+          location.href = 'productlist.php';
+        </script>";
+    }
 
-        
+
 }
 ?>  
 <form method="POST" enctype="multipart/form-data">
@@ -132,21 +140,21 @@ if(isset($_POST['update_product'])) // when click on Update button
 					<div class="form-group row">
                       <label for="product_regularPrice" class="col-sm-3 col-form-label">Product Regular Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_regularPrice"value="<?php echo $data['product_regularPrice'] ?>"placeholder="0.00">
+					   <input class="form-control " type="number" min=0.01 step="0.01" name="product_regularPrice"value="<?php echo $data['product_regularPrice'] ?>"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_listedPrice" class="col-sm-3 col-form-label">Product Listed Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_listedPrice"value="<?php echo $data['product_listedPrice'] ?>"placeholder="0.00">
+					   <input class="form-control " type="number"min=0.01 step="0.01" name="product_listedPrice"value="<?php echo $data['product_listedPrice'] ?>"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_discountRate" class="col-sm-3 col-form-label">ProductDiscount Rate</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" step="0.01" name="product_discountRate"value="<?php echo $data['product_discountRate'] ?>"placeholder="0.00">
+					   <input class="form-control " type="number"min=0 step="0.01" name="product_discountRate"value="<?php echo $data['product_discountRate'] ?>"placeholder="0.00">
                       </div>
                     </div>
 
@@ -160,7 +168,7 @@ if(isset($_POST['update_product'])) // when click on Update button
 					<div class="form-group row">
                       <label for="product_stock" class="col-sm-3 col-form-label">Product Stock</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_stock" value="<?php echo $data['product_stock'] ?>"placeholder="0">
+					   <input class="form-control " type="number" min=0 name="product_stock" value="<?php echo $data['product_stock'] ?>"placeholder="0">
                       </div>
                     </div>
 
@@ -170,17 +178,7 @@ if(isset($_POST['update_product'])) // when click on Update button
                       </div>
                     </div>
     </form>
-<?php 
-if($edit)
-        {
-            echo "Product Updated successfully.";
-            exit;
-        }
-        else
-        {
-            echo "Error to update product details..";
-        }    	
-?>
+
 <?php
 include_once '../admin/include/adminfooter.php';	
 ?>
