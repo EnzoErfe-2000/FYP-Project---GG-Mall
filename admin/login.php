@@ -44,13 +44,15 @@
           session_start();
           $_SESSION["loggedin"] = true;
           $_SESSION["name"] = $row['admin_name'];
+		  $_SESSION["id"] = $row['admin_id'];
+          $_SESSION["status"] = $row['admin_status'];
         }
-        echo'
+        echo"
           <script>
-            alert("Welcome back admin");
-            location.href="index.php"
+            alert('Welcome back ". $_SESSION["name"]."');
+            location.href='index.php'
           </script>
-        ';
+        ";
       }
       else
       {
