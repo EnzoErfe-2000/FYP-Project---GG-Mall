@@ -35,7 +35,7 @@
                     gauge: {
                         thickness: 0.03,
                         bgColor: "#eee",
-                        fgColor: "#b8cd06",
+                        fgColor: "#6777EF",
                         lineCap: 'butt'
                     },
                     textCSS: 'color:#343434;'
@@ -44,7 +44,7 @@
                     gauge: {
                         thickness: 0.03,
                         bgColor: "#eee",
-                        fgColor: "#b8cd06",
+                        fgColor: "#6777EF",
                         lineCap: 'butt'
                     },
                     textCSS: 'color:#343434;'
@@ -53,7 +53,7 @@
                     gauge: {
                         thickness: 0.03,
                         bgColor: "#eee",
-                        fgColor: "#b8cd06",
+                        fgColor: "#6777EF",
                         lineCap: 'butt'
                     },
                     textCSS: 'color:#343434;'
@@ -62,7 +62,7 @@
                     gauge: {
                         thickness: 0.03,
                         bgColor: "#eee",
-                        fgColor: "#b8cd06",
+                        fgColor: "#6777EF",
                         lineCap: 'butt'
                     },
                     textCSS: 'color:#343434;'
@@ -248,7 +248,7 @@
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,.5)",
-                                    fgColor: "#b8cd06"
+                                    fgColor: "#6777EF"
                                 },
                                 textCSS: 'color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,.1);'
                             },
@@ -256,7 +256,7 @@
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,.5)",
-                                    fgColor: "#b8cd06"
+                                    fgColor: "#6777EF"
                                 },
                                 textCSS: 'color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,.1);'
                             },
@@ -264,7 +264,7 @@
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,.5)",
-                                    fgColor: "#b8cd06"
+                                    fgColor: "#6777EF"
                                 },
                                 textCSS: 'color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,.1);'
                             },
@@ -272,7 +272,7 @@
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,.5)",
-                                    fgColor: "#b8cd06"
+                                    fgColor: "#6777EF"
                                 },
                                 textCSS: 'color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,.1);'
                             }

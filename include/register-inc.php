@@ -2,7 +2,7 @@
 <?php
     require_once 'dbh-inc.php';
 	require_once 'functions-inc.php';
-
+   
     // Define variables and initialize with empty values
 	$email_chk = $username_chk = $pwd_chk = $cpwd_chk = 0;
     $email = $username = $password = $confirm_password = "";
@@ -113,6 +113,15 @@
 								alert('New account created');
 								location.assign('/fyp-project/index.php');
 								</script>";
+
+                                $to = "1191202622@student.mmu.edu.my"; //send to our email
+                                $subject = "Register Successful";
+                                $message = 'Your GGMall account is created ';
+                    
+                                $headers = 'From: GGMall <ggmall.inc2001@gmail.com>' . "\r\n";
+                                $headers .= 'MIME-Version: 1.0' . "\r\n";
+                                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";  // Set from headers
+                                mail($to, $subject, $message, $headers);
 						}
 						else 
 						{
@@ -132,6 +141,10 @@
 					history.go(-1);
 				</script>";
 			}
+
+            
+  
+            
 		}
         // Close connection
         mysqli_close($conn);

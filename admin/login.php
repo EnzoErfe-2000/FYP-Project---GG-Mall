@@ -43,11 +43,13 @@
         {
           session_start();
           $_SESSION["loggedin"] = true;
-          $_SESSION["name"] = $row['admin_name'];
+          $_SESSION["name"] = $row["admin_name"];
+          $_SESSION["id"] = $row["admin_id"];
+          $_SESSION["status"] = $row["admin_status"];
         }
         echo'
           <script>
-            alert("Welcome back admin");
+            alert("Welcome back '.$_SESSION["name"].'");
             location.href="index.php"
           </script>
         ';
@@ -125,7 +127,7 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="font-weight-bold small" href="register.html">Create an Account!</a>
+                    <a class="font-weight-bold small" href="/fyp-project/index.php">Back to User Login</a>
                   </div>
                   <div class="text-center">
                   </div>
