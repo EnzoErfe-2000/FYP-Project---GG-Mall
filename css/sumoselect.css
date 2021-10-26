@@ -37,8 +37,8 @@
         .SumoSelect > .optWrapper.multiple > .options li ul li.opt{padding-left: 50px;}
         .SumoSelect > .optWrapper.isFloating > .options {max-height: 100%;}
         .SumoSelect > .optWrapper > .options  li.opt, .SumoSelect .no-match { line-height: 20px; padding: 5px 15px; font-size: 12px; color: #555; cursor: pointer;}
-            .SumoSelect > .optWrapper > .options li.opt:hover { background-color: #b8cd06; color: #fff;}
-            .SumoSelect > .optWrapper > .options li.opt.selected:not(.disabled){background-color: #b8cd06; color: #fff;}
+            .SumoSelect > .optWrapper > .options li.opt:hover { background-color: #6777EF; color: #fff;}
+            .SumoSelect > .optWrapper > .options li.opt.selected:not(.disabled){background-color: #6777EF; color: #fff;}
 
             .SumoSelect > .optWrapper > .options li label { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: block;cursor: pointer;}
             .SumoSelect > .optWrapper > .options li span { display: none; }

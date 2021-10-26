@@ -145,7 +145,7 @@
 }
 .swiper-button-prev:after,
 .swiper-button-next:after{
-  border: 5px #b8cd06 solid;
+  border: 5px #6777EF solid;
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transition: all .3s;
@@ -298,7 +298,7 @@ button.swiper-pagination-bullet {
   border-color: #fff;
 }
 .swiper-pagination-bullet-active {
-  border: 2px #b8cd06 solid;
+  border: 2px #6777EF solid;
   transform: scale(1.5);
   -webkit-transform: scale(1.5);
   -webkit-backface-visibility: hidden;

@@ -9,7 +9,7 @@
                             <div class="simple-article size-2 light fulltransparent">Integer posuere orci sit amet feugiat pellent que. Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</div>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> contact us: <a href="tel:+0121314520">+0121314520</a></div>
-                            <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
+                            <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:ggmall.inc2001@gmail.com">ggmall.inc2001@gmail.com</a></div>
                             <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> address: <a href="https://goo.gl/maps/Xxv2Qu1mBzeaKiaM7">Jalan Ayer Keroh Lama, 75450 Bukit Beruang, Melaka</a></div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
