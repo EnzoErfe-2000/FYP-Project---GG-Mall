@@ -41,7 +41,7 @@ if (isset($_POST['firstName'])) {
 	$note = $_POST['note'];
 	echo "<script type='text/javascript'>alert('$note');</script>";
 
-	$status = "Ongoing";
+	$status = "Pending";
 	echo "<script type='text/javascript'>alert('$status');</script>";
 
 	$total = number_format($_SESSION['cartTotal'],2,'.','');
@@ -85,6 +85,9 @@ if (isset($_POST['firstName'])) {
 		{
 			$currentProdId = $products_in_cart[$i];
 			$currentProdQuantity = $_SESSION['cart'][$currentProdId];
+			echo "<script type='text/javascript'>alert($currentProdId);</script>";
+			echo "<script type='text/javascript'>alert($currentProdQuantity	);</script>";
+		
 			//echo "Current prod id : $currentProdId <br>";
 			//echo "Current prod quantity : $currentProdQuantity <br>";
 			
@@ -123,6 +126,9 @@ if (isset($_POST['firstName'])) {
 			echo "<script> location.assign('/fyp-project/successful_checkout.php');</script>";
 			
 		}
+		unset($_SESSION['cart']);
+		unset($_SESSION['cartTotal']);
+		unset($_SESSION['checkout']);
 	}
 	
 }

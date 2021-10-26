@@ -9,7 +9,7 @@ include_once 'include/header.php';
 
 //PREVENT RANDOM ACCESS BY GUEST
 $uri=$_SERVER['HTTP_REFERER'];
-if($uri == "http://localhost/fyp-project/cart.php" || $_SESSION['checkout'] == 1)
+if(isset($_SESSION['cart']) && ($uri == "http://localhost/fyp-project/cart.php" || $_SESSION['checkout'] == 1))
 {
 	$_SESSION['checkout'] = 1;
 	if(isset($_SESSION['cart']))

@@ -6,7 +6,6 @@ include_once 'include/session-db-func.php';
 	
 	if (isset($_POST['firstName'])) {
 		
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -233,3 +232,10 @@ $(document).on('keyup', '#cardCVC', function(){
 	//change to alerts
 });
 </script>
+<?php
+}
+else
+{
+	echo "<script> location.assign('cart.php');</script>";
+}
+?>
