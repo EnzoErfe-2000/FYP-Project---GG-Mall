@@ -36,7 +36,7 @@ session_start();
                     <div class="row">
                         <div class="col-md-5 hidden-xs hidden-sm">
                             <div class="entry"><b>contact us:</b> <a href="tel:+0121314520">+0121314520</a></div>
-                            <div class="entry"><address><b>email:</b><a href="mailto:ggmall_inc@gmail.com"> ggmall_inc@gmail.com</a></address></div>
+                            <div class="entry"><address><b>email:</b><a href="mailto:ggmall.inc2001@gmail.com"> ggmall.inc2001@gmail.com</a></address></div>
                         </div>
 						<?php
 						
