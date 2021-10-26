@@ -1,8 +1,3 @@
-<?php
-  session_start();
-
-  require "../include/dbh-inc.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,12 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="../img/logo1~1.png" rel="icon">
   <title>GG Mall Admin</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -44,7 +40,7 @@
        
 	  <!-- Order -->
 	  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+        <a class="nav-link collapsed" href="../admin/orderlist.php" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
           <span>Order</span>
@@ -57,7 +53,7 @@
       </li>
 	    <!-- Product -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        <a class="nav-link collapsed" href="productlist.php" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Product</span>
@@ -66,12 +62,13 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="productlist.php">Product List</a>
             <a class="collapse-item" href="addproduct.php">Add Product</a>
-			<a class="collapse-item" href="addcategory.php">Add Category</a>
+			      <a class="collapse-item" href="addcategory.php">Add Category</a>
+            <a class="collapse-item" href="deleteproductlist.php">Delete Product</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+        <a class="nav-link collapsed" href="customerlist.php" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
           <span>Customer</span>
@@ -79,6 +76,30 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="customerlist.php">Customer List</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true"
+          aria-controls="collapseList">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Admin</span>
+        </a>
+        <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <ul>
+              <?php
+                if($_SESSION['status'] == "superadmin")
+                {
+                  echo '<li>
+                    <a class="collapse-item" href="adminlist.php">Admin List</a>
+                  </li>';
+                }
+              ?>
+              <li>
+                <a class="collapse-item" href="adminchange.php">Change Password</a>
+              </li>
+            </ul>
           </div>
         </div>
       </li>
@@ -102,7 +123,7 @@
         GG Mall
       </div>
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
+        <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">
           <i class="fas fa-fw fa-columns"></i>
           <span>User site</span>

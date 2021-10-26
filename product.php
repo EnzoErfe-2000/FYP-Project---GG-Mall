@@ -72,7 +72,7 @@ include_once 'include/header.php';
 										{
 											echo "<div class='swiper-slide'>
 													<div class='swiper-lazy-preloader'></div>
-													<div class='product-big-preview-entry swiper-lazy' data-background='product_img/" . $bigSwiperImgs[$i] . "'></div>
+													<div class='product-big-preview-entry swiper-lazy' data-background='./admin/product_img/" . $bigSwiperImgs[$i] . "'></div>
 												</div>";
 										}
 									?>
@@ -89,9 +89,9 @@ include_once 'include/header.php';
 											{
 												echo "<div class='swiper-slide'>
 														<div class='product-small-preview-entry'>
-															<img src='product_img/" . $swiperImgs[$i] . "' alt='' />
+															<img src='./admin/product_img/" . $swiperImgs[$i] . "' alt='' />
 														</div>
-													</div>";
+													</div>";   
 											}
 										?>
 									</div>

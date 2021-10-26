@@ -27,6 +27,7 @@
 				else if($correctPwd === true)
 				{
 					session_start();      
+					$_SESSION["loggedin"] = true;
 					$_SESSION["customer_id"] = $uidExists["customer_id"];
 					$_SESSION["customer_name"] = $uidExists["customer_name"];
 					$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];

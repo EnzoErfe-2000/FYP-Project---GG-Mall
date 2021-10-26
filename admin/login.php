@@ -127,7 +127,7 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="font-weight-bold small" href="register.html">Create an Account!</a>
+                    <a class="font-weight-bold small" href="/fyp-project/index.php">Back to User Login</a>
                   </div>
                   <div class="text-center">
                   </div>

@@ -1,6 +1,7 @@
 <?php
 include_once 'include/session-db-func.php';	
 include_once 'include/header.php';
+
 ?>
         <div class="header-empty-space"></div>
 

@@ -68,6 +68,15 @@
                             alert('Something went wrong');
                         </script>";
                     }
+
+                    $to = "1191202622@student.mmu.edu.my"; //send to our email
+                    $subject = "Password Changed";
+                    $message = 'We have noticed that your GGMall account password has recently been changed. You can safely disregard this email if it was sent to you.';
+
+                    $headers = 'From: GGMall <ggmall.inc2001@gmail.com>' . "\r\n";
+                    $headers .= 'MIME-Version: 1.0' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";  // Set from headers
+                    mail($to, $subject, $message, $headers);
                 }
                 else
                 {
