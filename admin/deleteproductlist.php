@@ -11,7 +11,6 @@ tbody td {
 tfoot {
     font-size: 15px;
 }
-
 </style>
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -36,7 +35,7 @@ tfoot {
 							<th>Category</th>
 							<th>Stock [Availability]</th>
 							<th>Price [RM] </th>
-							<th>Action</th>
+							<th>Delete</th>
 						  </tr>
 						</thead >
 						<tfoot class="thead-light">
@@ -46,7 +45,7 @@ tfoot {
 							<th>Category</th>
 							<th>Stock [Availability]</th>
 							<th>Price [RM]</th>
-							<th>Action</th>
+							<th>Delete</th>
 							
 						  </tr>
 						</tfoot>
@@ -61,17 +60,19 @@ tfoot {
 								{
 									$d=$data['product_id'];
 									echo "<tr>";
-									echo "<td>" ."<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
+									echo "<td>" ."
+													<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>". $data['product_id'] ."</button>". "</td>";
 									echo "<td>" . $data['product_name'] . "</td>";
 									echo "<td>" . $data['product_category0'] . " ". $data['product_category1'] ."</td>";
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
 									echo "<td>" . $data['product_listedPrice'] . "</td>";
 									echo "<td>".
-									   "<form action='editproduct.php' method='POST'>
-											<input type ='hidden' name='edit_id' value=product_id>
-											<button type='submit' name='update1' style='height:24px;' class= 'btn btn-light btn-sm'>
-											<a href = '/fyp-project/admin/editproduct.php?product=$d'>EDIT</p></button>
-										</form>"		
+									   "	
+											<input type ='hidden' name='deleteproduct' value=product_id>
+											<button type='button'  style='height:25px;' class= 'btn btn-warning btn-sm'>
+											<font size='2px'><a href = '/fyp-project/admin/deleteproduct.php?product=$d'>DELETE</a></button>
+											
+										"			
 									."</td>";
 									echo "</tr>";
 								}
@@ -84,6 +85,6 @@ tfoot {
         </div>
 </div>
 <?php
-include_once '../admin/include/adminfooter.php';	
+include_once 'include/adminfooter.php';	
 ?>
   

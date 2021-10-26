@@ -1,8 +1,3 @@
-<?php
-  session_start();
-
-  require "../include/dbh-inc.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="../img/logo1~1.png" rel="icon">
   <title>GG Mall Admin</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -45,7 +40,7 @@
        
 	  <!-- Order -->
 	  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+        <a class="nav-link collapsed" href="../admin/orderlist.php" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
           <span>Order</span>
@@ -58,7 +53,7 @@
       </li>
 	    <!-- Product -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        <a class="nav-link collapsed" href="productlist.php" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Product</span>
@@ -68,11 +63,12 @@
             <a class="collapse-item" href="productlist.php">Product List</a>
             <a class="collapse-item" href="addproduct.php">Add Product</a>
 			      <a class="collapse-item" href="addcategory.php">Add Category</a>
+            <a class="collapse-item" href="deleteproductlist.php">Delete Product</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+        <a class="nav-link collapsed" href="customerlist.php" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
           <span>Customer</span>
@@ -119,7 +115,7 @@
         GG Mall
       </div>
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
+        <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">
           <i class="fas fa-fw fa-columns"></i>
           <span>User site</span>
@@ -275,7 +271,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <a href="adminlogout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a> 
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
                 </a>
               </div>
             </li>
