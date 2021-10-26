@@ -1,5 +1,6 @@
 <?php
 include_once '../admin/include/adminheader.php';	
+include_once '../include/dbh-inc.php';
 ?>
 <?php
 $sql = "SELECT * FROM orders;";
