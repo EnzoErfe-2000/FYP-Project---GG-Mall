@@ -1,5 +1,17 @@
 <?php
 session_start();
+include_once '../include/dbh-inc.php';
+
+if(!isset($_SESSION["loggedin"]))
+{
+  echo'
+    <script>
+        alert("Please login first");
+        location.href = "login.php";
+    </script>
+  ';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

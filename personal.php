@@ -154,7 +154,6 @@ if(isset($_POST['submitt']))
                                                                 $phone = $row['customer_phone'];
                                                                 $dob = $row['customer_dateOfBirth'];
                                                                 $address = $row['customer_address'];
-																$street = $row['customer_address_street'];
 																$unit = $row['customer_address_unit'];
 																$city = $row['customer_address_city'];
 																$state = $row['customer_address_state'];
@@ -181,7 +180,7 @@ if(isset($_POST['submitt']))
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="input-dob" class="control-label">Street Address</label>
-                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $street?>" required>
+                                                            <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $address?>" required>
 															<div class="empty-space col-xs-b10"></div>
 															<div class="row m10">
 																<div class="col-sm-6">

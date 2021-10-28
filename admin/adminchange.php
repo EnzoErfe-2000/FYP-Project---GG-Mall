@@ -40,8 +40,8 @@ if(isset($_POST['save']))
                 {
                     echo'
                         <script>
-                            alert("New password updated successfully");
-                            location.href: "adminchange.php";
+                            alert("New password successfully update.");
+                            location.href = "adminchange.php";
                         </script>
                     ';
                 }
