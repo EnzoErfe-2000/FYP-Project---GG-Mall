@@ -141,14 +141,14 @@ include_once 'include/header.php';
 								<div class="col-sm-9">
 									<div class="quantity-select">
 										<button type="button" class="minus" style="border:none;"></button>
-										<input class="numInput" style="font-weight:bold;margin:0;" type="number" name="product_quantity" id="product_quantity" value="1" min=1 max=<?=$product['product_stock']?>>
+										<input class="numInput" style="font-weight:bold;margin:0;" type="number" name="product_quantity" value="1" min=1 max=<?=$product['product_stock']?> required>
 										<button type="button" class="plus" style="border:none;"></button>
 									</div>
 								</div>
 							</div>
 							<div class="row m5 col-xs-b40">
 								<div class="col-sm-6">
-									<button type="button" class="button size-2 style-1 block noshadow" href="#">
+									<button type="button" class="button size-2 style-1 block noshadow favbtn" href="#">
 										<span class="button-wrapper">
 											<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
 											<span class="text">add to favourites</span>
@@ -362,3 +362,12 @@ include_once 'include/footer.php';
 <?php
 include_once 'include/header_popup.php';
 ?>
+
+<!--<script>
+document.querySelector(".favbtn").addEventListener("click", addTodo);
+
+  function addTodo() {
+	  alert(parseInt($("#product_quantity").val()));
+	  $("#product_quantity").val(5);
+  }
+</script>-->

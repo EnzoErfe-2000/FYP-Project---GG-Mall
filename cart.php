@@ -151,7 +151,11 @@ if ($products_in_cart) {
 	// Calculate the subtotal
     foreach ($products as $product) {
         $subtotal += (float)$product['product_listedPrice'] * (int)$products_in_cart[$product['product_id']];
-    }
+		if($products_in_cart[$product['product_id']] > $product['product_stock'])
+		{
+			$products_in_cart[$product['product_id']] = $product['product_stock'];
+		}
+	}
 	$_SESSION['cartTotal'] =$subtotal;
 	
 	//mysqli_close($conn);

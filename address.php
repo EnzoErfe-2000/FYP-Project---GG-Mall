@@ -113,7 +113,7 @@ if(isset($_POST['submittt']))
                                                     $street = $row['street_address'];
                                                     $country = $row['country'];
                                                     $city = $row['city'];
-													$state = $row['state'];
+                                                    $state = $row['state'];
                                                     $postcode = $row['postcode'];
                                                 }
                                             ?>

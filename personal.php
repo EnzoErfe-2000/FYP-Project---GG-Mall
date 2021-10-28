@@ -44,10 +44,10 @@ if(isset($_POST['submitt']))
         
         if (mysqli_num_rows($result) > 0) 
         {
-            $email_err = "Email is taken";
+            //$email_err = "Email is taken";
         } 
     }
-
+	echo "<script>alert($_POST[unit])</script>";
     if(empty($email_err) && empty($phone_err))
     {
         $sql = "
@@ -56,7 +56,13 @@ if(isset($_POST['submitt']))
         customer_email_address = '". $_POST["email"]."', 
         customer_phone = '".$_POST["phone"]."', 
         customer_dateOfBirth = '".$_POST["dob"]."',
-        customer_address = '".$_POST["address"]."'
+        customer_address = '".$_POST["address"]."',
+		customer_address_unit = '".$_POST["unit"]."',
+		customer_address_city = '".$_POST["city"]."',
+		customer_address_state = '".$_POST["state"]."',
+		customer_address_country = '".$_POST["country"]."',
+		customer_address_postcodeZIP = '".$_POST["postcode"]."'
+		
         WHERE customer_id = ". $_SESSION['customer_id'];
 
         if(mysqli_query($conn, $sql))
@@ -181,13 +187,13 @@ if(isset($_POST['submitt']))
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Unit No.</label>
 																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$unit?>" placeholder="Unit No." />
+																	<input class="simple-input" type="text" value="<?=$unit?>" placeholder="Unit No." name="unit"/>
 																	<div class="empty-space col-xs-b10"></div>
 																</div>
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Town/City</label>
 																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$city?>" placeholder="Town/City" />
+																	<input class="simple-input" type="text" value="<?=$city?>" placeholder="Town/City" name="city"/>
 																	<div class="empty-space col-xs-b10"></div>
 																</div>
 															</div>
@@ -195,13 +201,13 @@ if(isset($_POST['submitt']))
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">State</label>
 																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$state?>" placeholder="State" />
+																	<input class="simple-input" type="text" value="<?=$state?>" placeholder="State" name="state"/>
 																	<div class="empty-space col-xs-b10"></div>
 																</div>
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Country</label>
 																	<div class="empty-space col-xs-b5"></div>
-																	<input class="simple-input" type="text" value="<?=$country?>" placeholder="Country" />
+																	<input class="simple-input" type="text" value="<?=$country?>" placeholder="Country" name="country"/>
 																	<div class="empty-space col-xs-b5"></div>
 																</div>
 															</div>
@@ -209,7 +215,7 @@ if(isset($_POST['submitt']))
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Postcode/ZIP</label>
 																	<div class="empty-space col-xs-b10"></div>
-																	<input class="simple-input" type="text" value="<?=$zip?>" placeholder="Postcode/ZIP" />
+																	<input class="simple-input" type="text" value="<?=$zip?>" placeholder="Postcode/ZIP" name="postcode"/>
 																	<div class="empty-space col-xs-b5"></div>
 																</div>
 															</div>
