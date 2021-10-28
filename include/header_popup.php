@@ -1,6 +1,6 @@
 <div class="popup-wrapper">
     <div class="bg-layer"></div>
-        <div class="popup-content" data-rel="1">
+        <div class="popup-content" data-rel="1" id="form">
 			<div class="layer-close"></div>
 			<div class="popup-container size-1">
 				<div class="popup-align">
@@ -15,6 +15,10 @@
 						<div class="empty-space col-xs-b10 col-sm-b20">
 							<span class="simple-article size-2" id="errPwd" style="color:red; margin-left: 30px;">&nbsp;</span>
 						</div>
+                        <div class="row">
+                            <div class="g-recaptcha" style="margin-left: 50px; margin-bottom: 10px;" data-sitekey="6Lc4KPkcAAAAAFo3LBkYvoI1ytwpC8V2K4hB4PhA"></div>
+                            <span class="reCAPTCHA-err" ><?php echo $err_mssg; ?></span>
+                        </div>
 						<div class="row">
 							<div class="col-sm-6 col-xs-b10 col-sm-b0">
 								<div class="empty-space col-sm-b5"></div>
@@ -318,6 +322,7 @@
                 <div class="button-close"></div>
             </div>
         </div>	
+        <p id="form" style="display:none;"><?php echo $form?></p>
 </div>
 
 </body>
@@ -326,6 +331,9 @@
 <script src="/fyp-project/js/jquery-2.2.4.min.js"></script>
 <script src="/fyp-project/js/swiper.jquery.min.js"></script>
 <script src="/fyp-project/js/global.js"></script>
+
+<!--reCaptcha-->
+<script src='https://www.google.com/recaptcha/api.js'></script> 
 
 <!-- styled select -->
 <script src="/fyp-project/js/jquery.sumoselect.min.js"></script>
@@ -354,6 +362,10 @@
                 }
             });
         });
+
+        if(document.getElementById("form").innerHTML == "false") {
+            $('#form').fadeIn();
+        }
     </script>
 	<script>
 	// This function gets called once the user submits the form
