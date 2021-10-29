@@ -111,7 +111,7 @@ else
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<input required name="streetAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
+					<input required name="streetAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address]";}else{echo "";}?>" placeholder="Street address" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
