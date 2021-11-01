@@ -56,7 +56,7 @@ if(isset($_POST['submitt']))
         customer_email_address = '". $_POST["email"]."', 
         customer_phone = '".$_POST["phone"]."', 
         customer_dateOfBirth = '".$_POST["dob"]."',
-        customer_address = '".$_POST["address"]."',
+        customer_address_street = '".$_POST["address"]."',
 		customer_address_unit = '".$_POST["unit"]."',
 		customer_address_city = '".$_POST["city"]."',
 		customer_address_state = '".$_POST["state"]."',
@@ -153,7 +153,6 @@ if(isset($_POST['submitt']))
                                                                 $email = $row['customer_email_address'];
                                                                 $phone = $row['customer_phone'];
                                                                 $dob = $row['customer_dateOfBirth'];
-                                                                $address = $row['customer_address'];
 																$street = $row['customer_address_street'];
 																$unit = $row['customer_address_unit'];
 																$city = $row['customer_address_city'];
