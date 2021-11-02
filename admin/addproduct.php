@@ -84,21 +84,21 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_regularPrice" class="col-sm-3 col-form-label">Product Regular Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number"min=0  step="0.01" name="product_regularPrice"placeholder="0.00">
+					   <input class="form-control " type="number" min=0.01  step="0.01" pattern="^\d+(?:\.\d{1,2})?$"  name="product_regularPrice"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_listedPrice" class="col-sm-3 col-form-label">Product Listed Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" min=0 step="0.01" name="product_listedPrice"placeholder="0.00">
+					   <input class="form-control " type="number" min=0.01 step="0.01" pattern="^\d+(?:\.\d{1,2})?$"  name="product_listedPrice"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_discountRate" class="col-sm-3 col-form-label">ProductDiscount Rate</label>
                       <div class="col-sm-9">
-					   <input class="form-control " min=0 type="number" step="0.01" name="product_discountRate"placeholder="0.00">
+					   <input class="form-control "  type="number"min=0。00  pattern="^\d+(?:\.\d{1,2})?$" step="0.01" name="product_discountRate"placeholder="0.00">
                       </div>
                     </div>
 
@@ -112,7 +112,7 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_stock" class="col-sm-3 col-form-label">Product Stock</label>
                       <div class="col-sm-9">
-					   <input class="form-control " min=0 type="text" name="product_stock" placeholder="0">
+					   <input class="form-control "  type="number" min=0  name="product_stock" placeholder="0">
                       </div>
                     </div>
 					
@@ -121,6 +121,40 @@ include_once '../admin/include/adminheader.php';
                       <label for="product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
                       <div class="col-sm-9">
 					   <input class="form-control" type="file" name="product_bigSwiperImg"  multiple accept=".jpg, .png, .gif" />
+             <?php
+             if(isset($_POST["submit"]))
+             {
+                 
+                 $filename = $_FILES['product_bigSwiperImg']['name'];
+                 $destination = './product_img/' . $filename;
+                 $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                 $file = $_FILES['product_bigSwiperImg']['tmp_name'];
+                 if (!in_array($extension, ['png', 'jpg', 'gif'])) {
+                     echo "You file extension must be .png, .jpg or .gif";
+                 }else {
+                     // move the uploaded (temporary) file to the specified destination
+                     if (move_uploaded_file($file, $destination)) {
+                         
+                         $sql="INSERT INTO product (product_bigSwiperImg)  
+                             VALUES ('$filename') ";
+ 
+                         if (mysqli_query($conn, $sql)) {
+                             echo "<script>
+                             location.href = 'productlist.php';
+                           </script>";
+                         }
+                     } else {
+                         echo "Failed to upload file.";
+                     }
+                 }
+            
+                };
+                 
+             
+             
+             
+             ?>
+
                 		<br />
                       </div>
                     </div>
