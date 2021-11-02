@@ -238,35 +238,7 @@ include_once 'include/header.php';
 ?>
                             
 <!----------------------------------------------------------------------------------------------->
-                               <div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/SteelSeriesArctis571_RGB_GH.png" width="150" height="150" alt="aaa">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10001">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM398.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Best mic in gaming: the Discord-certified Clearcast bidirectional microphone</div>
-                                        </div>
-                                    </div>  
-                               </div>
-                              
+                            
                             </div>
                         </div>
                     </div>

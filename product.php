@@ -85,11 +85,11 @@ include_once 'include/header.php';
 									<div class="swiper-button-next hidden"></div>
 									<div class="swiper-wrapper">
 										<?php
-											for($i = 0; $i < count($swiperImgs); $i++)
+											for($i = 0; $i < count($bigSwiperImgs); $i++)
 											{
 												echo "<div class='swiper-slide'>
 														<div class='product-small-preview-entry'>
-															<img src='./admin/product_img/" . $swiperImgs[$i] . "' alt='' />
+															<img src='./admin/product_img/" . $bigSwiperImgs[$i] . "'width='50' height='50' alt='' />
 														</div>
 													</div>";   
 											}
