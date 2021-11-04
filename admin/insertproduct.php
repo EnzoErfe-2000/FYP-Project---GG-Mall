@@ -1,4 +1,5 @@
 <?php
+			
 			include_once '../include/dbh-inc.php';
 			$product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
 			$product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
@@ -17,82 +18,114 @@
 
             $product_availability = mysqli_real_escape_string($conn, $_POST['product_availability']);
 			$product_stock = mysqli_real_escape_string($conn, $_POST['product_stock']);
-
-            if(isset($_POST["submit"]))
-             {
-                 
-                 $filename = $_FILES['product_bigSwiperImg']['name'];
-                 $destination = './product_img/' . $filename;
-                 $extension = pathinfo($filename, PATHINFO_EXTENSION);
-                 $file = $_FILES['product_bigSwiperImg']['tmp_name'];
-                 if (!in_array($extension, ['png', 'jpg', 'gif'])) {
-                     echo "
-                     <script>
-                       alert('You file extension must be .png, .jpg or .gif. Please delete this record and retry again.');
-                       location.href = 'productlist.php';
-                     </script>";
-                 }else {
+			
+			
+			if(isset($_POST["submit"]))
+            {				
+				$allowTypes = array('jpg','png','jpeg','gif');
+				$imageNamesArr = array();
+				 $total = count($_FILES['product_bigSwiperImg']['name']);
+				 $fileNames = array_filter($_FILES['product_bigSwiperImg']['name']); 
+				 if(!empty($fileNames))
+				 {
+					foreach($_FILES['product_bigSwiperImg']['name'] as $key=>$val) 
+					{
+						$filename = $_FILES['product_bigSwiperImg']['name'][$key];
+						$destination = './product_img/' . $filename;
+						$userDestination = '../product_img/' . $filename;
+						
+						$fileType = pathinfo($destination, PATHINFO_EXTENSION);
+						$fileType1 = pathinfo($userDestination, PATHINFO_EXTENSION);
+						if(in_array($fileType, $allowTypes) && in_array($fileType1, $allowTypes)){
+							//Add to string
+							array_push($imageNamesArr, $filename);
+							//Move to folder
+							$file = $_FILES['product_bigSwiperImg']['tmp_name'][$key];
+							copy($file, $userDestination);
+							move_uploaded_file($file, $destination);
+                            $mainImage = $imageNamesArr[0];
+                            $imageNamesString = implode(" ", $imageNamesArr);
+                            echo "<script>alert('$mainImage uploaded');</script>";
+                            echo "<script>alert('$imageNamesString uploaded');</script>";
+						}
+						else{
+							echo "You file extension must be .png, .jpg or .gif";
+						}
+					}
+					
+				 }
+				 
+				 //$filename = $_FILES['product_bigSwiperImg']['name'];
+                 //$destination = './product_img/' . $filename;
+				 //$userDestination = '../product_img/' . $filename;
+                 //$extension = pathinfo($filename, PATHINFO_EXTENSION);
+                 //$file = $_FILES['product_bigSwiperImg']['tmp_name'];
+				 //$file1 = $_FILES['product_bigSwiperImg']['tmp_name'];
+				 //echo "<script>alert('$fileNames[1]');</script>";
+    //             if (!in_array($extension, ['png', 'jpg', 'gif'])) {
+    //                 echo "You file extension must be .png, .jpg or .gif";
+    //             }
+	//			 else 
+	//			 {
                      // move the uploaded (temporary) file to the specified destination
-                     if (move_uploaded_file($file, $destination)) {
-                         
-                        $sql="INSERT INTO product (
-                            
-                            product_id,
-                            product_name,
-                            product_nameExtra,
-                            product_fullName,
-                            product_category0,
-                            product_category1,
-                            product_brand,
-                            product_description,
-                            product_regularPrice,
-                            product_listedPrice,
-                            product_discountRate,
-                            product_stock,
-                            product_availability,
-                            product_bigSwiperImg)  
-                            VALUES (
-                           
-                            '$product_id',
-                            '$product_name',
-                            '$product_product_nameExtra',
-                            '$product_product_fullName',
-                            '$product_category0',
-                            '$product_category1',
-                            '$product_brand',
-                            '$product_description',
-                            '$product_regularPrice',
-                            '$product_listedPrice',
-                            '$product_discountRate',
-                            '$product_stock',
-                            '$product_availability','$filename') ";
-                             
+                     //if (move_uploaded_file($file, $destination)) {
+                         //Copy img to main (or user level access) folder's product_img
+	//					 copy($file, $userDestination);
+						 //Move img to admin folder's product_img
+						 //This removes the temporary file that'swhy it's second after copy()
+	//					 move_uploaded_file($file, $destination);
+					/*
+                         $sql="INSERT INTO product (product_bigSwiperImg)  
+                             VALUES ('$filename') where product_id= $product_id ";
  
                          if (mysqli_query($conn, $sql)) {
-                             echo "
-                             <script>
-                               alert('Record added sucessfully.');
-                               location.href = 'productlist.php';
-                             </script>";
+                             echo "<script>
+                             location.href = 'productlist.php';
+                           </script>";
                          }
                      } else {
-                         echo "
-                             <script>
-                               alert('Record Failed to added.');
-                               location.href = 'productlist.php';
-                             </script>";
+                         echo "Failed to upload file.";
                      }
-                 }
-                 
-<<<<<<< HEAD
-             }
-=======
-             };
-
-            
+					 */
+    //             }
+            };  
+	
+            $sql="INSERT INTO product (
+                            
+                product_id,
+                product_name,
+                product_nameExtra,
+                product_fullName,
+                product_category0,
+                product_category1,
+                product_brand,
+                product_description,
+                product_regularPrice,
+                product_listedPrice,
+                product_discountRate,
+                product_stock,
+                product_availability,
+                product_img,  
+                product_bigSwiperImg)  
+                VALUES (
+               
+                '$product_id',
+                '$product_name',
+                '$product_product_nameExtra',
+                '$product_product_fullName',
+                '$product_category0',
+                '$product_category1',
+                '$product_brand',
+                '$product_description',
+                '$product_regularPrice',
+                '$product_listedPrice',
+                '$product_discountRate',
+                '$product_stock',
+                '$product_availability',
+				'$mainImage',
+				'$imageNamesString') ";
 
 			
->>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
             if($conn->query($sql) === TRUE)
             {
                 echo "
@@ -103,15 +136,13 @@
             }
             else
             {
-<<<<<<< HEAD
-                echo "<script>
-                alert('Record of this product is not completely uploaded into database. Please check from this product page and fill in complete information again');
-                location.href = 'productlist.php';
-              </script>";
-=======
-                echo "Error" ;
->>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
+                echo "
+                <script>
+                  alert('Record error.');
+                  location.href = 'productlist.php';
+                </script>";
             }
+	
 
         
 ?>

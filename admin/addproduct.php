@@ -122,14 +122,37 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
                       <div class="col-sm-9">
-<<<<<<< HEAD
-					   <input class="form-control" type="file" name="product_bigSwiperImg"  multiple accept=".jpg, .png, .gif" />
-
-                		<br />
-=======
-					   <input class="form-control" type="file" id="file" name="product_bigSwiperImg[]" onchange="preview_image();" multiple accept=".jpg, .png, .gif" />
-             <div id="image_preview"></div>
->>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
+					   <input class="form-control" type="file" id="file" name="product_bigSwiperImg[]"  multiple="multiple" accept=".jpg, .png, .gif" onchange="preview_image();" />
+             <?php
+             if(isset($_POST["submit"]))
+             {
+                 
+                 $filename = $_FILES['product_bigSwiperImg']['name'];
+                 $destination = './product_img/' . $filename;
+                 $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                 $file = $_FILES['product_bigSwiperImg']['tmp_name'];
+                 if (!in_array($extension, ['png', 'jpg', 'gif'])) {
+                     echo "You file extension must be .png, .jpg or .gif";
+                 }else {
+                     // move the uploaded (temporary) file to the specified destination
+                     if (move_uploaded_file($file, $destination)) {
+                         
+                         $sql="INSERT INTO product (product_bigSwiperImg)  
+                             VALUES ('$filename') ";
+ 
+                         if (mysqli_query($conn, $sql)) {
+                             echo "<script>
+                             location.href = 'productlist.php';
+                           </script>";
+                         }
+                     } else {
+                         echo "Failed to upload file.";
+                     }
+                 }
+            
+                };
+             
+             ?><div id="image_preview"></div>
                       </div>
                     </div>
 
