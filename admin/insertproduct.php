@@ -98,7 +98,7 @@
             {
                 echo "
                 <script>
-                  alert('Record added sucessfullyecho "<script>alert('$imageNamesString uploaded');
+                  alert('Record added sucessfullyecho $imageNamesString uploaded');
                   location.href = 'productlist.php';
                 </script>";
             }
