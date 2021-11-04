@@ -45,7 +45,7 @@
 							move_uploaded_file($file, $destination);
                             $mainImage = $imageNamesArr[0];
                             $imageNamesString = implode(" ", $imageNamesArr);
-                            echo "<script>alert('$mainImage uploaded');</script>";
+                           
                             echo "<script>alert('$imageNamesString uploaded');</script>";
 						}
 						else{
