@@ -84,7 +84,15 @@
                      }
                  }
                  
+<<<<<<< HEAD
              }
+=======
+             };
+
+            
+
+			
+>>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
             if($conn->query($sql) === TRUE)
             {
                 echo "
@@ -95,10 +103,14 @@
             }
             else
             {
+<<<<<<< HEAD
                 echo "<script>
                 alert('Record of this product is not completely uploaded into database. Please check from this product page and fill in complete information again');
                 location.href = 'productlist.php';
               </script>";
+=======
+                echo "Error" ;
+>>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
             }
 
         

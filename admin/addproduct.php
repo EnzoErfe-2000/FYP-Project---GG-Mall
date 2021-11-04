@@ -8,6 +8,8 @@ include_once '../admin/include/adminheader.php';
 	left:20px;
 }
 </style>
+
+
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Add Product</h1>
@@ -120,9 +122,14 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
                       <div class="col-sm-9">
+<<<<<<< HEAD
 					   <input class="form-control" type="file" name="product_bigSwiperImg"  multiple accept=".jpg, .png, .gif" />
 
                 		<br />
+=======
+					   <input class="form-control" type="file" id="file" name="product_bigSwiperImg[]" onchange="preview_image();" multiple accept=".jpg, .png, .gif" />
+             <div id="image_preview"></div>
+>>>>>>> 2d26578a5d7079f900c13a0782ef8131df125dfc
                       </div>
                     </div>
 
@@ -137,6 +144,25 @@ include_once '../admin/include/adminheader.php';
               </div>
          
 	</div>
+  <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script>
+$(document).ready(function() 
+{ 
+ $('form').ajaxForm(function() 
+ {
+  alert("Uploaded SuccessFully");
+ }); 
+});
+function preview_image() 
+{
+ var total_file=document.getElementById("file").files.length;
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+" 'width='100' height='100'>    ");
+ }
+}
+</script>
 	<?php
 		include_once 'include/adminfooter.php';	
 	?>
