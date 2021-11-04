@@ -46,7 +46,7 @@
                             $mainImage = $imageNamesArr[0];
                             $imageNamesString = implode(" ", $imageNamesArr);
                            
-                            echo "<script>alert('$imageNamesString uploaded');</script>";
+                            
 						}
 						else{
 							echo "You file extension must be .png, .jpg or .gif";
@@ -55,39 +55,7 @@
 					
 				 }
 				 
-				 //$filename = $_FILES['product_bigSwiperImg']['name'];
-                 //$destination = './product_img/' . $filename;
-				 //$userDestination = '../product_img/' . $filename;
-                 //$extension = pathinfo($filename, PATHINFO_EXTENSION);
-                 //$file = $_FILES['product_bigSwiperImg']['tmp_name'];
-				 //$file1 = $_FILES['product_bigSwiperImg']['tmp_name'];
-				 //echo "<script>alert('$fileNames[1]');</script>";
-    //             if (!in_array($extension, ['png', 'jpg', 'gif'])) {
-    //                 echo "You file extension must be .png, .jpg or .gif";
-    //             }
-	//			 else 
-	//			 {
-                     // move the uploaded (temporary) file to the specified destination
-                     //if (move_uploaded_file($file, $destination)) {
-                         //Copy img to main (or user level access) folder's product_img
-	//					 copy($file, $userDestination);
-						 //Move img to admin folder's product_img
-						 //This removes the temporary file that'swhy it's second after copy()
-	//					 move_uploaded_file($file, $destination);
-					/*
-                         $sql="INSERT INTO product (product_bigSwiperImg)  
-                             VALUES ('$filename') where product_id= $product_id ";
- 
-                         if (mysqli_query($conn, $sql)) {
-                             echo "<script>
-                             location.href = 'productlist.php';
-                           </script>";
-                         }
-                     } else {
-                         echo "Failed to upload file.";
-                     }
-					 */
-    //             }
+				 
             };  
 	
             $sql="INSERT INTO product (
@@ -130,7 +98,7 @@
             {
                 echo "
                 <script>
-                  alert('Record added sucessfully.');
+                  alert('Record added sucessfullyecho "<script>alert('$imageNamesString uploaded');
                   location.href = 'productlist.php';
                 </script>";
             }
