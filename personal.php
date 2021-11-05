@@ -3,8 +3,8 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';
 require_once 'include/dbh-inc.php';
 
-$name = $email = $phone = $dob = $address = "";
-$email_err = $phone_err = "";
+$name = $email = $phone = $dob = $address = $postcode = $street = $unit = $city = $state = $country =  "";
+$email_err = $phone_err = $postcode_err = $name_err = $street_err = $unit_err = $city_err = $state_err = $country_err =  "";
 
 if(isset($_POST['submitt']))
 {
@@ -13,6 +13,11 @@ if(isset($_POST['submitt']))
     $phone = $_POST['phone'];
     $dob = $_POST['dob'];
     $address = $_POST['address'];
+    $postcode = $_POST['postcode'];
+    $unit = $_POST['unit'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $country = $_POST['country'];
 
     if (empty($_POST["phone"])) 
     {
@@ -47,8 +52,79 @@ if(isset($_POST['submitt']))
             //$email_err = "Email is taken";
         } 
     }
-	echo "<script>alert($_POST[unit])</script>";
-    if(empty($email_err) && empty($phone_err))
+    
+    if(empty($_POST['postcode']))
+    {
+        $postcode_err = "Please enter postcode.";
+    }
+    else if(!preg_match('/^[0-9]{5}+$/', $_POST["postcode"]))
+    {
+        $postcode_err = "Please enter valid postcode";
+    }
+    else 
+    {
+        $postcode = $_POST["postcode"];
+    }
+
+    if(empty($_POST['name']))
+    {
+        $name_err = "Please enter name.";
+    }
+    else if(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["name"]))
+    {
+        $name_err = "Please enter valid name";
+    }
+    else 
+    {
+        $name = $_POST["name"];
+    }
+
+    if(empty($_POST['address']))
+    {
+        $address_err = "Please enter street address.";
+    }
+    else 
+    {
+        $address = $_POST["address"];
+    }
+
+    if(empty($_POST['unit']))
+    {
+        $unit_err = "Please enter unit no.";
+    }
+    else 
+    {
+        $unit = $_POST["unit"];
+    }
+
+    if(empty($_POST['city']))
+    {
+        $city_err = "Please enter city.";
+    }
+    else 
+    {
+        $city = $_POST["city"];
+    }
+
+    if(empty($_POST['state']))
+    {
+        $state_err = "Please enter state.";
+    }
+    else 
+    {
+        $state = $_POST["state"];
+    }
+
+    if(empty($_POST['country']))
+    {
+        $country_err = "Please enter country.";
+    }
+    else 
+    {
+        $country = $_POST["country"];
+    }
+
+    if(empty($email_err) && empty($phone_err) && empty($postcode_err) && empty($name_err) && empty($address_err) && empty($unit_err) && empty($city_err) && empty($state_err) && empty($country_err))
     {
         $sql = "
         UPDATE customer SET 
@@ -113,7 +189,7 @@ if(isset($_POST['submitt']))
             margin-bottom:10px;
         }
 
-        ul.a 
+        ul.a
         {
             list-style-type: square;
             margin-left:11px;
@@ -129,8 +205,8 @@ if(isset($_POST['submitt']))
                 <div class="col-12">
                     <div class="dashboard">
                         <div class="row">
-                            <div class="col-xl-8 col-md-8">
-                                <h4 class="accounttitle">Personal Details</h4>
+                            <div class="col-xl-8 col-md-8" style="border: 2px solid black; border-radius: 15px;">
+                                <h4 class="accounttitle"><br>Personal Details</h4>
                                     <div class="welcome">
                                         <p class="lead">Hello, 
                                             <?php
@@ -163,6 +239,7 @@ if(isset($_POST['submitt']))
                                                         ?>
                                                             <label for="input-name" class="control-label">Name</label>
                                                             <input type="text" class="simple-input" id="input-name" placeholder="Name" name="name" value="<?php echo $name?>" required>
+                                                            <span class="invalid-feedback" style="color: red;"><?php echo $name_err; ?></span>
                                                         </div>
                                                         <div class="form-group required">
                                                             <label for="input-email" class="control-label">E-Mail</label>
@@ -182,18 +259,21 @@ if(isset($_POST['submitt']))
                                                             <label for="input-dob" class="control-label">Street Address</label>
                                                             <input type="text" class="simple-input" id="input-address" placeholder="123, Taman 1, 75350 Melaka" name="address" value="<?php echo $address?>" required>
 															<div class="empty-space col-xs-b10"></div>
+                                                            <span class="invalid-feedback" style="color: red;"><?php echo $street_err; ?></span>
 															<div class="row m10">
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Unit No.</label>
 																	<div class="empty-space col-xs-b5"></div>
 																	<input class="simple-input" type="text" value="<?=$unit?>" placeholder="Unit No." name="unit"/>
 																	<div class="empty-space col-xs-b10"></div>
+                                                                    <span class="invalid-feedback" style="color: red;"><?php echo $unit_err; ?></span>
 																</div>
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Town/City</label>
 																	<div class="empty-space col-xs-b5"></div>
 																	<input class="simple-input" type="text" value="<?=$city?>" placeholder="Town/City" name="city"/>
 																	<div class="empty-space col-xs-b10"></div>
+                                                                    <span class="invalid-feedback" style="color: red;"><?php echo $city_err; ?></span>
 																</div>
 															</div>
 															<div class="row m10">
@@ -202,12 +282,14 @@ if(isset($_POST['submitt']))
 																	<div class="empty-space col-xs-b5"></div>
 																	<input class="simple-input" type="text" value="<?=$state?>" placeholder="State" name="state"/>
 																	<div class="empty-space col-xs-b10"></div>
+                                                                    <span class="invalid-feedback" style="color: red;"><?php echo $state_err; ?></span>
 																</div>
 																<div class="col-sm-6">
 																	<label for="input-dob" class="control-label">Country</label>
 																	<div class="empty-space col-xs-b5"></div>
 																	<input class="simple-input" type="text" value="<?=$country?>" placeholder="Country" name="country"/>
 																	<div class="empty-space col-xs-b5"></div>
+                                                                    <span class="invalid-feedback" style="color: red;"><?php echo $country_err; ?></span>
 																</div>
 															</div>
 															<div class="row m10">
@@ -216,6 +298,7 @@ if(isset($_POST['submitt']))
 																	<div class="empty-space col-xs-b10"></div>
 																	<input class="simple-input" type="text" value="<?=$zip?>" placeholder="Postcode/ZIP" name="postcode"/>
 																	<div class="empty-space col-xs-b5"></div>
+                                                                    <span class="invalid-feedback" style="color: red;"><?php echo $postcode_err; ?></span>
 																</div>
 															</div>
                                                         </div>
@@ -232,6 +315,7 @@ if(isset($_POST['submitt']))
                                                         </span>
                                                     </button>  
                                                 </div>
+                                                <br>
                                             </div>
                                         </form>    
                                     </div>

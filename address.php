@@ -119,9 +119,9 @@ if($result = mysqli_query($conn, $show))
                 <div class="col-12">
                     <div class="dashboard">
                         <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="accounttitle">Address</h4>
-                                <div class="container" style="background-color: rgb(66, 170, 245); border-radius: 5px;">
+                            <div class="col-md-8" style="border: 2px solid black; border-radius: 15px;">
+                                <h4 class="accounttitle"><br>Address</h4>
+                                <div class="container" style="background-color: #3abaf4; border-radius: 5px;">
                                     <div class="row" style="margin-top: 10px; margin-left:30px; font-size: 16px;">
                                         <?php
 
@@ -148,7 +148,8 @@ if($result = mysqli_query($conn, $show))
                                             }  
                                         ?>
                                     </div>
-                                </div>    
+                                </div> 
+                                <br>   
                             </div>
                             <div class="col-md-4">
                                 <div class="dashboardmenu"><span style="font-size:18px; text-decoration:underline; font-weight:bold;" >Account Selection</span>
@@ -332,6 +333,11 @@ if($result = mysqli_query($conn, $show))
                 document.getElementById("phone_err" + counter).innerHTML = "Phone is required";
                 pass = false;
             }
+            else if (!/^(\+?601)[0|1|2|3|4|6|7|8|9]\-*[0-9]{7,8}$/.test(phone))
+            {
+                document.getElementById("phone_err" + counter).innerHTML = "Please input valid phone number(60123456789)";
+                pass = false;
+            }
 
             if (unit == "") 
             {
@@ -360,6 +366,11 @@ if($result = mysqli_query($conn, $show))
             if (pcode == "") 
             {
                 document.getElementById("pcode_err" + counter).innerHTML = "Postcode is required";
+                pass = false;
+            }
+            else if(!/^[0-9]*$/.test(pcode))
+            {
+                document.getElementById("pcode_err" + counter).innerHTML = "Only numbers allowed";
                 pass = false;
             }
 
