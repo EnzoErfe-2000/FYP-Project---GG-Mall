@@ -38,14 +38,16 @@ $monthResult = mysqli_stmt_get_result($stmt);
 $monthResultRow = mysqli_fetch_assoc($monthResult);
 $daysInMonth = daysInMonth($monthResultRow['MONTH']);
 $daysInMonthArray = range(1,$daysInMonth);
+$currentDayInCurrentMonth = date("d");
 //echo implode(", ", $daysInMonthArray);
 
 $sql = "
 SELECT 
 DAY(CAST(orders_creationDate AS DATE)) AS 'DAY',
-SUM(orders_total) AS 'SALES' 
-FROM orders WHERE 
-MONTH(orders_creationDate) = 10
+sum(ordersdetail_quantity) AS 'QTY',
+orders_total AS 'SALES' 
+FROM orders, ordersdetail WHERE 
+MONTH(orders_creationDate) = MONTH(NOW())
 
 GROUP BY CAST(orders_creationDate AS DATE)
 ORDER BY CAST(orders_creationDate AS DATE)
@@ -66,7 +68,9 @@ $row = mysqli_fetch_assoc($monthResult);
 
 
 $salesData = array();
-$salesData = array_fill(0, $monthResultRow['DAY'], 0);
+$salesData = array_fill(0, $currentDayInCurrentMonth, 0);
+$quantityData = array();
+$quantityData = array_fill(0, $currentDayInCurrentMonth, 0);
 //echo count($salesData);
 
 //$daysWithSales = array();
@@ -75,10 +79,12 @@ foreach($result as $rowDeets)
 	//array_push($daysWithSales, $rowDeets['DAY']);
 	$dayWithSales = $rowDeets['DAY'];
 	$salesData[$dayWithSales - 1] = $rowDeets['SALES'];
+	$quantityData[$dayWithSales - 1] = $rowDeets['QTY'];
 	//echo "added $rowDeets[DAY]";
 }
 //echo "In array: ";
 //echo implode(", ", $salesData);
+//echo print_r($salesData);
 ?>
 
 	<!-- Container Fluid-->
@@ -147,6 +153,41 @@ foreach($result as $rowDeets)
 				  </div>
 				</div>
               </div>
+			  
+			  <div class="row">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">This Month's Sales</h6>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Date</th>
+                        <th>Quantity Sold</th>
+                        <th>Total Sales Amount</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					<?php for($i=0; $i < count($salesData); $i++){?>
+                      <tr>
+					  <?php $currentDay = $i+1?>
+                        <td><?=$currentDay?></a></td>
+                        <td><?=$quantityData[$i]?></td>
+                        <td>RM <?=$salesData[$i]?></td>
+                        <td><a <?php if($quantityData[$i] > 0){echo "href='salesreport.php?day=$currentDay' class='btn btn-sm btn-primary'";}?>><?php if($quantityData[$i] > 0){echo 'Details';} else{echo '---';}?></a></td>
+                      </tr>
+					<?php }?>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
             </div>
             
           <!-- Modal Logout -->

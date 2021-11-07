@@ -206,8 +206,10 @@ if(isset($_GET['order']))
 						<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<div>
 						<button type="button" class="btn btn-danger mb-1" onclick="updateStatus('Pending')">Pending</button>
+						<!--
 						<button type="button" class="btn btn-primary mb-1" onclick="updateStatus('Processing')">Processing</button>
 						<button type="button" class="btn btn-warning mb-1" onclick="updateStatus('Shipping')">Shipping</button>
+						-->
 						<button type="button" class="btn btn-success mb-1" onclick="updateStatus('Delivered')">Delivered</button>
 						</div>
 						<div>

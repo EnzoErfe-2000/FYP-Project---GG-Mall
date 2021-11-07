@@ -206,7 +206,7 @@ include_once 'include/header.php';
 					<?php //echo "<script type='text/javascript'>alert('Adding cart item $product[product_id]');</script>";?>
 					<tr>
                         <td data-title=" ">
-                            <a class="cart-entry-thumbnail" href="product.php?product=<?=$product['product_id']?>"><img src="product_img/<?=$product['product_img']?>" alt=""></a>
+                            <a class="cart-entry-thumbnail" href="product.php?product=<?=$product['product_id']?>"><img src="product_img/<?=$product['product_img']?>" width=70 alt=""></a>
                         </td>
                         <td data-title=" "><h6 class="h6"><a href="product.php?product=<?=$product['product_id']?>"><?=$product['product_name']?></a></h6></td>
                         <td data-title="Price: ">RM <?=number_format($product['product_listedPrice'],2,".",",")?></td>
