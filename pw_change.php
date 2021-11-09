@@ -141,8 +141,8 @@
                 <div class="col-12">
                     <div class="dashboard">
                         <div class="row">
-                            <div class="col-xl-8 col-md-8">
-                                <h4 class="accounttitle">Change Password</h4>
+                            <div class="col-xl-8 col-md-8" style="border: 2px solid black; border-radius: 15px;">
+                                <h4 class="accounttitle"><br>Change Password</h4>
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" >
                                         <div class="row">
                                             <div class="col-sm-6" style="margin-left:30px;">
@@ -171,6 +171,7 @@
                                                     </span>
                                                 </button>  
                                             </div>
+                                            <br>
                                         </div>
                                     </form>    
                             </div>

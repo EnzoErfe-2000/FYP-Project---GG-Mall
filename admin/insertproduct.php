@@ -1,6 +1,17 @@
 <?php
 			
 			include_once '../include/dbh-inc.php';
+
+            if(!isset($_SESSION["loggedin"]))
+            {
+                echo'
+                    <script>
+                        alert("Please login first");
+                        location.href = "login.php";
+                    </script>
+                ';
+            }
+
 			$product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
 			$product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
             $product_product_nameExtra = mysqli_real_escape_string($conn, $_POST['product_nameExtra']);

@@ -21,37 +21,41 @@
     {
  
         // Validate email
-        if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", test_input($_POST["email"]))) 
-        {
-            $email_err = "Invalid email format";
-			echo '<script type="text/javascript">alert("Invalid email format.");history.go(-1);</script>';
-        } 
-		else
-		{
-			// Prepare a select statement
-
-            $sql = "SELECT * FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
+        if (empty($_POST["email"])) {
+            $email_err = "error";
+        } else if (!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", test_input($_POST["email"]))) {
+            $email_err = "error";
+            echo "
+                <script>
+                    alert('Invalid email format.');
+                </script>";
+        } else {
+            // Prepare a select statement
+    
+            $sql = "SELECT customer_id FROM customer WHERE customer_email_address = '" . test_input($_POST["email"]) . "'";
             $result = mysqli_query($conn, $sql);
-			if (mysqli_num_rows($result) > 0) 
-            {
-                echo '<script type="text/javascript">alert("Email taken.");history.go(-1);</script>';
-            } 
-            else 
-            {
+    
+            if (mysqli_num_rows($result) > 0) {
+                $email_err = "error";
+                echo "
+                <script>
+                    alert('Email taken.');
+                    location.href = '/fyp-project/index.php'
+                </script>";
+            } else {
                 $email = test_input($_POST["email"]);
-				$email_chk = 1;
             }
-		}
+        }
 		
 		// Validate username
         if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"])))
         {
 			echo '<script type="text/javascript">alert("Username can only contain letters, numbers, and underscores.");history.go(-1);</script>';
+            $username_err = "error";
         } 
         else
         {
             $username = ucwords(test_input($_POST["username"]));
-			$username_chk = 1;
         }
 		
 		// Validate password
@@ -74,7 +78,6 @@
         else
         {
             $password = ($_POST["password"]);
-			$pwd_chk = 1;
         }
 		
 		// Validate confirm password
@@ -83,6 +86,7 @@
         if($password != $confirm_password)
         {
 			echo '<script type="text/javascript">alert("Password did not match.");</script>';
+            $confirm_password_err = "error";
         }
 		else
 		{
@@ -91,7 +95,7 @@
         }
 		
 		// Check input errors before inserting in database
-        if($email_chk == 1 && $username_chk == 1 && $pwd_chk == 1 && $cpwd_chk == 1)
+        if(empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) )
         {
 			// Prepare an insert statement
             $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
