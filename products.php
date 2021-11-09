@@ -184,29 +184,24 @@ include_once 'include/header.php';
                         <a class="pagination toggle-products-view active"><img src="img/icon-14.png" alt="" /><img src="img/icon-15.png" alt="" /></a>
                         <a class="pagination toggle-products-view"><img src="img/icon-16.png" alt="" /><img src="img/icon-17.png" alt="" /></a>
                     </div>
-                
-                    <div class="align-inline spacing-1 filtration-cell-width-2">
-                        <select class="SlectBox small">
-                            <option disabled="disabled" selected="selected">Show 30</option>
-                            <option value="volvo">30</option>
-                            <option value="saab">50</option>
-                            <option value="mercedes">100</option>
-                            <option value="audi">200</option>
-                        </select>
-                    </div>
+ <!--------------------------------------------------------------------------------->  
+           
+
   <!--------------------------------------------------------------------------------->     
                     <div class="products-content">
                         <div class="products-wrapper">
                             <div class="row nopadding">
 <!------------------------------------------------------------------------------->
-<?php
-							include_once 'include/dbh-inc.php';
+<?php  
+            
+                        
+                        include_once 'include/dbh-inc.php';
 							$sql = "SELECT * FROM product";
 							$result = $conn->query($sql);
 							
 								while($data = mysqli_fetch_array($result))
 								{
-                                    
+                                    $bigSwiperImgs = explode(" ", $data['product_bigSwiperImg']);
 									$d=$data['product_id'];
 									echo "<div class='col-sm-4'>
                                             <div class='product-shortcode style-1'>
@@ -217,7 +212,7 @@ include_once 'include/header.php';
 									echo "</div><div class='h6 animate-to-green'><a href = '/fyp-project/product.php?product=$d'>" . $data['product_name'] . "</div>
                                     </div>";
 									
-                                        echo "<div class='preview'><img src='./admin/product_img/". $data['product_bigSwiperImg'] . "' width='200' height='200'/></td>";
+                                        echo "<div class='preview'><img src='./admin/product_img/". $bigSwiperImgs[0] . "' width='200' height='200'/></td>";
                                  
 									echo "<div class='preview-buttons valign-middle'>
                                     <div class='valign-middle-content'>
@@ -388,6 +383,8 @@ include_once 'include/header.php';
             </div>
             </div>
         </div>
+<!----------------------------------------------------------------------------------------------->
+
 <?php
 include_once 'include/footer.php';
 ?>
