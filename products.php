@@ -3,6 +3,7 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
 ?>
 
+
         <div class="header-empty-space"></div>
 
         <div class="container">
@@ -173,349 +174,66 @@ include_once 'include/header.php';
 
                     <div class="empty-space col-xs-b20 col-sm-b35 col-md-b70"></div>
 
+             
                     <div class="align-inline spacing-1">
-                        <div class="h4">BEST RECOMMENDED</div>
+                        <div class="h4">ALL PRODUCTS</div>
                     </div>
                     
+  <!--------------------------------------------------------------------------------->     
+                    <div class="align-inline spacing-1 hidden-xs">
+                        <a class="pagination toggle-products-view active"><img src="img/icon-14.png" alt="" /><img src="img/icon-15.png" alt="" /></a>
+                        <a class="pagination toggle-products-view"><img src="img/icon-16.png" alt="" /><img src="img/icon-17.png" alt="" /></a>
+                    </div>
+ <!--------------------------------------------------------------------------------->  
+           
+
+  <!--------------------------------------------------------------------------------->     
                     <div class="products-content">
                         <div class="products-wrapper">
                             <div class="row nopadding">
-                                
-                               <div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/SteelSeriesArctis571_RGB_GH.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10001">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM398.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Best mic in gaming: the Discord-certified Clearcast bidirectional microphone</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div>
-                                <div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/RazerBlacksharkV2X_GH.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10002">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM218.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Advanced Passive Noise Cancellation</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Headset</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/RazerKrakenBluetoothKitty_GH.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10003">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM410.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Kitty ears and earcups powered by Razer Chroma RGB</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Keyboard</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/Apex3_kb.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10004">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM249.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Customizable 10-zone RGB illumination reacts to games and Discord</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Mice</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/SteelseriesAerox3_gm.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10009">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM359.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">PTFE glide skates for silky smooth mouse movements</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10021">MSI GF63 Thin 15.6″ FHD Gaming Laptop</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/MSIGF63_01.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10021">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM3,499.00</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">i5-10500H Processor with Graphic card of GTX 1650</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Gaming Laptop</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10023">Acer Nitro 5 Gaming Laptop</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/AcerNitro5_01.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10023">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM4,149.00</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">15.6" 144Hz Slim Bezel FHD IPS Display with Ryzen7-5800H processor</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Mice</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/LogitechtMXMaster_om.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10011">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM398.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Top mouse for productivity and creative tasks</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div><div class="col-sm-4">
-                                    <div class="product-shortcode style-1">
-                                        <div class="title">
-                                            <div class="simple-article size-1 color col-xs-b5"><a href="#">Office Keyboard</a></div>
-                                            <div class="h6 animate-to-green"><a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a></div>
-                                        </div>
-                                        <div class="preview">
-                                            <img src="product_img/MicrosoftBluetoothDesktopCombo_ok.png" alt="">
-                                            <div class="preview-buttons valign-middle">
-                                                <div class="valign-middle-content">
-                                                    <a class="button size-2 style-2" href="/fyp-project/product.php?product=10014">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="price">
-                                            <div class="simple-article size-4 dark">RM257.90</div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="simple-article text size-2">Slim, modern design at an exceptional value</div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                               </div>
+<!------------------------------------------------------------------------------->
+<?php  
+            
+                        
+                        include_once 'include/dbh-inc.php';
+							$sql = "SELECT * FROM product";
+							$result = $conn->query($sql);
+							
+								while($data = mysqli_fetch_array($result))
+								{
+                                    $bigSwiperImgs = explode(" ", $data['product_bigSwiperImg']);
+									$d=$data['product_id'];
+									echo "<div class='col-sm-4'>
+                                            <div class='product-shortcode style-1'>
+                                                <div class='title'>
+                                                    <div class='simple-article size-1 color col-xs-b5'>";
+                                    echo  "<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>".$data['product_category0'] . " ". $data['product_category1'] ;
+	
+									echo "</div><div class='h6 animate-to-green'><a href = '/fyp-project/product.php?product=$d'>" . $data['product_name'] . "</div>
+                                    </div>";
+									
+                                        echo "<div class='preview'><img src='./admin/product_img/". $bigSwiperImgs[0] . "' width='200' height='200'/></td>";
+                                 
+									echo "<div class='preview-buttons valign-middle'>
+                                    <div class='valign-middle-content'>
+                                        <a class='button size-2 style-2' href='/fyp-project/product.php?product=$d'
+                                            <span class='button-wrapper'>
+                                                <span class='icon'><img src='img/icon-1.png'></span>
+                                                <span class='text'>Learn More</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                             </div>
+                                    </div><div class='price'>
+                                    <div class='simple-article size-4 dark'>RM ". $data['product_regularPrice'] ."</div>
+                                </div>
+                            </div>  
+                                </div>"  ;
+					                        }
+?>
+                            
+<!----------------------------------------------------------------------------------------------->
+                            
                             </div>
                         </div>
                     </div>
@@ -665,6 +383,8 @@ include_once 'include/header.php';
             </div>
             </div>
         </div>
+<!----------------------------------------------------------------------------------------------->
+
 <?php
 include_once 'include/footer.php';
 ?>

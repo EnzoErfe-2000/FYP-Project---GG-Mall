@@ -8,6 +8,8 @@ include_once '../admin/include/adminheader.php';
 	left:20px;
 }
 </style>
+
+
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Add Product</h1>
@@ -84,21 +86,21 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_regularPrice" class="col-sm-3 col-form-label">Product Regular Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number"min=0  step="0.01" name="product_regularPrice"placeholder="0.00">
+					   <input class="form-control " type="number" min=1.00  step="0.01" pattern="^\d+(?:\.\d{1,2})?$"  name="product_regularPrice"placeholder="0.00">
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_listedPrice" class="col-sm-3 col-form-label">Product Listed Price [RM]</label>
                       <div class="col-sm-9">
-					   <input class="form-control " type="number" min=0 step="0.01" name="product_listedPrice"placeholder="0.00">
+					   <input class="form-control " type="number" min=1.00 step="0.01" pattern="^\d+(?:\.\d{1,2})?$"  name="product_listedPrice"placeholder="0.00" >
                       </div>
                     </div>
 
 					<div class="form-group row">
                       <label for="product_discountRate" class="col-sm-3 col-form-label">ProductDiscount Rate</label>
                       <div class="col-sm-9">
-					   <input class="form-control " min=0 type="number" step="0.01" name="product_discountRate"placeholder="0.00">
+					   <input class="form-control "  type="number"min=0。00  pattern="^\d+(?:\.\d{1,2})?$" step="0.01" name="product_discountRate"placeholder="0.00">
                       </div>
                     </div>
 
@@ -112,7 +114,7 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_stock" class="col-sm-3 col-form-label">Product Stock</label>
                       <div class="col-sm-9">
-					   <input class="form-control " min=0 type="text" name="product_stock" placeholder="0">
+					   <input class="form-control "  type="number" min=0  name="product_stock" placeholder="0">
                       </div>
                     </div>
 					
@@ -120,8 +122,37 @@ include_once '../admin/include/adminheader.php';
 					<div class="form-group row">
                       <label for="product_bigSwiperImg" class="col-sm-3 col-form-label">Product Image </label>
                       <div class="col-sm-9">
-					   <input class="form-control" type="file" name="product_bigSwiperImg"  multiple accept=".jpg, .png, .gif" />
-                		<br />
+					   <input class="form-control" type="file" id="file" name="product_bigSwiperImg[]"  multiple="multiple" accept=".jpg, .png, .gif" onchange="preview_image();" />
+             <?php
+             if(isset($_POST["submit"]))
+             {
+                 
+                 $filename = $_FILES['product_bigSwiperImg']['name'];
+                 $destination = './product_img/' . $filename;
+                 $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                 $file = $_FILES['product_bigSwiperImg']['tmp_name'];
+                 if (!in_array($extension, ['png', 'jpg', 'gif'])) {
+                     echo "You file extension must be .png, .jpg or .gif";
+                 }else {
+                     // move the uploaded (temporary) file to the specified destination
+                     if (move_uploaded_file($file, $destination)) {
+                         
+                         $sql="INSERT INTO product (product_bigSwiperImg)  
+                             VALUES ('$filename') ";
+ 
+                         if (mysqli_query($conn, $sql)) {
+                             echo "<script>
+                             location.href = 'productlist.php';
+                           </script>";
+                         }
+                     } else {
+                         echo "Failed to upload file.";
+                     }
+                 }
+            
+                };
+             
+             ?><div id="image_preview"></div>
                       </div>
                     </div>
 
@@ -136,6 +167,25 @@ include_once '../admin/include/adminheader.php';
               </div>
          
 	</div>
+  <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script>
+$(document).ready(function() 
+{ 
+ $('form').ajaxForm(function() 
+ {
+  alert("Uploaded SuccessFully");
+ }); 
+});
+function preview_image() 
+{
+ var total_file=document.getElementById("file").files.length;
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+" 'width='100' height='100'>    ");
+ }
+}
+</script>
 	<?php
 		include_once 'include/adminfooter.php';	
 	?>
