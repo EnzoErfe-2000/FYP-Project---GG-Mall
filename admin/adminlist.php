@@ -1,6 +1,16 @@
 <?php
 include_once '../admin/include/adminheader.php';
 
+if(!isset($_SESSION["loggedin"]))
+{
+  echo'
+    <script>
+        alert("Please login first");
+        location.href = "login.php";
+    </script>
+  ';
+}
+
 $email_err = $username_err = $password_err = $confirm_password_err = "";
 $email = $username = $password = $confirm_password = "";
 $status="true";

@@ -1,6 +1,16 @@
 <?php
 include_once '../admin/include/adminheader.php';	
 
+if(!isset($_SESSION["loggedin"]))
+{
+  echo'
+    <script>
+        alert("Please login first");
+        location.href = "login.php";
+    </script>
+  ';
+}
+
 $old_pw = $new_pw = $new_cfpw = "";
 $new_pw_err = $new_cfpw_err = $oldpw_err = "";
 
