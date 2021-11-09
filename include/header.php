@@ -77,7 +77,95 @@
                                     </span>
                                     <span class="cart-title hidden-xs">RM <?=isset($_SESSION['cartTotal']) ? number_format($_SESSION['cartTotal'],2,".",",") : 0;?></span>
                                 </a>
-        
+                                <div class="cart-toggle hidden-xs hidden-sm">
+                                    <div class="cart-overflow">
+                                        <div class="cart-entry clearfix">
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-1.png" alt="" /></a>
+                                            <div class="cart-entry-description">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="h6"><a href="#">modern beat ht</a></div>
+                                                            <div class="simple-article size-1">QUANTITY: 2</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="simple-article size-3 grey">$155.00</div>
+                                                            <div class="simple-article size-1">TOTAL: $310.00</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cart-color" style="background: #eee;"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button-close"></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="cart-entry clearfix">
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-2.png" alt="" /></a>
+                                            <div class="cart-entry-description">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="h6"><a href="#">modern beat ht</a></div>
+                                                            <div class="simple-article size-1">QUANTITY: 2</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="simple-article size-3 grey">$155.00</div>
+                                                            <div class="simple-article size-1">TOTAL: $310.00</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cart-color" style="background: #bf584b;"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button-close"></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="cart-entry clearfix">
+                                            <a class="cart-entry-thumbnail" href="#"><img src="/fyp-project/img/product-3.png" alt="" /></a>
+                                            <div class="cart-entry-description">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="h6"><a href="#">modern beat ht</a></div>
+                                                            <div class="simple-article size-1">QUANTITY: 2</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="simple-article size-3 grey">$155.00</div>
+                                                            <div class="simple-article size-1">TOTAL: $310.00</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cart-color" style="background: #facc22;"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button-close"></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="empty-space col-xs-b40"></div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="cell-view empty-space col-xs-b50">
+                                                <div class="simple-article size-5 grey">TOTAL <span class="color">$1195.00</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <a class="button size-2 style-3" href="checkout1.php">
+                                                <span class="button-wrapper">
+                                                    <span class="icon"><img src="/fyp-project/img/icon-4.png" alt=""></span>
+                                                    <span class="text">proceed to checkout</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="hamburger-icon">
                                 <span></span>
@@ -412,11 +500,7 @@
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                                 <input type="submit"/>
                                             </div>
-                                            <input class="simple-input style-1" type="text" id="myInput" value="" onkeyup="myFunction()"placeholder="Enter keyword" />
-                                            <li class="active">
-                                            <a href="index1.html">Home</a>
-                                            <div class="menu-toggle"></div>
-                                            
+                                            <input class="simple-input style-1" type="text" value="" placeholder="Enter keyword" />
                                         </form>
                                     </div>
                                 </div>
@@ -426,27 +510,7 @@
                     </div>
                 </div>
             </div>
-            <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
-</script>
         </header>
 		
 <?php

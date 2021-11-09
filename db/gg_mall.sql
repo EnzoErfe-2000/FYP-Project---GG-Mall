@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2021 at 02:02 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Oct 26, 2021 at 03:02 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,59 +29,26 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `address` (
   `address_id` int(5) NOT NULL,
-  `unit_no1` varchar(50) DEFAULT NULL,
-  `street_address1` varchar(200) DEFAULT NULL,
-  `country1` varchar(100) DEFAULT NULL,
-  `city1` varchar(200) DEFAULT NULL,
-  `state1` varchar(100) DEFAULT NULL,
-  `postcode1` int(10) DEFAULT NULL,
-  `customer_id` int(4) UNSIGNED ZEROFILL DEFAULT NULL,
-  `fname1` varchar(100) DEFAULT NULL,
-  `lname1` varchar(100) DEFAULT NULL,
-  `phone1` varchar(20) DEFAULT NULL,
-  `fname2` varchar(100) DEFAULT NULL,
-  `fname3` varchar(100) DEFAULT NULL,
-  `fname4` varchar(100) DEFAULT NULL,
-  `lname2` varchar(100) DEFAULT NULL,
-  `lname3` varchar(100) DEFAULT NULL,
-  `lname4` varchar(100) DEFAULT NULL,
-  `phone2` varchar(20) DEFAULT NULL,
-  `phone3` varchar(20) DEFAULT NULL,
-  `phone4` varchar(20) DEFAULT NULL,
-  `unit_no2` varchar(50) DEFAULT NULL,
-  `unit_no3` varchar(50) DEFAULT NULL,
-  `unit_no4` varchar(50) DEFAULT NULL,
-  `street_address2` varchar(200) DEFAULT NULL,
-  `street_address3` varchar(200) DEFAULT NULL,
-  `street_address4` varchar(200) DEFAULT NULL,
-  `country2` varchar(100) DEFAULT NULL,
-  `country3` varchar(100) DEFAULT NULL,
-  `country4` varchar(100) DEFAULT NULL,
-  `city2` varchar(200) DEFAULT NULL,
-  `city3` varchar(200) DEFAULT NULL,
-  `city4` varchar(200) DEFAULT NULL,
-  `state2` varchar(100) DEFAULT NULL,
-  `state3` varchar(100) DEFAULT NULL,
-  `state4` varchar(100) DEFAULT NULL,
-  `postcode2` int(10) DEFAULT NULL,
-  `postcode3` int(10) DEFAULT NULL,
-  `postcode4` int(10) DEFAULT NULL
+  `unit_no` varchar(50) DEFAULT NULL,
+  `street_address` varchar(200) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `postcode` int(10) DEFAULT NULL,
+  `customer_id` int(4) UNSIGNED ZEROFILL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `address`
 --
 
-INSERT INTO `address` (`address_id`, `unit_no1`, `street_address1`, `country1`, `city1`, `state1`, `postcode1`, `customer_id`, `fname1`, `lname1`, `phone1`, `fname2`, `fname3`, `fname4`, `lname2`, `lname3`, `lname4`, `phone2`, `phone3`, `phone4`, `unit_no2`, `unit_no3`, `unit_no4`, `street_address2`, `street_address3`, `street_address4`, `country2`, `country3`, `country4`, `city2`, `city3`, `city4`, `state2`, `state3`, `state4`, `postcode2`, `postcode3`, `postcode4`) VALUES
-(10000, NULL, NULL, NULL, NULL, NULL, NULL, 1008, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10001, NULL, NULL, NULL, NULL, NULL, NULL, 1009, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10002, '2', 'Jalan Merdeka Jaya 40, Taman Merdeka Jaya', 'Malaysia', 'Melacca', 'Melaka', 75350, 1002, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10003, NULL, NULL, NULL, NULL, NULL, NULL, 1011, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10004, NULL, NULL, NULL, NULL, NULL, NULL, 1012, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(100003, NULL, NULL, NULL, NULL, NULL, NULL, 1013, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(100004, '12', 'Jalan GG 9, Taman GG', 'Malaysia', 'Melaka', 'Melaka', 76450, 1014, '123', 'Adelene', '0182929555', 'ade', 'sd', 'jhon', 'ee', 'asd', 'doe', '0123456789', '123', '60123456789', '12', '1231', '9', '123,Melaka,Malaysia', 'qwe', 'Melaka 123', 'Malaysia', 'ee', 'ww', 'Melaka', 'ee', 'Jasin', 'Melaka', 'ee', 'melaka', 75350, 12312, 76300),
-(100006, NULL, NULL, NULL, NULL, NULL, NULL, 1016, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(100007, NULL, NULL, NULL, NULL, NULL, NULL, 1017, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `address` (`address_id`, `unit_no`, `street_address`, `country`, `city`, `state`, `postcode`, `customer_id`) VALUES
+(10000, NULL, NULL, NULL, NULL, NULL, NULL, 1008),
+(10001, NULL, NULL, NULL, NULL, NULL, NULL, 1009),
+(10002, '2', 'Jalan Merdeka Jaya 40, Taman Merdeka Jaya', 'Malaysia', 'Melacca', 'Melaka', 75350, 1002),
+(10003, NULL, NULL, NULL, NULL, NULL, NULL, 1011),
+(10004, NULL, NULL, NULL, NULL, NULL, NULL, 1012),
+(100003, NULL, NULL, NULL, NULL, NULL, NULL, 1013);
 
 -- --------------------------------------------------------
 
@@ -199,18 +166,6 @@ INSERT INTO `ordersdetail` (`ordersDetail_ordersId`, `ordersDetail_productId`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `otp`
---
-
-CREATE TABLE `otp` (
-  `code_id` int(6) NOT NULL,
-  `code` int(6) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `product`
 --
 
@@ -302,12 +257,6 @@ ALTER TABLE `ordersdetail`
   ADD KEY `fk_product_id` (`ordersDetail_productId`);
 
 --
--- Indexes for table `otp`
---
-ALTER TABLE `otp`
-  ADD PRIMARY KEY (`code_id`);
-
---
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -321,7 +270,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `address_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100008;
+  MODIFY `address_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100004;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -340,12 +289,6 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `orders`
   MODIFY `orders_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1054;
-
---
--- AUTO_INCREMENT for table `otp`
---
-ALTER TABLE `otp`
-  MODIFY `code_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200009;
 
 --
 -- AUTO_INCREMENT for table `product`

@@ -1,5 +1,4 @@
 <?php
-			
 			include_once '../include/dbh-inc.php';
 			$product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
 			$product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
@@ -18,46 +17,35 @@
 
             $product_availability = mysqli_real_escape_string($conn, $_POST['product_availability']);
 			$product_stock = mysqli_real_escape_string($conn, $_POST['product_stock']);
-			
-			
-			if(isset($_POST["submit"]))
-            {				
-				$allowTypes = array('jpg','png','jpeg','gif');
-				$imageNamesArr = array();
-				 $total = count($_FILES['product_bigSwiperImg']['name']);
-				 $fileNames = array_filter($_FILES['product_bigSwiperImg']['name']); 
-				 if(!empty($fileNames))
-				 {
-					foreach($_FILES['product_bigSwiperImg']['name'] as $key=>$val) 
-					{
-						$filename = $_FILES['product_bigSwiperImg']['name'][$key];
-						$destination = './product_img/' . $filename;
-						$userDestination = '../product_img/' . $filename;
-						
-						$fileType = pathinfo($destination, PATHINFO_EXTENSION);
-						$fileType1 = pathinfo($userDestination, PATHINFO_EXTENSION);
-						if(in_array($fileType, $allowTypes) && in_array($fileType1, $allowTypes)){
-							//Add to string
-							array_push($imageNamesArr, $filename);
-							//Move to folder
-							$file = $_FILES['product_bigSwiperImg']['tmp_name'][$key];
-							copy($file, $userDestination);
-							move_uploaded_file($file, $destination);
-                            $mainImage = $imageNamesArr[0];
-                            $imageNamesString = implode(" ", $imageNamesArr);
-                           
-                            
-						}
-						else{
-							echo "You file extension must be .png, .jpg or .gif";
-						}
-					}
-					
-				 }
-				 
-				 
-            };  
-	
+
+           
+            if(isset($_POST["submit"]))
+            {
+                
+                $filename = $_FILES['product_bigSwiperImg']['name'];
+                $destination = './product_img/' . $filename;
+                $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                $file = $_FILES['product_bigSwiperImg']['tmp_name'];
+                if (!in_array($extension, ['png', 'jpg', 'gif'])) {
+                    echo "You file extension must be .png, .jpg or .gif";
+                }else {
+                    // move the uploaded (temporary) file to the specified destination
+                    if (move_uploaded_file($file, $destination)) {
+                        
+                        $sql="INSERT INTO product (product_bigSwiperImg)  
+                            VALUES ('$filename') ";
+
+                        if (mysqli_query($conn, $sql)) {
+                            echo "<script>
+                            location.href = 'productlist.php';
+                          </script>";
+                        }
+                    } else {
+                        echo "Failed to upload file.";
+                    }
+                }
+                
+            };
             $sql="INSERT INTO product (
                             
                 product_id,
@@ -73,7 +61,6 @@
                 product_discountRate,
                 product_stock,
                 product_availability,
-                product_img,  
                 product_bigSwiperImg)  
                 VALUES (
                
@@ -89,28 +76,21 @@
                 '$product_listedPrice',
                 '$product_discountRate',
                 '$product_stock',
-                '$product_availability',
-				'$mainImage',
-				'$imageNamesString') ";
+                '$product_availability','$filename') ";
 
 			
             if($conn->query($sql) === TRUE)
             {
                 echo "
                 <script>
-                  alert('Record added sucessfullyecho $imageNamesString uploaded');
+                  alert('Record added sucessfully.');
                   location.href = 'productlist.php';
                 </script>";
             }
             else
             {
-                echo "
-                <script>
-                  alert('Record error.');
-                  location.href = 'productlist.php';
-                </script>";
+                echo "Error" ;
             }
-	
 
         
 ?>
