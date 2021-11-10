@@ -119,13 +119,13 @@
                     </div>
                     <hr>
                     <a href="admin_pw_reset.php" class="btn btn-google btn-block">
-                      <i class="fab fa-google fa-fw"></i> Forgot Password
+                      Forgot Password
                     </a>
                     <!--
-					<a href="index.html" class="btn btn-facebook btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a>
-					-->
+                    <a href="index.html" class="btn btn-facebook btn-block">
+                                <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                              </a>
+                    -->
                   </form>
                   <hr>
                   <div class="text-center">
