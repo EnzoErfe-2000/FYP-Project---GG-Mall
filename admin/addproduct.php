@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]))
                   <h6 class="m-0 font-weight-bold text-primary">New Product</h6>
                 </div>
                 <div class="card-body">
-      <form method="post" action="insertproduct.php" enctype="multipart/form-data" >
+				<form method="post" action="insertproduct.php" enctype="multipart/form-data" >
                     <div class="form-group row">
                         <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
                         <div class="col-sm-9">
@@ -65,17 +65,99 @@ if(!isset($_SESSION["loggedin"]))
                     </div>
 
 					<div class="form-group row">
-                      <label for="product_category0" class="col-sm-3 col-form-label">Product Category</label>
-                      <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_category0" placeholder="Product Category">
-                      </div>
+						<label for="product_category0" class="col-sm-3 col-form-label">Product Category</label>
+						<div class="col-sm-9">
+							<select class="form-control" onchange="changeCategory(event)" name="product_categoryId">
+							<?php
+								$sql = "
+								SELECT * FROM category
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$categories = mysqli_stmt_get_result($stmt);
+
+								$categoriesArray = array();
+								while ($categoriesRow = mysqli_fetch_assoc($categories))
+								{
+								  $categoriesArray[] = $categoriesRow;
+								}
+								
+								for($i = 0 ; $i< count($categoriesArray) ; $i++)
+								{
+									echo"
+										<option value='".$categoriesArray[$i]['category_id']."' 
+										";
+									if($i == 0)
+									{
+										echo"
+											selected='selected'
+										";
+									}
+									echo "
+									>".$categoriesArray[$i]['category_name']."</option>
+									";
+								}?>
+							</select>
+							<input class="form-control" hidden readonly name="product_category0" id="product_category0" value="" placeholder="Product Category">
+						</div>
                     </div>
 
 					<div class="form-group row">
-                      <label for="product_category1" class="col-sm-3 col-form-label">Product Subcategory</label>
-                      <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_category1" placeholder="Product Subcategory">
-                      </div>
+						<label for="product_category1" class="col-sm-3 col-form-label">Product Subcategory</label>
+						<div class="col-sm-9">
+							<select class="form-control" onchange="changeSubcategory(event)" name="product_subcategoryId">
+							<?php
+								$sql = "
+								SELECT * FROM subcategory
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$subcategories = mysqli_stmt_get_result($stmt);
+
+								$subcategoriesArray = array();
+								while ($subcategoriesRow = mysqli_fetch_assoc($subcategories))
+								{
+								  $subcategoriesArray[] = $subcategoriesRow;
+								}
+								
+								for($i = 0 ; $i< count($subcategoriesArray) ; $i++)
+								{
+									echo"
+										<option value='".$subcategoriesArray[$i]['subcategory_id']."' 
+										";
+									if($i == 0)
+									{
+										echo"
+											selected='selected'
+										";
+									}
+									echo "
+									>".$subcategoriesArray[$i]['subcategory_name']."</option>
+									";
+								}?>
+							</select>
+							<input class="form-control " hidden readonly name="product_category1" id="product_category1" value="" placeholder="Product Subcategory">
+						</div>
                     </div>
 					
 					<div class="form-group row">
@@ -171,7 +253,7 @@ if(!isset($_SESSION["loggedin"]))
                         <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                       </div>
                     </div>
-    </form>
+				</form>
 				  
                 </div>
               </div>
@@ -200,3 +282,11 @@ function preview_image()
 		include_once 'include/adminfooter.php';	
 	?>
 </div>
+<script>
+function changeCategory(e) {
+    document.getElementById("product_category0").value = e.target.options[e.target.selectedIndex].text;
+}
+function changeSubcategory(e) {
+    document.getElementById("product_category1").value = e.target.options[e.target.selectedIndex].text;
+}
+</script>

@@ -6,7 +6,7 @@
                         <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
                             <img src="/fyp-project/img/logo1.png" alt="" height="59"/>
                             <div class="empty-space col-xs-b20"></div>
-                            <div class="simple-article size-2 light fulltransparent">Integer posuere orci sit amet feugiat pellent que. Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</div>
+                            <div class="simple-article size-2 light fulltransparent">D720's 1st and Largest IT Hardware Store. We strive towards our longtime motto "fulfilling all your IT needs" and to serve you better.</div>
                             <div class="empty-space col-xs-b20"></div>
                             <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> contact us: <a href="tel:+0121314520">+0121314520</a></div>
                             <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:ggmall.inc2001@gmail.com">ggmall.inc2001@gmail.com</a></div>
@@ -19,21 +19,12 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <a href="index.php">home</a>
-                                        <a href="about.html">about us</a>
-                                        <a href="products.php">products</a>
-                                        <a href="services.html">services</a>
+                                        <a href="about.php">about us</a>
+                                        <a href="products.php">products</a>x
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="contact.html">contact</a>
-										<a href="#">privacy policy</a>
-                                        <a href="#">warranty</a>
-                                        <!--<a href="#">privacy policy</a>
-                                        <a href="#">warranty</a>
-                                        <a href="#">login</a>
-                                        <a href="#">registration</a>
-                                        <a href="#">delivery</a>
-                                        <a href="#">pages</a>
-                                        <a href="#">our stores</a>-->
+                                        <a href="services.php">services</a>
+                                        <a href="contact.php">contact</a>
                                     </div>
                                 </div>
                             </div>
@@ -70,28 +61,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-xs-text-center col-lg-text-left col-xs-b20 col-lg-b0">
                             <div class="copyright">&copy; 2021 All rights reserved. Development by <a href="#" target="_blank">GG Mall</a></div>
-                            <!--
-							<div class="follow">
-                                <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
-                                <a class="entry" href="#"><i class="fa fa-twitter"></i></a>
-                                <a class="entry" href="#"><i class="fa fa-linkedin"></i></a>
-                                <a class="entry" href="#"><i class="fa fa-google-plus"></i></a>
-                                <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-							-->
                         </div>
-						<!--
-                        <div class="col-lg-4 col-xs-text-center col-lg-text-right">
-                            <div class="footer-payment-icons">
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-4.jpg" alt="" /></a>
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-5.jpg" alt="" /></a>
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-6.jpg" alt="" /></a>
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-7.jpg" alt="" /></a>
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-8.jpg" alt="" /></a>
-                                <a class="entry"><img src="/fyp-project/img/thumbnail-9.jpg" alt="" /></a>
-                            </div>
-                        </div>
-						-->
                     </div>
                 </div>
             </div>

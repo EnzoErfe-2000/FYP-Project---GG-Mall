@@ -1,5 +1,14 @@
 <?php
 include_once '../admin/include/adminheader.php';	
+if(!isset($_SESSION["loggedin"]))
+{
+	echo'
+		<script>
+			alert("In insert, Please login first");
+			location.href = "login.php";
+		</script>
+	';
+}
 ?>
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">

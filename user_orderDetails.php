@@ -5,6 +5,27 @@ include_once 'include/header.php';
 if(isset($_GET['orderID']))
 {	
 	$id = $_GET['orderID'];
+	
+	$sql ="
+	SELECT customer.*, orders.*
+	FROM customer, orders WHERE 
+	customer.customer_id = orders.orders_customerId
+	AND orders.orders_id = $id
+	";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $sql)){
+		//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+		mysqli_close($conn);
+	}
+	else
+	{
+		//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+	}
+	mysqli_stmt_bind_param($stmt, "ss", $id, $_SESSION['customer_id']);
+	mysqli_stmt_execute($stmt);
+	$leftDetail = mysqli_stmt_get_result($stmt);
+	$leftDetails = mysqli_fetch_assoc($leftDetail);
+	
 	$sql = "SELECT orders_customerId,orders_total FROM orders WHERE orders_id = ? AND orders_customerId = ?";
 	$stmt = mysqli_stmt_init($conn);
 	
@@ -23,8 +44,6 @@ if(isset($_GET['orderID']))
 	$num2 = count($resultCol);
 	if($resultCol > 0)
 	{
-		//echo "<script>alert($id)</script>";
-	
 		$sql = "SELECT 
 		ordersDetail_ordersId,ordersDetail_productId,ordersDetail_quantity,ordersDetail_subtotal,product_id, product_img, product_name, product_listedPrice  
 		FROM ordersdetail, product WHERE ordersDetail_ordersId = ? AND product_id = ordersDetail_productId";
@@ -47,8 +66,6 @@ if(isset($_GET['orderID']))
 		$num = count($array);
 		$row = mysqli_fetch_assoc($ordersDetail);
 		$num1 = count($row);
-		//echo "<script>alert($num)</script>";
-		
 	}
 	else
 	{
@@ -73,13 +90,19 @@ else
 		<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
 		<div class="row">
 			<div class="col-sm-3">
-			<div class="h4">Customer ID..</div>
-			<div class="h4">Customer Email..</div>
-			<div class="h4">Shipping Address..</div>
-			<div class="h4">Status..</div>
-			<div class="h4">Delivery..</div>
-			<div class="h4">PayMethod..</div>
-			<div class="h4">Comment..</div>
+				<div class="h5">Customer ID :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['customer_name']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">Customer Email :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['customer_email_address']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">Shipping Address :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['orders_shippingAddress']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">Status: <br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['orders_status']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">Delivery :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['orders_deliveryMethod']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">PayMethod :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['orders_payMethod']?></span></div>
+				<div class="empty-space col-xs-b15 col-sm-b50 col-md-b20"></div>
+				<div class="h5">Comment :<br/><span style="text-transform:initial;font-weight:initial;"><?=$leftDetails['orders_comment']?></span></div>
 			</div>
 			<div class="col-sm-9">
 			<div class="container">
@@ -100,7 +123,7 @@ else
 							<td><input readonly name="orderID" value="<?=$ordersDetails['ordersDetail_productId']?>" style="text-align:center;"></td>
                             <td style="text-align:middle;">
 								<a class="cart-entry-thumbnail" href="product.php?product=<?=$ordersDetails['ordersDetail_productId']?>">
-									<img src="/fyp-project/product_img/<?=$ordersDetails['product_img']?>" alt="">
+									<img src="/fyp-project/product_img/<?=$ordersDetails['product_img']?>" width="100px" alt="">
 								</a>
 							</td>
                             <td style="text-align:left;">

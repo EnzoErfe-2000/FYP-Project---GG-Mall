@@ -33,12 +33,6 @@ include_once 'include/header.php';
                                                             <span class="text">Learn More</span>
                                                         </span>
                                                     </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,12 +55,6 @@ include_once 'include/header.php';
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -93,12 +81,6 @@ include_once 'include/header.php';
                                                             <span class="text">Learn More</span>
                                                         </span>
                                                     </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,12 +103,6 @@ include_once 'include/header.php';
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -153,12 +129,6 @@ include_once 'include/header.php';
                                                             <span class="text">Learn More</span>
                                                         </span>
                                                     </a>
-                                                    <a class="button size-2 style-3" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="img/icon-3.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -179,24 +149,25 @@ include_once 'include/header.php';
                         <div class="h4">ALL PRODUCTS</div>
                     </div>
                     
-  <!--------------------------------------------------------------------------------->     
+	<!--------------------------------------------------------------------------------->     
                     <div class="align-inline spacing-1 hidden-xs">
                         <a class="pagination toggle-products-view active"><img src="img/icon-14.png" alt="" /><img src="img/icon-15.png" alt="" /></a>
                         <a class="pagination toggle-products-view"><img src="img/icon-16.png" alt="" /><img src="img/icon-17.png" alt="" /></a>
                     </div>
- <!--------------------------------------------------------------------------------->  
+	<!--------------------------------------------------------------------------------->  
            
 
-  <!--------------------------------------------------------------------------------->     
+	<!--------------------------------------------------------------------------------->     
                     <div class="products-content">
                         <div class="products-wrapper">
                             <div class="row nopadding">
+
 <!------------------------------------------------------------------------------->
 <?php  
             
                         
                         include_once 'include/dbh-inc.php';
-							$sql = "SELECT * FROM product";
+							$sql = "SELECT * FROM product WHERE product_availability = 'YES'";
 							$result = $conn->query($sql);
 							
 								while($data = mysqli_fetch_array($result))
@@ -207,7 +178,7 @@ include_once 'include/header.php';
                                             <div class='product-shortcode style-1'>
                                                 <div class='title'>
                                                     <div class='simple-article size-1 color col-xs-b5'>";
-                                    echo  "<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>".$data['product_category0'] . " ". $data['product_category1'] ;
+                                    echo  "<a href = '/fyp-project/product.php?product=$d'vertical-align: text-top;>".$data['product_category0'] . " ". $data['product_category1']."</a>" ;
 	
 									echo "</div><div class='h6 animate-to-green'><a href = '/fyp-project/product.php?product=$d'>" . $data['product_name'] . "</div>
                                     </div>";
@@ -216,7 +187,7 @@ include_once 'include/header.php';
                                  
 									echo "<div class='preview-buttons valign-middle'>
                                     <div class='valign-middle-content'>
-                                        <a class='button size-2 style-2' href='/fyp-project/product.php?product=$d'
+                                        <a class='button size-2 style-2' href='/fyp-project/product.php?product=$d'>
                                             <span class='button-wrapper'>
                                                 <span class='icon'><img src='img/icon-1.png'></span>
                                                 <span class='text'>Learn More</span>
@@ -233,158 +204,125 @@ include_once 'include/header.php';
 ?>
                             
 <!----------------------------------------------------------------------------------------------->
-                            
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-md-pull-9">
-                    <div class="h4 col-xs-b10">popular categories</div>
-                    <ul class="categories-menu transparent">
-                        <li>
-                            <a href="#">PC Gaming Peripheral</a>
-                            <div class="toggle"></div>
-                            <ul>
-                                <li>
-                                    <a href="#">Gaming Headset</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10001">SteelSeries Arctis 5 7.1 Surround RGB Gaming Headset</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10002">Razer Blackshark V2 X Esports Gaming Headset</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10003">Razer Kraken Bluetooth Kitty Edition Wireless Gaming RGB Headset</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Gaming Keyboard</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10004">SteelSeries Apex 3 Water Resistant Gaming Keyboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10005">Cooler Master CK530 V2 TKL RGB Gaming Keyboard</a>
-                                        </li>
-										<li>
-                                            <a href="/fyp-project/product.php?product=10006">Razer BlackWidow Green Mechanical Gaming Keyboard</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Gaming Mice</a>
-									<div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10007">Logitech G502 Hero High Performance Gaming Mouse</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10008">Razer DeathAdder Essential Gaming Mouse</a>
-                                        </li>
-										<li>
-                                            <a href="/fyp-project/product.php?product=10009">Steelseries Aerox 3 Wireless Lightweight Gaming Mouse</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">PC Office</a>
-                            <div class="toggle"></div>
-                            <ul>
-                                <li>
-                                    <a href="#">Office Mice</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10010">Logitech M170 Wireless Mouse</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10011">Logitech MX Master 3 Wireless Mouse</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10012">Logitech M325 Wireless Mouse</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Office Keyboard</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10013">Logitech K380 Slim Multi-Device Keyboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10014">Microsoft Bluetooth Desktop Combo Keyboard</a>
-                                        </li>
-										<li>
-                                            <a href="/fyp-project/product.php?product=10015">Targus KB55 Multi-Platform Bluetooth</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Webcam</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10016">Logitech C922 Pro HD Stream Webcam</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10017">J5Create USB HD Webcam with 360° Rotation (JVCU100)</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Laptop</a>
-                            <div class="toggle"></div>
-                            <ul>
-                                <li>
-                                    <a href="#">Consumer Laptop</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10018">MSI Modern 15 15.6″ FHD Laptop</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10019">Acer Swift 3x SF314-510G-761J 14” FHD Laptop Steam Blue</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10020">Asus ZenBook 13 UX325E-AKG349TS 13.3” OLED FHD Laptop Pine Grey</a>
-                                        </li>
-                                    </ul>
-                                </li>
-								<li>
-                                    <a href="#">Gaming Laptop</a>
-                                    <div class="toggle"></div>
-                                    <ul>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10021">MSI GF63 Thin 15.6″ FHD Gaming Laptop </a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10022">Asus TUF Dash F15 FX516P-MHN085T 15.6″FHD</a>
-                                        </li>
-                                        <li>
-                                            <a href="/fyp-project/product.php?product=10023">Acer Nitro 5 AN515-45-R7QR 15.6″ Gaming Laptop Black</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                             
-                    </ul>
+						<div class="row">
+							<div class="h4 col-xs-b10">popular categories</div>
+							<ul class="categories-menu transparent">
+								<?php
+								$sql = "
+								SELECT category_name FROM category
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$categories = mysqli_stmt_get_result($stmt);
+								$categoriesArray = array();
+								while ($categoriesRow = mysqli_fetch_assoc($categories))
+								{
+								  $categoriesArray[] = $categoriesRow;
+								}
 
-                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
-           
-                </div> 
-            </div>
-            </div>
-        </div>
-<!----------------------------------------------------------------------------------------------->
+								$sql = "
+								SELECT subcategory_name FROM subcategory
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$subcategories = mysqli_stmt_get_result($stmt);
 
+								$subcategoriesArray = array();
+								while ($subcategoriesRow = mysqli_fetch_assoc($subcategories))
+								{
+								  $subcategoriesArray[] = $subcategoriesRow;
+								}
+								
+								
+								for($i = 0 ; $i< count($categoriesArray) ; $i++)
+								{
+									$categoryName = $categoriesArray[$i]['category_name'];
+									echo "
+										<li>
+											<a>". $categoryName ."</a>
+											<div class='toggle'></div>
+											<ul>
+											";
+											for($j = 0 ; $j< count($subcategoriesArray) ; $j++)
+											{
+												$subcategoryName = $subcategoriesArray[$j]['subcategory_name'];
+												echo "
+													<li>
+														<a>". $categoryName." ".$subcategoryName ."</a>
+														<div class='toggle'></div>
+														<ul>";
+														
+														settype($categoryName, "string");
+														settype($subcategoryName, "string");
+														$sql = "
+														SELECT product_id, product_name FROM product 
+														WHERE product_category0 = '$categoryName'
+														AND product_category1 = '$subcategoryName'
+														";
+														
+														$stmt = mysqli_stmt_init($conn);
+														if(!mysqli_stmt_prepare($stmt, $sql)){
+															mysqli_close($conn);
+														}
+														else
+														{
+															//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+														}
+														mysqli_stmt_execute($stmt);
+														$productsByCategories = mysqli_stmt_get_result($stmt);
+														$productsByCategoriesRow = mysqli_fetch_assoc($productsByCategories);
+														foreach($productsByCategories as $data)
+														{
+															//print_r($data['product_name']);
+															echo "
+																<li>
+																	<a href='/fyp-project/product.php?product=".$data['product_id']."'>".$data['product_name']."</a>
+																</li>
+																";
+														}
+												echo "	</ul>
+													</li>
+													";
+											}
+									echo "
+											</ul>
+										</li>
+										";
+								}
+								?>
+							</ul>
+							<div class="empty-space col-xs-b25 col-sm-b50"></div>
+						</div> 
+					</div>
+				
+			</div>
+		</div>
 <?php
 include_once 'include/footer.php';
 ?>

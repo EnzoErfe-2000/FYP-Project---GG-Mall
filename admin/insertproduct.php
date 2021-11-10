@@ -1,12 +1,12 @@
 <?php
 			
-			include_once '../include/dbh-inc.php';
+			include_once '../include/session-db-func.php';
 
             if(!isset($_SESSION["loggedin"]))
             {
                 echo'
                     <script>
-                        alert("Please login first");
+                        alert("In insert, Please login first");
                         location.href = "login.php";
                     </script>
                 ';
@@ -17,7 +17,9 @@
             $product_product_nameExtra = mysqli_real_escape_string($conn, $_POST['product_nameExtra']);
             $product_product_fullName = mysqli_real_escape_string($conn, $_POST['product_fullName']);
 
+			$product_categoryId = mysqli_real_escape_string($conn, $_POST['product_categoryId']);
 			$product_category0 = mysqli_real_escape_string($conn, $_POST['product_category0']);
+            $product_subcategoryId = mysqli_real_escape_string($conn, $_POST['product_subcategoryId']);
             $product_category1 = mysqli_real_escape_string($conn, $_POST['product_category1']);
 
 			$product_brand = mysqli_real_escape_string($conn, $_POST['product_brand']);
@@ -75,7 +77,9 @@
                 product_name,
                 product_nameExtra,
                 product_fullName,
+                product_categoryId,
                 product_category0,
+                product_subcategoryId,
                 product_category1,
                 product_brand,
                 product_description,
@@ -92,7 +96,9 @@
                 '$product_name',
                 '$product_product_nameExtra',
                 '$product_product_fullName',
+                '$product_categoryId',
                 '$product_category0',
+                '$product_subcategoryId',
                 '$product_category1',
                 '$product_brand',
                 '$product_description',

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once '../include/dbh-inc.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

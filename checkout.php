@@ -3,11 +3,7 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';	
 ?>
 <?php
-//if (isset($_POST['placeOrder'])) {
-	//echo "<script> location.assign('successful_checkout.php');</script>";
-//}
-
-//PREVENT RANDOM ACCESS BY GUEST
+//PREVENT RANDOM UNAUTHORIZED ACCESS BY GUEST
 $uri=$_SERVER['HTTP_REFERER'];
 if(isset($_SESSION['cart']) && ($uri == "http://localhost/fyp-project/cart.php" || $_SESSION['checkout'] == 1))
 {
@@ -60,9 +56,6 @@ if(isset($_SESSION['cart']) && ($uri == "http://localhost/fyp-project/cart.php" 
 		
 		$resultData = mysqli_stmt_get_result($stmt);
 		$row = mysqli_fetch_assoc($resultData);
-		//$num = count($row);
-		//echo "<script type='text/javascript'>alert('$num');</script>";
-		/*<?=$row['customer_name_first']?>*/
 	}
 }
 else
@@ -94,12 +87,6 @@ else
             <div class="row">
 				<div class="col-md-6 col-xs-b50 col-md-b0">
 					<h4 class="h4 col-xs-b25">billing details</h4>
-					<!--
-					<select class="SlectBox" required>
-                        <option value="" disabled="disabled">Choose country</option>
-                        <option value="malaysia" selected="selected">Malaysia</option>
-                    </select>
-					-->
 					<div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
@@ -111,7 +98,7 @@ else
                             <div class="empty-space col-xs-b20"></div>
                         </div>
                     </div>
-					<input required name="streetAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address]";}else{echo "";}?>" placeholder="Street address" />
+					<input required name="streetAdr" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_address_street]";}else{echo "";}?>" placeholder="Street address" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="row m10">
                         <div class="col-sm-6">
@@ -144,19 +131,6 @@ else
                         </div>
                     </div>
 					<input required name="email" class="simple-input" type="text" value="<?php if($row >0){echo "$row[customer_email_address]";}else{echo "";}?>" placeholder="Email" />
-                    <!--
-					<div class="empty-space col-xs-b20"></div>
-					<div class="row m10">
-					<div class="col-sm-6">
-					<label class="checkbox-entry">
-                        <input type="checkbox" name="privacyCheck" id="privacyCheck"><span>Privacy policy agreement
-					</label>
-					</div>
-					<div class="col-sm-6">
-						<div id="error" class="simple-article size-3 color" style="font-family:'Raleway', sans-serif;"></div></span>
-                    </div>
-					</div>
-					-->
                     <div class="empty-space col-xs-b30"></div>
 					<textarea name="note" class="simple-input" placeholder="Note about your order"></textarea>
 				</div>
@@ -165,7 +139,7 @@ else
                     <div style="max-height:440px; overflow-y:auto">
 					<?php foreach ($orderList as $order): ?>
 					<div class="cart-entry clearfix">
-                        <a class="cart-entry-thumbnail" href="product.php?product=<?=$order['product_id']?>"><img src="product_img/<?=$order['product_img']?>" alt=""></a>
+                        <a class="cart-entry-thumbnail" href="product.php?product=<?=$order['product_id']?>"><img src="product_img/<?=$order['product_img']?>" width="100px" alt=""></a>
                         <div class="cart-entry-description">
                             <table>
                                 <tbody>
@@ -178,41 +152,14 @@ else
                                             <div class="simple-article size-3 grey">RM <?=number_format($order['product_listedPrice'],2,".",",")?></div>
                                             <div class="simple-article size-1">TOTAL: RM <?= number_format(($order['product_listedPrice']*$products_in_cart[$order['product_id']]),2,'.',',')?></div>
                                         </td>
-										<!--
-                                        <td>
-                                            <div class="cart-color" style="background: #eee;"></div>
-                                        </td>
-										-->
-                                    </tr>
+									</tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 					<?php endforeach; ?>
 					</div>
-					<!--
-					<div class="order-details-entry simple-article size-3 grey uppercase">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                cart subtotal
-                            </div>
-                            <div class="col-xs-6 col-xs-text-right">
-                                <div class="color" style="font-weight:bold;">RM <?=number_format($subtotal,2,".",",")?></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-details-entry simple-article size-3 grey uppercase">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                shipping and handling
-                            </div>
-                            <div class="col-xs-6 col-xs-text-right">
-                                <div class="color">free shipping</div>
-                            </div>
-                        </div>
-                    </div>
-					-->
-                    <div class="order-details-entry simple-article size-3 grey uppercase">
+				    <div class="order-details-entry simple-article size-3 grey uppercase">
                         <div class="row">
                             <div class="col-xs-6">
                                 order total
@@ -238,11 +185,6 @@ else
 						<select class="SlectBox payMethodSlct" name="payMethod" required>
 							<option selected="selected" value="">Select payment method</option>
 							<option value="Card">Card (Credit/Debit)</option>
-							<!--
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-							-->
 						</select>
 						</div>
 						<div class="payMethod_content">
@@ -301,13 +243,11 @@ function validate() {
 	var val = document.getElementById("privacyCheck").checked;
 	if(val != true)
 	{
-		//event.preventDefault();
 		document.getElementById("error").innerHTML = "Please read & agree before proceeding";
 		
 	}
 	else
 	{
-		//document.getElementById("orderForm").unbind('submit').submit();
 		document.getElementById("error").innerHTML = "&nbsp;";
 	}
 }
@@ -315,7 +255,6 @@ function validate() {
 function validateForm() {
   let x = document.forms["orderForm"]["privacyCheck"].checked;
   if (x == false) {
-    //alert("Name must be filled out");
     $('html, body').animate({
         scrollTop: $(".checkbox-entry").offset().top - 300
     }, 500);
@@ -357,17 +296,13 @@ $(document).on('click', '.cardRadio', function(){
 	}else
 	{	
 		$location = "include/createOrder-inc.php";
-	}
-	//alert("will redirect to" + $location);	
+	}	
 	$("#orderForm").attr("action", $location);
 });
 
 $(document).ready(function(){
 	$('.cardRadio').click(function(){
-		//alert($(this).val());
-		//$('.paymethod').val("Card_"+$(this).val());
 		document.getElementById('paymethod').value = "Card_" + $(this).val();
-		//alert($('.paymethod').val());
 	})
 });
 </script>

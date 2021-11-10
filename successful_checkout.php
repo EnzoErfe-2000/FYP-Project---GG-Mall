@@ -24,25 +24,13 @@ if($uri == "http://localhost/fyp-project/include/createOrder-inc.php")
                 <div class="title-underline center"><span></span></div>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <div class="simple-article size-4 grey">Praesent nec finibus massa. Phasellus id auctor lacus, at iaculis lorem. Donec quis arcu elit. In vehicula purus semeu imperdiet odio, eu interdum justo</div>
-                        <div class="empty-space col-xs-b20 col-sm-b35 col-md-b70"></div>
-                        <div class="row m10">
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Order ID" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <input class="simple-input" type="text" value="" placeholder="Billing email" />
-                                <div class="empty-space col-xs-b20"></div>
-                            </div>
-                        </div>
-                        <div class="button size-2 style-3">
+                        <a class="button size-2 style-3" href="user_order.php">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="img/icon-4.png" alt=""></span>
                                 <span class="text">track</span>
                             </span>
                             <input type="submit"/>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

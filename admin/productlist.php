@@ -1,4 +1,5 @@
 <?php
+include_once '../include/dbh-inc.php';
 include_once '../admin/include/adminheader.php';
 
 if(!isset($_SESSION["loggedin"]))
