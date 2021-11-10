@@ -1,7 +1,15 @@
 <?php
 include_once '../admin/include/adminheader.php';	
 include_once '../include/dbh-inc.php';
-
+if(!isset($_SESSION["loggedin"]))
+{
+	echo'
+		<script>
+			alert("In insert, Please login first");
+			location.href = "login.php";
+		</script>
+	';
+}
 if(isset($_POST['category_submit']))
 {
 	$newCategoryName =  mysqli_real_escape_string($conn, $_POST['category_name']);

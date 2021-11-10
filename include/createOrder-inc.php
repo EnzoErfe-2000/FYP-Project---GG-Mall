@@ -57,7 +57,6 @@ if (isset($_POST['firstName'])) {
 	//CREATE ORDER DETAILS
 	if (isset($_SESSION['cart'])) {
 		$num = count($_SESSION['cart']);
-		echo "<script type='text/javascript'>alert($num);</script>";
 		
 		$products_in_cart = array_keys($_SESSION['cart']);
 		

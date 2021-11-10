@@ -1,6 +1,16 @@
 <?php
     include_once '../admin/include/adminheader.php';	
 
+    if(!isset($_SESSION["loggedin"]))
+    {
+      echo'
+        <script>
+            alert("Please login first");
+            location.href = "login.php";
+        </script>
+      ';
+    }
+    
     if(isset($_GET["admin_id"])) {
         $_SESSION["adminid"] = $_GET["admin_id"];
         $sql = "SELECT * FROM admin WHERE admin_id = " . $_GET["admin_id"];

@@ -1,29 +1,43 @@
 <?php
 include_once '../admin/include/adminheader.php';
 include_once '../include/dbh-inc.php';
+
 ?>
 <?php
+if(!isset($_SESSION["loggedin"]))
+{
+  echo'
+    <script>
+        alert("Please login first");
+        location.href = "login.php";
+    </script>
+  ';
+}
+
 	function daysInMonth($month)
 	{
 		$endOfMonth = 30;
 		if($month > 1 || $month < 13)
 		{
-			if($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 8 || $month == 10 || $month == 12)
+			$endOfMonth = 30;
+			if($month > 1 || $month < 13)
 			{
-				$endOfMonth = 31;
+				if($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 8 || $month == 10 || $month == 12)
+				{
+					$endOfMonth = 31;
+				}
+				else if($month == 4 || $month == 6 || $month == 9 || $month == 11)
+				{
+					$endOfMonth = 30;
+				}
+				else if($month == 2)
+				{
+					$endOfMonth = 29;
+				}
+				return $endOfMonth;
 			}
-			else if($month == 4 || $month == 6 || $month == 9 || $month == 11)
-			{
-				$endOfMonth = 30;
-			}
-			else if($month == 2)
-			{
-				$endOfMonth = 29;
-			}
-			return $endOfMonth;
 		}
 	}
-
 	if(isset($_GET['month']))
 	{
 		$currentMonth = $_GET['month'];

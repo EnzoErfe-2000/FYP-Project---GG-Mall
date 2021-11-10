@@ -11,13 +11,14 @@ include_once 'include/header.php';
             margin-top: 70px;
             margin-left: 50px;
             margin-bottom: 80px;
-            width: 1500px;
+            width: 1400px;
         }
 
         .accounttitle
         {
             margin-left:30px;
             margin-bottom:30px;
+            margin-top:10px;
         }
 
         .welcome
@@ -47,7 +48,7 @@ include_once 'include/header.php';
                 <div class="col-12">
                     <div class="dashboard">
                         <div class="row">
-                            <div class="col-xl-8 col-md-8" style="font-size:16px;">
+                            <div class="col-xl-8 col-md-8" style="font-size:16px; border: 2px solid black; border-radius: 15px;">
                                 <h4 class="accounttitle">Dashboard</h4>
                                     <div class="welcome">
                                     <p>Hello,  
@@ -57,7 +58,7 @@ include_once 'include/header.php';
                                     </p>
                                         <p class="m-t-25"><br>From your account dashboard. you can easily check &amp; view your
                                             recent orders, manage your shipping and billing <br>addresses and edit your password and
-                                            account details.</p>
+                                            account details.</p><br>
                                     </div>
                             </div>
                             <div class="col-xl-3 col-md-4">
