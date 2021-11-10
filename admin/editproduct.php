@@ -37,7 +37,9 @@ if(isset($_POST['update_product'])) // when click on Update button
     $product_product_nameExtra =$_POST['product_nameExtra'];
     $product_product_fullName = $_POST['product_fullName'];
 
+	$product_categoryId =$_POST['product_categoryId'];
     $product_category0 =$_POST['product_category0'];
+	$product_subcategoryId =$_POST['product_subcategoryId'];
     $product_category1 = $_POST['product_category1'];
 
     $product_brand =$_POST['product_brand'];
@@ -57,7 +59,9 @@ if(isset($_POST['update_product'])) // when click on Update button
         product_name='$product_name',
         product_nameExtra='$product_product_nameExtra',
         product_fullName='$product_product_fullName',
+        product_categoryId='$product_categoryId',
         product_category0='$product_category0',
+		product_subcategoryId='$product_subcategoryId',
         product_category1='$product_category1',
         product_brand='$product_brand',
         product_description='$product_description',
@@ -109,17 +113,99 @@ if(isset($_POST['update_product'])) // when click on Update button
                     </div>
 
 					<div class="form-group row">
-                      <label for="product_category0" class="col-sm-3 col-form-label">Product Category</label>
-                      <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_category0"value="<?php echo $data['product_category0'] ?>" placeholder="Product Category">
-                      </div>
+						<label for="product_category0" class="col-sm-3 col-form-label">Product Category</label>
+						<div class="col-sm-9">
+							<select class="form-control" onchange="changeCategory(event)" name="product_categoryId">
+							<?php
+								$sql = "
+								SELECT * FROM category
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+								//header("location: cart.php?error=stmtfailed");
+								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+								//exit();
+								mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$categories = mysqli_stmt_get_result($stmt);
+
+								$categoriesArray = array();
+								while ($categoriesRow = mysqli_fetch_assoc($categories))
+								{
+								  $categoriesArray[] = $categoriesRow;
+								}
+								
+								for($i = 0 ; $i< count($categoriesArray) ; $i++)
+								{
+									echo"
+										<option value='".$categoriesArray[$i]['category_id']."' 
+										";
+									if($data['product_categoryId'] == $categoriesArray[$i]['category_id'])
+									{
+										echo"
+											selected='selected'
+										";
+									}
+									echo "
+									>".$categoriesArray[$i]['category_name']."</option>
+									";
+								}?>
+							</select>
+							<input class="form-control" hidden readonly name="product_category0" id="product_category0" value="<?php echo $data['product_category0'] ?>" placeholder="Product Category">
+						</div>
                     </div>
 
 					<div class="form-group row">
-                      <label for="product_category1" class="col-sm-3 col-form-label">Product Subcategory</label>
-                      <div class="col-sm-9">
-					   <input class="form-control " type="text" name="product_category1" value="<?php echo $data['product_category1'] ?>"placeholder="Product Subcategory">
-                      </div>
+						<label for="product_category1" class="col-sm-3 col-form-label">Product Subcategory</label>
+						<div class="col-sm-9">
+							<select class="form-control" onchange="changeSubcategory(event)" name="product_subcategoryId">
+							<?php
+								$sql = "
+								SELECT * FROM subcategory
+								";
+								$stmt = mysqli_stmt_init($conn);
+								if(!mysqli_stmt_prepare($stmt, $sql)){
+								//header("location: cart.php?error=stmtfailed");
+								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+								//exit();
+								mysqli_close($conn);
+								}
+								else
+								{
+									//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
+								}
+								mysqli_stmt_execute($stmt);
+								$subcategories = mysqli_stmt_get_result($stmt);
+
+								$subcategoriesArray = array();
+								while ($subcategoriesRow = mysqli_fetch_assoc($subcategories))
+								{
+								  $subcategoriesArray[] = $subcategoriesRow;
+								}
+								
+								for($i = 0 ; $i< count($subcategoriesArray) ; $i++)
+								{
+									echo"
+										<option value='".$subcategoriesArray[$i]['subcategory_id']."' 
+										";
+									if($data['product_subcategoryId'] == $subcategoriesArray[$i]['subcategory_id'])
+									{
+										echo"
+											selected='selected'
+										";
+									}
+									echo "
+									>".$subcategoriesArray[$i]['subcategory_name']."</option>
+									";
+								}?>
+							</select>
+							<input class="form-control " hidden readonly name="product_category1" id="product_category1" value="<?php echo $data['product_category1'] ?>"placeholder="Product Subcategory">
+						</div>
                     </div>
 					
 					<div class="form-group row">
@@ -183,3 +269,11 @@ if(isset($_POST['update_product'])) // when click on Update button
 include_once '../admin/include/adminfooter.php';	
 ?>
   
+<script>
+function changeCategory(e) {
+    document.getElementById("product_category0").value = e.target.options[e.target.selectedIndex].text;
+}
+function changeSubcategory(e) {
+    document.getElementById("product_category1").value = e.target.options[e.target.selectedIndex].text;
+}
+</script>
