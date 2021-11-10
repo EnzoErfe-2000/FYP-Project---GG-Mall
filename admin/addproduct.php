@@ -23,7 +23,7 @@ include_once '../admin/include/adminheader.php';
                   <h6 class="m-0 font-weight-bold text-primary">New Product</h6>
                 </div>
                 <div class="card-body">
-      <form method="post" action="insertproduct.php" enctype="multipart/form-data" >
+				<form method="post" action="insertproduct.php" enctype="multipart/form-data" >
                     <div class="form-group row">
                         <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
                         <div class="col-sm-9">
@@ -62,10 +62,10 @@ include_once '../admin/include/adminheader.php';
 								";
 								$stmt = mysqli_stmt_init($conn);
 								if(!mysqli_stmt_prepare($stmt, $sql)){
-								//header("location: cart.php?error=stmtfailed");
-								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-								//exit();
-								mysqli_close($conn);
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
 								}
 								else
 								{
@@ -104,10 +104,10 @@ include_once '../admin/include/adminheader.php';
 								";
 								$stmt = mysqli_stmt_init($conn);
 								if(!mysqli_stmt_prepare($stmt, $sql)){
-								//header("location: cart.php?error=stmtfailed");
-								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-								//exit();
-								mysqli_close($conn);
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
 								}
 								else
 								{
@@ -200,7 +200,7 @@ include_once '../admin/include/adminheader.php';
                         <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                       </div>
                     </div>
-    </form>
+				</form>
 				  
                 </div>
               </div>

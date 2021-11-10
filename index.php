@@ -7,10 +7,10 @@ SELECT * FROM product;
 ";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $sql)){
-//header("location: cart.php?error=stmtfailed");
-//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-//exit();
-mysqli_close($conn);
+	//header("location: cart.php?error=stmtfailed");
+	//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+	//exit();
+	mysqli_close($conn);
 }
 else
 {
@@ -22,7 +22,7 @@ $products = mysqli_stmt_get_result($stmt);
 $productsArray = array();
 while ($productsRow = mysqli_fetch_assoc($products))
 {
-  $productsArray[] = $productsRow; // add the row in to the results (data) array
+  $productsArray[] = $productsRow;
 }
 ?>
         <div class="header-empty-space"></div>
@@ -160,8 +160,7 @@ while ($productsRow = mysqli_fetch_assoc($products))
         <div class="grey-background">
             <div class="empty-space col-xs-b40 col-sm-b80"></div>
             <div class="container">
-                <div class="row">
-				
+                <div class="row">			
                     <div class="col-md-9 col-md-push-3">
                         <div class="tabs-block">
                             <div class="tabulation-menu-wrapper text-center">
@@ -582,7 +581,6 @@ while ($productsRow = mysqli_fetch_assoc($products))
                                             <div class="swiper-wrapper">
                                                 <?php
 													$bigSwiperImgs = explode(" ", $productsArray[1]['product_bigSwiperImg']);
-													//print_r($bigSwiperImgs);
 													for($i = 0; $i < count($bigSwiperImgs); $i++)
 													{
 														echo "<div class='swiper-slide'>
@@ -641,10 +639,10 @@ while ($productsRow = mysqli_fetch_assoc($products))
 								";
 								$stmt = mysqli_stmt_init($conn);
 								if(!mysqli_stmt_prepare($stmt, $sql)){
-								//header("location: cart.php?error=stmtfailed");
-								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-								//exit();
-								mysqli_close($conn);
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
 								}
 								else
 								{
@@ -664,10 +662,10 @@ while ($productsRow = mysqli_fetch_assoc($products))
 								";
 								$stmt = mysqli_stmt_init($conn);
 								if(!mysqli_stmt_prepare($stmt, $sql)){
-								//header("location: cart.php?error=stmtfailed");
-								//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-								//exit();
-								mysqli_close($conn);
+									//header("location: cart.php?error=stmtfailed");
+									//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+									//exit();
+									mysqli_close($conn);
 								}
 								else
 								{
@@ -743,6 +741,7 @@ while ($productsRow = mysqli_fetch_assoc($products))
 							<div class="empty-space col-xs-b25 col-sm-b50"></div>
 						</div> 
 					</div>
+				
 				</div>
 			</div>
         </div>

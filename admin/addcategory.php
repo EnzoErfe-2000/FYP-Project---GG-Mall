@@ -47,12 +47,9 @@ else if(isset($_POST['subcategory_submit']))
 
 else if(isset($_POST['category_submit_update']))
 {
-	//echo "<script>alert('HUHU');</script>";
 	$updatedCategoryName =  mysqli_real_escape_string($conn, $_POST['categoryList_name']);
 	if($updatedCategoryName != "")
 	{
-		//echo "<script>alert('$updatedCategoryName');</script>";
-		//echo "<script>alert('$_POST[categoryList_id]');</script>";
 		$sql ="
 		UPDATE category SET category_name = '$updatedCategoryName'
 		WHERE category_id = $_POST[categoryList_id]
@@ -91,8 +88,6 @@ else if(isset($_POST['category_submit_update']))
 }
 else if(isset($_POST['category_submit_delete']))
 {
-	//echo "<script>alert('HUHUHU');</script>";
-	//echo "<script>alert('$_POST[categoryList_id]');</script>";
 	$sql ="
 	DELETE FROM category
 	WHERE category_id = $_POST[categoryList_id]
@@ -131,18 +126,12 @@ else if(isset($_POST['category_submit_delete']))
 
 else if(isset($_POST['subcategory_submit_update']))
 {
-	//echo "<script>alert('HUHUHU');</script>";
-	//echo "<script>alert('$_POST[subcategoryList_id]');</script>";
 	$updatedSubcategoryName =  mysqli_real_escape_string($conn, $_POST['subcategoryList_name']);
 	if($updatedSubcategoryName != "")
 	{
-		//echo "<script>alert('$updatedCategoryName');</script>";
-		//echo "<script>alert('$_POST[categoryList_id]');</script>";
 		$sql ="
 		UPDATE subcategory SET subcategory_name = '$updatedSubcategoryName'
 		WHERE subcategory_id = $_POST[subcategoryList_id]
-		
-		
 		";
 		if($conn->query($sql) === TRUE)
 		{
@@ -176,8 +165,6 @@ else if(isset($_POST['subcategory_submit_update']))
 }
 else if(isset($_POST['subcategory_submit_delete']))
 {
-	//echo "<script>alert('DELETEHUHU');</script>";
-	//echo "<script>alert('$_POST[subcategoryList_name]');</script>";
 	$sql ="
 	DELETE FROM subcategory
 	WHERE subcategory_id = $_POST[subcategoryList_id]
@@ -287,10 +274,10 @@ else if(isset($_POST['subcategory_submit_delete']))
 											";
 											$stmt = mysqli_stmt_init($conn);
 											if(!mysqli_stmt_prepare($stmt, $sql)){
-											//header("location: cart.php?error=stmtfailed");
-											//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-											//exit();
-											mysqli_close($conn);
+												//header("location: cart.php?error=stmtfailed");
+												//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+												//exit();
+												mysqli_close($conn);
 											}
 											else
 											{
@@ -347,10 +334,10 @@ else if(isset($_POST['subcategory_submit_delete']))
 										";
 										$stmt = mysqli_stmt_init($conn);
 										if(!mysqli_stmt_prepare($stmt, $sql)){
-										//header("location: cart.php?error=stmtfailed");
-										//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-										//exit();
-										mysqli_close($conn);
+											//header("location: cart.php?error=stmtfailed");
+											//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+											//exit();
+											mysqli_close($conn);
 										}
 										else
 										{

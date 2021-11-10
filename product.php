@@ -6,8 +6,7 @@ include_once 'include/header.php';
 	if(isset($_GET['product']) && is_numeric($_GET['product']))
 	{
 		$product_id = (int)$_GET['product'];
-		//echo "<script type='text/javascript'>alert('$product_id');</script>";
-	
+		
 		$sql = "SELECT * FROM product WHERE product_id = ?;";
 		$stmt = mysqli_stmt_init($conn);
 		if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -26,23 +25,13 @@ include_once 'include/header.php';
 		
 		$productData = mysqli_stmt_get_result($stmt);
 		$product = mysqli_fetch_assoc($productData);
-		//if(count($product) == 0){
-			//echo "<script> location.assign('error_404.php');</script>";
-		//}
-		//else{
 		$bigSwiperImgs = explode(" ", $product['product_bigSwiperImg']);
 		$swiperImgs = explode(" ", $product['product_swiperImg']);
-		
-		//$num = count($swiperImgs);
-		//echo "<script type='text/javascript'>alert('size of array: $num');</script>";
-		//echo "<script type='text/javascript'>alert('$bigSwiperImgs[0]');</script>";
-		//}
 	}
 ?>
 <?php
-	//add this condition after finished testing
-	//&& $product['product_isUnlisted'] != 1
-	if(count($product) != 0){
+	//
+	if(count($product) != 0 && $product['product_isUnlisted'] != 1){
 ?>
 	<div class="header-empty-space"></div>
 
@@ -152,22 +141,6 @@ include_once 'include/header.php';
 								</div>
 							</div>
 						</form>
-						<!--
-						<div class="row">
-                            <div class="col-sm-3">
-                                <div class="h6 detail-data-title size-2">share:</div>
-                            </div>
-                            <div class="col-sm-9">
-                                <div class="follow light">
-                                    <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a class="entry" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a class="entry" href="#"><i class="fa fa-linkedin"></i></a>
-									<a class="entry" href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
-                                </div>
-                            </div>
-                        </div>
-						-->
                     </div>
 					
 				</div>
@@ -184,10 +157,10 @@ include_once 'include/header.php';
 						";
 						$stmt = mysqli_stmt_init($conn);
 						if(!mysqli_stmt_prepare($stmt, $sql)){
-						//header("location: cart.php?error=stmtfailed");
-						//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-						//exit();
-						mysqli_close($conn);
+							//header("location: cart.php?error=stmtfailed");
+							//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+							//exit();
+							mysqli_close($conn);
 						}
 						else
 						{
@@ -207,10 +180,10 @@ include_once 'include/header.php';
 						";
 						$stmt = mysqli_stmt_init($conn);
 						if(!mysqli_stmt_prepare($stmt, $sql)){
-						//header("location: cart.php?error=stmtfailed");
-						//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
-						//exit();
-						mysqli_close($conn);
+							//header("location: cart.php?error=stmtfailed");
+							//echo "<script type='text/javascript'>alert('stmt failed!');</script>";
+							//exit();
+							mysqli_close($conn);
 						}
 						else
 						{
@@ -265,7 +238,6 @@ include_once 'include/header.php';
 												$productsByCategoriesRow = mysqli_fetch_assoc($productsByCategories);
 												foreach($productsByCategories as $data)
 												{
-													//print_r($data['product_name']);
 													echo "
 														<li>
 															<a href='/fyp-project/product.php?product=".$data['product_id']."'>".$data['product_name']."</a>
@@ -324,12 +296,3 @@ include_once 'include/footer.php';
 <?php
 include_once 'include/header_popup.php';
 ?>
-
-<!--<script>
-document.querySelector(".favbtn").addEventListener("click", addTodo);
-
-  function addTodo() {
-	  alert(parseInt($("#product_quantity").val()));
-	  $("#product_quantity").val(5);
-  }
-</script>-->

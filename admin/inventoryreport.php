@@ -27,7 +27,6 @@ include_once '../include/dbh-inc.php';
 	}
 	mysqli_stmt_execute($stmt);
 	$products = mysqli_stmt_get_result($stmt);
-	//$row = mysqli_fetch_assoc($result);
 ?>
 		<div id="report">
         <div class="container-fluid" id="container-wrapper">
@@ -47,24 +46,6 @@ include_once '../include/dbh-inc.php';
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Displays inventory changes for all Pending Orders</h6>
-				  <h6 class="m-0 font-weight-bold text-primary">
-				  <span>
-				  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonMonth"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <?php if(isset($_GET['month'])){echo date('M', mktime(0,0,0,$_GET['month'],10));}else{echo date("M");}?>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonMonth">
-                      <a class="dropdown-item" onclick="" href="inventoryreport.php">Nov</a>
-                    </div>
-					<span>
-					<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonYear"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <?=date("Y")?>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonYear">
-                      <a class="dropdown-item" onclick="">2021</a>
-                    </div>
-				  </h6>
                 </div>
                 <div class="table-responsive" media="print">
                   <table class="table align-items-center table-flush" id="table">
@@ -115,16 +96,6 @@ include_once '../include/dbh-inc.php';
 		</div>
 		<!---Container Fluid-->
 		</div>
-		<!--
-		<div class="col-lg-12">
-			<div class="py-3 d-flex flex-row align-items-center justify-content-between">
-				<h6></h6>
-				<h6>
-				    <button type="button" class="btn btn-info mb-1" href="generateSalesReport.php" id="download">Generate Report</button>
-				</h6>
-			</div>
-		</div>
-		-->
 		<script src="https:cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 		<script src="pdf.js"></script>
         
