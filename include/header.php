@@ -16,7 +16,7 @@
     <link href="/fyp-project/css/sumoselect.css" rel="stylesheet" type="text/css" />
     <link href="/fyp-project/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-    <link rel="shortcut icon" href="/fyp-project/img/favicon.ico" />
+    <link rel="shortcut icon" href="/fyp-project/img/logo1~1.png" />
 
   	<title>GG MALL</title>
 </head>

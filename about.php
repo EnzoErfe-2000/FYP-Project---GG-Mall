@@ -5,7 +5,7 @@ include_once 'include/header.php';
 
         <div class="header-empty-space"></div>
 
-        <div class="block-entry fixed-background" style="background-image: url(img/background-4.jpg);">
+        <div class="block-entry fixed-background" style="background-image: url(img/bg-4.jpg);">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
