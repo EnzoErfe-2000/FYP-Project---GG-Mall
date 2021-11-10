@@ -71,7 +71,8 @@ include_once '../include/dbh-inc.php';
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <!--
+	  <li class="nav-item">
         <a class="nav-link collapsed" href="customerlist.php" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
@@ -83,6 +84,7 @@ include_once '../include/dbh-inc.php';
           </div>
         </div>
       </li>
+	  -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true"
           aria-controls="collapseList">
@@ -160,7 +162,8 @@ include_once '../include/dbh-inc.php';
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown no-arrow">
+            <!--
+			<li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
@@ -264,7 +267,8 @@ include_once '../include/dbh-inc.php';
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
-            <div class="topbar-divider d-none d-sm-block"></div>
+            -->
+			<div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
