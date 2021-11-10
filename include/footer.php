@@ -19,15 +19,15 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <a href="index.php">home</a>
-                                        <a href="about.html">about us</a>
-                                        <a href="products.php">products</a>
-                                        <a href="services.html">services</a>
+                                        <a href="about.php">about us</a>
+                                        <a href="products.php">products</a>x
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="contact.html">contact</a>
-										<a href="#">privacy policy</a>
+                                        <a href="services.php">services</a>
+                                        <a href="contact.php">contact</a>
+										<!--<a href="#">privacy policy</a>
                                         <a href="#">warranty</a>
-                                        <!--<a href="#">privacy policy</a>
+                                        <a href="#">privacy policy</a>
                                         <a href="#">warranty</a>
                                         <a href="#">login</a>
                                         <a href="#">registration</a>

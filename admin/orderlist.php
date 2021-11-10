@@ -3,7 +3,7 @@ include_once '../admin/include/adminheader.php';
 include_once '../include/dbh-inc.php';
 ?>
 <?php
-$sql = "SELECT * FROM orders;";
+$sql = "SELECT * FROM orders ORDER BY orders_creationDate;";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $sql)){
 	//header("location: cart.php?error=stmtfailed");
@@ -206,10 +206,6 @@ if(isset($_GET['order']))
 						<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<div>
 						<button type="button" class="btn btn-danger mb-1" onclick="updateStatus('Pending')">Pending</button>
-						<!--
-						<button type="button" class="btn btn-primary mb-1" onclick="updateStatus('Processing')">Processing</button>
-						<button type="button" class="btn btn-warning mb-1" onclick="updateStatus('Shipping')">Shipping</button>
-						-->
 						<button type="button" class="btn btn-success mb-1" onclick="updateStatus('Delivered')">Delivered</button>
 						</div>
 						<div>
@@ -234,7 +230,7 @@ if(isset($_GET['order']))
 					<label for="productDetailsTable">Product Details</label>
 						
 					<table class="table table-bordered table-flush table-hover table-condensed" id="productDetailsTable">
-						<thead>
+						<thead class="thead-light">
 							<tr>
 								<th>ID</th>
 								<th style="width: 400px;">Name</th>
@@ -252,12 +248,15 @@ if(isset($_GET['order']))
 								</td>
 								<td><?=$orderProduct['product_name']?></td>
 								<td>RM<span id="prodPrice"><?=$orderProduct['product_listedPrice']?></span></td>
-								<td>
+								<td class="item">
+								<?=$orderProduct['ordersDetail_quantity']?>
+								<!--
 								<div class="input-group  bootstrap-touchspin bootstrap-touchspin-injected">
 								<input onkeyup="updateSubtotal(<?=$orderProduct['ordersDetail_productId']?>)" style="font-weight:bold;margin:0;" class="form-control quantityBox" type="number" name="product_quantity[]" id="quantityInput[<?=$orderProduct['ordersDetail_productId']?>]" min=1 value=<?=$orderProduct['ordersDetail_quantity']?>>
 								<input hidden readonly class="thisProdID" value="<?=$orderProduct['ordersDetail_productId']?>">
 								<button class="btn btn-primary bootstrap-touchspin-up sub" type="button">-</button>
 								<button class="btn btn-primary bootstrap-touchspin-down add" type="button">+</button>
+								-->
 								</div>
 								</td>
 								<td>
@@ -269,11 +268,11 @@ if(isset($_GET['order']))
 							</tr>
 							<?php endforeach;?>
 							<tr>
-								<td colspan="3"></td>
+								<td colspan="2"></td>
 								<td>Total</td>
+								<td><span id="quantity_total"></span></td>
 								<td>RM <span id="orders_total"><?=$orderDetails['orders_total']?></span>
-								
-								<input hidden readonly type="text" name="orders_total" id="hidden_orders_total" value="<?=$orderDetails['orders_total']?>">
+									<input hidden readonly type="text" name="orders_total" id="hidden_orders_total" value="<?=$orderDetails['orders_total']?>">
 								</td>
 							</tr>
 						</tbody>
@@ -322,6 +321,7 @@ else
                       <tr>
                         <th>Order ID</th>
                         <th>Customer ID</th>
+						<th>Creation Date</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
@@ -336,7 +336,8 @@ else
 					<tr>
                         <td><a href="#"><?=$order['orders_id']?></a></td>
                         <td><?=$order['orders_customerId']?></td>
-                        <td><span class="badge <?php if($order['orders_status'] == "Pending"){echo"badge-danger";}else if($order['orders_status'] == "Processing"){echo"badge-primary";}else if($order['orders_status'] == "Shipping"){echo"badge-warning";}else if($order['orders_status'] == "Delivered"){echo"badge-success";}else if($order['orders_status'] == "Cancelled"){echo"badge-secondary";}?>"><?=$order['orders_status']?></span></td>
+                        <td><?=date("d-m-y (g:i:s)",strtotime($order['orders_creationDate']))?></td>
+						<td><span class="badge <?php if($order['orders_status'] == "Pending"){echo"badge-danger";}else if($order['orders_status'] == "Processing"){echo"badge-primary";}else if($order['orders_status'] == "Shipping"){echo"badge-warning";}else if($order['orders_status'] == "Delivered"){echo"badge-success";}else if($order['orders_status'] == "Cancelled"){echo"badge-secondary";}?>"><?=$order['orders_status']?></span></td>
                         <td><a href="orderlist.php?order=<?=$order['orders_id']?>" class="btn btn-sm btn-primary">Detail</a></td>
                     </tr>
 					<?php endforeach;?>
@@ -414,15 +415,18 @@ function updateTotal(){
 	alert(document.getElementById("hidden_orders_total").value);
 	
 }
-/*
-$(document).on('keyup', '.quantityBox', function() {
-	const Quantity = parseInt($(this).parent().find('.quantityBox').val());
-    const Price = parseFloat(document.getElementById("prodPrice").innerHTML);
-	if(Quantity < 1 || isNaN(Quantity))
-		Quantity = 1;
-	alert(Price*Quantity);
-	
-	this.parentNode.parentNode.find('.subTotal').val(Quantity * Price);
-});
-*/
+
+var table = document.getElementById("productDetailsTable").getElementsByTagName("td");
+var sumVal = 0;
+
+for (var i=1; i < table.length ; i++)
+{
+	//console.log(table.rows[i].cells[3].innerHTML);
+	if(table[i].className == 'item')
+	{
+		sumVal += parseInt(table[i].innerHTML);
+	}
+} // end for
+console.log(sumVal);
+document.getElementById("quantity_total").innerHTML += sumVal;
 </script>

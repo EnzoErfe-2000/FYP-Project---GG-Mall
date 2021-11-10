@@ -10,10 +10,10 @@ include_once 'include/header.php';
                     <div class="col-sm-6 col-sm-offset-3">
                         <div class="cell-view simple-banner-height text-center">
 
-                            <div class="simple-article size-3 grey uppercase col-xs-b5">about us</div>
-							<div class="h2">GG MALL</div>
+                            <div class="simple-article size-3 light uppercase col-xs-b5">about us</div>
+							<div class="h2 light">GG MALL</div>
 							<div class="title-underline left"><span></span></div>
-							<div class="simple-article size-4 grey">D720's 1st and Largest IT Hardware Store. We strive towards our longtime motto "fulfilling all your IT needs" and to serve you better.<br><br>Our mission to succeed would not have materialized without the ever dedicated directors, managers and staff and continuous support from our shareholders who share in our company’s vision. </div> 
+							<div class="simple-article size-4 light">D720's 1st and Largest IT Hardware Store. We strive towards our longtime motto "fulfilling all your IT needs" and to serve you better.<br><br>Our mission to succeed would not have materialized without the ever dedicated directors, managers and staff and continuous support from our shareholders who share in our company’s vision. </div> 
 							
 
                         </div>
