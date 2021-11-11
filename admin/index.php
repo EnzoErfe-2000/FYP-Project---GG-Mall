@@ -9,6 +9,14 @@ if(!isset($_SESSION["loggedin"]))
         location.href = "login.php";
     </script>
   ';
+}else
+{
+  echo'
+    <script>
+        location.href = "salesreport.php";
+    </script>
+  ';
+
 }
 
 ?>

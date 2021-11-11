@@ -89,39 +89,33 @@
                             </button>
                         </div>
                     </div>
-                    
-					<div class="popup-or">
+                    <div class="popup-or">
                         <span>or</span>
                     </div>
                     <div class="row m5">
                         <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                        <!--
-							<a class="button facebook-button size-2 style-4 block" href="#">
+                            <a class="button facebook-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">facebook</span>
                                 </span>
                             </a>
-						-->
                         </div>
                         <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                            <a class="button twitter-button size-2 style-4 block switchModalToLogin" href="#">
+                            <a class="button twitter-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
-                                    <span class="text">Login</span>
+                                    <span class="text">twitter</span>
                                 </span>
                             </a>
                         </div>
-						
                         <div class="col-sm-4">
-                        <!--
-							<a class="button google-button size-2 style-4 block" href="#">
+                            <a class="button google-button size-2 style-4 block" href="#">
                                 <span class="button-wrapper">
                                     <span class="icon"><img src="/fyp-project/img/icon-4.png" alt="" /></span>
                                     <span class="text">google+</span>
                                 </span>
                             </a>
-						-->
                         </div>
                     </div>
                     </form>
@@ -394,13 +388,6 @@
 		e.preventDefault();
 		$('.popup-content').removeClass('active');
 		$('.popup-wrapper, .popup-content[data-rel="2"]').addClass('active');
-		$('html').addClass('overflow-hidden');
-		return false;
-	});
-	$(document).on('click', '.switchModalToLogin', function(e){
-		e.preventDefault();
-		$('.popup-content').removeClass('active');
-		$('.popup-wrapper, .popup-content[data-rel="1"]').addClass('active');
 		$('html').addClass('overflow-hidden');
 		return false;
 	});

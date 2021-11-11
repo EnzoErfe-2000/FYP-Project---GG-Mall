@@ -31,7 +31,7 @@ include_once 'include/header.php';
 ?>
 <?php
 	//
-	if(count($product) != 0 && $product['product_isUnlisted'] != 1 && ($product['product_availability'] == "YES" || $product['product_availability'] == "Yes")){
+	if(count($product) != 0 && $product['product_isUnlisted'] != 1){
 ?>
 	<div class="header-empty-space"></div>
 

@@ -76,6 +76,7 @@ if(isset($_POST['send']))
         }
     }
 }
+echo $_SESSION["resetemail"]
 ?>
 <!DOCTYPE html>
 <html lang="en">

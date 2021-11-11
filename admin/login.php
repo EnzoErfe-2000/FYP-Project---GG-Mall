@@ -78,7 +78,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="../img/logo1~1.png" rel="icon">
-  <title>GG Mall Admin - Login</title>
+  <title>GGMallAdmin - Login</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -108,17 +108,24 @@
                       <span class="invalid-feedback"><?php echo $password_err; ?></span>
                     </div>
                     <div class="form-group">
+                      <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember
+                          Me</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <input type="submit" class="btn btn-primary btn-block" name="login" value="Login">
                     </div>
                     <hr>
                     <a href="admin_pw_reset.php" class="btn btn-google btn-block">
-                      Forgot Password
+                      <i class="fab fa-google fa-fw"></i> Forgot Password
                     </a>
                     <!--
-                    <a href="index.html" class="btn btn-facebook btn-block">
-                                <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                              </a>
-                    -->
+					<a href="index.html" class="btn btn-facebook btn-block">
+                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                    </a>
+					-->
                   </form>
                   <hr>
                   <div class="text-center">

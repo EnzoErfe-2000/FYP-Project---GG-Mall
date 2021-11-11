@@ -5,7 +5,7 @@ include_once 'include/header.php';
 
         <div class="header-empty-space"></div>
 
-        <div class="block-entry fixed-background" style="background-image: url(/fyp-project/img/bg-4.jpg);">
+        <div class="block-entry fixed-background" style="background-image: url(/fyp-project/img/background-2.jpg);">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
@@ -61,8 +61,7 @@ include_once 'include/header.php';
                         <div class="description simple-article size-2"><a href="mailto:ggmall_inc@gmail.com">ggmall_inc@gmail.com</a></div>
                     </div>
                 </div>
-                <!--
-				<div class="col-sm-3">
+                <div class="col-sm-3">
                     <div class="icon-description-shortcode style-1">
                         <img class="icon" src="img/icon-26.png" alt="">
                         <div class="title h6">Follow us</div>
@@ -74,7 +73,6 @@ include_once 'include/header.php';
                         </div>
                     </div>
                 </div>
-				-->
             </div>
         </div>
 

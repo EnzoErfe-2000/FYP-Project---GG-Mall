@@ -118,11 +118,10 @@ if($result = mysqli_query($conn, $show))
             <div class="row">
                 <div class="col-12">
                     <div class="dashboard">
-					<h4 class="accounttitle"><br>Address</h4>
                         <div class="row">
-                            <div class="col-md-9" style="border: 2px solid black; border-radius: 15px;">
-                                <div class="empty-space col-xs-b35 col-md-b20"></div>
-                                <div class="container" style="background-color: #222; border-radius: 5px;">
+                            <div class="col-md-8" style="border: 2px solid black; border-radius: 15px;">
+                                <h4 class="accounttitle"><br>Address</h4>
+                                <div class="container" style="background-color: #3abaf4; border-radius: 5px;">
                                     <div class="row" style="margin-top: 10px; margin-left:30px; font-size: 16px;">
                                         <?php
 
@@ -132,33 +131,15 @@ if($result = mysqli_query($conn, $show))
                                                 $counterr++; 
                                                 echo'
                                                     <div class="col-md-6">
-                                                        <div class="h4 light">
-														First Name    : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$fname[$x].'</span>
-                                                        </div>
-														<div class="h4 light">
-														Last Name     : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$lname[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														Phone Number  : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$phone[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														Street Address: <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$address[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														Unit No       : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$unit[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														Country       : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$country[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														City          : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$city[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														State         : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$state[$x].'</span>
-														</div>
-                                                        <div class="h4 light">
-														Postcode      : <span class="h5 light" style="text-transform:initial;color:#6777EF;">'.$pcode[$x].'</span>
-														</div>
+                                                        <p>First Name    : '.$fname[$x].' </p>
+                                                        <p>Last Name     : '.$lname[$x].'</p>
+                                                        <p>Phone Number  : '.$phone[$x].'</p>
+                                                        <p>Street Address: '.$address[$x].'</p>
+                                                        <p>Unit No       : '.$unit[$x].'</p>
+                                                        <p>Country       : '.$country[$x].'</p>
+                                                        <p>City          : '.$city[$x].'</p>
+                                                        <p>State         : '.$state[$x].'</p>
+                                                        <p>Postcode      : '.$pcode[$x].'</p>
                                                         <button type="button" class="btn btn-gray" onclick="return openmodal(' . $counterr . ')" style="margin-bottom: 20px;">
                                                             Edit
                                                         </button>
@@ -170,7 +151,7 @@ if($result = mysqli_query($conn, $show))
                                 </div> 
                                 <br>   
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="dashboardmenu"><span style="font-size:18px; text-decoration:underline; font-weight:bold;" >Account Selection</span>
                                     <div class="menus">
                                         <ul class="a">
