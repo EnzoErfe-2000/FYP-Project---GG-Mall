@@ -66,7 +66,7 @@ include_once '../include/dbh-inc.php';
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="productlist.php">Product List</a>
             <a class="collapse-item" href="addproduct.php">Add Product</a>
-			      <a class="collapse-item" href="addcategory.php">Add Category</a>
+			<a class="collapse-item" href="addcategory.php">Category Lists</a>
             <a class="collapse-item" href="deleteproductlist.php">Delete Product</a>
           </div>
         </div>

@@ -98,7 +98,7 @@ if(isset($_POST['update_product'])) // when click on Update button
                     <div class="form-group row">
                         <label for="product_id" class="col-sm-3 col-form-label">Product ID</label>
                         <div class="col-sm-9">
-                            <input class="form-control " type="text"name="product_id" value="<?php echo $data['product_id'] ?>" placeholder="00000">
+                            <input readonly class="form-control " type="text"name="product_id" value="<?php echo $data['product_id'] ?>" placeholder="00000">
                         </div>
                     </div>
 					

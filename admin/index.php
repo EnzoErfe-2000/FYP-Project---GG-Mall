@@ -10,6 +10,14 @@ if(!isset($_SESSION["loggedin"]))
     </script>
   ';
 }
+else
+{
+  echo'
+    <script>
+        location.href = "salesreport.php";
+    </script>
+  ';
+}
 
 ?>
 
