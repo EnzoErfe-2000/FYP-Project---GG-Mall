@@ -21,7 +21,6 @@ if(isset($_GET['orderID']))
 	{
 		//echo "<script type='text/javascript'>alert('stmt successful!');</script>";
 	}
-	//mysqli_stmt_bind_param($stmt, "ss", $id, $_SESSION['customer_id']);
 	mysqli_stmt_execute($stmt);
 	$leftDetail = mysqli_stmt_get_result($stmt);
 	$leftDetails = mysqli_fetch_assoc($leftDetail);
