@@ -3,70 +3,75 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';
 require_once 'include/dbh-inc.php';
 
-$fname = $lname = $phone = $unit = $address = $country = $state = $pcode = $city = "";
-$fname_err = $lname_err = $phone_err = $unit_err = $address_err = $country_err = $state_err = $pcode_err = $city_err = "";
-$form = "true";
-
-$fname = array();
-$lname = array();
-$phone = array();
-$unit = array();
-$address = array();
-$country = array();
-$state = array();
-$pcode = array();
-$city = array();
-
-if(isset($_POST['addaddress']))
+if(isset($_SESSION['customer_id']))
 {
-   $sql = "
-            UPDATE address SET 
-            fname" . $_POST["no"] . " = '" . ($_POST['input-fname']) . "',
-            lname" . $_POST["no"] . " = '" . ($_POST['input-lname']) . "',
-            phone" . $_POST["no"] . " = '" . ($_POST['input-phone']) . "',
-            unit_no" . $_POST["no"] . " = '" . ($_POST['input-unit']) . "',
-            street_address" . $_POST["no"] . " = '" . ($_POST['input-address']) . "',
-            country" . $_POST["no"] . " = '" . ($_POST['input-country']) . "',
-            state" . $_POST["no"] . " = '" . ($_POST['input-state']) . "',
-            postcode" . $_POST["no"] . " = '" . ($_POST['input-pcode']) . "',
-            city" . $_POST["no"] . " = '" . ($_POST['input-city']) . "'
-            WHERE customer_id = " . $_SESSION["customer_id"];
+	$fname = $lname = $phone = $unit = $address = $country = $state = $pcode = $city = "";
+	$fname_err = $lname_err = $phone_err = $unit_err = $address_err = $country_err = $state_err = $pcode_err = $city_err = "";
+	$form = "true";
 
-    if(mysqli_query($conn, $sql))
-    {
-        echo'
-            <script>
-                alert("Updated.");
-            </script>
-        ';
-    }
-    else
-    {
-        echo'
-            <script>
-                alert("Something went wrong.");
-            </script>
-        ';
-    }
+	$fname = array();
+	$lname = array();
+	$phone = array();
+	$unit = array();
+	$address = array();
+	$country = array();
+	$state = array();
+	$pcode = array();
+	$city = array();
+
+	if(isset($_POST['addaddress']))
+	{
+	   $sql = "
+				UPDATE address SET 
+				fname" . $_POST["no"] . " = '" . ($_POST['input-fname']) . "',
+				lname" . $_POST["no"] . " = '" . ($_POST['input-lname']) . "',
+				phone" . $_POST["no"] . " = '" . ($_POST['input-phone']) . "',
+				unit_no" . $_POST["no"] . " = '" . ($_POST['input-unit']) . "',
+				street_address" . $_POST["no"] . " = '" . ($_POST['input-address']) . "',
+				country" . $_POST["no"] . " = '" . ($_POST['input-country']) . "',
+				state" . $_POST["no"] . " = '" . ($_POST['input-state']) . "',
+				postcode" . $_POST["no"] . " = '" . ($_POST['input-pcode']) . "',
+				city" . $_POST["no"] . " = '" . ($_POST['input-city']) . "'
+				WHERE customer_id = " . $_SESSION["customer_id"];
+
+		if(mysqli_query($conn, $sql))
+		{
+			echo'
+				<script>
+					alert("Updated.");
+				</script>
+			';
+		}
+		else
+		{
+			echo'
+				<script>
+					alert("Something went wrong.");
+				</script>
+			';
+		}
+	}
+	   
+	$show = "SELECT * FROM address where customer_id = " . $_SESSION["customer_id"];
+	if($result = mysqli_query($conn, $show))
+	{
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($fname, $row['fname1'], $row['fname2'], $row['fname3'], $row['fname4']);
+			array_push($lname, $row['lname1'], $row['lname2'], $row['lname3'], $row['lname4']);
+			array_push($phone, $row['phone1'], $row['phone2'], $row['phone3'], $row['phone4']);
+			array_push($unit, $row['unit_no1'], $row['unit_no2'], $row['unit_no3'], $row['unit_no4']);
+			array_push($address, $row['street_address1'], $row['street_address2'], $row['street_address3'], $row['street_address4']);
+			array_push($country, $row['country1'], $row['country2'], $row['country3'], $row['country4']);
+			array_push($state, $row['state1'], $row['state2'], $row['state3'], $row['state4']);
+			array_push($pcode, $row['postcode1'], $row['postcode2'], $row['postcode3'], $row['postcode4']);
+			array_push($city, $row['city1'], $row['city2'], $row['city3'], $row['city4']);
+		}
+	}
 }
-   
-$show = "SELECT * FROM address where customer_id = " . $_SESSION["customer_id"];
-if($result = mysqli_query($conn, $show))
+else
 {
-    while ($row = mysqli_fetch_assoc($result)) {
-        array_push($fname, $row['fname1'], $row['fname2'], $row['fname3'], $row['fname4']);
-        array_push($lname, $row['lname1'], $row['lname2'], $row['lname3'], $row['lname4']);
-        array_push($phone, $row['phone1'], $row['phone2'], $row['phone3'], $row['phone4']);
-        array_push($unit, $row['unit_no1'], $row['unit_no2'], $row['unit_no3'], $row['unit_no4']);
-        array_push($address, $row['street_address1'], $row['street_address2'], $row['street_address3'], $row['street_address4']);
-        array_push($country, $row['country1'], $row['country2'], $row['country3'], $row['country4']);
-        array_push($state, $row['state1'], $row['state2'], $row['state3'], $row['state4']);
-        array_push($pcode, $row['postcode1'], $row['postcode2'], $row['postcode3'], $row['postcode4']);
-        array_push($city, $row['city1'], $row['city2'], $row['city3'], $row['city4']);
-    }
+	echo "<script> location.assign('error_404.php');</script>";
 }
-
-
 ?>
 
 <head>

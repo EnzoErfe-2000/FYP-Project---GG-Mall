@@ -3,161 +3,168 @@ include_once 'include/session-db-func.php';
 include_once 'include/header.php';
 require_once 'include/dbh-inc.php';
 
-$name = $email = $phone = $dob = $address = $postcode = $street = $unit = $city = $state = $country =  "";
-$email_err = $phone_err = $postcode_err = $name_err = $street_err = $unit_err = $city_err = $state_err = $country_err =  "";
-
-if(isset($_POST['submitt']))
+if(isset($_SESSION['customer_id']))
 {
-    $name = $_POST['name'];
-    $newemail = $_POST['email'];
-    $phone = $_POST['phone'];
-    $dob = $_POST['dob'];
-    $address = $_POST['address'];
-    $postcode = $_POST['postcode'];
-    $unit = $_POST['unit'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $country = $_POST['country'];
+	$name = $email = $phone = $dob = $address = $postcode = $street = $unit = $city = $state = $country =  "";
+	$email_err = $phone_err = $postcode_err = $name_err = $street_err = $unit_err = $city_err = $state_err = $country_err =  "";
 
-    if (empty($_POST["phone"])) 
-    {
-        $phone_err = "Phone number is required";
-    } 
-    else if (!preg_match('/^[0-9]{10}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{11}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{12}+$/', $_POST["phone"])) 
-    {
-        $phone_err ="Invalid phone number format";
-    }
-    else 
-    {
-        $phone = $_POST["phone"];
-    }
+	if(isset($_POST['submitt']))
+	{
+		$name = $_POST['name'];
+		$newemail = $_POST['email'];
+		$phone = $_POST['phone'];
+		$dob = $_POST['dob'];
+		$address = $_POST['address'];
+		$postcode = $_POST['postcode'];
+		$unit = $_POST['unit'];
+		$city = $_POST['city'];
+		$state = $_POST['state'];
+		$country = $_POST['country'];
 
-    if(empty($_POST['email']))
-    {
-        $email_err = "Please enter your email";
-    }
-    else if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", ($_POST["email"])))
-    {
-        $email_err = "Invalid email format";
-    } 
-    else
-    {
-        // Prepare a select statement
+		if (empty($_POST["phone"])) 
+		{
+			$phone_err = "Phone number is required";
+		} 
+		else if (!preg_match('/^[0-9]{10}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{11}+$/', $_POST["phone"]) && !preg_match('/^[0-9]{12}+$/', $_POST["phone"])) 
+		{
+			$phone_err ="Invalid phone number format";
+		}
+		else 
+		{
+			$phone = $_POST["phone"];
+		}
 
-        $sql = "SELECT * FROM customer WHERE customer_email_address = '" . ($_POST["email"]) . "'";
-        $result = mysqli_query($conn, $sql);
-        
-        if (mysqli_num_rows($result) > 0) 
-        {
-            //$email_err = "Email is taken";
-        } 
-    }
-    
-    if(empty($_POST['postcode']))
-    {
-        $postcode_err = "Please enter postcode.";
-    }
-    else if(!preg_match('/^[0-9]{5}+$/', $_POST["postcode"]))
-    {
-        $postcode_err = "Please enter valid postcode";
-    }
-    else 
-    {
-        $postcode = $_POST["postcode"];
-    }
+		if(empty($_POST['email']))
+		{
+			$email_err = "Please enter your email";
+		}
+		else if (!preg_match("/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/", ($_POST["email"])))
+		{
+			$email_err = "Invalid email format";
+		} 
+		else
+		{
+			// Prepare a select statement
 
-    if(empty($_POST['name']))
-    {
-        $name_err = "Please enter name.";
-    }
-    else if(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["name"]))
-    {
-        $name_err = "Please enter valid name";
-    }
-    else 
-    {
-        $name = $_POST["name"];
-    }
-
-    if(empty($_POST['address']))
-    {
-        $address_err = "Please enter street address.";
-    }
-    else 
-    {
-        $address = $_POST["address"];
-    }
-
-    if(empty($_POST['unit']))
-    {
-        $unit_err = "Please enter unit no.";
-    }
-    else 
-    {
-        $unit = $_POST["unit"];
-    }
-
-    if(empty($_POST['city']))
-    {
-        $city_err = "Please enter city.";
-    }
-    else 
-    {
-        $city = $_POST["city"];
-    }
-
-    if(empty($_POST['state']))
-    {
-        $state_err = "Please enter state.";
-    }
-    else 
-    {
-        $state = $_POST["state"];
-    }
-
-    if(empty($_POST['country']))
-    {
-        $country_err = "Please enter country.";
-    }
-    else 
-    {
-        $country = $_POST["country"];
-    }
-
-    if(empty($email_err) && empty($phone_err) && empty($postcode_err) && empty($name_err) && empty($address_err) && empty($unit_err) && empty($city_err) && empty($state_err) && empty($country_err))
-    {
-        $sql = "
-        UPDATE customer SET 
-        customer_name = '".$_POST["name"]."', 
-        customer_email_address = '". $_POST["email"]."', 
-        customer_phone = '".$_POST["phone"]."', 
-        customer_dateOfBirth = '".$_POST["dob"]."',
-        customer_address_street = '".$_POST["address"]."',
-		customer_address_unit = '".$_POST["unit"]."',
-		customer_address_city = '".$_POST["city"]."',
-		customer_address_state = '".$_POST["state"]."',
-		customer_address_country = '".$_POST["country"]."',
-		customer_address_postcodeZIP = '".$_POST["postcode"]."'
+			$sql = "SELECT * FROM customer WHERE customer_email_address = '" . ($_POST["email"]) . "'";
+			$result = mysqli_query($conn, $sql);
+			
+			if (mysqli_num_rows($result) > 0) 
+			{
+				//$email_err = "Email is taken";
+			} 
+		}
 		
-        WHERE customer_id = ". $_SESSION['customer_id'];
+		if(empty($_POST['postcode']))
+		{
+			$postcode_err = "Please enter postcode.";
+		}
+		else if(!preg_match('/^[0-9]{5}+$/', $_POST["postcode"]))
+		{
+			$postcode_err = "Please enter valid postcode";
+		}
+		else 
+		{
+			$postcode = $_POST["postcode"];
+		}
 
-        if(mysqli_query($conn, $sql))
-        {
-            echo "
-            <script> 
-                alert('Updated Successfully');
-                location.assign('/fyp-project/personal.php');
-            </script>";
-        }
-        else
-        {
-            echo"
-            <script> 
-                alert('Something went wrong');
-            </script>";
-        }
-    }
-    
+		if(empty($_POST['name']))
+		{
+			$name_err = "Please enter name.";
+		}
+		else if(!preg_match("/^[a-zA-Z-' ]*$/", $_POST["name"]))
+		{
+			$name_err = "Please enter valid name";
+		}
+		else 
+		{
+			$name = $_POST["name"];
+		}
+
+		if(empty($_POST['address']))
+		{
+			$address_err = "Please enter street address.";
+		}
+		else 
+		{
+			$address = $_POST["address"];
+		}
+
+		if(empty($_POST['unit']))
+		{
+			$unit_err = "Please enter unit no.";
+		}
+		else 
+		{
+			$unit = $_POST["unit"];
+		}
+
+		if(empty($_POST['city']))
+		{
+			$city_err = "Please enter city.";
+		}
+		else 
+		{
+			$city = $_POST["city"];
+		}
+
+		if(empty($_POST['state']))
+		{
+			$state_err = "Please enter state.";
+		}
+		else 
+		{
+			$state = $_POST["state"];
+		}
+
+		if(empty($_POST['country']))
+		{
+			$country_err = "Please enter country.";
+		}
+		else 
+		{
+			$country = $_POST["country"];
+		}
+
+		if(empty($email_err) && empty($phone_err) && empty($postcode_err) && empty($name_err) && empty($address_err) && empty($unit_err) && empty($city_err) && empty($state_err) && empty($country_err))
+		{
+			$sql = "
+			UPDATE customer SET 
+			customer_name = '".$_POST["name"]."', 
+			customer_email_address = '". $_POST["email"]."', 
+			customer_phone = '".$_POST["phone"]."', 
+			customer_dateOfBirth = '".$_POST["dob"]."',
+			customer_address_street = '".$_POST["address"]."',
+			customer_address_unit = '".$_POST["unit"]."',
+			customer_address_city = '".$_POST["city"]."',
+			customer_address_state = '".$_POST["state"]."',
+			customer_address_country = '".$_POST["country"]."',
+			customer_address_postcodeZIP = '".$_POST["postcode"]."'
+			
+			WHERE customer_id = ". $_SESSION['customer_id'];
+
+			if(mysqli_query($conn, $sql))
+			{
+				echo "
+				<script> 
+					alert('Updated Successfully');
+					location.assign('/fyp-project/personal.php');
+				</script>";
+			}
+			else
+			{
+				echo"
+				<script> 
+					alert('Something went wrong');
+				</script>";
+			}
+		}
+		
+	}
+}
+else
+{
+	echo "<script> location.assign('error_404.php');</script>";
 }
 ?>
 

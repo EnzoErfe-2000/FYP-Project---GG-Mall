@@ -1,6 +1,10 @@
 <?php
 include_once 'include/session-db-func.php';
 include_once 'include/header.php';
+
+if(isset($_SESSION['customer_id']))
+{
+	
 ?>
 <head>
     <style>
@@ -101,7 +105,13 @@ include_once 'include/header.php';
     
 </body>
 
-
+<?php
+}
+else
+{
+	echo "<script> location.assign('error_404.php');</script>";
+}
+?>
 <?php
 include_once 'include/footer.php';
 ?>

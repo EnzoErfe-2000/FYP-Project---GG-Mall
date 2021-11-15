@@ -1,8 +1,10 @@
 <?php
-    include_once 'include/session-db-func.php';
-    include_once 'include/header.php';
-    include_once 'include/dbh-inc.php';
+include_once 'include/session-db-func.php';
+include_once 'include/header.php';
+include_once 'include/dbh-inc.php';
 
+if(isset($_SESSION['customer_id']))
+{
     $newpassword = $oldpassword = $cfmpassword = "";
     $newpassworderr = $cfmpassworderr = "";
 
@@ -96,6 +98,11 @@
         }
 
     }
+}
+else
+{
+	echo "<script> location.assign('error_404.php');</script>";
+}
 ?>
 <head>
     <style>
