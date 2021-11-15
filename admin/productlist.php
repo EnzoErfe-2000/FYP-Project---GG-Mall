@@ -79,7 +79,7 @@ tfoot {
 									echo "<td>" . $data['product_stock'] ."  [".$data['product_availability'] ."]". "</td>";
 									echo "<td>" . $data['product_listedPrice'] . "</td>";
 									echo "<td>".
-									   "<form action='editproduct.php' method='POST'>
+									   "<form action='editproduct.php?product=$d' method='POST'>
 											<input type ='hidden' name='edit_id' value=product_id>
 											<button type='submit' name='update1' style='height:24px;' class= 'btn btn-light btn-sm'>
 											<a href = '/fyp-project/admin/editproduct.php?product=$d'>EDIT</p></button>

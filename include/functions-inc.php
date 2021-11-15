@@ -47,32 +47,4 @@ function resetHeadErrMsgs()
 	echo "<script type='text/javascript'>document.getElementById('errEmail').innerHTML = '&nbsp;';</script>";
 	echo "<script type='text/javascript'>document.getElementById('errPwd').innerHTML = '&nbsp;';</script>";
 }
-/*
-function loginUser($conn, $email, $pwd){
-	$uidExists = uidExists($conn, $email, $email);
-	
-	if($uidExists === false){
-		header("location: ../index.php?error=wronglogin");
-		print '<script type="text/javascript">alert("User not found!")</script>';
-		exit();
-	}
-	
-	$pwdHashed = $uidExists["customer_password"];
-	$checkPwd = password_verify($pwd, $pwdHashed);
-	
-	if($checkPwd === false){
-		header("location: ../index.php?error=wrongpassword");		
-		print '<script type="text/javascript">alert("User not found!")</script>';
-		exit();
-	}
-	else if($checkPwd === true){
-		session_start();
-		$_SESSION["customer_id"] = $uidExists["customer_id"];
-		$_SESSION["customer_name"] = $uidExists["customer_name"];
-		$_SESSION["customer_email_address"] = $uidExists["customer_email_address"];
-		header("location: ../index.php?session=start");
-		exit();
-	}
-}
-*/
 ?>
